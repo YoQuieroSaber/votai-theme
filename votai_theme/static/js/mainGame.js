@@ -229,8 +229,8 @@ var app = (function(){
 		var fS = parseFloat(element.css("font-size"));
 		var par = element.get(0);
 		var count = 0;
-		while (count<1000 && (par.offsetHeight <par.scrollHeight)){
-			fS*=0.95;
+		while (count<20 && (par.offsetHeight <par.scrollHeight)){
+			fS*=0.8;
 			element.css("font-size",fS+"em");
 			count++;
 		}	
@@ -1736,74 +1736,80 @@ function loadGame(){
 			pregFS = parseFloat($(".tPreg").css("font-size"));
 			resuFS = $(".pregResu").css("font-size");
 
-			$("#game").css("left",($(window).width()*0.5-parseFloat($("#game").css("width"))*0.5)+"px");
-			$("#telon").css("left",($(window).width()*0.5-parseFloat($("#telon").css("width"))*0.5)+"px");
-			if(mobile){
-				$("#game").css("top","0px");
-				$("#telon").css("top","0px");
-				$("#inicio").css("top","0px");
-				$("header").hide();
-				$(".footer").hide();
-				$("#sideLeft").hide();
-				$("#inicioD").hide();
-				$(".afiniSide").hide();
-				$("#homecontent").hide();
-				if(pregCount>0){
-					$(".afiT .realAfinidad").show();
-				}
-			}else{
-				$("#inicioD").hide();
-				$(".bMenuH").hide();
-				$("#game").css("left",($(window).width()*0.5-parseFloat($("#game").css("width"))*0.5)+"px");
-				$("#sideLeft").show();
-				var margR=parseFloat($("#sideLeft").css("margin-right"));
-				if($(window).width()>960){
-					$("#sideLeft").css("left",($(window).width()*0.5-parseFloat($("#game").css("width"))*0.5-parseFloat($("#sideLeft").css("width"))-margR)+"px");
-				}else{
-					$("#sideLeft").css("width","150px")
-					margR = margR*($(window).width()-768)/(960-768);
-					$("#sideLeft").css("left",($(window).width()*0.5-parseFloat($("#game").css("width"))*0.5-parseFloat($("#sideLeft").css("width"))-margR)+"px");
-					$(".afiniSide").css("margin-left",margR+"px");
-				}
-				$(".afiniSide").css("left",($(window).width()*0.5+parseFloat($("#game").css("width"))*0.5)+"px");
-				$(".afiniSide").css("height",(0.9*$("#game").height())+"px");
-				$(".afiniSide").hide();
-			}
+			// $("#game").css("left",($(window).width()*0.5-parseFloat($("#game").css("width"))*0.5)+"px");
+			// $("#telon").css("left",($(window).width()*0.5-parseFloat($("#telon").css("width"))*0.5)+"px");
+			// if(mobile){
+			// 	$("#game").css("top","0px");
+			// 	$("#telon").css("top","0px");
+			// 	$("#inicio").css("top","0px");
+			// 	$("header").hide();
+			// 	$(".footer").hide();
+			// 	$("#sideLeft").hide();
+			// 	$("#inicioD").hide();
+			// 	$(".afiniSide").hide();
+			// 	$("#homecontent").hide();
+			// 	if(pregCount>0){
+			// 		$(".afiT .realAfinidad").show();
+			// 	}
+			// }else{
+			// 	$("#inicioD").hide();
+			// 	$(".bMenuH").hide();
+			// 	$("#game").css("left",($(window).width()*0.5-parseFloat($("#game").css("width"))*0.5)+"px");
+			// 	$("#sideLeft").show();
+			// 	var margR=parseFloat($("#sideLeft").css("margin-right"));
+			// 	if($(window).width()>960){
+			// 		$("#sideLeft").css("left",($(window).width()*0.5-parseFloat($("#game").css("width"))*0.5-parseFloat($("#sideLeft").css("width"))-margR)+"px");
+			// 	}else{
+			// 		$("#sideLeft").css("width","150px")
+			// 		margR = margR*($(window).width()-768)/(960-768);
+			// 		$("#sideLeft").css("left",($(window).width()*0.5-parseFloat($("#game").css("width"))*0.5-parseFloat($("#sideLeft").css("width"))-margR)+"px");
+			// 		$(".afiniSide").css("margin-left",margR+"px");
+			// 	}
+			// 	$(".afiniSide").css("left",($(window).width()*0.5+parseFloat($("#game").css("width"))*0.5)+"px");
+			// 	$(".afiniSide").css("height",(0.9*$("#game").height())+"px");
+			// 	$(".afiniSide").hide();
+			// }
 
-			if(h<480)iniPadH=0.05;
-			$("#inicio").css("padding-top",h*iniPadH+"px");
-			$("#inicio").css("padding-bottom",h*iniPadH+"px");;
+			// if(h<480)iniPadH=0.05;
+			// $("#inicio").css("padding-top",h*iniPadH+"px");
+			// $("#inicio").css("padding-bottom",h*iniPadH+"px");;
 
 
+
+			// 	w = $("#game").width();
+			// 	h = $("#game").height();
+
+			// 	if(h<480)iniPadH=0.05;
+			// 	$("#inicio").css("padding-top",h*iniPadH+"px");
+			// 	$("#inicio").css("padding-bottom",h*iniPadH+"px");
+				
+			// 	$("#game").css("left",($(window).width()*0.5-parseFloat($("#game").css("width"))*0.5)+"px");
+			// 	$("#telon").css("left",($(window).width()*0.5-parseFloat($("#telon").css("width"))*0.5)+"px");
+				
+
+			// 	if($(window).width()>768){
+			// 		resizeDesktop();
+			// 	}else{
+			// 		resizeMobile();
+			// 	}
+
+			// 	pregResize();	
+			// 	$(".pregResu").css("font-size",resuFS);
+				
 			// Listener por resize de la ventana
 			window.addEventListener("resize", function() {
-
-				w = $("#game").width();
-				h = $("#game").height();
-
-				if(h<480)iniPadH=0.05;
-				$("#inicio").css("padding-top",h*iniPadH+"px");
-				$("#inicio").css("padding-bottom",h*iniPadH+"px");
-				
-				$("#game").css("left",($(window).width()*0.5-parseFloat($("#game").css("width"))*0.5)+"px");
-				$("#telon").css("left",($(window).width()*0.5-parseFloat($("#telon").css("width"))*0.5)+"px");
-				
-
-				if($(window).width()>768){
-					resizeDesktop();
-				}else{
-					resizeMobile();
+				if ($(".pregResu").is(":visible")) {
+					$(".pregResu").resizeFont($(".pregResu"));
 				}
-
-				pregResize();	
-				$(".pregResu").css("font-size",resuFS);
-				resizeFont($(".pregResu"));
 				
+				if ($(".tPreg").is(":visible")) {
+					$(".tPreg").css("font-size",pregFS);
+					resizeFont($(".tPreg"));
+				}
 			}, false);
-
 			
 
-			pregResize();
+			//pregResize();
 			
 			var inicio = $("#inicio");
 			var game = $("#game");

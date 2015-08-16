@@ -1,12 +1,13 @@
+/** GENERAL **/ 
 @font-face {
-    font-family: yqsFont;
-    src: url(../fonts/POLITICA.TTF);
+  font-family: Politica;
+  src: url(fonts/POLITICA.TTF);
 }
 
 @font-face {
-   font-family: yqsFont;
-   src: url(../fonts/POLITICA_BOLD.TTF);
-   font-weight: bold;
+  font-family: Politica;
+  src: url(fonts/POLITICA_BOLD.TTF);
+  font-weight: bold;
 }
 
 html {
@@ -18,6 +19,9 @@ body {
 	padding-top: 0;	
 	min-height: 100%;
 	height: auto;
+	background-color:#dddddd;
+	overflow:auto;
+	text-align:center;
 }
 
 a{
@@ -25,140 +29,67 @@ a{
 	color: #085;
 }
 
-.container-profile {
-	background: #454;
-	margin-top: 1em;
+nav{
+	background-color:#86e895;
 }
-
-.profile-candidate {
-	background-color: transparent; 
-	padding: 1em;
-}
-
-.antecedentes.col-md-12 {
-	padding: 0;
-}
-
-.profile-candidate img {
-	margin-bottom: 0;
-}
-
-.panel-default>.panel-heading {
-	background-color: #575;
-}
-
-.container-profile h3 {
-	padding: 0.5em 0 0 0;
-}
-.read-more a, .read-less a {
-	background: #cfc;
-}
-
-.question-answer {
-	background-color: white;
-	border-top: 1px solid #cdc;
-}
-
-p.question {
-	font-size: 1.3em;
-}
-p.answer {
-	font-size: 1.2em;
-}
-p.position_description {
-	font-size: 0.9em;
-	color: #454;
+button:focus {
+	outline: none;
 }
 
 
-.share-sidebar {
-position: fixed;
-right: 10px;
-top: 125px;
-width: 55px;
-background: #ccc;
-border-radius: 10px;
-}
+.imgHeader{
+	vertical-align: middle;
+	width:232.43px;
+	height:50px;
+} 
 
-@media (max-width: 600px) {
-	.share-sidebar {
-		display: none;
-	}
+.navbar-inverse {
+  background-color: #86e895;
+  border-color: #080808;
 }
-
-.share-title {
-font-family: yqsFont;
-margin-top: 1em;
-}
-body .social_share_privacy_area.box {
-width: auto;
-}
- 
-body .fbshare a {
-background-color: #3b5998;
-background-image: url("/static/img/logo-facebook.png");
-width: 55px;
-height: 26px;
-display: block;
-background-repeat: no-repeat;
-background-position: center;
-}
-body .fbshare a img {
-visibility:hidden;
-}
- 
-body .social_share_privacy_area.box .mail a img {
-zoom: 0.5;
-}
-body .social_share_privacy_area.box .mail a {
-background: #bde;
-height: 26px;
-width: 55px;
-}
-body .social_share_privacy_area.box li .dummy_btn {
-margin-bottom: 5px;
-overflow: hidden;
-}
-
-body .social_share_privacy_area li .dummy_btn img.privacy_dummy {
-margin-top: -41px;
+.container{
+	text-align: left;
+	max-width: 100%;
 }
 
 
-div.question-answer div.row.hidden-xs {
-	border-top: 4px solid #EFE;
-	padding: 1em 0px;
-	margin-bottom: 1em;
-}
-
-#listaGobernadores {
+.list-inline {
 	list-style: none;
-	margin: 1em 0 0 0;
 	padding: 0;
+	margin: 0;
 }
 
-#listaGobernadores li {
+.list-inline li {
 	list-style: none;
-        margin: 1em 0 ;  
+	padding: 0;
+	margin: 0;
+	display: inline-block;
 }
-#listaGobernadores a {
-	background: #eee;
-	display: block;
-	border-radius: 0.5em;
-	padding: 1em;
+
+/** FIN GENERAL **/ 
+
+
+/** JUEGO **/
+.juego-container {
+	width: 100%;
+	height: 100%;
+	max-height: 500px;
+	position: relative;
 }
+
 
 #telon{
 	position:fixed;
 	left:0px;
 	top:0px;
-	padding-top: 40px;
 	width:100%;
 	height:100%;
+	padding-top: 40px;
 	background-color:#86e895;
 	z-index:10000;	
 	text-align:center;
 }
+
 .loading{
 	width:75px;
 	height:75px;
@@ -170,277 +101,19 @@ div.question-answer div.row.hidden-xs {
 
 p.message-accuracy {
 	margin: -8px 0 2px 0;
-}
-
-header{
-	width:100%;
-	height:auto;	
-	box-shadow: 5px 0px 6px rgba(0, 0, 0, 0.5);
-
-    color: #000;
-    text-align: center;
-}
-
-header, footer {
-	background-color: #454;
-}
-
-.header__nav__social a[href*="facebook"] {
-        background-color: #3b5998;
-        background-image: url("../img/logo-facebook.png");
-}
-
-.header__nav__social a[href*="twitter"] {
-        background-color: #55acee;
-        background-image: url("../img/logo-twitter.png");
-}
-.header__nav__social a[href*="taringa"] {
-        background-color: #23b;
-        background-image: url("../img/logo-taringa.png");
-}
-
-.header__nav__social a:hover, .header__nav__social a:focus {
-height: 54px;
-background-position: 8px 26px;
-}
-a.header__logo:hover, a.header__logo:focus, .header__nav__social a:hover, .header__nav__social a:focus {
-margin-bottom: 0;
-border-bottom: 0;
-}
-.header__nav__social a {
-display: block;
-float: left;
-width: 36px;
-height: 50px;
-text-indent: -9999px;
-background-position: 8px 22px;
-background-repeat: no-repeat;
-}
-.header__nav__social {
-position: absolute;
-top: 0;
-right: .9375rem;
-}
-
-
-.hLogo{
-	height: 100%;      
-	white-space: nowrap;    
-	text-align: center;
-	padding-top: 1em;
-}
-header span{
-    display: inline-block;
-    height: 100%;
-    vertical-align: middle;
-}
-#headermenu { 
-margin-top: 0.5em;
-font-family: yqsFont, "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif; 
-font-size: 1.5em;
-}
-#headermenu a {
-	color: white;
-padding: 0 0.5em;
-}
-
-#headermenu a:hover {
-	text-decoration: underline;
-}
-.breadcrumb>li+li:before {
-padding: 0 5px;
-color: #aaa;
-content: ">\000";
-}
-.breadcrumb a {
-color: #777;
-}
-
-.breadcrumb {
-padding: 0;
-}
-
-#election nav,
-#election .nav-candidator ul.list-inline  {
-	background: none;
-}
-
-#election .nav-candidator .list-inline>li a {
-	background: #5a7;
-	color: white;
-	text-decoration: none;
-	border-radius: 1em;
-	padding: 1em 3em;
-	margin: 1em;
-	font-size: 1.5em;
-}
-
-.soulmate-link {
-	text-align: center;
-	border-radius: 1em;
-	padding: 1em;
-	background: #454;
-	color: white;
-	clear: both;
-	margin-top: 1em;
-	font-family: yqsFont;
-}
-
-.soulmate-link b{
-	color: #5a7;
-}
-
-.breadscrumb-social .social-button {
-	display: hidden;
-}
-
-footer{
-	font-family:Arial;
-	padding-bottom: 32px;	
-}
-footer p{
-	font-size:0.5em;
-	margin:0px;
-	color:#363636;
-}
-footer h3{
-	color:white;
-	
-}
-.colabora{
-	margin-top: 25px;
-	border-radius: 5px;
-	border: none;
-	padding: 1em;
-	font-weight: bold;
-}
-.colabora a:hover {
-  text-decoration: none;
-  color: white;
-}
-.colabora a {
-  color: #000000;
-  cursor: pointer;
-}
-.dias{
-	color:#e4324c;
-}
-.calendario{
-	font-size:2em;	
-	background-color:#bbb;
-	color: black;
-	text-align:center;	
-	padding:20px;
-}
-.calendario h3
-{
-	margin-top:0px;
-	color: #353535;
-	font-size: 1.1em;
-	font-family:yqsFont;
-}
-.calendario {
-	font-family:yqsFont;
-	margin-bottom: 0px;
-}
-
-.calendario ul {
-	margin: 0.5em 0;
-	padding: 0;
-	list-style: none;
-	vertical-align: middle;
-}
-
-.calendario li a {
-	background: white;
-	display: block;
-	min-height: 2.4em;
-	line-height: 1.2em;
-	padding: 0.3em;
-	border-radius: 0.5em;
-}
-
-.votas {
-	clear: both;
-	font-size: 1em;
-}
-
-.fecha-distancia {
-	font-weight: bold;
-}
-
-.about{
-	#background-color:#0f4135;
-	#box-shadow: 50px 50px 20px black;
-	max-width:545px;
-	text-align:left;
-	margin:auto;
-}
-.about img {
-	margin-right: 0.7em;
-}
-.about p{
-	font-size:1.0em;
-	margin-bottom:18px;
-	color:#343434;
-}
-
-.about h4{
-font-size: 1.0em;
-color: #cfa;
-margin-bottom: 1px;
-font-weight: bold;
-}
-.about a{
-	color:white;
-	cursor: pointer;
-}
-.about a:hover{
-	text-decoration:none;
-	color:white;
-}
-
-.imgHeader{
-	vertical-align: middle;
-	width:232.43px;
-	height:50px;
 } 
-body{
-	//background-color:#86e895;
-	background-color:#dddddd;
-	overflow:auto;
-	text-align:center;
-}
-nav{
-	background-color:#86e895;
-}
-button:focus {
-	outline: none;
-}
 
-.navbar-inverse {
-  background-color: #86e895;
-  border-color: #080808;
-}
-.container{
-	text-align: left;
-}
 
 #inicio{
 	position:absolute;
 	left:0;
 	top:0;
-	//width:100%;
-	//height:100%;
-	height:560px;
+	height:100%;
 	width:100%;
 	background-color:#86e895;
-	//z-index:1;
 	text-align:center;
 	padding-top:20%;
 	padding-bottom:20%;
-	//overflow-x:hidden;
-	//overflow-y:auto;
 	overflow:hidden;
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;
@@ -452,57 +125,29 @@ button:focus {
 
 #inicio h1{
 	color:#FFF;
-	font-family: yqsFont;
+	font-family: Politica;
 }
 #inicio h4{
-	//color:#befffc;
 	color:#fff;
-	font-family: yqsFont;
+	font-family: Politica;
 	font-size:1.5em;
 }
 
 #inicio #eleccion {
-	//direction: rtl;
-	//color:#befffc;
-	font-family: yqsFont;
+	font-family: Politica;
 	color:black;
 	background-color:white;	
 	border: 1px solid black;
 	margin-left:1%;
 	margin-right:1%;
-	/*border: 1px solid #AAA;
-	border-radius: 2px;
-	box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);*/
-/*	text-align:center;
-	font-size: inherit;
-	padding-top: 5px;
-	padding-bottom: 5px;/
-	/*margin: 0;
-	overflow: hidden;
+}
 
-	text-overflow: ellipsis;
-	white-space: nowrap;*/
-}
-#sideLeft{
-	position:absolute;
-	//left:200px;
-	margin-right:50px;
-	top:170px;
-	text-align:right;
-	width:300px;
-	color:black;
-}
 .bInicio,
 .bJugar{
 	top:66%;
 	background-color:#da3b75;	
 	background-size: 100%;
-	//color:#40d9b3;
-	color:#fff;
 	border: none;
-	//background: url(../img/botonInicio.jpg) no-repeat;
-	//width:226px;
-	//height:74px;
 	width:210px;
 	height:60px;
 	border-radius: 1.8em;
@@ -511,20 +156,17 @@ button:focus {
 	-moz-box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.5);
 	box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.5);	
 	
-	font-family: yqsFont;
+	font-family: Politica;
 }
 .imgInicio{
 	width:345px;
 	height:75px;
 }
 #game{
-	position:absolute;
-	left:0;
-	top:0;
 	padding-top:5px;
 	display: none;
-	width:450px;
-	height:560px;
+	width:100%;
+	height:100%;
 	top:150px;
 	border-radius: 1.8em;
 	background-color:#86e895;	
@@ -535,6 +177,13 @@ button:focus {
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
+}
+
+
+@media only screen and (max-width:768px){
+	#game{
+		border-radius: 0px;
+	}
 }
 
 .resultados{
@@ -553,7 +202,7 @@ button:focus {
 	height:18%;
 	overflow:hidden;
 	font-size:1.6em;
-	font-family:yqsFont;
+	font-family:Politica;
 	color:white;
 }
 .posturas::-webkit-scrollbar {
@@ -564,7 +213,6 @@ button:focus {
 }
 .posturas::-webkit-scrollbar-thumb {
 	background: white;
-	//-webkit-border-radius: 0px;
 	height:10px;
 }
 .posturas
@@ -589,10 +237,7 @@ button:focus {
 	float:left;
 	margin-bottom:10px;
 }
-/*.chatIMG{
-	border-radius: 10%;	
-	margin-bottom:10px;
-}*/
+
 .chatIMG
 {
 	width:90px;
@@ -731,7 +376,7 @@ button:focus {
 }
 .resuPor1,.resuPor2{
 	color:white;
-	font-family:yqsFont;
+	font-family:Politica;
 }
 .resuPor1{
 	font-size:2em;
@@ -873,59 +518,14 @@ button:focus {
 }
 .bMenuH{
 	position:absolute;
-	width:33px;
+	width:5%;
 	height:29px;
 	top:3%;
-	left:3%;
+	left:2%;
 	background-size: 100%;
 	border: none;
 	background: url(../img/tresLineas.png) no-repeat;
 	z-index: 10;
-}
-#menuDesk{
-	position:absolute;
-	left:0px;
-	top:200%;
-	text-align:right;
-	width:100%;	
-}
-.menu {
-	color:black;
-}
-
-.menu ul {
-	margin: 1em 0 0 0;
-	padding: 0;
-}
-
-.menu a {
-	padding: 1em;
-	background: #454;
-	display: block;
-	border-radius: 1em;
-	margin: 1em;
-	color: white;
-}
-
-.menu li {
-	list-style: none;
-}
-
-.descubriendo{
-	font-family: yqsFont;
-}
-
-.soulmate-link .bEmpez {
-padding: 0.5em 2.3em 0.8em;
-font-size: 1em;
-line-height: 2em;
-height: auto;
-width: auto;
-background-color: #5a7;
-}
-
-.soulmate-link {
-font-size: 2em;
 }
 
 .bEmpez{
@@ -944,10 +544,8 @@ font-size: 2em;
 	font-size:0.9em;
 }
 #menuMob{
-	//width: 80vw;
 	width: 100%;
 	margin-top: 20vh;
-	//margin-left: 10vw;
 }
 #menuMob a:hover {
   text-decoration: none;
@@ -967,7 +565,7 @@ font-size: 2em;
 }
 .share p{
 	width: 100%;
-	font-family: yqsFont;
+	font-family: Politica;
 	color: white;
 	font-size: 1.5em;
 	margin-bottom: 2em;
@@ -989,12 +587,11 @@ font-size: 2em;
 }
 .about2::-webkit-scrollbar-thumb {
 	background: white;
-	//-webkit-border-radius: 0px;
 	height:10px;
 }
 
 .about2 h2 {
-	font-family: yqsFont;
+	font-family: Politica;
 	margin-top: 0;
 }
 
@@ -1028,7 +625,7 @@ font-size: 2em;
 
 @media (max-width: 768px) {
 	.recorrido ul {
-		padding-left: 40px;
+		padding-left: 7%;
 	}
 }
 
@@ -1046,27 +643,27 @@ font-size: 2em;
 	vertical-align:middle;
 }
 
+@media only screen and (max-width:480px){
+	.dots{
+		width: 10px;
+		height: 10px;
+		border-radius: 12px;
+		margin: 0 0.5%;
+	}
+}
+
+
+
 .pregunta {
-	//padding-botton: 1%;
-	//padding-botton: 5%;
-	//padding-top:1%;
 	margin-top:10px;
 	text-align: center;
 
 
 	color: #fff;
-	//text-shadow: 0 0 0 1px rgba(0,0,0,.05), 0 1px 2px rgba(0,0,0,.3);
-	//text-shadow: 0 1px 2px black;
 
 	background-color: #86e895;
-	//box-shadow: 0 1px 2px rgba(0,0,0,.25);
-	//border:none;
 }
-.page-header{
-	border:none;
-	//padding-bottom:2%;
-	margin:0;
-}
+
 .tPreg{
 	padding-top:0px;
 	padding-left:15%;
@@ -1074,10 +671,10 @@ font-size: 2em;
 	margin-top:0;
 	margin-bottom:0;
 	height:20vh;
-	//height:138px;
 	overflow:hidden;
 	font-size:2.5em;
-	font-family:yqsFont;
+	line-height: 120%;
+	font-family:Politica;
 	color:#444;
 	font-weight: 100;
 }
@@ -1088,7 +685,6 @@ font-size: 2em;
 	padding-top: 0%;
 	background-color:#86e895;
 	color:#FFF;
-	//padding-bottom:10%;	
 }
 
 #tarjeta1,#tarjeta2,#tarjeta3{
@@ -1118,7 +714,7 @@ font-size: 2em;
 	-moz-box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
 	box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);	
 		
-	font-family:yqsFont;
+	font-family:Politica;
 	font-size:4em;
 	color:black;
 	padding: 0;
@@ -1136,7 +732,7 @@ font-size: 2em;
 	-moz-box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
 	box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);	
 	
-	font-family:yqsFont;
+	font-family:Politica;
 	font-size:4em;
 	color:black;
 	padding: 0;
@@ -1170,17 +766,15 @@ font-size: 2em;
 }
 .afiniCand::-webkit-scrollbar-thumb {
 	background: white;
-	//-webkit-border-radius: 0px;
 	height:10px;
 }
 .afiniCand .tit{
 	float: left;
 	padding-left: 10px;
-	font-family:yqsFont;
+	font-family:Politica;
 	font-size:1.6em;
 }
 .afiniCHead{
-	//width:75%;
 	margin-top:5%;
 	margin-bottom:10px;
 	margin-left:5%;
@@ -1188,7 +782,7 @@ font-size: 2em;
 	display:block;
 }
 .afiniCNom{
-	font-family: yqsFont;
+	font-family: Politica;
     font-size: 2em;
     margin-left: 10%;
 }
@@ -1208,7 +802,7 @@ background: white;
 color: black;
 border-radius: 5px;
 padding: 0px 5px;
-font-family: yqsFont;
+font-family: Politica;
 }
 .afiniBio {
 clear: both;
@@ -1231,9 +825,6 @@ padding: 0 4em 1em 0;
         padding-right: 0;
 }
 
-.coincide{
-	//margin-top:5%;
-}
 .coincide,.noCoincide,.noResp{
 	width:90%;	
 	margin-left:10%;
@@ -1241,7 +832,6 @@ padding: 0 4em 1em 0;
 }
 .AfiniCV{
 	width: 100%;
-	//height: 70px;
 	border-radius: 0.75em;
 	background-color: #333;
 	vertical-align: middle;
@@ -1273,7 +863,7 @@ padding: 0 4em 1em 0;
 	-webkit-box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.5);
 	-moz-box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.5);
 	box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.5);	
-	font-family: yqsFont;
+	font-family: Politica;
 	font-size: 2em;
 	color: black;
 	text-align: center;
@@ -1300,7 +890,7 @@ padding: 0 4em 1em 0;
 	-webkit-box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.5);
 	-moz-box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.5);
 	box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.5);			
-	font-family:yqsFont;
+	font-family:Politica;
 	font-size:2em;
 	color:black;
 	text-align: center;
@@ -1348,15 +938,13 @@ padding: 0 4em 1em 0;
 	height:100%;	
 }
 .op1,.op2{
-	//position:absolute;
 	background-color:#00a92c;
-	//background: url(../img/si.jpg) no-repeat;	
 	
 	border-radius: 0.75em;
 	-webkit-box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.5);
 	-moz-box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.5);
 	box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.5);	
-	font-family: yqsFont;
+	font-family: Politica;
 	font-size:2em;
 	color:#fff;
 	text-align:center;
@@ -1364,14 +952,12 @@ padding: 0 4em 1em 0;
 	z-index:31;
 }
 .op3,.op4{
-	//position:absolute;
 	background-color:#e4324c;
-	//background: url(../img/no.jpg) no-repeat;	
 	border-radius: 0.75em;
 	-webkit-box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.5);
 	-moz-box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.5);
 	box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.5);	
-	font-family:yqsFont;
+	font-family:Politica;
 	font-size:2em;
 	color:#fff;
 	text-align:center;
@@ -1380,16 +966,9 @@ padding: 0 4em 1em 0;
 }
 #opc span{
       width:80%;
-      //height:90%;	
       display: inline-block;
-      //display: table-cell;
       vertical-align: middle;
       line-height: normal;
-      //padding-right:5px;
-      //padding-left:5px;
-      //padding-top:3px;
-      //padding-bottom:2px
-      //font-size:1.1em;
 }
 .bOp1{
 	margin-top:10px;
@@ -1407,7 +986,6 @@ padding: 0 4em 1em 0;
 .encSi,.encNo,.enviar{
 	position:absolute;
 	background-color:#00a92c;
-	//background: url(../img/si.jpg) no-repeat;	
 	width:50%;
 	height:12%;
 	left:25%;
@@ -1416,7 +994,7 @@ padding: 0 4em 1em 0;
 	-webkit-box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.5);
 	-moz-box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.5);
 	box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.5);	
-	font-family: yqsFont;
+	font-family: Politica;
 	font-size:2.5em;
 	color:black;
 	z-index:21;
@@ -1449,7 +1027,6 @@ padding: 0 4em 1em 0;
 	top:65%;
 	width:50px;
 	height:50px;
-	//border-radius: 1em;	
 	border: none;	
 	z-index:10;
 }
@@ -1497,7 +1074,7 @@ padding: 0 4em 1em 0;
 	-webkit-box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
 	-moz-box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
 	box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);		
-	font-family:yqsFont;
+	font-family:Politica;
 	font-size:2em;
 	font-width:800;
 	line-height:100%;
@@ -1512,7 +1089,6 @@ padding: 0 4em 1em 0;
 }
 .sobreFondo2 img{
 	width:117px;
-	//height:81.012px;	
 	height:73px;	
 }
 .pre-urna{
@@ -1549,7 +1125,7 @@ padding: 0 4em 1em 0;
 	width:100%;
 	height:15%;
     color: white;
-    font-family: yqsFont;
+    font-family: Politica;
 }
 
 .secondaryButton,
@@ -1564,7 +1140,7 @@ padding: 0 4em 1em 0;
     border: none;
     border-radius: 1.2em;
     color: white;
-    font-family: yqsFont;
+    font-family: Politica;
     padding: 0 1em;
     height:50px;
     margin: 2px;
@@ -1581,7 +1157,7 @@ padding: 0 4em 1em 0;
 	position:absolute;
 	top:75%;
 	left:2%;
-	font-family:yqsFont;
+	font-family:Politica;
 	font-size:2em;
 	color:black;
  	z-index:3;
@@ -1612,7 +1188,6 @@ padding: 0 4em 1em 0;
 }
 .afinidad::-webkit-scrollbar-thumb {
 	background: white;
-	//-webkit-border-radius: 0px;
 	height:10px;
 }
 .afiniImg,.afiniImg2{
@@ -1634,7 +1209,7 @@ padding: 0 4em 1em 0;
 	cursor:pointer;
 }
 .afiT2{
-	font-family:yqsFont;
+	font-family:Politica;
 	font-size:2em;
 	color:black;
 }
@@ -1664,15 +1239,13 @@ padding: 0 4em 1em 0;
 }
 .afinidad2::-webkit-scrollbar-thumb {
 	background: #777;
-	//-webkit-border-radius: 0px;
 	height:10px;
 }
-@media only screen and (max-height:360px){
+@media only projector and (max-height:360px){
 	.recorrido ul{
 		padding-top:0px;
 	}
 	.tPreg{
-		//font-size:1.5em;
 		padding-top:10px;
 		height:15vh;
 	}
@@ -1694,15 +1267,11 @@ padding: 0 4em 1em 0;
 		font-size:1.5em;
 	}
 }
-@media only screen and (max-width:449px){
+
+@media only projector and (max-width:480px){
 	.imgInicio{
 		width:172px;
 		height:37px;
-	}
-	#game{
-		width:100%;
-		height:100%;
-		border-radius: 0px;
 	}
 	#tarjeta1,#tarjeta2{
 		height:207px;
@@ -1711,7 +1280,6 @@ padding: 0 4em 1em 0;
 		height:70px;
 	}
 	.urna1,.urna2{
-		//top:389px;
 		top:82vh;
 	}
 	.mainButton,.secondaryButton {
@@ -1726,16 +1294,10 @@ padding: 0 4em 1em 0;
 		margin-left:60px;
 		margin-right:60px;
 	}
-	.dots{
-		width: 10px;
-		height: 10px;
-		border-radius: 12px;
-		margin: 0 0.5%;
-	}
 	
 }
 
-@media only screen and (min-width:768px){
+@media only projector and (min-width:768px){
 	.container{
 		min-height: 617px;
 	}
@@ -1747,20 +1309,13 @@ padding: 0 4em 1em 0;
 		width:100%;
 	}
 	#inicioD{
-		//width:30%;
-		//height:70%;		
-		//width:360px;
-		//height:460px;
 		padding-top:5%;
-		//left:35%;	
 		border-radius: 1.8em;
 		color:#86e895;
-		font-family: yqsFont;
+		font-family: Politica;
 	}
 	
 	#invitaD{
-		//width:360px;
-		//left:-180px;
 		text-align:center;
 		display:inline;
 		
@@ -1773,7 +1328,6 @@ padding: 0 4em 1em 0;
 	}
 	#inviDC2{
 		background-color:#dddddd;
-		//border-left: 1px solid black;
 		text-align:left;
 	}
 	#inviDC3{
@@ -1781,7 +1335,6 @@ padding: 0 4em 1em 0;
 	}
 	#sideLeft{
 		position:absolute;
-		//left:200px;
 		margin-right:50px;
 		top:170px;
 		text-align:right;
@@ -1796,7 +1349,7 @@ padding: 0 4em 1em 0;
 		width:100%;	
 	}
 	.descubriendo{
-		font-family: yqsFont;
+		font-family: Politica;
 	}
 	.bEmpez{
 		background-color:#dd3975;
@@ -1898,6 +1451,51 @@ padding: 0 4em 1em 0;
 
 
 
+#sideLeft{
+	position:absolute;
+	margin-right:50px;
+	top:170px;
+	text-align:right;
+	width:300px;
+	color:black;
+}
+
+
+#menuDesk{
+	position:absolute;
+	left:0px;
+	top:200%;
+	text-align:right;
+	width:100%;	
+}
+.menu {
+	color:black;
+}
+
+.menu ul {
+	margin: 1em 0 0 0;
+	padding: 0;
+}
+
+.menu a {
+	padding: 1em;
+	background: #454;
+	display: block;
+	border-radius: 1em;
+	margin: 1em;
+	color: white;
+}
+
+.menu li {
+	list-style: none;
+}
+
+.descubriendo{
+	font-family: Politica;
+}
+
+
+
 
 
 /*** BACK TO TOP ***/
@@ -1958,4 +1556,404 @@ padding: 0 4em 1em 0;
 
 .contenedor {
 	margin-bottom: 10px;
+}
+
+
+
+
+
+
+
+/** SHARE BAR **/
+.share-sidebar {
+	position: fixed;
+	right: 10px;
+	top: 125px;
+	width: 55px;
+	background: #ccc;
+	border-radius: 10px;
+}
+
+@media (max-width: 600px) {
+	.share-sidebar {
+		display: none;
+	}
+}
+
+.share-title {
+	font-family: Politica;
+	margin-top: 1em;
+}
+
+body .social_share_privacy_area.box {
+	width: auto;
+}
+ 
+body .fbshare a {
+	background-color: #3b5998;
+	background-image: url("/static/img/logo-facebook.png");
+	width: 55px;
+	height: 26px;
+	display: block;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+body .fbshare a img {
+	visibility:hidden;
+}
+ 
+body .social_share_privacy_area.box .mail a img {
+	zoom: 0.5;
+}
+body .social_share_privacy_area.box .mail a {
+	background: #bde;
+	height: 26px;
+	width: 55px;
+}
+body .social_share_privacy_area.box li .dummy_btn {
+	margin-bottom: 5px;
+	overflow: hidden;
+}
+
+body .social_share_privacy_area li .dummy_btn img.privacy_dummy {
+	margin-top: -41px;
+}
+
+/** FIN SHARE BAR **/
+
+
+
+/** PAGINA ELECCION **/ 
+
+#election nav,
+#election .nav-candidator ul.list-inline  {
+	background: none;
+}
+
+#election .nav-candidator .list-inline>li a {
+	background: #5a7;
+	color: white;
+	text-decoration: none;
+	border-radius: 1em;
+	padding: 1em 3em;
+	margin: 1em;
+	font-size: 1.5em;
+}
+
+.soulmate-link {
+	text-align: center;
+	border-radius: 1em;
+	padding: 1em;
+	background: #454;
+	color: white;
+	clear: both;
+	margin-top: 1em;
+	font-family: Politica;
+}
+
+.soulmate-link .bEmpez {
+padding: 0.5em 2.3em 0.8em;
+font-size: 1em;
+line-height: 2em;
+height: auto;
+width: auto;
+background-color: #5a7;
+}
+
+.soulmate-link {
+	font-size: 2em;
+}
+
+.soulmate-link b{
+	color: #5a7;
+}
+
+.breadscrumb-social .social-button {
+	display: hidden;
+}
+
+/** FIN PAGINA ELECCION **/ 
+
+
+
+/** PERFIL **/
+.container-profile {
+	background: #454;
+	margin-top: 1em;
+}
+
+.profile-candidate {
+	background-color: transparent; 
+	padding: 1em;
+}
+
+.antecedentes.col-md-12 {
+	padding: 0;
+}
+
+.profile-candidate img {
+	margin-bottom: 0;
+}
+
+.panel-default>.panel-heading {
+	background-color: #575;
+}
+
+.container-profile h3 {
+	padding: 0.5em 0 0 0;
+}
+.read-more a, .read-less a {
+	background: #cfc;
+}
+
+.question-answer {
+	background-color: white;
+	border-top: 1px solid #cdc;
+}
+
+p.question {
+	font-size: 1.3em;
+}
+p.answer {
+	font-size: 1.2em;
+}
+p.position_description {
+	font-size: 0.9em;
+	color: #454;
+}
+
+div.question-answer div.row.hidden-xs {
+	border-top: 4px solid #EFE;
+	padding: 1em 0px;
+	margin-bottom: 1em;
+}
+
+
+/** PERFIL **/
+
+
+/** PAGINA TODAS LAS ELECCIONES **/
+
+#listaGobernadores {
+	list-style: none;
+	margin: 1em 0 0 0;
+	padding: 0;
+}
+
+#listaGobernadores li {
+	list-style: none;
+        margin: 1em 0 ;  
+}
+#listaGobernadores a {
+	background: #eee;
+	display: block;
+	border-radius: 0.5em;
+	padding: 1em;
+}
+
+/** FIN PAGINA TODAS LAS ELECCIONES **/
+
+
+
+/** FOOTER **/ 
+
+footer{
+	font-family:Arial;
+	padding-bottom: 32px;	
+}
+footer p{
+	font-size:0.5em;
+	margin:0px;
+	color:#363636;
+}
+footer h3{
+	color:white;
+	
+}
+.colabora{
+	margin-top: 25px;
+	border-radius: 5px;
+	border: none;
+	padding: 1em;
+	font-weight: bold;
+}
+.colabora a:hover {
+  text-decoration: none;
+  color: white;
+}
+.colabora a {
+  color: #000000;
+  cursor: pointer;
+}
+
+.calendario{
+	font-size:2em;	
+	background-color:#bbb;
+	color: black;
+	text-align:center;	
+	padding:20px;
+}
+.calendario h3
+{
+	margin-top:0px;
+	color: #353535;
+	font-size: 1.1em;
+	font-family:Politica;
+}
+.calendario {
+	font-family:Politica;
+	margin-bottom: 0px;
+}
+
+.calendario ul {
+	margin: 0.5em 0;
+	padding: 0;
+	list-style: none;
+	vertical-align: middle;
+}
+
+.calendario li a {
+	background: white;
+	display: block;
+	min-height: 2.4em;
+	line-height: 1.2em;
+	padding: 0.3em;
+	border-radius: 0.5em;
+}
+
+.votas {
+	clear: both;
+	font-size: 1em;
+}
+
+.fecha-distancia {
+	font-weight: bold;
+}
+
+.about{
+	max-width:545px;
+	text-align:left;
+	margin:auto;
+}
+.about img {
+	margin-right: 0.7em;
+}
+.about p{
+	font-size:1.0em;
+	margin-bottom:18px;
+	color:#343434;
+}
+
+.about h4{
+font-size: 1.0em;
+color: #cfa;
+margin-bottom: 1px;
+font-weight: bold;
+}
+.about a{
+	color:white;
+	cursor: pointer;
+}
+.about a:hover{
+	text-decoration:none;
+	color:white;
+}
+
+/** FIN FOOTER **/ 
+
+
+/** HEADER **/ 
+
+header{
+	width:100%;
+	height:auto;	
+	box-shadow: 5px 0px 6px rgba(0, 0, 0, 0.5);
+	margin-bottom: 1em;
+    color: #000;
+    text-align: center;
+}
+
+header, footer {
+	background-color: #454;
+}
+
+.header__nav__social a[href*="facebook"] {
+        background-color: #3b5998;
+        background-image: url("../img/logo-facebook.png");
+}
+
+.header__nav__social a[href*="twitter"] {
+        background-color: #55acee;
+        background-image: url("../img/logo-twitter.png");
+}
+.header__nav__social a[href*="taringa"] {
+        background-color: #23b;
+        background-image: url("../img/logo-taringa.png");
+}
+
+.header__nav__social a:hover, .header__nav__social a:focus {
+height: 54px;
+background-position: 8px 26px;
+}
+a.header__logo:hover, a.header__logo:focus, .header__nav__social a:hover, .header__nav__social a:focus {
+margin-bottom: 0;
+border-bottom: 0;
+}
+.header__nav__social a {
+display: block;
+float: left;
+width: 36px;
+height: 50px;
+text-indent: -9999px;
+background-position: 8px 22px;
+background-repeat: no-repeat;
+}
+.header__nav__social {
+position: absolute;
+top: 0;
+right: .9375rem;
+}
+
+
+.hLogo{
+	height: 100%;      
+	white-space: nowrap;    
+	text-align: center;
+	padding-top: 1em;
+	margin: 0;
+	font-size: 1em;
+}
+
+#headermenu { 
+margin-top: 0.5em;
+font-family: Politica, "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif; 
+font-size: 1.5em;
+}
+#headermenu a {
+	color: white;
+padding: 0 0.5em;
+}
+
+#headermenu a:hover {
+	text-decoration: underline;
+}
+.breadcrumb>li+li:before {
+padding: 0 5px;
+color: #aaa;
+content: ">\000";
+}
+.breadcrumb a {
+color: #777;
+}
+
+.breadcrumb {
+padding: 0;
+}
+
+/** FIN HEADER **/
+
+@media only screen and (max-width:768px){
+	header,footer {
+		display: none;
+	}
 }

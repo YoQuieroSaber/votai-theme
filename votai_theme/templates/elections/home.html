@@ -4,12 +4,17 @@
 {% load thumbnail %}
 
 {% block extrajs %}
-{% include 'elections/home.js' %}
+{#% include 'elections/home.js' %#}
+{#% include ' static 'js/removeDiacritics.js'  %#}
 {% endblock extrajs %}
 
 {% block extrascripts %}
 <script src="{% static 'js/mainGame.js' %}"></script>
 <script src="{% static 'js/jstween-1.2.min.js' %}"></script>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.3/angular.min.js"></script> -->
+<script type="text/javascript">
+// var app = angular.module('votainteligente', []);
+</script>
 {% endblock %}
 
 
@@ -18,7 +23,9 @@
 {% load yqs_extras %}
 
 {% block juego %}
+<div class="juego-container">
 {% include 'elections/juego.html' %}
+</div>
 {% endblock %}
 
 
