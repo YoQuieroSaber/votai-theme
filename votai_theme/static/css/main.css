@@ -14,7 +14,7 @@ html, body {
 
 #wrapper {
   min-height: 100%;
-  height: auto !important;
+  height: auto;
   /* Negative indent footer by its height */
   margin: 400 auto -60px;
   /* Pad bottom by footer height */

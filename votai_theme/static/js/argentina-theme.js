@@ -1,6 +1,3 @@
-var elecUrl="/election/pre-candidato-a-gobernador-de-tucuman";
-var jsonUrl= "/theme/election/pre-candidato-a-gobernador-de-tucuman/media-naranja.json";
-
 jQuery(document).ready(function($){
         // browser window scroll (in pixels) after which the "back to top" link is shown
         var offset = $(window).innerHeight() + 100,
@@ -35,32 +32,46 @@ jQuery(document).ready(function($){
                 $(el).text(getDayCount(date) + " días");
         });
 
+        $(".bMenuH").click(function(){
+                $("#headermenu").slideToggle();
+                // $("#menuMob").show();
+                // $(".afiniCand").hide();
+                // openIntermedio();                               
+        });
 
         //Init election selector
         if (window.elections_json) {        
-                jsonUrl= elections_json[0].medianaranja_link;
-
                 var options_eleccion = '';
-                options_eleccion += '<option value="' + elecUrl + '"><h4>Elegí tu distrito</h4><\/option>';
+                var li_eleccion = '';
                 $.each(elections_json, function(key,value){
-                        //console.log(value["detaillink"]);
-                        options_eleccion += '<option value="' + value["detaillink"] + '"><h4>' +  value["name"] + '</h4><\/option>';
-                });
-                $("select#eleccion").html(options_eleccion);
-
-                $( "select#eleccion,#menuMob select" ).change( function(e){
-                        elecUrl=$(e.target).val();
-                        if ($(".game-cta").length > 0) {
-                                location.href=elecUrl;
+                        if (window.default_election == value["detaillink"]) {
+                                selected = 'selected="true"';
+                                selected_class = 'class="default_election"';
                         }
+                        else {
+                                selected = "";
+                                selected_class = '';
+                        }
+                        options_eleccion += '<option value="' + value["detaillink"] + '" '+ selected +'>' +  value["name"] + '<\/option>';
+                        li_eleccion += '<li data="' + value["detaillink"] + '"'+ selected_class +'>' +  value["name"] + '<\/li>';
                 });
+
+                $(".election-selector")
+                        .append(options_eleccion)
+                        .change( function(e){
+                                elecUrl=$(e.target).val();
+                                if ($(".game-cta").length > 0) {
+                                        location.href=elecUrl;
+                                }
+                        });
+
+                $(".election-list").append(li_eleccion);
+                $(".election-list li").click(function() {
+                        elecUrl=$(this).attr("data");
+                })
 
                 function jugar(){
-
-                //url = "/theme/election/pre-candidato-a-presidente/media-naranja.json";
                         location.href="/theme"+elecUrl+"/media-naranja";
-                        jsonUrl=elecUrl+"/media-naranja.json";
-
                 }
 
 

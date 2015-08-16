@@ -6,6 +6,7 @@
 {% block extrajs %}
 {#% include 'elections/home.js' %#}
 {#% include ' static 'js/removeDiacritics.js'  %#}
+var default_election="/election/pre-candidato-a-gobernador-de-tucuman";
 {% endblock extrajs %}
 
 {% block extrascripts %}
@@ -22,29 +23,8 @@
 
 {% load yqs_extras %}
 
-{% block juego %}
-<div class="juego-container">
-{% include 'elections/juego.html' %}
-</div>
-{% endblock %}
-
 
 {% block content%}
-<!--
-<div style="margin-top: 600px" id="homecontent" >
-  <div class="row">
-    <div class="col-md-10 col-md-offset-1">
-      <h2 class="text-center intro-home">
-       Yo quiero saber - El juego interactivo con todos los candidatos.
-	</h2>
-    </div>
-  </div>
-<div style="font-size: 1.5em; text-align: center">
-<div class="row"><a href="http://www.yoquierosaber.org/election/pre-candidato-a-presidente">Ver todos los candidatos a presidente</a></div>
-<div class="row"><a href="http://www.yoquierosaber.org/pages/gobernador">Ver candidatos a gobernador</a></div>
-</div>
-</div>
--->
-
+{% include 'elections/juego.html' %}
 {% endblock content %}
 

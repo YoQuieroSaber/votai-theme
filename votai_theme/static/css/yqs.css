@@ -39,7 +39,6 @@ button:focus {
 
 .imgHeader{
 	vertical-align: middle;
-	width:232.43px;
 	height:50px;
 } 
 
@@ -50,6 +49,7 @@ button:focus {
 .container{
 	text-align: left;
 	max-width: 100%;
+	min-height: 100%;
 }
 
 
@@ -72,11 +72,29 @@ button:focus {
 /** JUEGO **/
 .juego-container {
 	width: 100%;
-	height: 100%;
-	max-height: 500px;
+	height: 600px;
 	position: relative;
+	background-color:#86e895;
+	border-radius: 1.8em;
+	overflow:hidden;
+	left: 0;
 }
 
+.juego-fill {
+	height: 600px;
+	max-height: 90%;
+}
+
+@media only screen and (max-width:768px){
+	.juego-container {
+		border-radius: 0px;
+	}
+}
+@media only screen and (max-height:600px){
+	.juego-container {
+		height: 100%;
+	}
+}
 
 #telon{
 	position:fixed;
@@ -93,34 +111,24 @@ button:focus {
 .loading{
 	width:75px;
 	height:75px;
-	margin-top:150px;
+	position: absolute;
+	top: 45%;
 	background: url("/static/img/loading.gif");
 	background-size: cover;
 	display: inline-block;
+	margin: 0 auto;
+	left: 50%;
+	margin-left: -37px;
 }
 
 p.message-accuracy {
 	margin: -8px 0 2px 0;
 } 
 
-
 #inicio{
-	position:absolute;
-	left:0;
-	top:0;
-	height:100%;
-	width:100%;
-	background-color:#86e895;
 	text-align:center;
-	padding-top:20%;
-	padding-bottom:20%;
-	overflow:hidden;
-	-webkit-touch-callout: none;
-	-webkit-user-select: none;
-	-khtml-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
+	padding-top:10%;
+	padding-bottom: 5%;
 }
 
 #inicio h1{
@@ -158,19 +166,13 @@ p.message-accuracy {
 	
 	font-family: Politica;
 }
-.imgInicio{
-	width:345px;
-	height:75px;
-}
+
 #game{
-	padding-top:5px;
+	padding-top:0.5%;
 	display: none;
 	width:100%;
 	height:100%;
 	top:150px;
-	border-radius: 1.8em;
-	background-color:#86e895;	
-	overflow:hidden;
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;
 	-khtml-user-select: none;
@@ -179,12 +181,6 @@ p.message-accuracy {
 	user-select: none;
 }
 
-
-@media only screen and (max-width:768px){
-	#game{
-		border-radius: 0px;
-	}
-}
 
 .resultados{
 	background-color:#444;
@@ -195,15 +191,16 @@ p.message-accuracy {
 }
 .pregResu{
 	padding-top:3%;
-	padding-left:15%;
-	padding-right:15%;
-	margin-top:0;
-	margin-bottom:0;
-	height:18%;
+	width: 95%;
+	margin: 0 auto;
+	height:12%;
 	overflow:hidden;
 	font-size:1.6em;
 	font-family:Politica;
 	color:white;
+	position: absolute;
+	top: 0;
+
 }
 .posturas::-webkit-scrollbar {
  	width: 8px;
@@ -217,13 +214,15 @@ p.message-accuracy {
 }
 .posturas
 {
-	width:90%;
-	height:65%;
+	width:95%;
+	height:63%;
+	padding: 1%;
 	margin:auto;
 	overflow: auto;
 	overflow-x: hidden;
 	display:block;
-	padding-right:10px;
+	position: absolute;
+	top: 15%;
 }
 .chatLeft
 {
@@ -516,17 +515,6 @@ p.message-accuracy {
 	-o-transform:scaleX(-1);
 	transform:scaleX(-1);	
 }
-.bMenuH{
-	position:absolute;
-	width:5%;
-	height:29px;
-	top:3%;
-	left:2%;
-	background-size: 100%;
-	border: none;
-	background: url(../img/tresLineas.png) no-repeat;
-	z-index: 10;
-}
 
 .bEmpez{
 	background-color:#dd3975;
@@ -617,7 +605,7 @@ p.message-accuracy {
 	position: relative;
 	display: inline-block;
 	margin: 0 0 0 0;
-	padding: 20px 0 0 0;
+	padding: 1% 0 0 0;
 	height: 7%;
 	width:85%;
 	list-style: none;	
@@ -655,13 +643,9 @@ p.message-accuracy {
 
 
 .pregunta {
-	margin-top:10px;
+	margin-top:1%;
 	text-align: center;
-
-
 	color: #fff;
-
-	background-color: #86e895;
 }
 
 .tPreg{
@@ -683,7 +667,6 @@ p.message-accuracy {
 	position:relative;
 	height:30%;
 	padding-top: 0%;
-	background-color:#86e895;
 	color:#FFF;
 }
 
@@ -1022,7 +1005,6 @@ padding: 0 4em 1em 0;
 }
 .bBack#nav1{
 	position:absolute;
-	background-color:#86e895;
 	left:15%;
 	top:65%;
 	width:50px;
@@ -1043,7 +1025,6 @@ padding: 0 4em 1em 0;
 .bSaltear#nav1{
 	position:absolute;
 	top:65%;
-	background-color:#86e895;
 	width:50px;
 	height:50px;
 	border: none;	
@@ -1095,7 +1076,6 @@ padding: 0 4em 1em 0;
 	position:absolute;
 	width:100%;
 	z-index:3;
-	background-color:#86e895;
 }
 .urna1,.urna2{
 	position:absolute;
@@ -1104,7 +1084,6 @@ padding: 0 4em 1em 0;
 	margin:0;
 	padding:0;
 	text-align: center;
-	background-color:#86e895;
 	height:16px;
 }
 
@@ -1174,11 +1153,10 @@ padding: 0 4em 1em 0;
 	left:0%;
 	width:100%;
 	height:80px;
-	background-color:#002B15;
 	display:block;
 	text-align:center;
 	vertical-align:middle;	
-	overflow-x:hidden;
+	overflow-x:auto;
 	overflow-y:hidden;
 }
 .afinidad::-webkit-scrollbar {
@@ -1878,40 +1856,40 @@ header, footer {
 }
 
 .header__nav__social a[href*="facebook"] {
-        background-color: #3b5998;
-        background-image: url("../img/logo-facebook.png");
+    background-color: #3b5998;
+    background-image: url("../img/logo-facebook.png");
 }
 
 .header__nav__social a[href*="twitter"] {
-        background-color: #55acee;
-        background-image: url("../img/logo-twitter.png");
+    background-color: #55acee;
+    background-image: url("../img/logo-twitter.png");
 }
 .header__nav__social a[href*="taringa"] {
-        background-color: #23b;
-        background-image: url("../img/logo-taringa.png");
+    background-color: #23b;
+    background-image: url("../img/logo-taringa.png");
 }
 
 .header__nav__social a:hover, .header__nav__social a:focus {
-height: 54px;
-background-position: 8px 26px;
+	height: 54px;
+	background-position: 8px 26px;
 }
 a.header__logo:hover, a.header__logo:focus, .header__nav__social a:hover, .header__nav__social a:focus {
-margin-bottom: 0;
-border-bottom: 0;
+	margin-bottom: 0;
+	border-bottom: 0;
 }
 .header__nav__social a {
-display: block;
-float: left;
-width: 36px;
-height: 50px;
-text-indent: -9999px;
-background-position: 8px 22px;
-background-repeat: no-repeat;
+	display: block;
+	float: left;
+	width: 36px;
+	height: 50px;
+	text-indent: -9999px;
+	background-position: 8px 22px;
+	background-repeat: no-repeat;
 }
 .header__nav__social {
-position: absolute;
-top: 0;
-right: .9375rem;
+	position: absolute;
+	top: 0;
+	right: .9375rem;
 }
 
 
@@ -1922,38 +1900,117 @@ right: .9375rem;
 	padding-top: 1em;
 	margin: 0;
 	font-size: 1em;
+	line-height: 1em;
 }
 
-#headermenu { 
-margin-top: 0.5em;
-font-family: Politica, "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif; 
-font-size: 1.5em;
+.bMenuH{
+	display: none;
+	position:absolute;
+	width:5%;
+	height:29px;
+	top:3%;
+	left:2%;
+	background-size: 100%;
+	border: none;
+	background: url(../img/tresLineas.png) no-repeat;
+	z-index: 10;
 }
-#headermenu a {
+
+
+#headermenu { 
+	margin-top: 0.5em;
+	font-family: Politica, "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif; 
+	z-index: 10;
+	position: relative;
+}
+#headermenu .list-inline a {
 	color: white;
-padding: 0 0.5em;
+	padding: 0 0.5em;
+	font-size: 1.5em;
 }
 
 #headermenu a:hover {
 	text-decoration: underline;
 }
 .breadcrumb>li+li:before {
-padding: 0 5px;
-color: #aaa;
-content: ">\000";
+	padding: 0 5px;
+	color: #aaa;
+	content: ">\000";
 }
 .breadcrumb a {
-color: #777;
+	color: #777;
 }
 
 .breadcrumb {
-padding: 0;
+	padding: 0;
 }
 
-/** FIN HEADER **/
+
 
 @media only screen and (max-width:768px){
-	header,footer {
+	body {
+		height: 100%;		
+	}
+
+	.juego-fill,
+	header #headermenu, 
+	header .header__nav__social,
+	footer {
 		display: none;
 	}
+
+	header #headermenu {
+		background: #444;
+		height: 90%;
+		position: absolute;
+		width: 86%;
+		top: 10%;
+		margin: 0;
+	}
+
+	header #headermenu li {
+		display: block;
+		border-top: 1px solid #ccc;
+		padding: 0.5em;		
+	}
+
+	header #headermenu .share-sidebar {
+		position: absolute;
+		right: 2%;
+		top: 2%;		
+	}
+
+	.bMenuH{
+		display: block;
+	}
+
+	header {
+		margin: 0;
+		height: 10%;
+	}
+
+	header .hLogo {
+		padding: 1%;
+		box-sizing: border-box;
+	}
+
+	header .imgHeader{
+		height:100%;
+	}
+
+	#wrapper {
+		padding: 0;
+		margin: 0;
+		min-height: 90%;
+	}
+	.container {
+		margin-bottom: 0;
+	}
+	.juego-container {
+		position: absolute;
+		max-height: 90%;
+	}
 }
+
+
+/** FIN HEADER **/

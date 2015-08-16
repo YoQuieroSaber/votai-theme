@@ -50,25 +50,34 @@
   <body data-ng-app="votainteligente">
     <header>
       <h1 class="hLogo"><a href="/"><img src="{% static 'img/YQSlogo.png' %}" class='imgHeader' alt="{% trans "Vota Inteligente" %}"></a></h1>
-      <ul class="list-inline" id="headermenu">
-        <li>
-          <a href="/election/pre-candidato-a-presidente">Presidentes</a>
-        </li>
-        <li>
-          <a href="/pages/gobernadores">Gobernadores</a>
-        </li>
-        <li>
-          <a href="http://investigacion.yoquierosaber.org/posts">Otros cargos</a>
-        <li>
-          <a href="http://investigacion.yoquierosaber.org/">Investigación colectiva</a>
-        </li>
-        <li>
-          <a href="/pages/medios/">Medios</a>
-        </li>
-        <li>
-          <a href="/pages/nosotros/">Nosotros</a>
-        </li>
-      </ul>
+      <button type="button" class="bMenuH"></button>
+      <div id="headermenu">
+        <ul class="list-inline">
+          <li>
+            <a href="/election/pre-candidato-a-presidente">Presidentes</a>
+          </li>
+          <li>
+            <a href="/pages/gobernadores">Gobernadores</a>
+          </li>
+          <li>
+            <a href="http://investigacion.yoquierosaber.org/posts">Otros cargos</a>
+          <li>
+            <a href="http://investigacion.yoquierosaber.org/">Investigación colectiva</a>
+          </li>
+          <li>
+            <a href="/pages/medios/">Medios</a>
+          </li>
+          <li>
+            <a href="/pages/nosotros/">Nosotros</a>
+          </li>
+        </ul>
+        <div class="share-sidebar">
+        <p class="share-title">Compartir</p>
+        <div data-social-share-privacy="true" data-order="facebook fbshare mail twitter gplus"  data-options='{
+                "language" : "es",
+            }'></div>
+        </div>
+      </div>
       <div class="header__nav__social">
         <a href="https://www.facebook.com/YoQuieroSaber">Facebook</a>
         <a href="https://twitter.com/YoQuieroSaberAR">Twitter</a>
@@ -82,12 +91,6 @@
           {% block juego %}
           {% endblock %}
         </div>
-      </div>
-      <div class="share-sidebar">
-      <p class="share-title">Compartir</p>
-      <div data-social-share-privacy="true" data-order="facebook fbshare mail twitter gplus"  data-options='{
-              "language" : "es",
-          }'></div>
       </div>
 
       <footer class="footer">
