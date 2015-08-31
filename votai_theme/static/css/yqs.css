@@ -10,19 +10,6 @@
   font-weight: bold;
 }
 
-html {
-	padding-top: 0;	
-	height: 100%;
-}
-
-body {
-	padding-top: 0;	
-	min-height: 100%;
-	height: auto;
-	background-color:#dddddd;
-	overflow:auto;
-	text-align:center;
-}
 
 a{
 	cursor:pointer;
@@ -37,47 +24,79 @@ button:focus {
 }
 
 
-.imgHeader{
-	vertical-align: middle;
-	height:50px;
-} 
-
 .navbar-inverse {
   background-color: #86e895;
   border-color: #080808;
 }
+
+.secondaryButton,
+.mainButton {
+
+	-webkit-box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+	-moz-box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+	box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+
+    background-color: #00a92c;
+    background-size: 100% auto;
+    border: none;
+    border-radius: 1.2em;
+    color: white;
+    font-family: Politica;
+    padding: 0 1em;
+    height:50px;
+    margin: 2px;
+    text-align: center;
+}
+
+.secondaryButton {
+    background-color: #242;
+    color: #bcb;
+}
+
+/** FIN GENERAL **/ 
+
+
+/** LAYOUT **/
+html {
+	padding-top: 0;	
+	height: 100%;
+}
+
+body {
+	padding-top: 0;	
+	min-height: 100%;
+	height: auto;
+	background-color:#dddddd;
+	overflow:auto;
+	text-align:center;
+}
+
 .container{
 	text-align: left;
 	max-width: 100%;
 	min-height: 100%;
 }
 
-
-.list-inline {
-	list-style: none;
+#wrapper {
 	padding: 0;
 	margin: 0;
+	min-height: 90%;
+}
+.juego-container {
 }
 
-.list-inline li {
-	list-style: none;
-	padding: 0;
-	margin: 0;
-	display: inline-block;
-}
-
-/** FIN GENERAL **/ 
-
-
-/** JUEGO **/
 .juego-container {
 	width: 100%;
-	height: 600px;
-	position: relative;
+	/*height: 600px;*/
+	height: 100%;
+	/*position: relative;*/
+	position: absolute;
+	max-height: 90%;
 	background-color:#86e895;
 	border-radius: 1.8em;
 	overflow:hidden;
 	left: 0;
+	border-radius: 0px;
 }
 
 .juego-fill {
@@ -85,17 +104,15 @@ button:focus {
 	max-height: 90%;
 }
 
-@media only screen and (max-width:768px){
+/*@media only screen and (max-width:768px){
 	.juego-container {
-		border-radius: 0px;
 	}
 }
 @media only screen and (max-height:600px){
 	.juego-container {
-		height: 100%;
 	}
 }
-
+*/
 #telon{
 	position:fixed;
 	left:0px;
@@ -107,6 +124,14 @@ button:focus {
 	z-index:10000;	
 	text-align:center;
 }
+
+#inicio{
+	text-align:center;
+	padding-top:10%;
+	padding-bottom: 5%;
+	height: 100%;
+}
+
 
 .loading{
 	width:75px;
@@ -121,15 +146,77 @@ button:focus {
 	margin-left: -37px;
 }
 
-p.message-accuracy {
-	margin: -8px 0 2px 0;
-} 
 
-#inicio{
-	text-align:center;
-	padding-top:10%;
-	padding-bottom: 5%;
+#game{
+	padding-top:0.5%;
+	display: none;
+	width:100%;
+	height:100%;
+	top:150px;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 }
+
+header{
+	width:100%;
+	height:auto;	
+	box-shadow: 5px 0px 6px rgba(0, 0, 0, 0.5);
+    color: #000;
+    text-align: center;
+	margin: 0;
+	height: 10%;
+}
+
+@media only screen and (max-width:768px){
+	body {
+		height: 100%;		
+	}
+
+	.juego-fill,
+	header #headermenu, 
+	header .header__nav__social,
+	footer {
+		display: none;
+	}
+
+	header #headermenu {
+		background: #444;
+		height: 90%;
+		position: absolute;
+		width: 86%;
+		top: 10%;
+		margin: 0;
+	}
+
+	header #headermenu li {
+		display: block;
+		border-top: 1px solid #ccc;
+		padding: 0.5em;		
+	}
+
+	header #headermenu .share-sidebar {
+		position: absolute;
+		right: 2%;
+		top: 2%;		
+	}
+
+	header .imgHeader{
+		height:100%;
+	}
+
+	.container {
+		margin-bottom: 0;
+	}
+}
+
+
+/** FIN LAYOUT **/
+
+/** JUEGO **/
 
 #inicio h1{
 	color:#FFF;
@@ -165,20 +252,6 @@ p.message-accuracy {
 	box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.5);	
 	
 	font-family: Politica;
-}
-
-#game{
-	padding-top:0.5%;
-	display: none;
-	width:100%;
-	height:100%;
-	top:150px;
-	-webkit-touch-callout: none;
-	-webkit-user-select: none;
-	-khtml-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
 }
 
 
@@ -1107,30 +1180,10 @@ padding: 0 4em 1em 0;
     font-family: Politica;
 }
 
-.secondaryButton,
-.mainButton {
+p.message-accuracy {
+	margin: -8px 0 2px 0;
+} 
 
-	-webkit-box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
-	-moz-box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
-	box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
-
-    background-color: #00a92c;
-    background-size: 100% auto;
-    border: none;
-    border-radius: 1.2em;
-    color: white;
-    font-family: Politica;
-    padding: 0 1em;
-    height:50px;
-    margin: 2px;
-    text-align: center;
-}
-
-.secondaryButton,
-.bResultados {
-    background-color: #242;
-    color: #bcb;
-}
 
 .afiT{
 	position:absolute;
@@ -1438,14 +1491,6 @@ padding: 0 4em 1em 0;
 	color:black;
 }
 
-
-#menuDesk{
-	position:absolute;
-	left:0px;
-	top:200%;
-	text-align:right;
-	width:100%;	
-}
 .menu {
 	color:black;
 }
@@ -1550,12 +1595,6 @@ padding: 0 4em 1em 0;
 	width: 55px;
 	background: #ccc;
 	border-radius: 10px;
-}
-
-@media (max-width: 600px) {
-	.share-sidebar {
-		display: none;
-	}
 }
 
 .share-title {
@@ -1842,14 +1881,6 @@ font-weight: bold;
 
 /** HEADER **/ 
 
-header{
-	width:100%;
-	height:auto;	
-	box-shadow: 5px 0px 6px rgba(0, 0, 0, 0.5);
-	margin-bottom: 1em;
-    color: #000;
-    text-align: center;
-}
 
 header, footer {
 	background-color: #454;
@@ -1897,14 +1928,15 @@ a.header__logo:hover, a.header__logo:focus, .header__nav__social a:hover, .heade
 	height: 100%;      
 	white-space: nowrap;    
 	text-align: center;
-	padding-top: 1em;
 	margin: 0;
 	font-size: 1em;
 	line-height: 1em;
+	padding: 1%;
+	box-sizing: border-box;
 }
 
+
 .bMenuH{
-	display: none;
 	position:absolute;
 	width:5%;
 	height:29px;
@@ -1916,11 +1948,16 @@ a.header__logo:hover, a.header__logo:focus, .header__nav__social a:hover, .heade
 	z-index: 10;
 }
 
+@media only screen and (min-width: 768px) {
+	.bMenuH{
+		display: none;
+	}	
+} 
 
 #headermenu { 
 	margin-top: 0.5em;
 	font-family: Politica, "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif; 
-	z-index: 10;
+	z-index: 25	;
 	position: relative;
 }
 #headermenu .list-inline a {
@@ -1945,72 +1982,9 @@ a.header__logo:hover, a.header__logo:focus, .header__nav__social a:hover, .heade
 	padding: 0;
 }
 
-
-
-@media only screen and (max-width:768px){
-	body {
-		height: 100%;		
-	}
-
-	.juego-fill,
-	header #headermenu, 
-	header .header__nav__social,
-	footer {
-		display: none;
-	}
-
-	header #headermenu {
-		background: #444;
-		height: 90%;
-		position: absolute;
-		width: 86%;
-		top: 10%;
-		margin: 0;
-	}
-
-	header #headermenu li {
-		display: block;
-		border-top: 1px solid #ccc;
-		padding: 0.5em;		
-	}
-
-	header #headermenu .share-sidebar {
-		position: absolute;
-		right: 2%;
-		top: 2%;		
-	}
-
-	.bMenuH{
-		display: block;
-	}
-
-	header {
-		margin: 0;
-		height: 10%;
-	}
-
-	header .hLogo {
-		padding: 1%;
-		box-sizing: border-box;
-	}
-
-	header .imgHeader{
-		height:100%;
-	}
-
-	#wrapper {
-		padding: 0;
-		margin: 0;
-		min-height: 90%;
-	}
-	.container {
-		margin-bottom: 0;
-	}
-	.juego-container {
-		position: absolute;
-		max-height: 90%;
-	}
-}
-
+.imgHeader{
+	vertical-align: middle;
+	height:50px;
+} 
 
 /** FIN HEADER **/

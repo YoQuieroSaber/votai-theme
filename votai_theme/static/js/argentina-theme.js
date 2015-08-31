@@ -33,7 +33,7 @@ jQuery(document).ready(function($){
         });
 
         $(".bMenuH").click(function(){
-                $("#headermenu").slideToggle();
+                $("#headermenu").toggle("slide","left",500);
                 // $("#menuMob").show();
                 // $(".afiniCand").hide();
                 // openIntermedio();                               
