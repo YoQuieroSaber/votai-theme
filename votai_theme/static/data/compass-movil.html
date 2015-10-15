@@ -53,14 +53,21 @@
 	<script>
 	window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')
 	</script>
+	<script>
+	var answer_values_preset = {
+		todo_cero: {"105_x":0,"105_y":0,"106_x":0,"106_y":0,"107_x":0,"107_y":0,"108_x":0,"108_y":0,"109_x":0,"109_y":0,"110_x":0,"110_y":0,"111_x":0,"111_y":0,"112_x":0,"112_y":0,"113_x":0,"113_y":0,"114_x":0,"114_y":0,"116_x":0,"116_y":0,"117_x":0,"117_y":0,"118_x":0,"118_y":0,"119_x":0,"119_y":0,"120_x":0,"120_y":0,"121_x":0,"121_y":0,"122_x":0,"122_y":0,"125_x":0,"125_y":0,"126_x":0,"126_y":0,"127_x":0,"127_y":0,"128_x":0,"128_y":0,"129_x":0,"129_y":0,"130_x":0,"130_y":0,"133_x":0,"133_y":0,"134_x":0,"134_y":0,"135_x":0,"135_y":0,"136_x":0,"136_y":0,"137_x":0,"137_y":0,"138_x":0,"138_y":0,"139_x":0,"139_y":0,"140_x":0,"140_y":0,"154_x":0,"154_y":0,"155_x":0,"155_y":0,"156_x":0,"156_y":0,"145_x":0,"145_y":0,"148_x":0,"148_y":0,"149_x":0,"149_y":0,"152_x":0,"152_y":0,"157_x":0,"157_y":0,"158_x":0,"158_y":0,"161_x":0,"161_y":0,"163_x":0,"163_y":0,"165_x":0,"165_y":0,"167_x":0,"167_y":0,"168_x":0,"168_y":0,"141_x":0,"141_y":0,"144_x":0,"144_y":0,"169_x":0,"169_y":0,"170_x":0,"170_y":0,"171_x":0,"171_y":0,"172_x":0,"172_y":0},
+		martin_1: {"105_x":0,"105_y":1,"106_x":0,"106_y":0.5,"107_x":0,"107_y":-0.5,"108_x":0,"108_y":-1,"109_x":0,"109_y":1,"110_x":0,"110_y":0.5,"111_x":0,"111_y":-0.5,"112_x":0,"112_y":-1,"113_x":0,"113_y":-1,"114_x":0,"114_y":-0.5,"116_x":0,"116_y":1,"117_x":0,"117_y":-1,"118_x":0,"118_y":0.5,"119_x":0,"119_y":-0.5,"120_x":0,"120_y":1,"121_x":0,"121_y":1,"122_x":0,"122_y":0.5,"125_x":1,"125_y":0,"126_x":0.5,"126_y":0,"127_x":-0.5,"127_y":0,"128_x":-1,"128_y":0,"129_x":1,"129_y":0,"130_x":0.5,"130_y":0,"133_x":-1,"133_y":0,"134_x":-0.5,"134_y":0,"135_x":1,"135_y":0,"136_x":0.5,"136_y":0,"137_x":-1,"137_y":0,"138_x":-0.5,"138_y":0,"139_x":0.5,"139_y":0,"140_x":1,"140_y":0,"154_x":0,"154_y":0,"155_x":0,"155_y":0,"156_x":0,"156_y":0,"145_x":0,"145_y":0,"148_x":0,"148_y":0,"149_x":-1,"149_y":0,"152_x":1,"152_y":0,"157_x":0,"157_y":0,"158_x":0,"158_y":0,"161_x":-1,"161_y":1,"163_x":1,"163_y":-1,"165_x":0,"165_y":0,"167_x":0,"167_y":0,"168_x":0,"168_y":0,"141_x":-1,"141_y":1,"144_x":1,"144_y":-1,"169_x":-1,"169_y":0,"170_x":0.5,"170_y":0,"171_x":-0.5,"171_y":0,"172_x":1,"172_y":0},
+		martin_2: {"105_x":-1,"105_y":1,"106_x":-0.5,"106_y":0.5,"107_x":0,"107_y":-0.5,"108_x":0,"108_y":-1,"109_x":0,"109_y":1,"110_x":0,"110_y":0.5,"111_x":0,"111_y":-0.5,"112_x":0,"112_y":-1,"113_x":0,"113_y":-1,"114_x":0,"114_y":-0.5,"116_x":0,"116_y":1,"117_x":0,"117_y":-1,"118_x":0,"118_y":0.5,"119_x":0,"119_y":-0.5,"120_x":0,"120_y":1,"121_x":0,"121_y":1,"122_x":0,"122_y":0.5,"125_x":1,"125_y":1,"126_x":0.5,"126_y":-0.5,"127_x":-0.5,"127_y":-0.5,"128_x":-1,"128_y":-1,"129_x":-1,"129_y":1,"130_x":-0.5,"130_y":0.5,"133_x":-1,"133_y":0,"134_x":-0.5,"134_y":0.5,"135_x":1,"135_y":0,"136_x":-0.5,"136_y":0.5,"137_x":-1,"137_y":0,"138_x":-0.5,"138_y":0,"139_x":0.5,"139_y":0,"140_x":1,"140_y":0,"154_x":0,"154_y":0,"155_x":0,"155_y":0,"156_x":0,"156_y":0,"145_x":0,"145_y":0,"148_x":0,"148_y":0,"149_x":-1,"149_y":0,"152_x":1,"152_y":0,"157_x":0,"157_y":0,"158_x":0,"158_y":0,"161_x":-1,"161_y":1,"163_x":1,"163_y":-1,"165_x":0,"165_y":0,"167_x":0,"167_y":0,"168_x":0,"168_y":0,"141_x":-1,"141_y":1,"144_x":1,"144_y":-1,"169_x":-1,"169_y":0,"170_x":0.5,"170_y":0,"171_x":-0.5,"171_y":0,"172_x":1,"172_y":0},
+		martin_3: {"105_x":-1,"105_y":1,"106_x":-0.5,"106_y":0.5,"107_x":0,"107_y":-0.5,"108_x":0,"108_y":-1,"109_x":0,"109_y":1,"110_x":0,"110_y":0.5,"111_x":0,"111_y":-0.5,"112_x":0,"112_y":-1,"113_x":0,"113_y":-1,"114_x":0,"114_y":-0.5,"116_x":0,"116_y":1,"117_x":0,"117_y":-1,"118_x":0,"118_y":0.5,"119_x":0,"119_y":-0.5,"120_x":0,"120_y":1,"121_x":0,"121_y":1,"122_x":0,"122_y":0.5,"125_x":1,"125_y":1,"126_x":0.5,"126_y":-0.5,"127_x":-0.5,"127_y":-0.5,"128_x":-1,"128_y":-1,"129_x":-1,"129_y":1,"130_x":-0.5,"130_y":0.5,"133_x":-1,"133_y":0,"134_x":-0.5,"134_y":0.5,"135_x":1,"135_y":0,"136_x":-0.5,"136_y":0.5,"137_x":-1,"137_y":0,"138_x":-0.5,"138_y":0,"139_x":0.5,"139_y":0,"140_x":1,"140_y":0,"154_x":-0.5,"154_y":0.5,"155_x":0.5,"155_y":-0.5,"156_x":-1,"156_y":-1,"145_x":0,"145_y":1,"148_x":0,"148_y":-1,"149_x":-1,"149_y":1,"152_x":1,"152_y":-1,"157_x":0,"157_y":1,"158_x":0,"158_y":0,"161_x":-1,"161_y":1,"163_x":1,"163_y":-1,"165_x":-1,"165_y":1,"167_x":0.5,"167_y":-0.5,"168_x":1,"168_y":-1,"141_x":-1,"141_y":1,"144_x":1,"144_y":-1,"169_x":-1,"169_y":1,"170_x":0.5,"170_y":-0.5,"171_x":-0.5,"171_y":0.5,"172_x":1,"172_y":-1}
+	}
 
+	</script>
 </head>
 <body>
-	<script>
-
-	var answer_values = {"105_x":0,"105_y":1,"106_x":0,"106_y":0.5,"107_x":0,"107_y":-0.5,"108_x":0,"108_y":-1,"109_x":0,"109_y":1,"110_x":0,"110_y":0.5,"111_x":0,"111_y":-0.5,"112_x":0,"112_y":-1,"113_x":0,"113_y":-1,"114_x":0,"114_y":-0.5,"116_x":0,"116_y":1,"117_x":0,"117_y":-1,"118_x":0,"118_y":0.5,"119_x":0,"119_y":-0.5,"120_x":0,"120_y":1,"121_x":0,"121_y":1,"122_x":0,"122_y":0.5,"125_x":1,"125_y":0,"126_x":0.5,"126_y":0,"127_x":-0.5,"127_y":0,"128_x":-1,"128_y":0,"129_x":1,"129_y":0,"130_x":0.5,"130_y":0,"133_x":-1,"133_y":0,"134_x":-0.5,"134_y":0,"135_x":1,"135_y":0,"136_x":0.5,"136_y":0,"137_x":-1,"137_y":0,"138_x":-0.5,"138_y":0,"139_x":0.5,"139_y":0,"140_x":1,"140_y":0,"154_x":0,"154_y":0,"155_x":0,"155_y":0,"156_x":0,"156_y":0,"145_x":0,"145_y":0,"148_x":0,"148_y":0,"149_x":-1,"149_y":0,"152_x":1,"152_y":0,"157_x":0,"157_y":0,"158_x":0,"158_y":0,"161_x":-1,"161_y":1,"163_x":1,"163_y":-1,"165_x":0,"165_y":0,"167_x":0,"167_y":0,"168_x":0,"168_y":0,"141_x":-1,"141_y":1,"144_x":1,"144_y":-1,"169_x":-1,"169_y":0,"170_x":0.5,"170_y":0,"171_x":-0.5,"171_y":0,"172_x":1,"172_y":0};
-
-
+	<script type="text/javascript">
+	var current_answer_values = "todo_cero";
+	var answer_values = answer_values_preset[current_answer_values];
+	
 	function answer(answer_id,data) {
 		for (c in data.categories) {
 			var category = data.categories[c];
@@ -89,7 +96,8 @@
 
 
 	function election_table(data) {
-		// console.log(data);
+		answer_values = answer_values_preset[current_answer_values];
+		console.log(data,current_answer_values,answer_values_preset);
 
 		$("body").find("h2").text(data.election_name);
 		contenedor = $(".contenedor");
@@ -113,14 +121,9 @@
 			for (a in candidate.answers) {
 				// console.log(candidate.answers[a]);
 				candidate.suma_y += answer_values[candidate.answers[a].answer_id+"_y"];
-				if (answer_values[candidate.answers[a].answer_id+"_y"] != 0) {
-					candidate.cantidad_y++;	
-				}
+				candidate.cantidad_y++;	
 				candidate.suma_x += answer_values[candidate.answers[a].answer_id+"_x"];
-				if (answer_values[candidate.answers[a].answer_id+"_x"] != 0) {
-					candidate.cantidad_x++;	
-				}
-				
+				candidate.cantidad_x++;					
 			}
 			candidate.posicion_y = (candidate.suma_y/candidate.cantidad_y);
 			candidate.posicion_x = (candidate.suma_x/candidate.cantidad_x);
@@ -139,7 +142,7 @@
 			candi.css("top", pos_y + "px");
 			candi.attr("title",candidate.candidate_name + " x"+candidate.posicion_x + " y"+candidate.posicion_y);
 		}
-		console.log(data);
+		
 		$("#values").val(JSON.stringify(answer_values));
     }
 
@@ -147,16 +150,30 @@
 
     function init() {
     	console.log("init");
+		
+
         $.getJSON("/theme/election/pre-candidato-a-presidente/media-naranja.json", election_table);
         // $.getJSON("http://elecciones2015.yoquierosaber.org/theme/election/pre-candidato-a-gobernador-de-buenos-aires/media-naranja.json", election_table);
         // $.getJSON("http://elecciones2015.yoquierosaber.org/theme/election/pre-candidato-a-gobernador-de-tucuman/media-naranja.json", election_table);
         // $.getJSON("http://elecciones2015.yoquierosaber.org/theme/election/pre-candidato-a-gobernador-de-san-juan/media-naranja.json", election_table);
         // $.getJSON("http://elecciones2015.yoquierosaber.org/theme/election/pre-candidato-a-gobernador-de-entre-rios/media-naranja.json", election_table);
 
+
+
     }
 
     init();
 	$("body").on("change",".answervalue", null, init);
+	$("body").on("change","#valores_predeterminados", null, function() {
+		$("body").off("change",".answervalue", null, init);
+		current_answer_values = $("#valores_predeterminados").val();
+		answer_values = answer_values_preset[current_answer_values];
+		for (v in answer_values) {
+			$("#answer_"+v).val(answer_values[v]);	
+		}
+		$("body").on("change",".answervalue", null, init);
+		init();
+	});
 
 	</script>
 
@@ -169,15 +186,20 @@
 			<h3>Posiciones</h3>			
 		</div>
 		<hr>
-		Valores combinados: <input id='values'><br/>
+		Valores actuales: <input id='values'><br/>
+		Valores predeterminados: <select id="valores_predeterminados"></select>
 
-		<p>Por favor ayudanos a definir los valores para cada posición. 
+		<p>Ayudanos a definir los valores para cada posición. 
 		Seleccioná en cada uno de los campos de la izquierda los valores izquierda económica a derecha económica y socialmente autoritario a socialmente liberal.<br/>
-		Una vez que hayas definido valores para cada una de las posiciones, copiá el contenido del campo "valores combinados" y envialo a info@yoquierosaber.org<br/>
+		Finalmente, copiá el contenido del campo "valores actuales" y envialo a info@yoquierosaber.org<br/>
 		El gráfico se actualiza automaticamente luego de cada cambio.<br/>
-		Gracias.<br/>
 
 	</div>
+	<script type="text/javascript">
+		for (av in answer_values_preset) {
+        	$("#valores_predeterminados").append("<option>"+av+"</option>")
+        }
+	</script>
 
 </body>
 </html>
