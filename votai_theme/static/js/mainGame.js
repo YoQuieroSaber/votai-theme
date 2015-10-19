@@ -1473,7 +1473,7 @@ function loadGame(){
 					candidatos = eleccion["candidates"];
 
 					election_name = eleccion["election_name"];
-					if (GetUrlValue("show_all_candidates")) {
+					if (GetUrlValue("show_all_candidates") == "True") {
 						election_name+=" (incluye pre-candidatos)";
 					}
 

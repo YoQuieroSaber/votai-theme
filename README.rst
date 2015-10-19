@@ -10,28 +10,6 @@ votai-theme
 
 Tema de la instnancia de Vota Inteligente para YoQuieroSaber Argentina, elecciones 2015. Incluye el juego de Yo Quiero Saber.
 
-Descripción
-----------
-
-Este tema funciona como un módulo de django utilizado por el votainteligente-portal-electoral.
-
-Por favor siga las instricciones de instalación disponibles en:
-	http://github.com/YoQuieroSaber/votainteligente-portal-electoral
-
-	[este es el fork local de http://github.com/ciudadanointeligente/votainteligente-portal-electoral, por favor reportar incidencias en orígen]
-
-Debe configurar el theme en el archivo local_settings.py de votainteligente para que este funcione, ejemplo:
-	THEME = 'votai_theme'
-
-El theme debe estar instalado en el mismo entorno virtual (virtualenv) que el votainteligente, esto se realiza con el siguiente comando:
-
-Install votai-theme::
-
-    pip install votai-theme
-
-Then use it in a project::
-
-    import votai-theme
 
 Features
 --------
@@ -43,18 +21,79 @@ Features
 * Funcionalidad de compartir en redes sociales con generación reducida de sombra (SocialSharePrivacy)
 * Theme y juego responsive y compatible con la mayoría de dispositivos.
 
+Releases
+--------
 
-Deploy
-------
+El branch master incluye el código estable que está funcionando en www.yoquierosaber.org, además se realizan modificaciones de desarrollo en el branch dev.
 
-Configuración propuesta
-* nginx como servidor web para elementos estáticos y cache
-* nginx funciona como proxy a una aplicación python
-* esta aplicación python es iniciada por supervisord
-* el intérprete de python utilizado es uwsgi
+Cada vez que se llega a un nivel estable con nuevas funciones, se realiza un nuevo release. Puede ver el último release en la página de releases
+	https://github.com/YoQuieroSaber/votai-theme/releases
 
-Por favor revisar las configuraciones sugeridas para nginx, supervisor y autodeploy en el repositorio yqs-tools:
-	https://github.com/YoQuieroSaber/yqs-tools
+Relase del 15/ago/2015: 1.1.443
+	https://github.com/YoQuieroSaber/votai-theme/releases/tag/1.1.443
+
+
+Instalación
+----------
+
+Este tema funciona como un módulo de django utilizado por el votainteligente-portal-electoral.
+
+Ante cualquier duda siga las instrucciones en:
+	http://github.com/YoQuieroSaber/votainteligente-portal-electoral
+
+Para instalar los requerimientos básicos:
+	sudo apt-get install virtualenv virtualenvwrapper python git g++ 
+
+Clone votainteligente somewhere in your system.
+	git clone https://github.com/YoQuieroSaber/votainteligente-portal-electoral.git
+
+Enter the installation directory
+	cd votainteligente-portal-electoral
+
+Create a virtual environment
+	virtualenv votainteligente
+
+Activate your virtual environment
+	source votainteligente/bin/activate
+
+Algunos de los módulos de python resultan difíciles de instalar, por favor verifique que funcionan pgmagick y Pillow antes de continuar.
+	sudo apt-get install libgraphicsmagick++1-dev libgraphicsmagick++3 libboost-python-dev python-pgmagick python-dev libpython-dev libevent-dev graphicsmagick imagemagick libmagickcore-dev libmagickwand-dev
+
+	pip install pgmagick
+
+	pip install Pillow
+
+Si recibe algún error, refiérase a la documentación de pgmagick http://pythonhosted.org/pgmagick/tutorial.html#installation
+
+Una vez que esté instalado pgmagick y pillow, instale todos los requerimientos.
+
+Install the requirements that votainteligente needs in the current virtualenvironment
+	pip install -r requirements.txt
+
+It might take some time to get all installed.
+
+Create the database and tables.
+	python manage.py syncdb
+
+Update the tables with migrations
+	python manage.py migrate
+
+
+Asegúrese de que el theme en el archivo local_settings.py de votainteligente para que este funcione, ejemplo:
+	vi votainteligente/local_settings.py
+	
+	THEME = 'votai_theme'
+
+Clone the theme in another directory
+	cd ..
+	
+	git clone https://github.com/YoQuieroSaber/votai-theme.git
+
+En entornos de desarrollo, será necesario ejecutar el siguiente comando para actualizar los cambios, asegurándose de estar en la carpeta del theme y con el virtualenv activado.
+	cd votai-theme
+	
+	python setup.py install
+
 
 
 Datos
@@ -72,7 +111,7 @@ Comando para importar datos
 	./manage.py loaddata data-20150815.json
 
 
-Nota: Aún no se ha intentado re-crear el sitio a partir de estos datos.
+Nota: Importar los datos no está funcionando actualmente https://github.com/YoQuieroSaber/votai-theme/issues/60
 
 
 API
@@ -84,14 +123,38 @@ Está disponible una API REST en:
 Esta API provee acceso a diferentes objetos y es conformante con el standard Popolo.
 
 Además se provee una API para el juego, que está disponible dentro de cada elección
-	http://www.yoquierosaber.org/theme/election/pre-candidato-a-presidente/media-naranja.json
-	http://www.yoquierosaber.org/theme/election/pre-candidato-a-gobenador-de-tucuman/media-naranja.json
-	http://www.yoquierosaber.org/theme/election/pre-candidato-a-gobenador-de-buenos-aires/media-naranja.json
-	http://www.yoquierosaber.org/theme/election/pre-candidato-a-gobenador-de-entre-rios/media-naranja.json
-	http://www.yoquierosaber.org/theme/election/pre-candidato-a-gobenador-de-san-juan/media-naranja.json
+	* http://www.yoquierosaber.org/theme/election/pre-candidato-a-presidente/media-naranja.json
+	* http://www.yoquierosaber.org/theme/election/pre-candidato-a-gobenador-de-tucuman/media-naranja.json
+	* http://www.yoquierosaber.org/theme/election/pre-candidato-a-gobenador-de-buenos-aires/media-naranja.json
+	* http://www.yoquierosaber.org/theme/election/pre-candidato-a-gobenador-de-entre-rios/media-naranja.json
+	* http://www.yoquierosaber.org/theme/election/pre-candidato-a-gobenador-de-san-juan/media-naranja.json
 
 
 Estos datos están disponibles bajo licencia CC-BY-SA
+
+
+
+Deploy
+------
+
+Configuración propuesta
+* nginx como servidor web para elementos estáticos y cache
+* nginx funciona como proxy a una aplicación python
+* esta aplicación python es iniciada por supervisord
+* el intérprete de python utilizado es uwsgi
+
+Por favor revisar las configuraciones sugeridas para nginx, supervisor y autodeploy en el repositorio yqs-tools:
+	https://github.com/YoQuieroSaber/yqs-tools
+
+
+Para usarlo en un nuevo proyecto (que no sea vota inteligente), es necesario que el proyecto incluya el theme en los requerimientos e importarlo dentro del archivo .py que quiera utilizarlo.
+
+    import votai-theme
+
+El theme debe estar instalado en el mismo entorno virtual (virtualenv) que el votainteligente. Esto se realiza con el siguiente comando:
+
+    pip install votai-theme
+
 
 Bug reports
 -----------

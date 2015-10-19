@@ -1,0 +1,59 @@
+{% load url from future %}{% load thumbnail %}<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>{{ newsletter.title }}: {{ message.title }}</title>
+</head>
+<body style="margin: 0; padding: 0;">
+    <div style="font-family: sans-serif; background-color: #dddddd;">
+        <div style="background-color: #454;
+            height: auto;
+            box-shadow: 5px 0px 6px rgba(0,0,0,0.5);
+            color: #000;
+            padding: 10px;
+            text-align: center;">
+            <a class="navbar-brand" href="/"><img src="http://www.yoquierosaber.org/static/img/YQSlogo.png" title="Vota Inteligente" alt="Yo Quiero Saber" style="height: 40px"></a>
+        </div>
+        {% if submission.publish %}
+            <small>Si tiene problemas, puede <a href="http://{{ site.domain }}{{ submission.get_absolute_url }}">Leer este mensaje en el navegador</a></small>
+        {% endif %}
+
+        <h1 style="color: #323a45;font-weight: 900; padding: 0.2em 0.4em; margin: 0; text-align: center">{{ message.title }}</h1>
+        <h2 style="color: #323a45;font-weight: 400; padding: 0 0.5em; margin: 0; text-align: center;">{{ newsletter.title }}</h2>
+        {% for article in message.articles.all %}
+            <div style="margin: 0.6em 0.3em; background-color: #fff;border-radius: 6px;box-shadow: 0 1px 1px rgba(0,0,0,0.05);">
+                <h3 style="background-color: #575; color: white;border-top-right-radius: 6px;
+                border-top-left-radius: 6px; padding: 0.4em 0.6em;">{{ article.title }}</h3>
+                <div style=" padding: 0.5em;">
+                    {% thumbnail article.image "200x200" as image %}
+                        <img src="http://{{ site.domain }}{{ image.url }}" width="{{ image.width }}" height="{{ image.height }}">
+                    {% endthumbnail %}
+
+                    <div>{{ article.text|safe }}</div>
+                    
+                    {% if article.url %}
+                        <div><a href="{{ article.url }}" style="margin-top: 25px;
+border-radius: 5px;
+border: none;
+padding: 0.5em 1em;
+background: #454;
+font-weight: bold;color: #fff;
+margin: 1em 0; 
+display: inline-block;
+cursor: pointer;">Continuar leyendo...</div></a>
+                    {% endif %}
+                </div>
+            </div>
+        {% endfor %}
+        
+        <p style="text-align: center; margin-bottom: 1em;">
+            <small>
+                Este mensaje se envía sólo a usuarios suscriptos. Puede
+                <a href="http://{{ site.domain }}{% url "newsletter_unsubscribe_request" newsletter.slug %}">Anular su suscripción</a>
+            </small>
+        </p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,18 @@
+{% load url from future %}++++++++++++++++++++
+
+Yo Quiero Saber - Elecciones 2015
+
+{{ newsletter.title }}: {{ message.title }}
+
+++++++++++++++++++++
+
+{% for article in message.articles.all %}
+{{ article.title }}
+{{ article.text|striptags|safe }}
+{{ article.url }}
+
+{% endfor %}
+
+++++++++++++++++++++
+
+Unsubscribe: http://{{ site }}{% url "newsletter_unsubscribe_request" newsletter.slug %}

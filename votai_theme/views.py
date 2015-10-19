@@ -2,7 +2,7 @@ from elections.views import SoulMateDetailView
 from votai_theme.calculator import YQSCalculator
 from django.http import JsonResponse
 from candidator.models import TakenPosition
-from votai_theme.models import AnswerValue
+from votai_theme.models import AnswerValue, ExtraInfoTopic
 from sorl.thumbnail import get_thumbnail
 from django.views.decorators.clickjacking import xframe_options_exempt
 
@@ -29,8 +29,8 @@ class MedianaranjaJsonView(MediaNaranjaView):
             'election_id': election.id,
             "election_name": election.name,
             "district": election.area.name,
-            "level": election.extra_info['nivel'],
-            "post": election.extra_info['cargo'],
+            # "level": election.extra_info['nivel'],
+            # "post": election.extra_info['cargo'],
             "categories": [],
             "candidates": []
 
@@ -40,7 +40,8 @@ class MedianaranjaJsonView(MediaNaranjaView):
                              'name': category.name,
                              'questions': []
                              }
-            for topic in category.topics.all():
+            extra_infos = [e.topic.id for e in ExtraInfoTopic.objects.filter(is_hidden=True, topic__category=category)]
+            for topic in category.topics.exclude(id__in=extra_infos):
                 question_dict = {"question_id": topic.id,
                                  "question_text": topic.label,
                                  "answers": []
