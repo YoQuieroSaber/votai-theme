@@ -81,8 +81,12 @@ Update the tables with migrations
 
 Asegúrese de que el theme en el archivo local_settings.py de votainteligente para que este funcione, ejemplo:
 	vi votainteligente/local_settings.py
-	
+
+Contenido:
 	THEME = 'votai_theme'
+
+Hay muchas más opciones para personalizar en este archivo. Si lo desea puede solicitar un archivo local_settings completo. Otra cosa importante en este archivo es:
+	DEBUG=False
 
 Clone the theme in another directory
 	cd ..
@@ -111,7 +115,7 @@ Comando para importar datos
 	./manage.py loaddata data-20150815.json
 
 
-Nota: Importar los datos no está funcionando actualmente https://github.com/YoQuieroSaber/votai-theme/issues/60
+Nota: Para importar los datos  https://github.com/YoQuieroSaber/votai-theme/issues/60
 
 
 API
