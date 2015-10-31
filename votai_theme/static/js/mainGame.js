@@ -30,7 +30,7 @@ var app = (function(){
 	var pregCount=0;
 	var lastPreg;
 
-	var MaxPreg=0;
+	var MaxPreg=8;
 	var valorPuntos = [100,66,33,0];
 
 	var animando=false;
@@ -181,18 +181,18 @@ var app = (function(){
 	
 
 	function GetUrlValue(varsearch){
-		var searchstring = window.location.search.substring(1);
+		var searchstring = window.location.search.substring(1)+"&"+window.location.hash;
 		var variablearray = searchstring.split('&');
 		for(var i = 0; i < variablearray.length; i++){
 			var keyvaluepair = variablearray[i].split('=');
-			if(keyvaluepair[0] == varsearch){
+			if(keyvaluepair[0].replace("#","") == varsearch){
 				return keyvaluepair[1];
 			}
 		}
 	}
 	
 	
-	function shuffle(categorias) {
+	function shuffle(categorias,norecursion) {
 		var preguntas = [];
 
 		//Ir por todas las categorias
@@ -201,9 +201,25 @@ var app = (function(){
 			for (q in categorias[c].questions) {
 				var pregunta = categorias[c].questions[q];
 
-				//Agregar la pregunta al array en orden lineal
-				preguntas.push(pregunta);	
+				preguntasPasadasString = GetUrlValue("preguntasPasadas");
+				if (preguntasPasadasString) {
+					preguntasPasadas = JSON.parse(preguntasPasadasString);
+				}
+				else {
+					preguntasPasadas = [];
+				}
+				
+				//Si la pregunta no se usó en la partida anterior
+				if (preguntasPasadas.indexOf(pregunta["question_id"]) == -1) {
+					//Agregar la pregunta al array en orden lineal
+					preguntas.push(pregunta);					
+				}
 			}
+		}
+		if (preguntas.length < 2 && !norecursion) {
+			alert("Vuelve a jugar con todas las preguntas.")
+			location.hash = "";
+			return shuffle(categorias,true);
 		}
 
 		//Ahora desordenar el array de preguntas
@@ -754,7 +770,18 @@ var app = (function(){
 		$(".sobreTapa2").show();
 
 		preguntaActual = preguntas[pregCount];
-		console.log(preguntaActual);
+		
+		preguntasPasadasString = GetUrlValue("preguntasPasadas");
+		if (preguntasPasadasString) {
+			preguntasPasadas = JSON.parse(preguntasPasadasString);	
+		}
+		else {
+			preguntasPasadas = [];
+		}
+		
+		preguntasPasadas.push(preguntaActual["question_id"]);
+		location.hash = "preguntasPasadas="+JSON.stringify(preguntasPasadas);
+		console.log(preguntaActual,preguntasPasadas);
 
 		// Escribe el texto de la siguiente pregunta
 		$(".tPreg").html(preguntaActual["question_text"]);
@@ -1161,6 +1188,7 @@ var app = (function(){
 	        $(".posturas").show();   
 			$(".resuFooter").show();
 			$(".posturas").scrollTop(0);
+			$(".resultados").show();
 	 	}, 500);
 
 			$(".pregResu").html("Resultado");
@@ -1169,7 +1197,8 @@ var app = (function(){
 			$(".posturasBG").css("text-align","right");
 			$(".bResultados").hide();
 			$(".bShare").show();
-			$(".rejugar").hide();
+			$(".rejugar").show();
+			$(".vuelve").hide();
 
 			var cant = candidatos.length;
 			var posBG="";
@@ -1223,7 +1252,7 @@ var app = (function(){
 		$(".posturas").hide();
 		$(".resuFooter").hide();
 
-		$(".bResultados").show();
+		$(".bResultados").hide();
 
 		setTimeout(function () {
 			$(".resultados").show();
@@ -1483,10 +1512,9 @@ function loadGame(){
 					var cant = candidatos.length;
 
 					preguntas = shuffle(categorias);
-					preguntas = filter(preguntas);
-					MaxPreg = preguntas.length;
 
-					console.log(MaxPreg);
+					//Descomentar para desactivar el límite de preguntas
+					//MaxPreg = preguntas.length;
 
 					$(".dots.template").hide();
 					for(var i=0;i<MaxPreg;i++) {
@@ -1546,21 +1574,6 @@ function loadGame(){
 
 				});
 
-	}
-
-	function filter(questions,election_name) {
-		var new_questions = [];
-		if (election_name == "Pre-candidatos a Gobernador de Entre Ríos") {
-			for (q in questions) {
-				if (questions[q].question_id != 11) {
-					new_questions.push(questions[q]);
-				}
-			}
-		}
-		else {
-			new_questions = questions;			
-		}
-		return new_questions;
 	}
 
 	function openOpt(){
@@ -1971,12 +1984,16 @@ function loadGame(){
 					resetSacudir();
 					lastPreg = pregCount;
 					pregCount++;
+					console.log("saltear",pregCount,MaxPreg);
 					if(pregCount>=MaxPreg){
 						pregResultFinal();
 					}
+					else {
+						nextQuest();
+					}
 					$("#vSi").hide();
 					$("#vNo").hide();
-					nextQuest();				
+									
 				}
 			});
 
@@ -2029,7 +2046,7 @@ function loadGame(){
 				$(".preguntas").show();
 				pregResize();
 				// lastPreg = pregCount;
-				// pregCount++;
+				pregCount--;
 				nextQuest();
 				$(".resultados").hide();
 			});
