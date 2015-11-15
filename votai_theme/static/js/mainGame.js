@@ -9,7 +9,7 @@
 */
 
 function showDetalle(eleNum){
-	if ($(".detalle"+eleNum).is(':visible')) { 
+	if ($(".detalle"+eleNum).is(':visible')) {
 		$(".detalle"+eleNum).hide();
 		$(".detalleButton"+eleNum).html("+");
 	}else{
@@ -42,15 +42,15 @@ var app = (function(){
 	var iniPadH=0.2;
 	var gameTop=100;
 	var tarjeH100=0;
-	var tarjeFactor = 0.45; 
+	var tarjeFactor = 0.45;
 	var tarjePadF = 0.05;
 	var punSize=0;
 	var factorDot=1.5;
 
 	var sobreFondoH=0;
-	var sobreFreDiff=0.4;	
-	var sobreF1HFact=0.592;	
-	var sobreF_CHFact=0.975;	
+	var sobreFreDiff=0.4;
+	var sobreF1HFact=0.592;
+	var sobreF_CHFact=0.975;
 
 	var urna1H=0;
 
@@ -89,14 +89,14 @@ var app = (function(){
 			if(qresp!=null){
 				//console.log(qresp);
 				var ansId = qresp.answer_id;
-				//console.log("A: "+ansId);			
+				//console.log("A: "+ansId);
 				qresp = $.grep(preguntaActual["answers"], function(e){ return e.answer_id == ansId; })[0];
 				var candR = qresp.answer_value;
 				//console.log("B: "+candR);
-						
+
 			if(Math.abs(userR-candR)==0){// Si no hay diferencia, ergo es igual, entonces el mayor puntaje
 				puntajes[i][0]+=valorPuntos[0];
-				punPreg[i][0]=valorPuntos[0];		
+				punPreg[i][0]=valorPuntos[0];
 				puntajes[i][2]++;
 			}else if(Math.abs(userR-candR)==3){// Si la diferencia es la mayor posible, entonces el menor puntaje
 				puntajes[i][0]+=valorPuntos[3];
@@ -115,7 +115,7 @@ var app = (function(){
 					puntajes[i][0]+=valorPuntos[3];
 					punPreg[i][0]=valorPuntos[3];
 					puntajes[i][2]++;
-				}			
+				}
 			}
 				punParcial[i][1]=cInd;
 				punParcial[i][2]=puntajes[i][2];
@@ -132,11 +132,11 @@ var app = (function(){
 				punPreg[i][0]=-1;
 				//console.log("PunPar "+candidatos[cInd]["candidate_name"]+": "+punParcial[i]);
 			}
-			
-		}	
+
+		}
 
 		punParcial.sort(function(a, b){
-			return b[0] - a[0];					
+			return b[0] - a[0];
 		});
 	}
 
@@ -147,11 +147,11 @@ var app = (function(){
 		}else{
 			aH = parseFloat($(".afiniImg2").css("width"));
 		}
-		var cant = candidatos.length;		
-		var invMaxPunt = 1/(valorPuntos[0]);		
+		var cant = candidatos.length;
+		var invMaxPunt = 1/(valorPuntos[0]);
 		for(var i=0;i<cant;i++){
 			var canInd = punParcial[i][1];
-			//console.log("Puntaje "+(candidatos[canInd]["candidate_name"])+": "+(punParcial[i][0]));								
+			//console.log("Puntaje "+(candidatos[canInd]["candidate_name"])+": "+(punParcial[i][0]));
 			$(".cFoto"+i).attr("src",fotos[canInd].src);
 			$(".cFoto"+i).attr("title",candidatos[canInd]["candidate_name"]);
 			$(".cFoto"+i).css("background-color",candidatos[canInd]["candidate_color"]);
@@ -177,8 +177,8 @@ var app = (function(){
 			$(".cFoto"+i).css("height",fW+"px");
 		}
 	}
-	
-	
+
+
 
 	function GetUrlValue(varsearch){
 		var searchstring = window.location.search.substring(1)+"&"+window.location.hash;
@@ -190,8 +190,8 @@ var app = (function(){
 			}
 		}
 	}
-	
-	
+
+
 	function shuffle(categorias,norecursion) {
 		var preguntas = [];
 
@@ -208,11 +208,11 @@ var app = (function(){
 				else {
 					preguntasPasadas = [];
 				}
-				
+
 				//Si la pregunta no se usó en la partida anterior
 				if (preguntasPasadas.indexOf(pregunta["question_id"]) == -1) {
 					//Agregar la pregunta al array en orden lineal
-					preguntas.push(pregunta);					
+					preguntas.push(pregunta);
 				}
 			}
 		}
@@ -249,7 +249,7 @@ var app = (function(){
 			fS*=0.95;
 			element.css("font-size",fS+"em");
 			count++;
-		}	
+		}
 	}
 
 	function pregResize(){
@@ -261,7 +261,7 @@ var app = (function(){
 
 		$(".tPreg").css("font-size",pregFS+"em");
 		resizeFont($(".tPreg"));
-		
+
 		tarjeH100 = tarjeFactor*parseFloat($("#tarjeta1").css("height"))/h;
 
 		//console.log(w);
@@ -269,10 +269,10 @@ var app = (function(){
 		$( "#vSi" ).css("height",(tarjeH100*h*0.9)+"px");
 		$( "#vNo" ).css("width",(tarjeH100*h)+"px");
 		$( "#vNo" ).css("height",(tarjeH100*h*0.9)+"px");
-		
+
 		$( "#vOp" ).css("width",(tarjeH100*h)+"px");
 		$( "#vOp" ).css("height",(tarjeH100*h*0.9)+"px");
-		
+
 
 		tar3FS = tarjeH100*h*0.02;
 		tar12FS = tarjeH100*h*0.04;
@@ -281,7 +281,7 @@ var app = (function(){
 
 		$( "#vOp" ).css("font-size",tar3FS+"em");
 
-		var tOpW = parseFloat($(".sCerrImg").css("width"))*0.9;		
+		var tOpW = parseFloat($(".sCerrImg").css("width"))*0.9;
 
 		var sFonH = parseFloat($(".sobreFondo2").children("img").css("height"));
 
@@ -301,7 +301,7 @@ var app = (function(){
 		$(".sobreCerrado").css("top",(sobreFondoH+sFreT)+"px");
 
 		var sobW = parseFloat($(".urna1").children("img").css("width"))*0.9;
-		
+
 		$(".sobreFondo1").children("img").css("width",sobW+"px");
 		$(".sobreFondo2").children("img").css("width",sobW+"px");
 		$(".tapaCerrada").children("img").css("width",(sobW*0.95)+"px");
@@ -315,7 +315,7 @@ var app = (function(){
 		$(".sobreFrente").css("left","0px");
 		$(".sobreChicos").css("left","0px");
 		$(".sobreCerrado").css("left","0px");
-		
+
 
 		urna1H = parseFloat($(".urna1").css("top"));
 		var urna2Diff = parseFloat($(".urna1").css("height"));
@@ -332,15 +332,15 @@ var app = (function(){
 		var bSl = (w*0.5)+oSet;
 		$( ".bSaltear#nav1" ).css("left",bSl+"px");
 
-		 
+
 	}
 
 	function opcionResize(){
 		var pUW = $(".popupBg").width();
 		$(".popupBg").css("left",(w*0.5-pUW*0.5)+"px");
 
-		var bCl = parseFloat($(".popupBg").css("left"))+parseFloat($(".popupBg").css("width"))*0.825;				
-		$(".closeBtn").css("left",bCl+"px");			
+		var bCl = parseFloat($(".popupBg").css("left"))+parseFloat($(".popupBg").css("width"))*0.825;
+		$(".closeBtn").css("left",bCl+"px");
 		$(".closeBtn").css("top",parseFloat($(".popupBg").css("height"))*0.035+"px");
 
 		var opW = parseFloat($(".popupBg").css("width"))*0.75;
@@ -348,7 +348,7 @@ var app = (function(){
 		$(".op2").css("width",opW+"px");
 		$(".op3").css("width",opW+"px");
 		$(".op4").css("width",opW+"px");
-		
+
 		var opL = (w*0.5)-opW*0.5;
 		$(".op1").css("left",opL+"px");
 		$(".op2").css("left",opL+"px");
@@ -360,18 +360,18 @@ var app = (function(){
 		$(".op2").css("height",opH+"px");
 		$(".op3").css("height",opH+"px");
 		$(".op4").css("height",opH+"px");
-		
+
 		$(".op1").css("top",(opH*0.6)+"px");
 		$(".op2").css("top",((opH*0.6)+8+opH)+"px");
 		$(".op3").css("top",((opH*0.6)+8+opH+8+opH)+"px");
-		$(".op4").css("top",((opH*0.6)+8+opH+8+opH+8+opH)+"px");	
+		$(".op4").css("top",((opH*0.6)+8+opH+8+opH+8+opH)+"px");
 
 		var opW = parseFloat($(".popupBg").css("width"))*0.75;
 		$(".bOp1").css("width",opW+"px");
 		$(".bOp2").css("width",opW+"px");
 		$(".bOp3").css("width",opW+"px");
 		$(".bOp4").css("width",opW+"px");
-		
+
 		var opL = (w*0.5)-opW*0.5;
 		$(".bOp1").css("left",opL+"px");
 		$(".bOp2").css("left",opL+"px");
@@ -383,23 +383,23 @@ var app = (function(){
 		$(".bOp2").css("height",opH+"px");
 		$(".bOp3").css("height",opH+"px");
 		$(".bOp4").css("height",opH+"px");
-		
+
 		$(".bOp1").css("top",(opH*0.6)+"px");
 		$(".bOp2").css("top",((opH*0.6)+8+opH)+"px");
 		$(".bOp3").css("top",((opH*0.6)+8+opH+8+opH)+"px");
 		$(".bOp4").css("top",((opH*0.6)+8+opH+8+opH+8+opH)+"px");
 	}
-	
+
 	function animaSobre(){
 		var sH =parseFloat($(".sobreFondo1").css("height"));
 
 		var offset = $(".sobreTapa").offset();
-		var contOS = $(".sobreFondo1").offset()			
+		var contOS = $(".sobreFondo1").offset()
 		offset.top = offset.top-contOS.top;
 		offset.left = offset.left-contOS.left;
 
 		$(".sobreTapa").css("position","absolute");
-		
+
 		$(".sobreTapa").css("left",offset.left+"px");
 		$(".sobreTapa").css("top",offset.top+"px");
 
@@ -424,7 +424,7 @@ var app = (function(){
 					$(".sobreTapa").css("position","relative");
 					$(".sobreTapa").css("top","0px");
 					$(".sobreTapa").css("left","0px");
-					$(".sobreTapa").css("height",sH+"px");	
+					$(".sobreTapa").css("height",sH+"px");
 					$(".sobreFondo1").hide();
 					$(".sobreTapa2").show();
 					$(".tapaCerrada").show();
@@ -440,15 +440,15 @@ var app = (function(){
 				duration:0.25,
 				effect:'easeInOut'
 			},
-			
+
 			onStop: function( element ){
 					$("#vSi").css("position","relative");
 					$("#vSi").css("top","0px");
-					$("#vSi").css("left","0px");							
+					$("#vSi").css("left","0px");
 					$("#vSi").css("zIndex","1");
 					$("#vNo").css("position","relative");
 					$("#vNo").css("top","0px");
-					$("#vNo").css("left","0px");							
+					$("#vNo").css("left","0px");
 					$("#vNo").css("zIndex","1");
 					$("#vSi").css("width","0px");
 					$("#vSi").css("height","0px");
@@ -465,26 +465,26 @@ var app = (function(){
 					$(".tapaCerrada").hide();
 					$(".sobreCerrado").show();
 					sobre2Urna();
-					
+
 				}
 			});
 
-		$.play();  
-	
+		$.play();
+
 	}
 	function sobre2Urna(){
 			var offset = $(".sCerrImg").offset();
-			var contOS = $(".sobreCerrado").offset()			
+			var contOS = $(".sobreCerrado").offset()
 			offset.top = offset.top-contOS.top;
 			offset.left = offset.left-contOS.left;
 
-			$(".sCerrImg").css("position","absolute");			
-			
+			$(".sCerrImg").css("position","absolute");
+
 			var center =  (($("#game").width())*0.5)-($(".sCerrImg").width()*0.5);
 			$(".sCerrImg").css("left",center+"px");
 			$(".sCerrImg").css("top",offset.top+"px");
 
-			$( ".sCerrImg" ).tween({		
+			$( ".sCerrImg" ).tween({
 			top:{
 				start: 0,
 				stop:100,
@@ -494,24 +494,24 @@ var app = (function(){
 				effect:'easeInOut'
 			},
 			onStop: function( element ){
-					animando=false;				
+					animando=false;
 					$(".sobreFondo1").show();
 					$(".sobreFondo2").show();
 					$(".sobreFrente").show();
-					$(".sobreChicos").show();																		
-					$(".sobreCerrado").hide();					
-					pregResultIntermedio();					
+					$(".sobreChicos").show();
+					$(".sobreCerrado").hide();
+					pregResultIntermedio();
 				}
 			});
 		$.play();
 	}
-	
-	function animaSi(){		
+
+	function animaSi(){
 		if(!animando){
 			animando=true;
 
 			var offset = $("#vSi").offset();
-			var contOS = $("#tarjeta1").offset()			
+			var contOS = $("#tarjeta1").offset()
 			offset.top = offset.top-contOS.top;
 			offset.left = offset.left-contOS.left;
 
@@ -519,12 +519,12 @@ var app = (function(){
 			offUrna.top = offUrna.top-contOS.top;
 
 			$("#vSi").css("position","absolute");
-			$("#vSi").css("zIndex","2");		
+			$("#vSi").css("zIndex","2");
 
 			$("#vSi").css("left",offset.left+"px");
 			$("#vSi").css("top",offset.top+"px");
 			var center =  (($("#game").width())*0.5)-($("#vSi").width()*0.5);
-			
+
 			$(".sobreChicos").hide();
 			$( "#vSi" ).tween({
 				rotate:{
@@ -535,7 +535,7 @@ var app = (function(){
 				effect:'easeInOut'
 				},
 				left:{
-				start:offset.left, 
+				start:offset.left,
 				stop: center+h*tarjeH100*0.075,
 				time: 0,
 				units: 'px',
@@ -543,7 +543,7 @@ var app = (function(){
 				effect:'easeInOut'
 				},
 				fontSize:{
-				start: tar12FS, 
+				start: tar12FS,
 				stop: 2,
 				time: 0,
 				units: 'em',
@@ -567,7 +567,7 @@ var app = (function(){
 				effect:'easeInOut'
 				},
 				top:{
-				start: offset.top, 
+				start: offset.top,
 				stop: offUrna.top,
 				time: 0,
 				units: 'px',
@@ -581,13 +581,13 @@ var app = (function(){
 				      duration: 0.5,
 				      effect:'easeInOut'
 				},
-				
+
 
 				onStop: function( element ){
-					animaSobre();				
+					animaSobre();
 				}
 			});
-			$.play();  
+			$.play();
 		}
 	}
 
@@ -599,13 +599,13 @@ var app = (function(){
 			offset.top = parseFloat($("#tarjeta1").css("padding-top"));*/
 
 			var offset = $("#vNo").offset();
-			var contOS = $("#tarjeta2").offset()			
+			var contOS = $("#tarjeta2").offset()
 			offset.top = offset.top-contOS.top;
 			offset.left = offset.left-contOS.left;
 
 			var offUrna = $(".sobreChicos").offset();
 			offUrna.top = offUrna.top-contOS.top;
-			
+
 			var padL = parseFloat($("#tarjeta2").css("padding-right"));
 
 			$("#vNo").css("position","absolute");
@@ -615,7 +615,7 @@ var app = (function(){
 			$("#vNo").css("top",offset.top+"px");
 			$("#vNo").css("left",offset.left+"px");
 			var center =  $("#vNo").css("padding-left")+($("#vNo").width());
-			
+
 			$(".sobreChicos").hide();
 
 			$( "#vNo" ).tween({
@@ -627,7 +627,7 @@ var app = (function(){
 				effect:'easeInOut'
 				},
 				left:{
-				start:offset.left, 
+				start:offset.left,
 				stop: -(offset.left+h*tarjeH100*0.9-padL),
 				time: 0,
 				units: 'px',
@@ -635,7 +635,7 @@ var app = (function(){
 				effect:'easeInOut'
 				},
 				fontSize:{
-				start: tar12FS, 
+				start: tar12FS,
 				stop: 2,
 				time: 0,
 				units: 'em',
@@ -659,7 +659,7 @@ var app = (function(){
 				effect:'easeInOut'
 				},
 				top:{
-				start: offset.top, 
+				start: offset.top,
 				stop: offUrna.top+h*tarjeH100*0.35,
 				time: 0,
 				units: 'px',
@@ -674,13 +674,13 @@ var app = (function(){
 				      effect:'easeInOut'
 				},
 				onStop: function( element ){
-					animaSobre();					
+					animaSobre();
 				}
 			});
 			$.play();
 		}
 	}
-	
+
 	function getRotDegrees(obj) {
 		var matrix = obj.css("-webkit-transform") ||
 		obj.css("-moz-transform")    ||
@@ -693,7 +693,7 @@ var app = (function(){
 			var b = values[1];
 			var angle = Math.round(Math.atan2(b, a) * (180/Math.PI));
 		} else {
-			var angle = 0; 
+			var angle = 0;
 		}
 		return (angle < 0) ? angle + 360 : angle;
 	}
@@ -707,8 +707,8 @@ var app = (function(){
 		$("#vNo").css({ 'transform': 'rotate(' + rot + 'deg)'});
 
 		rot = 0;
-		$("#vOp").css({ 'transform': 'rotate(' + rot + 'deg)'});	
-	}	
+		$("#vOp").css({ 'transform': 'rotate(' + rot + 'deg)'});
+	}
 
 	function sacudir(element){
 		var rot = 0;
@@ -746,20 +746,20 @@ var app = (function(){
 				units: 'px',
 				duration:0.2,
 				effect:'easeInOut'
-			},			
+			},
 			onStop: function(){
 					if(esperando){
 						setTimeout(function () {
-							sacudir(element);	
-						}, 5000);			
-					}		
+							sacudir(element);
+						}, 5000);
+					}
 				}
-			});		
-		$.play();	
-		}	
+			});
+		$.play();
+		}
 	}
-	
-	function nextQuest(){		
+
+	function nextQuest(){
 
 		$(".message-accuracy").hide();
 
@@ -770,15 +770,15 @@ var app = (function(){
 		$(".sobreTapa2").show();
 
 		preguntaActual = preguntas[pregCount];
-		
+
 		preguntasPasadasString = GetUrlValue("preguntasPasadas");
 		if (preguntasPasadasString) {
-			preguntasPasadas = JSON.parse(preguntasPasadasString);	
+			preguntasPasadas = JSON.parse(preguntasPasadasString);
 		}
 		else {
 			preguntasPasadas = [];
 		}
-		
+
 		preguntasPasadas.push(preguntaActual["question_id"]);
 		location.hash = "preguntasPasadas="+JSON.stringify(preguntasPasadas);
 		console.log(preguntaActual,preguntasPasadas);
@@ -788,13 +788,13 @@ var app = (function(){
 		resizeFont($(".tPreg"));
 
 		animando = true;
-		
+
 		if(pregCount>0){
 			$(".bBack").css("visibility", "visible");
 			var aH = 0;
 			if(mobile){
 				$(".afiniImg").show();
-				$(".afiT .realAfinidad").show();				
+				$(".afiT .realAfinidad").show();
 				aH = parseFloat($(".afiniImg").css("height"));
 				$(".afinidad").scrollLeft(2.25*aH);
 				$(".afinidad").css("overflow-x","auto");
@@ -804,8 +804,8 @@ var app = (function(){
 				aH = parseFloat($(".afiniImg2").css("width"));
 				$(".afinidad").css("overflow-y","auto");
 			}
-			
-			if(userRes[pregCount-1]>-1){				
+
+			if(userRes[pregCount-1]>-1){
 				ordenarAfinidad();
 			}
 		}else{
@@ -839,7 +839,7 @@ var app = (function(){
 				units: 'px',
 				duration: 1,
 				effect:'easeInOut'
-			},				
+			},
 			backgroundColor:{
 				start: '#fff',
 				stop: '#444',
@@ -847,7 +847,7 @@ var app = (function(){
 				duration: 1,
 				effect:'easeInOut'
 			}
-		});			
+		});
 
 		if(pregCount!=lastPreg){
 			pun = "#p"+(lastPreg);
@@ -877,7 +877,7 @@ var app = (function(){
 						duration: 1,
 						effect:'easeInOut'
 					}
-				});					
+				});
 			}else{
 				$( pun ).tween({
 					width:{
@@ -905,7 +905,7 @@ var app = (function(){
 						effect:'easeInOut'
 					},backgroundColor:{
 						start: '#444',
-						stop: '#fff',	
+						stop: '#fff',
 						time: 0,
 						duration: 1,
 						effect:'easeInOut'
@@ -916,7 +916,7 @@ var app = (function(){
 
 		var sH =tarjeH100*h*0.9*0.65*sobreF1HFact;
 		$( ".sobreTapa2" ).css("height",sH+"px");
-		
+
 		$( ".sobreTapa2" ).tween({
 			height:{
 				start: sH,
@@ -925,7 +925,7 @@ var app = (function(){
 				units: 'px',
 				duration:0.5,
 				effect:'easeInOut'
-			},			
+			},
 			onStop: function( element ){
 					$("#vSi").show();
 					$("#vNo").show();
@@ -948,17 +948,17 @@ var app = (function(){
 				duration: 1.0,
 				effect:'easeInOut'
 			}
-		
+
 		});
-		
+
 		$("#vOp").show();
 
 		var offset = $("#vOp").offset();
-		var contOS = $("#tarjeta3").offset()			
+		var contOS = $("#tarjeta3").offset()
 		offset.top = offset.top-contOS.top;
 		offset.left = offset.left-contOS.left;
 		var halfW = ($("#vOp").width()*0.5);
-				
+
 		var center =  (($("#game").width())*0.5)-($("#vOp").width()*0.5);
 		$("#vOp").css("width",0+"px");
 		$("#vOp").css("height",0+"px");
@@ -966,7 +966,7 @@ var app = (function(){
 		$("#vOp").css("zIndex","2");
 		$("#vOp").css("left",(offset.left+halfW)+"px");
 		$("#vOp").css("top",(sobreFondoH)+"px");
-		
+
 
 		$("#vOp").tween({
 			width:{
@@ -1000,10 +1000,10 @@ var app = (function(){
 				units: 'px',
 				duration: 1,
 				effect:'easeInOut'
-			
+
 			},
 			fontSize:{
-				start: 0, 
+				start: 0,
 				stop: tar3FS,
 				time: 0.5,
 				units: 'em',
@@ -1020,10 +1020,10 @@ var app = (function(){
 				$("#vOp").css("zIndex","1");
 			}
 		});
-		
-		
+
+
 		var offsetSi = $("#vSi").offset();
-		var contOSi = $("#tarjeta1").offset()			
+		var contOSi = $("#tarjeta1").offset()
 		offsetSi.top = offsetSi.top-contOSi.top;
 		offsetSi.left = offsetSi.left-contOSi.left;
 		var halfW = ($("#vSi").width()*0.5);
@@ -1035,7 +1035,7 @@ var app = (function(){
 		$("#vSi").css("top",offset.top+5+"px");
 
 		// #Animación de aparición de las opciones de voto
-		$( "#vSi" ).tween({		
+		$( "#vSi" ).tween({
 			top:{
 				start: offset.top+5+h*tarjeH100*0.45,
 				stop: offset.top+5,
@@ -1052,9 +1052,9 @@ var app = (function(){
 				duration: 0.5,
 				effect:'easeInOut'
 			},
-			
+
 			fontSize:{
-				start: 0, 
+				start: 0,
 				stop: tar12FS,
 				time: 0.9,
 				units: 'em',
@@ -1076,9 +1076,9 @@ var app = (function(){
 			}
 		});
 
-		
+
 		var offsetNo = $("#vNo").offset();
-		var contONo = $("#tarjeta2").offset()			
+		var contONo = $("#tarjeta2").offset()
 		offsetNo.top = offsetNo.top-contONo.top;
 		offsetNo.left = offsetNo.left-contONo.left;
 		var halfW = ($("#vNo").width()*0.5);
@@ -1090,7 +1090,7 @@ var app = (function(){
 		$("#vNo").css("top",offset.top+5+"px");
 
 		// #Animación de aparición de las opciones de voto
-		$( "#vNo" ).tween({		
+		$( "#vNo" ).tween({
 			top:{
 				start: offset.top+5+h*tarjeH100*0.45,
 				stop: offset.top+5,
@@ -1107,9 +1107,9 @@ var app = (function(){
 				duration: 0.5,
 				effect:'easeInOut'
 			},
-			
+
 			fontSize:{
-				start: 0, 
+				start: 0,
 				stop: tar12FS,
 				time: 0.9,
 				units: 'em',
@@ -1123,13 +1123,13 @@ var app = (function(){
 				duration: 0.4,
 				effect:'easeInOut'
 			},
-				
+
 			onStop: function( element ){
 				$("#vNo").css("position","relative");
 				$("#vNo").css("zIndex","1");
 				$("#vNo").css("left","0px");
 				$("#vNo").css("top","0px");
-				
+
 				$( "#vOp" ).css("width",(tarjeH100*h)+"px");
 				$( "#vOp" ).css("height",(tarjeH100*h*0.9)+"px");
 				$( "#vOp" ).css("font-size",tar3FS+"em");
@@ -1153,9 +1153,9 @@ var app = (function(){
 				animando=false;
 			}
 
-		});		
-		
-		$.play();	
+		});
+
+		$.play();
 		setTimeout(function () {
 			if(!animando){
 				$( "#vOp" ).css("width",(tarjeH100*h)+"px");
@@ -1178,14 +1178,14 @@ var app = (function(){
 			$(".message-accuracy").hide();
 		}
 		else {
-			$(".message-accuracy").show();			
+			$(".message-accuracy").show();
 		}
 
 		$(".preguntas").hide();
 		$(".posturas").hide();
 		$(".resuFooter").hide();
 		setTimeout(function () {
-	        $(".posturas").show();   
+	        $(".posturas").show();
 			$(".resuFooter").show();
 			$(".posturas").scrollTop(0);
 			$(".resultados").show();
@@ -1207,12 +1207,12 @@ var app = (function(){
 			var segundos = true;
 
 			for(var i=0;i<cant;i++){
-			
+
 				var canInd = punParcial[i][1];
 				//console.log("Pun Preg "+candidatos[canInd]["candidate_name"]+": "+punParcial[i]);
 
 				if(punParcial[i][0]<0)punParcial[i][0]=0;
-				
+
 				if(i==0||punParcial[0][0]==punParcial[i][0]){
 					posBG+="<div class='resuCand1'>";
 					posBG+="<div class='resuIMG1'><img id='fCand' class='rFoto' style='margin-right:0px;background-color:"+candidatos[canInd]["candidate_color"]+";' src="+candidatos[canInd]["candidate_pic"]+" ></div>";
@@ -1238,9 +1238,9 @@ var app = (function(){
 					posBG+="<div class='resuBarra'><div class='barraLlena' style='width:"+parseInt(punParcial[i][0])+"%;background-color:"+candidatos[canInd]["candidate_color"]+";'>&nbsp;</div><div class='barraVacia' style='width:"+(100-parseInt(punParcial[i][0]))+"%;'>&nbsp;</div></div>";
 					posBG+="<div class='resuPor2'>"+parseInt(punParcial[i][0])+"%</div>";
 					posBG+="</div>";
-					posBG+="</div>";					
+					posBG+="</div>";
 				}
-				
+
 			}
 			$(".posturas").html(posBG);
 			ordenarAfinidad();
@@ -1256,7 +1256,7 @@ var app = (function(){
 
 		setTimeout(function () {
 			$(".resultados").show();
-	        $(".posturas").show();   
+	        $(".posturas").show();
 			$(".posturas").scrollTop(0);
 			$(".resuFooter").show();
 	 	}, 500);
@@ -1264,19 +1264,19 @@ var app = (function(){
 
 			$(".bShare").hide();
 			$(".rejugar").hide();
-		
+
 			$(".pregResu").html(preguntas[pregCount]["question_text"]);
 			$(".pregResu").css("font-size",resuFS);
 			resizeFont($(".pregResu"));
 			var cant = candidatos.length;
 			var posBG="";
 			punPreg.sort(function(a, b){
-				return b[0] - a[0];					
+				return b[0] - a[0];
 			});
 			for(var i=0;i<cant;i++){
 				var canInd = punPreg[i][1];
 				//console.log("Pun Preg "+candidatos[canInd]["candidate_name"]+": "+punPreg[i]);
-				if(i%2==0){	
+				if(i%2==0){
 					var qresp = {};
 					qresp = $.grep(candidatos[canInd]["positions"], function(e){ return e.question_id == preguntaActual["question_id"] })[0];
 					if(qresp!=null){
@@ -1290,7 +1290,7 @@ var app = (function(){
 						posBG+="<img id='fCand' class='rFoto' style='background-color:"+candidatos[canInd]["candidate_color"]+";' src="+candidatos[canInd]["candidate_pic"]+" ></div><div class='chatArrowLeft'>&nbsp;</div>";
 						posBG+="<div class='chatBoxLeft'>";
 						var ansId = qresp.answer_id;
-						qresp = $.grep(preguntas[pregCount]["answers"], function(e){ return e.answer_id == ansId; })[0];						
+						qresp = $.grep(preguntas[pregCount]["answers"], function(e){ return e.answer_id == ansId; })[0];
 						var anTxt = qresp.answer_text;
 						//console.log(qresp);
 						//console.log("Texto: "+anTxt);
@@ -1299,13 +1299,13 @@ var app = (function(){
 							posBG+="<div class='chatBoxHeader' id='chatSi'>";
 						}else{
 							posBG+="<div class='chatBoxHeader' id='chatNo'>";
-						}				
+						}
 						posBG+="<h3 class=posNom"+i+" >"+candidatos[canInd]["candidate_name"]+" <span style='font-size:0.6em;vertical-align:middle;'>"+candidatos[canInd]["candidate_partido"]+"</span>"+ "</h3></div>";
 						posBG+="<div class='chatBoxContent'><p class='postu postu-"+i+"' "+onclick+">"+anTxt+candTxt+"</p></div></div></div>";
 					}else{
 						posBG+="<div class='chatLeft'><div class='chatIMG'>";
 						posBG+="<img id='fCand' class='rFoto' style='background-color:"+candidatos[canInd]["candidate_color"]+";-webkit-filter:grayscale(100%);-moz-filter:grayscale(100%);-o-filter:grayscale(100%);-ms-filter:grayscale(100%);' src="+candidatos[canInd]["candidate_pic"]+" ></div><div class='chatArrowLeft'>&nbsp;</div><div class='chatBoxLeft'>";
-						posBG+="<div class='chatBoxHeader' id='chatSR'>";						
+						posBG+="<div class='chatBoxHeader' id='chatSR'>";
 						posBG+="<h3 class=posNom"+i+" >"+candidatos[canInd]["candidate_name"]+" <span style='font-size:0.6em;vertical-align:middle;'>"+candidatos[canInd]["candidate_partido"]+"</span>"+ "</h3></div>";
 						posBG+="<div class='chatBoxContent'><p class='postu postu-"+i+"'>"+"*El candidato no respondi\u00f3 esta pregunta"+"</p></div></div></div>";
 					}
@@ -1323,7 +1323,7 @@ var app = (function(){
 						posBG+="<img id='fCand' class='rFoto' style='background-color:"+candidatos[canInd]["candidate_color"]+";' src="+candidatos[canInd]["candidate_pic"]+" ></div><div class='chatArrowRight'>&nbsp;</div>";
 						posBG+="<div class='chatBoxRight'>";
 						var ansId = qresp.answer_id;
-						qresp = $.grep(preguntas[pregCount]["answers"], function(e){ return e.answer_id == ansId; })[0];						
+						qresp = $.grep(preguntas[pregCount]["answers"], function(e){ return e.answer_id == ansId; })[0];
 						var anTxt = qresp.answer_text;
 						var r = qresp.answer_value;
 						if(r<2){
@@ -1336,7 +1336,7 @@ var app = (function(){
 					}else{
 						posBG+="<div class='chatRight'><div class='chatPhotoRight'>";
 						posBG+="<img id='fCand' class='rFoto' style='background-color:"+candidatos[canInd]["candidate_color"]+";-webkit-filter:grayscale(100%);-moz-filter:grayscale(100%);-o-filter:grayscale(100%);-ms-filter:grayscale(100%);' src="+candidatos[canInd]["candidate_pic"]+" ></div><div class='chatArrowRight'>&nbsp;</div><div class='chatBoxRight'>";
-						posBG+="<div class='chatBoxHeader' id='chatSR'>";						
+						posBG+="<div class='chatBoxHeader' id='chatSR'>";
 						posBG+="<h3 class=posNom"+i+" >"+candidatos[canInd]["candidate_name"]+" <span style='font-size:0.6em;vertical-align:middle;'>"+candidatos[canInd]["candidate_partido"]+"</span>"+ " </h3></div>";
 						posBG+="<div class='chatBoxContent'><p class='postu postu-"+i+"'>"+"*El candidato no respondi\u00f3 esta pregunta"+"</p></div></div></div>";
 					}
@@ -1376,7 +1376,7 @@ var app = (function(){
 				$(".afiniBio").removeClass("abierta");
 			}
 		});
-		$.play();	
+		$.play();
 
 	}
 
@@ -1384,7 +1384,7 @@ var app = (function(){
 	function showAfinidad(candN){
 		$("#about2").hide();
 		$("#menuMob").hide();
-		$(".afiniCand").show();	
+		$(".afiniCand").show();
 
 		openIntermedio();
 		//console.log("Candidate Nr: "+candN);
@@ -1407,7 +1407,7 @@ var app = (function(){
 		var htC = "";
 		var htNC = "";
 		var htNTR = "";
-		
+
 		for(var i=0;i<userRes.length;i++){
 			if(userRes[i]>-1){
 				var qTxt = preguntas[i]["question_text"];
@@ -1415,7 +1415,7 @@ var app = (function(){
 				qresp = $.grep(candidatos[candN]["positions"], function(e){ return e.question_id == preguntas[i]["question_id"]; })[0];
 				if(qresp!=null){
 					var ansId = qresp.answer_id;
-					qresp = $.grep(preguntas[i]["answers"], function(e){ return e.answer_id == ansId; })[0];						
+					qresp = $.grep(preguntas[i]["answers"], function(e){ return e.answer_id == ansId; })[0];
 					var anTxt = qresp.answer_text;
 					//console.log(qresp);
 					//console.log("Texto: "+anTxt);
@@ -1425,22 +1425,22 @@ var app = (function(){
 						if(!isCoin){
 								$(".coincide").show();
 								htC = "<div class='tit'>Coincide con vos:</div><br style='line-height:25px;'>";
-								isCoin=true;					
+								isCoin=true;
 								//console.log("Coincide!");
 						}
 						if(parseInt(resC*0.5)==0){
 							htC += "<div class='AfiniCV'>";
 							htC+="<div class='afPTit'>"+qTxt+"</div>";
 							htC += "<div class='afVot' id='afVSi'><span>Si</span></div>";
-							htC+="<div class='afPreg'>"+anTxt+"</div>";	
+							htC+="<div class='afPreg'>"+anTxt+"</div>";
 							htC+="</div>";
-						}else if(parseInt(resC*0.5)==1){					
+						}else if(parseInt(resC*0.5)==1){
 							htC += "<div class='AfiniCV'>";
 							htC+="<div class='afPTit'>"+qTxt+"</div>";
 							htC += "<div class='afVot' id='afVNo'><span>No</span></div>";
-							htC+="<div class='afPreg'>"+anTxt+"</div>";	
+							htC+="<div class='afPreg'>"+anTxt+"</div>";
 							htC+="</div>";
-						}			
+						}
 					}else{
 						if(!isNCoin){
 							$(".noCoincide").show();
@@ -1451,14 +1451,14 @@ var app = (function(){
 						if(parseInt(resC*0.5)==0){
 							htNC += "<div class='AfiniCV'>";
 							htNC+="<div class='afPTit'>"+qTxt+"</div>";
-							htNC += "<div class='afVot' id='afVSi'><span>Si</span></div>"					
-							htNC+="<div class='afPreg'>"+anTxt+"</div>";	
+							htNC += "<div class='afVot' id='afVSi'><span>Si</span></div>"
+							htNC+="<div class='afPreg'>"+anTxt+"</div>";
 							htNC+="</div>";
-						}else if(parseInt(resC*0.5)==1){					
+						}else if(parseInt(resC*0.5)==1){
 							htNC += "<div class='AfiniCV'>";
 							htNC+="<div class='afPTit'>"+qTxt+"</div>";
 							htNC += "<div class='afVot' id='afVNo'><span>No</span></div>"
-							htNC+="<div class='afPreg'>"+anTxt+"</div>";	
+							htNC+="<div class='afPreg'>"+anTxt+"</div>";
 							htNC+="</div>";
 						}
 					}
@@ -1466,16 +1466,16 @@ var app = (function(){
 					if(!isNResp){
 							$(".coincide").show();
 							htNTR = "<div class='tit';>No tiene respuesta:</div><br style='line-height:25px;'>";
-							isNResp=true;					
+							isNResp=true;
 					}
-					
+
 					htNTR += "<div class='AfiniCV'>";
 					htNTR+="<div class='afPTit'>"+qTxt+"</div>";
 					htNTR+="</div>";
 				}
 			}
 		}
-		$(".coincide").html(htC);		
+		$(".coincide").html(htC);
 		$(".noCoincide").html(htNC);
 		$(".noResp").html(htNTR);
 		$(".afiniCand").scrollTop(0);
@@ -1483,7 +1483,7 @@ var app = (function(){
 	}
 
 function loadGame(){
-		
+
 	var url="/theme"+elecUrl+"/media-naranja.json";
 
 	if (/theme\/election\/(.*)\//.test(location.href)) {
@@ -1495,7 +1495,7 @@ function loadGame(){
 		url+="?show_all_candidates="+GetUrlValue("show_all_candidates");
 	}
 
-					$.getJSON( url, function( data ) {			
+					$.getJSON( url, function( data ) {
 					eleccion = data;
 
 					categorias = eleccion["categories"];
@@ -1521,44 +1521,35 @@ function loadGame(){
 						var newDot = $(".dots.template").clone().removeClass("template").attr("id","p"+i).css("display","");
 						$(".dots.template").parent().append(newDot);
 					}
-					
+
 
 					var afCont="";
-					var aH = parseFloat($(".afiniImg").css("height"));			
-					for(var i=0;i<cant;i++){						
+					var aH = parseFloat($(".afiniImg").css("height"));
+					for(var i=0;i<cant;i++){
 						fotos[i] = new Image(aH, aH);
 						fotos[i].src=candidatos[i]["candidate_pic"];
 						afCont+="<img id=fCand style='background-color:"+candidatos[i]["candidate_color"]+";' class=cFoto"+i+" width="+aH+"px height="+aH+"px"+" src="+candidatos[i]["candidate_pic"]+" >";
-						puntajes[i]=[0,i,0];						
-						punParcial[i]=[0,i,0];						
-						punPreg[i]=[0,i];						
+						puntajes[i]=[0,i,0];
+						punParcial[i]=[0,i,0];
+						punPreg[i]=[0,i];
 					}
-					
+
 					if(aH*cant>$("#game").width()){
 						$(".afiniImg").css("width",(aH*cant)+"px");
 						var cl = 0.5*((aH*cant)-parseFloat($(".afinidad").css("width")));
 						$(".afiniImg").css("left",-cl+"px");
 					}
-					
+
 					$(".afiniImg").html(afCont);
 					$(".afiniImg2").html(afCont);
 
 					var mobile = $.browser.mobile;;
-	
-					if (document.location.search.indexOf("telon=1") == -1 && !mobile) {
-						$("#game").show();
 
-						pregResize();
-						nextQuest();
-					}
-					else {
+					//Ponerle una calse a incicio para que muestre una imagen de fondo
+					//Hacer imagen de fondo
+					$("#inicio").show().addClass("election_"+eleccion.election_id);
+          $("#telon").hide();
 
-						$("#inicio").show();
-
-					}
-                    
-                    $("#telon").hide();
-		
 					$("#game,.afiniSide").on("click","img#fCand",function(){
 						for(var i=0;i<candidatos.length;i++){
 							var f1 = $(this).attr("src").split("/");
@@ -1567,7 +1558,7 @@ function loadGame(){
 								showAfinidad(i);
 								break;
 							}
-						}	
+						}
 					});
 
 
@@ -1605,7 +1596,7 @@ function loadGame(){
 				$(".opciones").hide();
 			}
 		});
-		$.play();	
+		$.play();
 	}
 
 	function showOpt(){
@@ -1613,10 +1604,10 @@ function loadGame(){
 
 		//console.log("opciones");
 		for(var i=0;i<cantOp;i++){
-			
+
 			$(".op"+(i+1)).html("<span>"+preguntas[pregCount]["answers"][i]["answer_text"]+"</span>");
 			$(".op"+(i+1)).children("span").css("height",$(".op"+(i+1)).css("height"));
-			if(!opScroll){						
+			if(!opScroll){
 				var lH = parseFloat($(".op"+(i+1)).children("span").css("height"))*1.0;
 				var fS = 20;
 				$(".op"+(i+1)).children("span").css("line-height",lH+"px");
@@ -1646,7 +1637,7 @@ function loadGame(){
 				var lH = parseFloat($(".op"+(i+1)).children("span").css("height"));
 				$(".op"+(i+1)).children("span").css("line-height",lH+"px");
 						$(".op"+(i+1)).children("span").css("font-size",lH*0.5+"px");
-						
+
 					}
 				}
 			}
@@ -1661,7 +1652,7 @@ function loadGame(){
 		$(".rejugar").show();
 		$(".pregResu").css("font-size","2.0em");
 		$(".pregResu").css("height","250px");
-		$(".pregResu").html("<div style='width:100%;height:150px;'>&nbsp;</div>&#191;Te inform&#243; el juego?");	
+		$(".pregResu").html("<div style='width:100%;height:150px;'>&nbsp;</div>&#191;Te inform&#243; el juego?");
 		$(".encSi").show();
 		$(".encNo").show();
 		$(".sigue").hide();
@@ -1672,18 +1663,18 @@ function loadGame(){
 	function getMail(){
 		$(".pregResu").css("font-size","2.5em");
 		$(".pregResu").css("height","30%");
-		$(".pregResu").html("<div style='width:100%;height:50%;'>&nbsp;</div>&#161;Gracias!");	
+		$(".pregResu").html("<div style='width:100%;height:50%;'>&nbsp;</div>&#161;Gracias!");
 		// if () {
-		// 	$(".posturas").show().html("<p><a href="">Más información sobre esta elección</a></p>");	
+		// 	$(".posturas").show().html("<p><a href="">Más información sobre esta elección</a></p>");
 		// }
 		$(".pregResu").css("visibility", "hidden");
 		$(".encSi").hide();
 		$(".encNo").hide();
-		$(".enviar").show();	
-		$(".correoU").show();	
-	
+		$(".enviar").show();
+		$(".correoU").show();
+
 	}
-	
+
 	function resizeMobile(){
 		mobile=true;
 		$("header").hide();
@@ -1703,7 +1694,7 @@ function loadGame(){
 			$(".afinidad").css("overflow-x","auto");
 		}
 	}
-	
+
 	function resizeDesktop(){
 		mobile=false;
 		$("#homecontent").show();
@@ -1733,12 +1724,12 @@ function loadGame(){
 			$(".afiniSide").css("margin-left",margR+"px");
 		}
 		$(".afiniSide").css("left",($(window).width()*0.5+parseFloat($("#game").css("width"))*0.5)+"px");
-		$(".afiniSide").css("height",(0.9*$("#game").height())+"px");				
+		$(".afiniSide").css("height",(0.9*$("#game").height())+"px");
 	}
 
 	return {//funcion de inicio de la aplicación
 		init : function(){
-			
+
 			w = $("#game").width();
 			h = $("#game").height();
 
@@ -1808,10 +1799,10 @@ function loadGame(){
 				if(h<480)iniPadH=0.05;
 				$("#inicio").css("padding-top",h*iniPadH+"px");
 				$("#inicio").css("padding-bottom",h*iniPadH+"px");
-				
+
 				$("#game").css("left",($(window).width()*0.5-parseFloat($("#game").css("width"))*0.5)+"px");
 				$("#telon").css("left",($(window).width()*0.5-parseFloat($("#telon").css("width"))*0.5)+"px");
-				
+
 
 				if($(window).width()>768){
 					resizeDesktop();
@@ -1819,22 +1810,22 @@ function loadGame(){
 					resizeMobile();
 				}
 
-				pregResize();	
+				pregResize();
 				$(".pregResu").css("font-size",resuFS);
 				resizeFont($(".pregResu"));
-				
+
 			}, false);
 
-			
+
 
 			pregResize();
-			
+
 			var inicio = $("#inicio");
 			var game = $("#game");
 
 			$(".resultados").hide();
 			game.hide();
-			
+
 			$(".intermedio").hide();
 			$(".afinidad").css("background-color",$("#game").css("background-color"));
 			$(".afiniImg").hide();
@@ -1851,7 +1842,7 @@ function loadGame(){
 
 			$(".encNo").click(function(){
 				_gaq.push(['_setCustomVar',1,'Encuesta','no',1]);
-				getMail();				
+				getMail();
 			});
 
 			$(".enviar").click(function(){
@@ -1880,10 +1871,10 @@ function loadGame(){
 			$(".bMenuH").click(function(){
 				$("#menuMob").show();
 				$(".afiniCand").hide();
-				openIntermedio();				
+				openIntermedio();
 			});
 
-			$(".bShare").click(function(){								
+			$(".bShare").click(function(){
 				$("#menuMob").hide();
 				$(".afiniCand").hide();
 				$(".about2").hide();
@@ -1891,7 +1882,7 @@ function loadGame(){
 				$.fn.socialSharePrivacy.settings.description = shareTxt;
 				$.fn.socialSharePrivacy.settings.body = shareTxt;
 				$(".share").show();
-				openIntermedio();					
+				openIntermedio();
 			});
 
 			$(".bCompartir").click(function(){
@@ -1910,13 +1901,13 @@ function loadGame(){
 							openIntermedio();
 							console.log("compartir mobile")
 						}, 1500);
-						
+
 					}else{
 						$("#menuMob").hide();
 						$(".afiniCand").hide();
 						$(".about2").hide();
 						$(".share").show();
-						openIntermedio();					
+						openIntermedio();
 					}
 				}else{
 					$("#menuMob").hide();
@@ -1939,13 +1930,13 @@ function loadGame(){
 							openIntermedio();
 							console.log("compartir mobile")
 						}, 1500);
-						
+
 					}else{
 						$("#menuMob").hide();
 						$(".afiniCand").hide();
 						$(".share").hide();
 						$(".about2").show();
-						openIntermedio();					
+						openIntermedio();
 					}
 				}else{
 					$("#menuMob").hide();
@@ -1954,7 +1945,7 @@ function loadGame(){
 					$(".about2").show();
 					openIntermedio();
 				}
-			});			
+			});
 
 			$(".rejugar").click(function(){
 				rejugar=true;
@@ -1968,7 +1959,7 @@ function loadGame(){
 				if(!animando)showOpt();
 			});
 
-			$(".closeBtn").click(function() {				
+			$(".closeBtn").click(function() {
 				resetSacudir();
 				closeOpt();
 			});
@@ -1977,7 +1968,7 @@ function loadGame(){
 				resetSacudir();
 				closeIntermedio();
 			})
-			
+
 
 			$(".bSaltear").click(function() {
 				if(!animando){
@@ -1993,7 +1984,7 @@ function loadGame(){
 					}
 					$("#vSi").hide();
 					$("#vNo").hide();
-									
+
 				}
 			});
 
@@ -2022,7 +2013,7 @@ function loadGame(){
 			});
 
 
-			$(".sigue").click(function() {								
+			$(".sigue").click(function() {
 				$(".tapaCerrada").show()
 				$(".preguntas").show();
 				pregResize();
@@ -2037,10 +2028,10 @@ function loadGame(){
 				}else{
 					nextQuest();
 					$(".resultados").hide();
-				}				
+				}
 			});
 
-			$(".vuelve").click(function() {								
+			$(".vuelve").click(function() {
 				app.currentSection="preguntas"
 				$(".tapaCerrada").show()
 				$(".preguntas").show();
@@ -2051,7 +2042,7 @@ function loadGame(){
 				$(".resultados").hide();
 			});
 
-			$(".bResultados").click(function() {								
+			$(".bResultados").click(function() {
 				$(".tapaCerrada").show()
 				$(".preguntas").show();
 				pregResize();
@@ -2115,14 +2106,14 @@ function loadGame(){
 			$(".bOp4").click(function() {
 				resetSacudir();
 				userRes[pregCount] = 3;
-				puntajeCalc(userRes[pregCount]);		
+				puntajeCalc(userRes[pregCount]);
 				$(".opciones").css("top",h+"px");
 				$(".opciones").hide();
 				animaNo();
 			});
-			
+
 			for(var i=0;i<MaxPreg;i++)userRes[i]=-1;
-			
+
 			loadGame();
 		},
 
@@ -2130,7 +2121,7 @@ function loadGame(){
 
 	},
 
-	update : function(){		    
+	update : function(){
 
 	},
 	keyPressed : function(keyCode){
@@ -2149,4 +2140,3 @@ $(window).bind('beforeunload', function(){
 	if(!rejugar)
   return '\u00bfEst\u00e1s seguro de que quer\u00e9s abandonar el juego?\nPara volver atr\u00e1s en las preguntas pod\u00e9s usar las flechas que aparecen a ambos lados del sobre.';
 });
-

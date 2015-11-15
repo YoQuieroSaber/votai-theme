@@ -1,5 +1,5 @@
-var elecUrl="/election/pre-candidato-a-presidente";
-var jsonUrl= "/theme/election/pre-candidato-a-presidente/media-naranja.json";
+var elecUrl="/election/ballotage";
+var jsonUrl= "/theme/election/ballotage/media-naranja.json";
 
 jQuery(document).ready(function($){
         // browser window scroll (in pixels) after which the "back to top" link is shown
@@ -14,7 +14,7 @@ jQuery(document).ready(function($){
         //hide or show the "back to top" link
         $(window).scroll(function(){
                 ( $(this).scrollTop() > offset ) ? $back_to_top.addClass('cd-is-visible') : $back_to_top.removeClass('cd-is-visible cd-fade-out');
-                if( $(this).scrollTop() > offset_opacity ) { 
+                if( $(this).scrollTop() > offset_opacity ) {
                         $back_to_top.addClass('cd-fade-out');
                 }
         });
@@ -37,7 +37,7 @@ jQuery(document).ready(function($){
 
 
         //Init election selector
-        if (window.elections_json) {        
+        if (window.elections_json) {
                 jsonUrl= elections_json[0].medianaranja_link;
 
                 var options_eleccion = '';
@@ -66,7 +66,7 @@ jQuery(document).ready(function($){
 
                 $(".bEmpez").click(function() {
                         jugar();
-                });        
+                });
         }
 });
 
