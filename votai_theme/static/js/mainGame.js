@@ -1547,6 +1547,7 @@ function loadGame(){
 
 					//Ponerle una calse a incicio para que muestre una imagen de fondo
 					//Hacer imagen de fondo
+					$("#game").addClass("election_"+eleccion.election_id);
 					$("#inicio").show().addClass("election_"+eleccion.election_id);
           $("#telon").hide();
 
@@ -1785,9 +1786,9 @@ function loadGame(){
 				$(".afiniSide").hide();
 			}
 
-			if(h<480)iniPadH=0.05;
-			$("#inicio").css("padding-top",h*iniPadH+"px");
-			$("#inicio").css("padding-bottom",h*iniPadH+"px");;
+			// if(h<480)iniPadH=0.05;
+			// $("#inicio").css("padding-top",h*iniPadH+"px");
+			// $("#inicio").css("padding-bottom",h*iniPadH+"px");;
 
 
 			// Listener por resize de la ventana
