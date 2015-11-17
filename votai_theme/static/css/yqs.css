@@ -473,7 +473,7 @@ button:focus {
   background-size: 100%;
   background-repeat: no-repeat;
   background-color: #474;
-  top: 105px;
+  top: 107px !important;
 }
 
 #inicio.election_10 .imgInicio {
@@ -571,10 +571,6 @@ button:focus {
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
-}
-
-#game.election_10 {
-  top: 105px;
 }
 
 .resultados{
