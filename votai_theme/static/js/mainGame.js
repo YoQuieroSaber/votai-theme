@@ -190,6 +190,16 @@ var app = (function(){
 			}
 		}
 	}
+	function getPreguntasPasadas() {
+			preguntasPasadasString = GetUrlValue("preguntasPasadas");
+			if (preguntasPasadasString) {
+				preguntasPasadas = JSON.parse(preguntasPasadasString);
+			}
+			else {
+				preguntasPasadas = [];
+			}
+			return preguntasPasadas;
+	}
 
 
 	function shuffle(categorias,norecursion) {
@@ -201,13 +211,7 @@ var app = (function(){
 			for (q in categorias[c].questions) {
 				var pregunta = categorias[c].questions[q];
 
-				preguntasPasadasString = GetUrlValue("preguntasPasadas");
-				if (preguntasPasadasString) {
-					preguntasPasadas = JSON.parse(preguntasPasadasString);
-				}
-				else {
-					preguntasPasadas = [];
-				}
+				preguntasPasadas = getPreguntasPasadas();
 
 				//Si la pregunta no se usó en la partida anterior
 				if (preguntasPasadas.indexOf(pregunta["question_id"]) == -1) {
@@ -216,7 +220,7 @@ var app = (function(){
 				}
 			}
 		}
-		if (preguntas.length < 2 && !norecursion) {
+		if (preguntas.length < MaxPreg && !norecursion) {
 			alert("Vuelve a jugar con todas las preguntas.")
 			location.hash = "";
 			return shuffle(categorias,true);
@@ -771,13 +775,7 @@ var app = (function(){
 
 		preguntaActual = preguntas[pregCount];
 
-		preguntasPasadasString = GetUrlValue("preguntasPasadas");
-		if (preguntasPasadasString) {
-			preguntasPasadas = JSON.parse(preguntasPasadasString);
-		}
-		else {
-			preguntasPasadas = [];
-		}
+		preguntasPasadas = getPreguntasPasadas();
 
 		preguntasPasadas.push(preguntaActual["question_id"]);
 		location.hash = "preguntasPasadas="+JSON.stringify(preguntasPasadas);
@@ -1548,7 +1546,15 @@ function loadGame(){
 					//Ponerle una calse a incicio para que muestre una imagen de fondo
 					//Hacer imagen de fondo
 					$("#game").addClass("election_"+eleccion.election_id);
-					$("#inicio").show().addClass("election_"+eleccion.election_id);
+
+					preguntasPasadas = getPreguntasPasadas();
+					if (preguntasPasadas.length > 0) {
+						$("#game").show();
+						nextQuest();
+					}
+					else {
+						$("#inicio").show().addClass("election_"+eleccion.election_id);
+					}
           $("#telon").hide();
 
 					$("#game,.afiniSide").on("click","img#fCand",function(){
