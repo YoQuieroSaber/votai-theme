@@ -2,10 +2,9 @@ from elections.views import SoulMateDetailView
 from votai_theme.calculator import YQSCalculator
 from django.http import JsonResponse
 from candidator.models import TakenPosition
-from votai_theme.models import AnswerValue
+from votai_theme.models import AnswerValue, ExtraInfoTopic
 from sorl.thumbnail import get_thumbnail
 from django.views.decorators.clickjacking import xframe_options_exempt
-
 
 class juegoView(SoulMateDetailView):
     @xframe_options_exempt
@@ -30,8 +29,8 @@ class MedianaranjaJsonView(MediaNaranjaView):
             'election_id': election.id,
             "election_name": election.name,
             "district": election.area.name,
-            "level": election.extra_info['nivel'],
-            "post": election.extra_info['cargo'],
+            # "level": election.extra_info['nivel'],
+            # "post": election.extra_info['cargo'],
             "categories": [],
             "candidates": []
 
@@ -41,7 +40,8 @@ class MedianaranjaJsonView(MediaNaranjaView):
                              'name': category.name,
                              'questions': []
                              }
-            for topic in category.topics.all():
+            extra_infos = [e.topic.id for e in ExtraInfoTopic.objects.filter(is_hidden=True, topic__category=category)]
+            for topic in category.topics.exclude(id__in=extra_infos):
                 question_dict = {"question_id": topic.id,
                                  "question_text": topic.label,
                                  "answers": []
@@ -57,7 +57,16 @@ class MedianaranjaJsonView(MediaNaranjaView):
                     question_dict['answers'].append(position_dict)
                 category_dict['questions'].append(question_dict)
             response['categories'].append(category_dict)
-        for candidate in election.candidates.all():
+
+
+        candidates = election.candidates.all();
+
+        show_all_candidates = self.request.GET.get('show_all_candidates', "False")
+
+        if show_all_candidates == "False":
+          candidates = candidates.exclude(did_not_pass_primaries=True)
+
+        for candidate in candidates:
 
             imurl = candidate.extra_info['portrait_photo']
             try:
@@ -71,6 +80,7 @@ class MedianaranjaJsonView(MediaNaranjaView):
             candidate_dict = {'candidate_id': candidate.id,
                               'candidate_name': candidate.name,
                               'candidate_pic': imurl,
+                              'did_not_pass_primaries': candidate.did_not_pass_primaries,
 			      'candidate_bio': candidate.biography,
                               'positions': []
                               }

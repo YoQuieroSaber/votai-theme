@@ -1,12 +1,12 @@
 /** GENERAL **/ 
 @font-face {
   font-family: Politica;
-  src: url(fonts/POLITICA.TTF);
+  src: url(../fonts/POLITICA.TTF);
 }
 
 @font-face {
   font-family: Politica;
-  src: url(fonts/POLITICA_BOLD.TTF);
+  src: url(../fonts/POLITICA_BOLD.TTF);
   font-weight: bold;
 }
 
@@ -1931,7 +1931,7 @@ a.header__logo:hover, a.header__logo:focus, .header__nav__social a:hover, .heade
 	margin: 0;
 	font-size: 1em;
 	line-height: 1em;
-	padding: 1%;
+	padding: 1% 1% 0 1%;
 	box-sizing: border-box;
 }
 
