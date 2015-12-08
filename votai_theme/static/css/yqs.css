@@ -63,7 +63,7 @@ html {
 }
 
 body {
-	padding-top: 0;	
+	padding-top: 15vh;	
 	min-height: 100%;
 	height: auto;
 	background-color:#dddddd;
@@ -82,22 +82,26 @@ body {
 	margin: 0;
 	min-height: 90%;
 }
-.juego-container {
-}
 
 .juego-container {
 	width: 100%;
-	/*height: 600px;*/
-	height: 100%;
-	/*position: relative;*/
+	height: 85vh;
 	position: absolute;
-	max-height: 90%;
 	background-color:#86e895;
 	border-radius: 1.8em;
 	overflow:hidden;
 	left: 0;
 	border-radius: 0px;
 }
+
+@media (min-width: 55em) {
+	.juego-container {
+		width: 55em;
+		margin-left: -27.5em;
+		left: 50%;
+	}
+}
+
 
 .juego-fill {
 	height: 600px;
@@ -130,6 +134,7 @@ body {
 	padding-top:10%;
 	padding-bottom: 5%;
 	height: 100%;
+	background-color: #474;
 }
 
 
@@ -168,12 +173,28 @@ header{
     color: #000;
     text-align: center;
 	margin: 0;
-	height: 10%;
+	height: 15vh;
+	position: fixed;
+	z-index: 10;
+	top: 0;
 }
 
 @media only screen and (max-width:768px){
 	body {
-		height: 100%;		
+		height: 100%;	
+		padding-top: 10vh;	
+	}
+
+	.juego-container {
+		height: 90vh;
+	}
+
+	header {
+		height: 10vh;
+	}
+
+	header .hLogo {
+		height: 100%;
 	}
 
 	.juego-fill,
@@ -185,8 +206,8 @@ header{
 
 	header #headermenu {
 		background: #444;
-		height: 90%;
-		position: absolute;
+		height: 90vh;
+		position: fixed;
 		width: 86%;
 		top: 10%;
 		margin: 0;
@@ -204,10 +225,6 @@ header{
 		top: 2%;		
 	}
 
-	header .imgHeader{
-		height:100%;
-	}
-
 	.container {
 		margin-bottom: 0;
 	}
@@ -223,9 +240,10 @@ header{
 	font-family: Politica;
 }
 #inicio h4{
-	color:#fff;
 	font-family: Politica;
-	font-size:1.5em;
+	font-size: 8vh;
+	color: #FFF;
+	text-shadow: 1px 1px 10px #000;
 }
 
 #inicio #eleccion {
@@ -246,6 +264,7 @@ header{
 	width:210px;
 	height:60px;
 	border-radius: 1.8em;
+	color: white;
 	
 	-webkit-box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.5);
 	-moz-box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.5);
@@ -254,11 +273,15 @@ header{
 	font-family: Politica;
 }
 
+.election-selector {
+	margin: 4vh 0;
+}
+
 
 .resultados{
 	background-color:#444;
 	width:100%;
-	height:101%;
+	height:100%;
 	text-align:center;
 	margin-top:-5px;
 }
@@ -288,7 +311,7 @@ header{
 .posturas
 {
 	width:95%;
-	height:63%;
+	height:65%;
 	padding: 1%;
 	margin:auto;
 	overflow: auto;
@@ -1172,10 +1195,10 @@ padding: 0 4em 1em 0;
 }
 .resuFooter{
 	position:absolute;
-	top:85%;
+	top:82%;
 	left:0px;
 	width:100%;
-	height:15%;
+	height:16%;
     color: white;
     font-family: Politica;
 }
@@ -1202,7 +1225,7 @@ p.message-accuracy {
 
 .afinidad{
 	position:absolute;
-	top:85%;
+	top:82%;
 	left:0%;
 	width:100%;
 	height:80px;
@@ -1925,14 +1948,17 @@ a.header__logo:hover, a.header__logo:focus, .header__nav__social a:hover, .heade
 
 
 .hLogo{
-	height: 100%;      
 	white-space: nowrap;    
 	text-align: center;
 	margin: 0;
-	font-size: 1em;
-	line-height: 1em;
-	padding: 1% 1% 0 1%;
-	box-sizing: border-box;
+	font-size: 100%;
+	line-height: 100%;
+	padding: 1vh 0;
+	height: 55%;
+}
+
+header .imgHeader{
+	height: 100%;
 }
 
 
@@ -1940,7 +1966,8 @@ a.header__logo:hover, a.header__logo:focus, .header__nav__social a:hover, .heade
 	position:absolute;
 	width:5%;
 	height:29px;
-	top:3%;
+	top:50%;
+	margin-top: -15px;
 	left:2%;
 	background-size: 100%;
 	border: none;
@@ -1955,15 +1982,15 @@ a.header__logo:hover, a.header__logo:focus, .header__nav__social a:hover, .heade
 } 
 
 #headermenu { 
-	margin-top: 0.5em;
+	margin-top: 0;
 	font-family: Politica, "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif; 
 	z-index: 25	;
 	position: relative;
 }
 #headermenu .list-inline a {
 	color: white;
-	padding: 0 0.5em;
-	font-size: 1.5em;
+	padding: 0 1vw;
+	font-size: 3.5vh;
 }
 
 #headermenu a:hover {
@@ -1981,10 +2008,4 @@ a.header__logo:hover, a.header__logo:focus, .header__nav__social a:hover, .heade
 .breadcrumb {
 	padding: 0;
 }
-
-.imgHeader{
-	vertical-align: middle;
-	height:50px;
-} 
-
 /** FIN HEADER **/
