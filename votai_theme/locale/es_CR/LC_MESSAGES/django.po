@@ -1,0 +1,579 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-12-15 19:47+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: templates/base.html:9 templates/elections/juego_base.html:9
+#: templates/newsletter/message.html:11
+msgid "Vota Inteligente"
+msgstr "La voz de guanacaste"
+
+#: templates/base.html:55
+msgid "Presidentes"
+msgstr ""
+
+#: templates/base.html:58
+msgid "Gobernadores"
+msgstr ""
+
+#: templates/base.html:61
+msgid "Otros cargos"
+msgstr ""
+
+#: templates/base.html:63
+msgid "Investigación colectiva"
+msgstr ""
+
+#: templates/base.html:66
+msgid "Medios"
+msgstr ""
+
+#: templates/base.html:69
+msgid "Nosotros"
+msgstr ""
+
+#: templates/base.html:73
+msgid "Facebook"
+msgstr ""
+
+#: templates/base.html:74
+msgid "Twitter"
+msgstr ""
+
+#: templates/base.html:75
+msgid "Taringa"
+msgstr ""
+
+#: templates/base.html:95
+msgid "Calendario electoral"
+msgstr ""
+
+#: templates/base.html:98
+msgid "Todas las elecciones"
+msgstr ""
+
+#: templates/base.html:101
+msgid ""
+"¿Votás? Contanos en <a href=\"http://www.twitter.com/YoQuieroSaberAr"
+"\">twitter @YoQuieroSaberAr</a> hashtag #YoQuieroSaber"
+msgstr ""
+
+#: templates/base.html:104
+msgid "Colabor&#225; con nuestra investigación colectiva"
+msgstr ""
+
+#: templates/base.html:107
+msgid "Hecho por"
+msgstr ""
+
+#: templates/base.html:115
+msgid "Socios"
+msgstr ""
+
+#: templates/base.html:124
+msgid "Apoyado por"
+msgstr ""
+
+#: templates/base.html:131
+msgid "Desarrollado por"
+msgstr ""
+
+#: templates/base.html:138
+msgid "Todos los colaboradores y voluntarios"
+msgstr ""
+
+#: templates/base.html:144
+msgid "Subir"
+msgstr ""
+
+#: templates/candideitorg/information_source.html:3
+msgid "Fuente"
+msgstr ""
+
+#: templates/elections/candidate_detail.html:36
+msgid "Apoya a tu candidato"
+msgstr ""
+
+#: templates/elections/candidate_detail.html:41
+#: templates/elections/candidate_detail.html:48
+#: templates/elections/soulmate_response.html:21
+#: templates/elections/soulmate_response.html:28
+msgid "Da la cara por tu candidato"
+msgstr ""
+
+#: templates/elections/candidate_detail.html:53
+#: templates/elections/soulmate_response.html:33
+msgid "Recuerda activar tu cámara"
+msgstr ""
+
+#: templates/elections/candidate_detail.html:67
+#: templates/elections/soulmate_response.html:47
+msgid "compartir"
+msgstr ""
+
+#: templates/elections/candidate_detail.html:68
+#: templates/elections/soulmate_response.html:48
+msgid "publicar"
+msgstr ""
+
+#: templates/elections/candidate_detail.html:70
+#: templates/elections/soulmate_response.html:50
+msgid "Tomar otra foto"
+msgstr ""
+
+#: templates/elections/candidate_detail.html:71
+#: templates/elections/soulmate_response.html:51
+msgid "Tomar foto"
+msgstr ""
+
+#: templates/elections/candidate_detail.html:72
+#: templates/elections/juego.html:34 templates/elections/juego.html.py:110
+#: templates/elections/juego.html:167
+#: templates/elections/soulmate_response.html:52
+msgid "Compartir"
+msgstr ""
+
+#: templates/elections/candidate_detail.html:123
+#: templates/elections/election_detail.html:90
+#: templates/elections/election_questionary.html:9
+#: templates/elections/election_questionary.html:11
+#: templates/elections/election_questionary.html:18
+msgid "Cuestionario"
+msgstr ""
+
+#: templates/elections/candidates/personal_data_candidate.html:6
+#: templates/elections/personal_data_candidate.html:6
+msgid "Nacimiento"
+msgstr ""
+
+#: templates/elections/compare_candidates.html:7
+#: templates/elections/compare_candidates.html:9
+#: templates/elections/election_detail.html:93
+msgid "Frente a Frente"
+msgstr ""
+
+#: templates/elections/compare_candidates.html:22
+msgid "El porcentaje de similitud es"
+msgstr ""
+
+#: templates/elections/compare_candidates.html:28
+#: templates/elections/compare_candidates.html:39
+msgid "Selecciona un candidato"
+msgstr ""
+
+#: templates/elections/compare_candidates.html:102
+#: templates/elections/compare_candidates.html:139
+msgid ""
+"Aquí se mostraran las diferencias y similitudes entre los candidatos que "
+"selecciones."
+msgstr ""
+
+#: templates/elections/election_base.html:8
+msgid "Perfiles"
+msgstr ""
+
+#: templates/elections/election_detail.html:19
+msgid "Informate sobre los pre-candidatos nacionales y de tu provincia"
+msgstr ""
+
+#: templates/elections/election_detail.html:20
+#: templates/elections/juego.html:23
+msgid "Elegí tu distrito"
+msgstr ""
+
+#: templates/elections/election_detail.html:29
+msgid "que no superaron las internas (PASO)"
+msgstr ""
+
+#: templates/elections/election_detail.html:36
+msgid ""
+"Jugá con todos los candidatos, incluso los que no superaron las primarias "
+"(PASO)"
+msgstr ""
+
+#: templates/elections/election_detail.html:38
+msgid ""
+"Descubr&#237; con cuál de los <b>{{ election }}</b> coincid&#237;s m&#225;"
+"s..."
+msgstr ""
+
+#: templates/elections/election_detail.html:41
+#: templates/elections/election_detail.html:42
+#: templates/elections/soulmate_candidate.html:5
+msgid "1/2 Naranja"
+msgstr "Jugar"
+
+#: templates/elections/election_questionary.html:71
+msgid "y"
+msgstr ""
+
+#: templates/elections/juego.html:22 templates/elections/juego.html.py:155
+msgid "Descubriendo<br/> con qu&#233; candidato coincid&#237;s m&#225;s..."
+msgstr ""
+
+#: templates/elections/juego.html:27 templates/elections/juego.html.py:81
+#: templates/elections/juego.html:160
+msgid "Jugar"
+msgstr ""
+
+#: templates/elections/juego.html:32 templates/elections/juego.html.py:165
+msgid "Volver a jugar"
+msgstr ""
+
+#: templates/elections/juego.html:35 templates/elections/juego.html.py:168
+msgid "Acerca de YQS"
+msgstr ""
+
+#: templates/elections/juego.html:36 templates/elections/juego.html.py:169
+msgid "Todos los candidatos"
+msgstr ""
+
+#: templates/elections/juego.html:50
+msgid "&#191;Con  cu&#225;l candidato tengo</br>m&#225;s afinidad?"
+msgstr ""
+
+#: templates/elections/juego.html:60
+msgid "Empezar"
+msgstr ""
+
+#: templates/elections/juego.html:73
+msgid "Informate sobre los pre-candidatos<br/> nacionales y de tu provincia"
+msgstr ""
+
+#: templates/elections/juego.html:78
+msgid "Descubr&#237; con qu&#233; pre-candidato a<br/><b style="
+msgstr ""
+
+#: templates/elections/juego.html:93
+msgid "S&#237"
+msgstr ""
+
+#: templates/elections/juego.html:94
+msgid "No"
+msgstr ""
+
+#: templates/elections/juego.html:99
+msgid ""
+"Si quer&#233;s dejanos tu mail<br>para enviarte m&#225;s informaci&#243;n "
+"antes de las elecciones:"
+msgstr ""
+
+#: templates/elections/juego.html:108
+msgid "Volvé y seguí contestando para mayor presición"
+msgstr ""
+
+#: templates/elections/juego.html:116
+msgid "Volver"
+msgstr ""
+
+#: templates/elections/juego.html:120
+msgid "Mas preguntas"
+msgstr ""
+
+#: templates/elections/juego.html:145
+msgid "Coincide con vos:"
+msgstr ""
+
+#: templates/elections/juego.html:147
+msgid "No coincide con vos:"
+msgstr ""
+
+#: templates/elections/juego.html:148
+msgid "No tiene respuesta:"
+msgstr ""
+
+#: templates/elections/juego.html:173
+msgid "Compartí esta información con tus amigos en redes sociales:"
+msgstr ""
+
+#: templates/elections/juego.html:176
+msgid "Yo Quiero Saber 2015"
+msgstr ""
+
+#: templates/elections/juego.html:177
+msgid ""
+"\n"
+"\t\t\t\t    Mediante preguntas y respuestas vas a conocer la afinidad con "
+"quienes aspiran a gobernar el pa&#237;s:  candidatos a presidente y "
+"gobernador de las provincia de Buenos Aires, Entre R&#237;os, San Juan y "
+"Tucum&#225;n.<br/>\n"
+"\t\t\t\t\t\t\t\tUna manera divertida de informarte sobre los candidatos a "
+"las elecciones primarias abiertas y simult&#225;neas (PASO) del 9 de "
+"agosto. \n"
+"\t\t\t\t"
+msgstr ""
+
+#: templates/elections/juego.html:183
+msgid "&#191;Quienes hacemos Yo Quiero Saber?"
+msgstr ""
+
+#: templates/elections/juego.html:192
+msgid "Con el apoyo de:"
+msgstr ""
+
+#: templates/elections/juego.html:199
+msgid ""
+"Junto con otras organizaciones de la sociedad civil, periodistas, polit&#243;"
+"logos y voluntarios de: ACIJ, Asociaci&#243;n Conciencia, We-Me, Acción "
+"Social DiTella y Taringa."
+msgstr ""
+
+#: templates/elections/juego.html:202
+msgid "Desarrollado por MySociety, Ciudadano Inteligente y Cl&#237;nica Web."
+msgstr ""
+
+#: templates/elections/juego.html:203
+msgid "Contacto:"
+msgstr ""
+
+#: templates/elections/juego.html:204
+msgid "Sumate a nuestro equipo de investigación"
+msgstr ""
+
+#: templates/elections/juego.html:225
+msgid "SI"
+msgstr ""
+
+#: templates/elections/juego.html:226
+msgid "MÁS<br/>OPCIONES"
+msgstr ""
+
+#: templates/elections/juego.html:227
+msgid "NO"
+msgstr ""
+
+#: templates/elections/juego.html:236
+msgid "Pregunta anterior"
+msgstr ""
+
+#: templates/elections/juego.html:238
+msgid "Saltear pregunta"
+msgstr ""
+
+#: templates/elections/juego.html:273 templates/elections/juego.html.py:280
+msgid "Afinidad"
+msgstr ""
+
+#: templates/elections/juego.html:273
+msgid "con"
+msgstr ""
+
+#: templates/elections/personal_data_candidate.html:15
+msgid "Partido"
+msgstr ""
+
+#: templates/elections/questions_per_candidate.html:9
+msgid "Preguntas"
+msgstr ""
+
+#: templates/elections/questions_per_candidate.html:16
+msgid "Preguntas para"
+msgstr ""
+
+#: templates/elections/soulmate_candidate.html:7
+msgid "Juego"
+msgstr ""
+
+#: templates/elections/soulmate_response.html:63
+msgid "de afinidad"
+msgstr ""
+
+#: templates/elections/soulmate_response.html:66
+msgid "Declara tu amor publicamente:"
+msgstr ""
+
+#: templates/elections/twitter/answer_this_question.html:3
+#, python-format
+msgid ".@%(twitter)s %(topic)s"
+msgstr ""
+
+#: templates/elections/twitter/answer_this_question.html:3
+msgid "preguntale, ¿qué opinas?"
+msgstr ""
+
+#: templates/elections/twitter/follow_the_conversation.html:2
+#, python-format
+msgid "oye @%(twitter.label)s Sobre la pregunta"
+msgstr ""
+
+#: templates/elections/twitter/follow_the_conversation.html:2
+msgid "Sigue la conversa"
+msgstr ""
+
+#: templates/elections/twitter/ranking_twitter.html:2
+msgid "Ventana twitter"
+msgstr ""
+
+#: templates/newsletter/common.html:7
+#: templates/newsletter/newsletter_detail.html:11
+#: templates/newsletter/newsletter_list.html:15
+#: templates/newsletter/newsletter_list.html:33
+#: templates/newsletter/subscription_activate.html:5
+#: templates/newsletter/subscription_activate.html:8
+#: templates/newsletter/subscription_subscribe_activated.html:5
+#: templates/newsletter/subscription_subscribe_activated.html:8
+#: templates/newsletter/subscription_unsubscribe_activated.html:5
+#: templates/newsletter/subscription_unsubscribe_activated.html:8
+#: templates/newsletter/subscription_update_activated.html:5
+#: templates/newsletter/subscription_update_activated.html:8
+msgid "Newsletter"
+msgstr ""
+
+#: templates/newsletter/newsletter_detail.html:6
+msgid "Newsletter detail"
+msgstr ""
+
+#: templates/newsletter/newsletter_list.html:6
+msgid "Newsletter list"
+msgstr ""
+
+#: templates/newsletter/newsletter_list.html:17
+#: templates/newsletter/subscription_subscribe.html:23
+#: templates/newsletter/subscription_subscribe_user.html:23
+msgid "Subscribe"
+msgstr ""
+
+#: templates/newsletter/newsletter_list.html:28
+msgid "Update subscriptions"
+msgstr ""
+
+#: templates/newsletter/submission_archive.html:5
+#: templates/newsletter/submission_archive.html:10
+msgid "Newsletter archive"
+msgstr ""
+
+#: templates/newsletter/subscription_activate.html:5
+#: templates/newsletter/subscription_activate.html:8
+#: templates/newsletter/subscription_subscribe_activated.html:5
+#: templates/newsletter/subscription_subscribe_activated.html:8
+#: templates/newsletter/subscription_unsubscribe_activated.html:5
+#: templates/newsletter/subscription_unsubscribe_activated.html:8
+#: templates/newsletter/subscription_update_activated.html:5
+#: templates/newsletter/subscription_update_activated.html:8
+msgid "activate"
+msgstr ""
+
+#: templates/newsletter/subscription_activate.html:13
+msgid "Activate"
+msgstr ""
+
+#: templates/newsletter/subscription_subscribe.html:5
+#: templates/newsletter/subscription_subscribe.html:8
+#: templates/newsletter/subscription_subscribe_email_sent.html:5
+#: templates/newsletter/subscription_subscribe_email_sent.html:8
+#: templates/newsletter/subscription_subscribe_user.html:6
+#: templates/newsletter/subscription_subscribe_user.html:9
+msgid "Newsletter subscribe"
+msgstr ""
+
+#: templates/newsletter/subscription_subscribe.html:11
+#: templates/newsletter/subscription_unsubscribe.html:11
+#: templates/newsletter/subscription_update.html:11
+msgid ""
+"Due to a technical error we were not able to submit your confirmation email. "
+"This could be because your email address is invalid."
+msgstr ""
+
+#: templates/newsletter/subscription_subscribe_activated.html:10
+msgid "Your subscription has successfully been activated."
+msgstr ""
+
+#: templates/newsletter/subscription_subscribe_email_sent.html:10
+msgid ""
+"Your subscription request was successfully received and an activation email "
+"has been sent to you. In that email you will find a link which you need to "
+"follow in order to activate your subscription."
+msgstr ""
+
+#: templates/newsletter/subscription_subscribe_user.html:20
+msgid "Do you want to subscribe to this newsletter?"
+msgstr ""
+
+#: templates/newsletter/subscription_unsubscribe.html:5
+#: templates/newsletter/subscription_unsubscribe.html:8
+#: templates/newsletter/subscription_unsubscribe_email_sent.html:5
+#: templates/newsletter/subscription_unsubscribe_email_sent.html:8
+#: templates/newsletter/subscription_unsubscribe_user.html:6
+#: templates/newsletter/subscription_unsubscribe_user.html:9
+msgid "Newsletter unsubscribe"
+msgstr ""
+
+#: templates/newsletter/subscription_unsubscribe.html:23
+#: templates/newsletter/subscription_unsubscribe_user.html:24
+msgid "Unsubscribe"
+msgstr ""
+
+#: templates/newsletter/subscription_unsubscribe_activated.html:10
+msgid "You have successfully been unsubscribed."
+msgstr ""
+
+#: templates/newsletter/subscription_unsubscribe_email_sent.html:10
+msgid ""
+"Your unsubscription request has successfully been received. An email has "
+"been sent to you with a link you need to follow in order to confirm your "
+"unsubscription."
+msgstr ""
+
+#: templates/newsletter/subscription_unsubscribe_user.html:21
+msgid "Do you want to unsubscribe from this newsletter?"
+msgstr ""
+
+#: templates/newsletter/subscription_update.html:5
+#: templates/newsletter/subscription_update.html:8
+#: templates/newsletter/subscription_update_email_sent.html:5
+#: templates/newsletter/subscription_update_email_sent.html:8
+msgid "Newsletter update"
+msgstr ""
+
+#: templates/newsletter/subscription_update.html:23
+msgid "Update subscription"
+msgstr ""
+
+#: templates/newsletter/subscription_update_activated.html:10
+msgid "Your subscription has successfully been updated."
+msgstr ""
+
+#: templates/newsletter/subscription_update_email_sent.html:10
+msgid ""
+"Your update request was successfully received and an activation email has "
+"been sent to you. In that email you will find a link which you need to "
+"follow in order to update your subscription."
+msgstr ""
+
+#: templates/search.html:5 templates/search/tags_search.html:6
+msgid "Busqueda"
+msgstr ""
+
+#: templates/search.html:13 templates/search/tags_search.html:14
+msgid "Buscar"
+msgstr ""
+
+#: templates/search.html:19 templates/search/tags_search.html:21
+msgid "Elecciones"
+msgstr ""
+
+#: templates/search.html:26 templates/search/tags_search.html:28
+msgid "No encontré resultados"
+msgstr ""
+
+#: templates/search.html:31
+msgid "Anterior"
+msgstr ""
+
+#: templates/search.html:33
+msgid "Siguiente"
+msgstr ""

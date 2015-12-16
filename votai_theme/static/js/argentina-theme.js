@@ -1,5 +1,5 @@
-var elecUrl="/election/ballotage";
-var jsonUrl= "/theme/election/ballotage/media-naranja.json";
+var elecUrl="/election/bagaces";
+var jsonUrl= "/theme/election/bagaces/media-naranja.json";
 
 jQuery(document).ready(function($){
         // browser window scroll (in pixels) after which the "back to top" link is shown
@@ -41,12 +41,11 @@ jQuery(document).ready(function($){
                 jsonUrl= elections_json[0].medianaranja_link;
 
                 var options_eleccion = '';
-                options_eleccion += '<option value="' + elecUrl + '"><h4>Elegí tu distrito</h4><\/option>';
                 $.each(elections_json, function(key,value){
                         //console.log(value["detaillink"]);
                         options_eleccion += '<option value="' + value["detaillink"] + '"><h4>' +  value["name"] + '</h4><\/option>';
                 });
-                $("select#eleccion").html(options_eleccion);
+                $("select#eleccion").append(options_eleccion);
 
                 $( "select#eleccion,#menuMob select" ).change( function(e){
                         elecUrl=$(e.target).val();

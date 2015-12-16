@@ -52,27 +52,27 @@
       <div class="hLogo"><span></span><a href="/"><img src="{% static 'img/YQSlogo.png' %}" class='imgHeader'></a></div>
       <ul class="list-inline" id="headermenu">
         <li>
-          <a href="/election/pre-candidato-a-presidente">Presidentes</a>
+          <a href="/election/pre-candidato-a-presidente">{% trans "Presidentes" %}</a>
         </li>
         <li>
-          <a href="/pages/gobernadores">Gobernadores</a>
+          <a href="/pages/gobernadores">{% trans "Gobernadores" %}</a>
         </li>
         <li>
-          <a href="http://investigacion.yoquierosaber.org/posts">Otros cargos</a>
+          <a href="http://investigacion.yoquierosaber.org/posts">{% trans "Otros cargos" %}</a>
         <li>
-          <a href="http://investigacion.yoquierosaber.org/">Investigación colectiva</a>
+          <a href="http://investigacion.yoquierosaber.org/">{% trans "Investigación colectiva" %}</a>
         </li>
         <li>
-          <a href="/pages/medios/">Medios</a>
+          <a href="/pages/medios/">{% trans "Medios" %}</a>
         </li>
         <li>
-          <a href="/pages/nosotros/">Nosotros</a>
+          <a href="/pages/nosotros/">{% trans "Nosotros" %}</a>
         </li>
       </ul>
       <div class="header__nav__social">
-        <a href="https://www.facebook.com/YoQuieroSaber">Facebook</a>
-        <a href="https://twitter.com/YoQuieroSaberAR">Twitter</a>
-        <a href="http://taringa.net/YoQuieroSaber15">Taringa</a>
+        <a href="https://www.facebook.com/YoQuieroSaber">{% trans "Facebook" %}</a>
+        <a href="https://twitter.com/YoQuieroSaberAR">{% trans "Twitter" %}</a>
+        <a href="http://taringa.net/YoQuieroSaber15">{% trans "Taringa" %}</a>
       </div>
     </header>
       <div id="wrapper">
@@ -92,19 +92,19 @@
 
       <footer class="footer">
         <div class="calendario">
-          <h3 class="faltan">Calendario electoral</h3>
+          <h3 class="faltan">{% trans "Calendario electoral" %}</h3>
           <ul class="row">
             <li class="col-sm-8"><a href="/election/pre-candidato-a-presidente">Ballotage en <span class="fecha-distancia">22/11/2015</span></a></li>
-            <li class="col-sm-4"><a href="/pages/gobernadores">Todas las elecciones</a></li>
+            <li class="col-sm-4"><a href="/pages/gobernadores">{% trans "Todas las elecciones" %}</a></li>
           </ul>
           <p class="votas">
-            ¿Votás? Contanos en <a href="http://www.twitter.com/YoQuieroSaberAr">twitter @YoQuieroSaberAr</a> hashtag #YoQuieroSaber
+            {% trans '¿Votás? Contanos en <a href="http://www.twitter.com/YoQuieroSaberAr">twitter @YoQuieroSaberAr</a> hashtag #YoQuieroSaber' %}
           </p>
         </div>
-        <button class="colabora"><a href="http://investigacion.yoquierosaber.org/">Colabor&#225; con nuestra investigaci&#243;n colectiva</a></button>
+        <button class="colabora"><a href="http://investigacion.yoquierosaber.org/">{% trans "Colabor&#225; con nuestra investigación colectiva" %}</a></button>
 				<div class="about">
           <div class="footer__bylines">
-            <h4>Hecho por</h4>
+            <h4>{% trans "Hecho por" %}</h4>
             <p>
               <a href="http://www.congresointeractivo.org"><img src="/static/img/logo-congreso-interactivo.png" width="107" height="40" alt="Congreso Interactivo"></a>
               <a href="http://ar.okfn.org"><img src="/static/img/logo-okf-argentina.png" width="172" height="40" alt="Open Knowledge Argentina"></a>
@@ -112,7 +112,7 @@
               <a href="http://www.directoriolegislativo.org/"><img src="/static/img/logo-directorio-legislativo.png" width="130" height="40" alt="Directorio Legislativo"></a>
             </p>
 
-            <h4>Socios</h4>
+            <h4>{% trans "Socios" %}</h4>
             <p>
               <a href="http://www.taringa.net">Taringa</a> &middot;
               <a href="http://www.acij.org.ar">ACIJ</a> &middot;
@@ -121,27 +121,27 @@
               <a href="http://www.utdt.edu/ver_contenido.php?id_contenido=9095&amp;id_item_menu=17559">Acción Social DiTella</a>
             </p>
             <p>
-              <h4>Apoyado por </h4>
+              <h4>{% trans "Apoyado por" %} </h4>
             </p>
             <div style="background: white; padding: 1em; padding-bottom: 0.5em; border-radius: 1em">
                   <a href="http://hackslabs.org/"><img src="{% static 'img/logo-hl.png' %}" alt="hackslabs"></a>
                   <a href="http://www.worldbank.org/"><img src="{% static 'img/logo-wb.png' %}" alt="World Bank"></a>
                   <a href="http://www.icfj.org/" style="zoom: 0.8;"><img src="{% static 'img/logo-icfj.png' %}" alt="ICFJ"></a>
             </div>
-            <h4>Desarrollado por </h4>
+            <h4>{% trans "Desarrollado por" %} </h4>
             <p>
               <a href="https://mysociety.org">mySociety</a> &middot;
               <a href="http://www.ciudadanointeligente.org">Ciudadano Inteligente</a> &middot;
               <a href="http://www.clinica-web.com.ar">Clínica Web</a>
             </p>
             <p>
-              <a href="/pages/nosotros/">Todos los colaboradores y voluntarios</a>
+              <a href="/pages/nosotros/">{% trans "Todos los colaboradores y voluntarios" %}</a>
             </p>
           </div>
 
 				</div>
       </footer>
-      <a href="#0" class="cd-top">Subir</a>
+      <a href="#0" class="cd-top">{% trans "Subir" %}</a>
       <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
       <script>
       window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')

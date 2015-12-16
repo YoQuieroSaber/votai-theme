@@ -16,8 +16,8 @@ elections_json = {% elections_json %};
 
 <div class="descubIni" style="overflow: hidden">
            <div class="col-md-1" id="inviDC3"></div>
-<div class="col-md-6" id="inviDC1">Informate sobre los pre-candidatos nacionales y de tu provincia</div>
-        <div class="col-md-4" id="inviDC2"><select name="elecci&#243;n" id="eleccion"></select></div>
+<div class="col-md-6" id="inviDC1">{% trans "Informate sobre los pre-candidatos nacionales y de tu provincia" %}</div>
+        <div class="col-md-4" id="inviDC2"><select name="elecci&#243;n" id="eleccion"><option value=""><h4>{% trans "Elegí tu distrito" %}</h4></option></select></div>
 </div>
 
 
@@ -26,16 +26,16 @@ elections_json = {% elections_json %};
 
 	<div class="candidate_group did_not_pass_primaries_{{ candidates.grouper }}">
 	    <div>
-	            <h2 class="text-center">{{ election }} {% if candidates.grouper == True %} que no superaron las internas (PASO){% endif %}</h2>
+	            <h2 class="text-center">{{ election }} {% if candidates.grouper == True %} {% trans "que no superaron las internas (PASO)" %}{% endif %}</h2>
 	    </div>
 		<div class="game-cta">
 			{% if 'soulmate'|val_navbars and election.uses_soul_mate  %}
 			<div class="soulmate-link">
 			    <p class="soulmate-text">
 				    {% if candidates.grouper == True %}
-				    Jugá con todos los candidatos, incluso los que no superaron las primarias (PASO)
+				    {% trans "Jugá con todos los candidatos, incluso los que no superaron las primarias (PASO)" %}
 				    {% else %}
-				    Descubr&#237; con cuál de los <b>{{ election }}</b> coincid&#237;s m&#225;s...
+				    {% trans "Descubr&#237; con cuál de los <b>{{ election }}</b> coincid&#237;s m&#225;s..." %}
 				    {% endif %}
 			    </p>
 				<a class="bEmpez" href="{% url 'soul_mate_detail_view' slug=election.slug  %}?show_all_candidates={{ candidates.grouper }}" accesskey="n" title="{% trans "1/2 Naranja" %} (Alt+n)">
