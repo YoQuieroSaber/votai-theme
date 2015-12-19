@@ -3,6 +3,7 @@
 {% load flatpages %}
 {% load i18n %}
 {% load votainteligente_extras %}
+{% load yqs_extras %}
 <html prefix="og: http://ogp.me/ns/{{ 'type'|ogpdata }}#">
   <head>
     <meta charset="utf-8">
@@ -35,6 +36,10 @@
      document.body.appendChild(e);
     }
     </script>
+    <script type="text/javascript">
+    elections_json = {% elections_json %};
+    </script>
+
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
     <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
@@ -49,31 +54,12 @@
   </head>
   <body data-ng-app="votainteligente">
     <header>
-      <div class="hLogo"><span></span><a href="/"><img src="{% static 'img/YQSlogo.png' %}" class='imgHeader'></a></div>
+      <div class="hLogo"><span></span><a href="/"><img src="{% static 'img/lvdg-logo.png' %}" class='imgHeader'></a></div>
       <ul class="list-inline" id="headermenu">
-        <li>
-          <a href="/election/pre-candidato-a-presidente">{% trans "Presidentes" %}</a>
-        </li>
-        <li>
-          <a href="/pages/gobernadores">{% trans "Gobernadores" %}</a>
-        </li>
-        <li>
-          <a href="http://investigacion.yoquierosaber.org/posts">{% trans "Otros cargos" %}</a>
-        <li>
-          <a href="http://investigacion.yoquierosaber.org/">{% trans "Investigación colectiva" %}</a>
-        </li>
-        <li>
-          <a href="/pages/medios/">{% trans "Medios" %}</a>
-        </li>
-        <li>
-          <a href="/pages/nosotros/">{% trans "Nosotros" %}</a>
+        <li class="election-link election-link-template">
+          <a href="#"></a>
         </li>
       </ul>
-      <div class="header__nav__social">
-        <a href="https://www.facebook.com/YoQuieroSaber">{% trans "Facebook" %}</a>
-        <a href="https://twitter.com/YoQuieroSaberAR">{% trans "Twitter" %}</a>
-        <a href="http://taringa.net/YoQuieroSaber15">{% trans "Taringa" %}</a>
-      </div>
     </header>
       <div id="wrapper">
         <div class="container">
@@ -83,59 +69,19 @@
           {% endblock %}
         </div>
       </div>
-      <!-- <div class="share-sidebar">
+      <div class="share-sidebar">
       <p class="share-title">Compartir</p>
       <div data-social-share-privacy="true" data-order="facebook fbshare mail twitter gplus"  data-options='{
               "language" : "es",
           }'></div>
-      </div> -->
+      </div>
 
       <footer class="footer">
-        <div class="calendario">
-          <h3 class="faltan">{% trans "Calendario electoral" %}</h3>
-          <ul class="row">
-            <li class="col-sm-8"><a href="/election/pre-candidato-a-presidente">Ballotage en <span class="fecha-distancia">22/11/2015</span></a></li>
-            <li class="col-sm-4"><a href="/pages/gobernadores">{% trans "Todas las elecciones" %}</a></li>
-          </ul>
-          <p class="votas">
-            {% trans '¿Votás? Contanos en <a href="http://www.twitter.com/YoQuieroSaberAr">twitter @YoQuieroSaberAr</a> hashtag #YoQuieroSaber' %}
-          </p>
-        </div>
-        <button class="colabora"><a href="http://investigacion.yoquierosaber.org/">{% trans "Colabor&#225; con nuestra investigación colectiva" %}</a></button>
 				<div class="about">
           <div class="footer__bylines">
             <h4>{% trans "Hecho por" %}</h4>
             <p>
-              <a href="http://www.congresointeractivo.org"><img src="/static/img/logo-congreso-interactivo.png" width="107" height="40" alt="Congreso Interactivo"></a>
-              <a href="http://ar.okfn.org"><img src="/static/img/logo-okf-argentina.png" width="172" height="40" alt="Open Knowledge Argentina"></a>
-              <a href="http://twitter.com/dataconcepcion"><img src="/static/img/logo-datos-concepcion.png" width="35" height="40" alt="Datos Concepción"></a>
-              <a href="http://www.directoriolegislativo.org/"><img src="/static/img/logo-directorio-legislativo.png" width="130" height="40" alt="Directorio Legislativo"></a>
-            </p>
-
-            <h4>{% trans "Socios" %}</h4>
-            <p>
-              <a href="http://www.taringa.net">Taringa</a> &middot;
-              <a href="http://www.acij.org.ar">ACIJ</a> &middot;
-              <a href="http://www.conciencia.org">Asociación Conciencia</a> &middot;
-              <a href="http://www.we-me.org">We-Me</a> &middot;
-              <a href="http://www.utdt.edu/ver_contenido.php?id_contenido=9095&amp;id_item_menu=17559">Acción Social DiTella</a>
-            </p>
-            <p>
-              <h4>{% trans "Apoyado por" %} </h4>
-            </p>
-            <div style="background: white; padding: 1em; padding-bottom: 0.5em; border-radius: 1em">
-                  <a href="http://hackslabs.org/"><img src="{% static 'img/logo-hl.png' %}" alt="hackslabs"></a>
-                  <a href="http://www.worldbank.org/"><img src="{% static 'img/logo-wb.png' %}" alt="World Bank"></a>
-                  <a href="http://www.icfj.org/" style="zoom: 0.8;"><img src="{% static 'img/logo-icfj.png' %}" alt="ICFJ"></a>
-            </div>
-            <h4>{% trans "Desarrollado por" %} </h4>
-            <p>
-              <a href="https://mysociety.org">mySociety</a> &middot;
-              <a href="http://www.ciudadanointeligente.org">Ciudadano Inteligente</a> &middot;
-              <a href="http://www.clinica-web.com.ar">Clínica Web</a>
-            </p>
-            <p>
-              <a href="/pages/nosotros/">{% trans "Todos los colaboradores y voluntarios" %}</a>
+              <a href="http://fundacionconocimientoabierto.org"><img src="/static/img/logo-okf-argentina.png" width="172" height="40" alt="Fundación ConocimientoAbierto"></a>
             </p>
           </div>
 
@@ -154,7 +100,7 @@
       <script src="{% static 'js/main.js' %}"></script>
 
       <script src="{% static 'SocialSharePrivacy/javascripts/jquery.cookies.js' %}"></script>
-      <!-- <script type="application/x-social-share-privacy-settings">{"path_prefix":"{% static 'SocialSharePrivacy/' %}","layout":"box","services":{"buffer":{"status":false},"delicious":{"status":false},"disqus":{"status":false},"facebook":{"status":false},"flattr":{"status":false},"hackernews":{"status":false},"linkedin":{"status":false},"pinterest":{"status":false},"reddit":{"status":false},"stumbleupon":{"status":false},"tumblr":{"status":false},"xing":{"status":false}}}</script> -->
+      <script type="application/x-social-share-privacy-settings">{"path_prefix":"{% static 'SocialSharePrivacy/' %}","layout":"box","services":{"buffer":{"status":false},"delicious":{"status":false},"disqus":{"status":false},"facebook":{"status":false},"flattr":{"status":false},"hackernews":{"status":false},"linkedin":{"status":false},"pinterest":{"status":false},"reddit":{"status":false},"stumbleupon":{"status":false},"tumblr":{"status":false},"xing":{"status":false}}}</script>
       <script type="text/javascript">(function () {var s = document.createElement('script');var t = document.getElementsByTagName('script')[0];s.type = 'text/javascript';s.async = true;s.src = "http://elecciones2015.yoquierosaber.org/static/SocialSharePrivacy/javascripts/jquery.socialshareprivacy.min.autoload.js";t.parentNode.insertBefore(s, t);})();</script>
 
 

@@ -10,7 +10,7 @@ elections_json = {% elections_json %};
 </script>
 <div id="telon">
         <div>
-                <img src="{% static 'img/YQSlogo.png' %}" class='imgInicio' >
+                <img src="{% static 'img/lvdg-iso.png' %}" class='imgInicio' >
         </div>
 
 		<span class="loading"></span>
@@ -39,24 +39,19 @@ elections_json = {% elections_json %};
 
 <div id="inicio" style="display: none">
 	<div class="row">
-		<img src="{% static 'img/YQSlogo.png' %}" class='imgInicio' >
-	</div>
-	<div class="row"></br></div>
-	<div class="row">
 		<div class="col-xs-1 col-md-4" id="iniColS">
 		</div>
 		<div class="col-xs-10 col-md-4" id="iniColC">
 
 			<h4 class="invita">{% trans "&#191;Con  cu&#225;l candidato tengo</br>m&#225;s afinidad?" %}<br/><br/>
-				<!--	<select name="elecci&#243;n" id="eleccion"></select>-->
 				</h4><br/>
 		</div>
 		<div class="col-xs-1 col-md-4" id="iniColS">
 		</div>
 	</div>
-	<!-- <div class="row"><select name="elecci&#243;n" id="eleccion"></select></div> -->
+	<div class="row"><select name="elecci&#243;n" id="eleccion"></select></div>
 	<div class="row">
-		<button type="button" class="bInicio">
+		<button type="button" class="bInicio" id="bInicioMain">
 		<span style="font-size:1.5em;vertical-align:middle;">{% trans "Empezar" %}</span>
 		<span style="font-size:3em; vertical-align:middle;"><b>&#20;&#20;>></b></span>
 	</button> 

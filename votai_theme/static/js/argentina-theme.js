@@ -44,6 +44,11 @@ jQuery(document).ready(function($){
                 $.each(elections_json, function(key,value){
                         //console.log(value["detaillink"]);
                         options_eleccion += '<option value="' + value["detaillink"] + '"><h4>' +  value["name"] + '</h4><\/option>';
+
+                        electionLink = $(".election-link-template").clone().removeClass("election-link-template");
+                        electionLink.find("a").attr("href",value.medianaranja_link.replace(".json","")).text(value["name"]);
+                        $("#headermenu").append(electionLink);
+                        
                 });
                 $("select#eleccion").append(options_eleccion);
 

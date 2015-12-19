@@ -1804,8 +1804,6 @@ function loadGame(){
 				h = $("#game").height();
 
 				if(h<480)iniPadH=0.05;
-				$("#inicio").css("padding-top",h*iniPadH+"px");
-				$("#inicio").css("padding-bottom",h*iniPadH+"px");
 
 				$("#game").css("left",($(window).width()*0.5-parseFloat($("#game").css("width"))*0.5)+"px");
 				$("#telon").css("left",($(window).width()*0.5-parseFloat($("#telon").css("width"))*0.5)+"px");
