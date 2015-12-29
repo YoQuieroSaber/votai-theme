@@ -2069,6 +2069,7 @@ function loadGame(){
 			});
 
 
+
 			$("#vSi").click(function(){
 				resetSacudir();
 				userRes[pregCount] = 0;

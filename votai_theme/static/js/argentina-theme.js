@@ -41,20 +41,25 @@ jQuery(document).ready(function($){
                 jsonUrl= elections_json[0].medianaranja_link;
 
                 var options_eleccion = '';
+                var options_eleccion_juegolink = '';
                 $.each(elections_json, function(key,value){
                         //console.log(value["detaillink"]);
+                        // WIP MARK SELECTED
+                        //if (value["detaillink"] == location.href)
                         options_eleccion += '<option value="' + value["detaillink"] + '"><h4>' +  value["name"] + '</h4><\/option>';
+                        options_eleccion_juegolink += '<option value="' + value["medianaranja_link"].replace(".json","") + '"><h4>' +  value["name"] + '</h4><\/option>';
 
                         electionLink = $(".election-link-template").clone().removeClass("election-link-template");
-                        electionLink.find("a").attr("href",value.medianaranja_link.replace(".json","")).text(value["name"]);
+                        electionLink.find("a").attr("href",value.detaillink).text(value["name"]);
                         $("#headermenu").append(electionLink);
                         
                 });
-                $("select#eleccion").append(options_eleccion);
+                $("select#eleccion:not(.home_election_selector)").append(options_eleccion);
+                $("select#eleccion.home_election_selector").append(options_eleccion_juegolink);
 
                 $( "select#eleccion,#menuMob select" ).change( function(e){
                         elecUrl=$(e.target).val();
-                        if ($(".game-cta").length > 0) {
+                        if ($(".game-cta").length > 0 || $(e.target).hasClass("home_election_selector")) {
                                 location.href=elecUrl;
                         }
                 });
