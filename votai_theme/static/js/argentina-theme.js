@@ -1,5 +1,6 @@
 var elecUrl="/election/bagaces";
 var jsonUrl= "/theme/election/bagaces/media-naranja.json";
+var lang = "lang-es";
 
 jQuery(document).ready(function($){
         // browser window scroll (in pixels) after which the "back to top" link is shown
@@ -44,14 +45,19 @@ jQuery(document).ready(function($){
                 var options_eleccion_juegolink = '';
                 $.each(elections_json, function(key,value){
                         //console.log(value["detaillink"]);
-                        // WIP MARK SELECTED
-                        //if (value["detaillink"] == location.href)
-                        options_eleccion += '<option value="' + value["detaillink"] + '"><h4>' +  value["name"] + '</h4><\/option>';
-                        options_eleccion_juegolink += '<option value="' + value["medianaranja_link"].replace(".json","") + '"><h4>' +  value["name"] + '</h4><\/option>';
+                        if (value["tags"].indexOf(lang)) {
 
-                        electionLink = $(".election-link-template").clone().removeClass("election-link-template");
-                        electionLink.find("a").attr("href",value.detaillink).text(value["name"]);
-                        $("#headermenu").append(electionLink);
+                                selected = "";
+                                if (value["medianaranja_link"].replace(".json","") == location.pathname) {
+                                        selected = "selected='selected'";
+                                }
+                                options_eleccion += '<option value="' + value["detaillink"] + '" '+selected+'><h4>' +  value["name"] + '</h4><\/option>';
+                                options_eleccion_juegolink += '<option value="' + value["medianaranja_link"].replace(".json","") + '" '+selected+'><h4>' +  value["name"] + '</h4><\/option>';
+
+                                electionLink = $(".election-link-template").clone().removeClass("election-link-template");
+                                electionLink.find("a").attr("href",value.detaillink).text(value["name"]);
+                                $("#headermenu").append(electionLink);
+                        }
                         
                 });
                 $("select#eleccion:not(.home_election_selector)").append(options_eleccion);

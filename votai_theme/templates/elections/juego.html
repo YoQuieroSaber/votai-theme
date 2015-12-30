@@ -49,7 +49,9 @@ elections_json = {% elections_json %};
 		<div class="col-xs-1 col-md-4" id="iniColS">
 		</div>
 	</div>
-	<div class="row"><select name="elecci&#243;n" id="eleccion" class="home_election_selector"></select></div>
+	<div class="row">
+	{% trans "Seleccione su localidad" %}
+	<select name="elecci&#243;n" id="eleccion" class="home_election_selector"></select></div>
 	<div class="row">
 		<button type="button" class="bInicio" id="bInicioMain">
 		<span style="font-size:1.5em;vertical-align:middle;">{% trans "Empezar" %}</span>
