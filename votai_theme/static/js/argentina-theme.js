@@ -1,6 +1,5 @@
 var elecUrl="/election/bagaces";
 var jsonUrl= "/theme/election/bagaces/media-naranja.json";
-var lang = "lang-es";
 
 jQuery(document).ready(function($){
         // browser window scroll (in pixels) after which the "back to top" link is shown
@@ -45,7 +44,7 @@ jQuery(document).ready(function($){
                 var options_eleccion_juegolink = '';
                 $.each(elections_json, function(key,value){
                         //console.log(value["detaillink"]);
-                        if (value["tags"].indexOf(lang)) {
+                        if (value["tags"].indexOf(lang) > -1) {
 
                                 selected = "";
                                 if (value["medianaranja_link"].replace(".json","") == location.pathname) {
