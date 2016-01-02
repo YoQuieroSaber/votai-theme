@@ -234,6 +234,13 @@ header span{
     height: 100%;
     vertical-align: middle;
 }
+
+#langmenu {
+	position: absolute;
+	top: 0;
+	right: 0;	
+}
+
 #headermenu {
 margin-top: 0.5em;
 font-family: yqsFont, "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;

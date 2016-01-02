@@ -38,7 +38,8 @@
     </script>
     <script type="text/javascript">
     elections_json = {% elections_json %};
-    var lang = "lang-en"; "{{ LANGUAGE_CODE }}";
+    {% get_current_language as LANGUAGE_CODE %}
+    var lang = "{{ LANGUAGE_CODE }}";
     </script>
 
     <!-- Latest compiled and minified CSS -->
@@ -59,6 +60,15 @@
       <ul class="list-inline" id="headermenu">
         <li class="election-link election-link-template">
           <a href="#"></a>
+        </li>
+      </ul>
+      <ul class="list-inline" id="langmenu">
+        <li>{% trans "Lenguajes" %}</li>
+        <li class="lang-link">
+          <a href="/es">Español</a>
+        </li>
+        <li class="lang-link">
+          <a href="/en">English</a>
         </li>
       </ul>
     </header>

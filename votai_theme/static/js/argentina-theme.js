@@ -1,5 +1,26 @@
+//TODO: Tendria que haber un default para cada idioma
 var elecUrl="/election/bagaces";
 var jsonUrl= "/theme/election/bagaces/media-naranja.json";
+
+function GetUrlValue(varsearch){
+        var searchstring = window.location.search.substring(1)+"&"+window.location.hash;
+        var variablearray = searchstring.split('&');
+        for(var i = 0; i < variablearray.length; i++){
+                var keyvaluepair = variablearray[i].split('=');
+                if(keyvaluepair[0].replace("#","") == varsearch){
+                        return keyvaluepair[1];
+                }
+        }
+}
+
+url_lang = GetUrlValue("lang");
+
+lang =  url_lang ? url_lang : lang;
+if (lang.indexOf("-") > -1) {
+        lang = lang.split("-")[0];
+}
+
+
 
 jQuery(document).ready(function($){
         // browser window scroll (in pixels) after which the "back to top" link is shown

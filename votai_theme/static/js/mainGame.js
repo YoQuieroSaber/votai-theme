@@ -178,18 +178,6 @@ var app = (function(){
 		}
 	}
 
-
-
-	function GetUrlValue(varsearch){
-		var searchstring = window.location.search.substring(1)+"&"+window.location.hash;
-		var variablearray = searchstring.split('&');
-		for(var i = 0; i < variablearray.length; i++){
-			var keyvaluepair = variablearray[i].split('=');
-			if(keyvaluepair[0].replace("#","") == varsearch){
-				return keyvaluepair[1];
-			}
-		}
-	}
 	function getPreguntasPasadas() {
 			preguntasPasadasString = GetUrlValue("preguntasPasadas");
 			if (preguntasPasadasString) {
