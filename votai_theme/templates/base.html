@@ -56,8 +56,11 @@
   </head>
   <body data-ng-app="votainteligente">
     <header>
-      <div class="hLogo"><span></span><a href="/"><img src="{% static 'img/lvdg-logo.png' %}" class='imgHeader'></a></div>
+      <div class="hLogo"><a href="http://www.vozdeguanacaste.com"><img src="{% static 'img/lvdg-logo.png' %}" class='imgHeader'></a></div>
       <ul class="list-inline" id="headermenu">
+        <li class="election-link selected">
+          <a href="/">{% trans "Inicio" %}</a>
+        </li>
         <li class="election-link election-link-template">
           <a href="#"></a>
         </li>
@@ -83,7 +86,7 @@
       <div class="share-sidebar">
       <p class="share-title">Compartir</p>
       <div data-social-share-privacy="true" data-order="facebook fbshare mail twitter gplus"  data-options='{
-              "language" : "es",
+              "language" : "{{ LANGUAGE_CODE }}",
           }'></div>
       </div>
 
@@ -92,7 +95,7 @@
           <div class="footer__bylines">
             <h4>{% trans "Hecho por" %}</h4>
             <p>
-              <a href="http://fundacionconocimientoabierto.org"><img src="/static/img/logo-okf-argentina.png" width="172" height="40" alt="Fundación ConocimientoAbierto"></a>
+              <a href="http://fcabierto.org"><img src="/static/img/logo-okf-argentina.png" width="172" height="40" alt="Fundación ConocimientoAbierto"></a>
             </p>
           </div>
 

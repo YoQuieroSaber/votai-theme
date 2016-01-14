@@ -40,8 +40,10 @@ elections_json = {% elections_json %};
 <div id="inicio" style="display: none">
 	<div class="row">
 		<div class="col-xs-1 col-md-4" id="iniColS">
+
 		</div>
 		<div class="col-xs-10 col-md-4" id="iniColC">
+	      <div class="mLogo"><a href="http://www.vozdeguanacaste.com"><img src="{% static 'img/lvdg-logo-blanco.png' %}" class='imgHeader'></a></div>
 
 			<h4 class="invita">{% trans "¿Con  cuál candidato tengo más afinidad?" %}<br/><br/>
 				</h4><br/>
@@ -50,16 +52,14 @@ elections_json = {% elections_json %};
 		</div>
 	</div>
 	<div class="row">
-	{% trans "Seleccione su localidad" %}
-	<select name="elecci&#243;n" id="eleccion" class="home_election_selector"></select></div>
-	<div class="row">
-		<button type="button" class="bInicio" id="bInicioMain">
-		<span style="font-size:1.5em;vertical-align:middle;">{% trans "Empezar" %}</span>
-		<span style="font-size:3em; vertical-align:middle;"><b>&#20;&#20;>></b></span>
-	</button> 
-	</div>
-	<div class="row" style="margin-top: 1em">
-		<div class="election_name election_name_content"></div>
+		<p class="game-selector-title">
+		{% trans "Seleccione su localidad" %}
+		</p>
+        <div id="gamemenu">
+	        <a class="bInicio game-link-template">
+	            <span style="font-size:1.5em;vertical-align:middle;">{% trans "Jugar" %}</span>
+	        </a>
+        </div>
 	</div>
 </div>
 
@@ -72,7 +72,7 @@ elections_json = {% elections_json %};
 			<div class="col-xs-3 col-md-3" id="inviDC3"></div>
 			<br/>
 			<br/>
-			<h4>{% trans "Descubr&#237; con qu&#233; pre-candidato a<br/><b style=\"color:#dd3975;\">presidente</b> coincid&#237;s m&#225;s..." %}</h4>
+			<h4>{% trans "Descubr&#237; con qu&#233; pre-candidato a<br/><b style='color:#dd3975;'>presidente</b> coincid&#237;s m&#225;s..." %}</h4>
 
 	<button type="button" class="bEmpez">
 		<span style="font-size:1.5em;vertical-align:middle;">{% trans "Jugar" %}</span>
@@ -157,6 +157,17 @@ elections_json = {% elections_json %};
 		                <span style="font-size:1.5em;vertical-align:middle;">{% trans "Jugar" %}</span>
 		        </button>
 		        </div>
+
+      <ul class="list-inline" id="langmenu">
+        <li>{% trans "Lenguajes" %}</li>
+        <li class="lang-link">
+          <a href="/es">Español</a>
+        </li>
+        <li class="lang-link">
+          <a href="/en">English</a>
+        </li>
+      </ul>
+
 		                <ul class="submenu" id="submenuMob">
 		                <li>
 		                <a onclick="location.reload()"><b>{% trans "Volver a jugar" %}</b></a></li>

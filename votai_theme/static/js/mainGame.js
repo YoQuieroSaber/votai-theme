@@ -1468,9 +1468,13 @@ var app = (function(){
 		$("#about2").hide();
 	}
 
-function loadGame(){
+function loadGame(url){
+	$("#telon").show();
+	$("#game").show();
 
-	var url="/theme"+elecUrl+"/media-naranja.json";
+	if (!url) {
+		url="/theme"+elecUrl+"/media-naranja.json";	
+	} 
 
 	if (/theme\/election\/(.*)\//.test(location.href)) {
 		election = /theme\/election\/([^\/]*)\//.exec(location.href)[1];
@@ -1493,6 +1497,8 @@ function loadGame(){
 					}
 
 					$(".nElec,.election_name_content").html(election_name);
+					$("#headermenu .selected").removeClass("selected");
+					$(".election-link a:contains("+election_name+")").parent(".election-link").addClass("selected");
 					//console.log(candidatos);
 
 					var cant = candidatos.length;
@@ -1543,7 +1549,11 @@ function loadGame(){
 					else {
 						$("#inicio").show().addClass("election_"+eleccion.election_id);
 					}
-          $("#telon").hide();
+					pregResize();
+					nextQuest();
+					$("#inicio").hide();
+
+		          $("#telon").hide();
 
 					$("#game,.afiniSide").on("click","img#fCand",function(){
 						for(var i=0;i<candidatos.length;i++){
@@ -2048,12 +2058,10 @@ function loadGame(){
 				jugar();
 			});
 
-			$(".bInicio").click(function() {
-				$("#game").show();
-				pregResize();
-				nextQuest();
-				$("#inicio").hide();
-
+			$("body").on("click",".bInicio",function(e) {
+				url = $(e.currentTarget).data("url");
+				console.log("click",$(e.currentTarget),url);
+				loadGame(url);
 			});
 
 
@@ -2108,7 +2116,9 @@ function loadGame(){
 
 			for(var i=0;i<MaxPreg;i++)userRes[i]=-1;
 
-			loadGame();
+			$("#telon").hide();
+			$("#inicio").show();
+			//loadGame();
 		},
 
 	stop : function(){

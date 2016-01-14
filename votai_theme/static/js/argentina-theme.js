@@ -76,7 +76,16 @@ jQuery(document).ready(function($){
 
                                 electionLink = $(".election-link-template").clone().removeClass("election-link-template");
                                 electionLink.find("a").attr("href",value.detaillink).text(value["name"]);
+                                if (location.href.indexOf(value["name"].toLowerCase()) > -1) {
+                                        $("#headermenu").removeClass("selected");
+                                        electionLink.addClass("selected");
+                                }
                                 $("#headermenu").append(electionLink);
+
+                                gameLink = $(".game-link-template").clone().removeClass("game-link-template");
+                                gameLink.data("url",value["medianaranja_link"]).text(value["name"]);
+                                $("#gamemenu").append(gameLink);
+
                         }
                         
                 });

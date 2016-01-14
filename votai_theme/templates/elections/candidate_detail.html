@@ -95,7 +95,7 @@
                                         {% endfor %}
 
 
-                                        {{ candidate.biography|markdown }}
+                                        {{ candidate.biography|safe|linebreaksbr }}
                                         </div>
                                 </div>
 
@@ -106,7 +106,7 @@
 					
 					
 					{% if 'facetoface'|val_navbars and election.uses_face_to_face  %}
-					<button type="button" class="btn btn-danger btn-lg btn-block" onClick="location.href='{% url 'face_to_face_one_candidate_detail_view' slug=election.slug slug_candidate_one=candidate.id %}'"><i class="icon-bolt"></i> Comparálo con otro candidato</button>
+					<button type="button" class="btn btn-danger btn-lg btn-block" onClick="location.href='{% url 'face_to_face_one_candidate_detail_view' slug=election.slug slug_candidate_one=candidate.id %}'"><i class="icon-bolt"></i> {% trans "Comparálo con otro candidato" %}</button>
 					{% endif %}
 					
 				</div>

@@ -1,32 +1,38 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
+# Translators:
+# Martín Szyszlican <martinsz@gmail.com>, 2016
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: YoQuieroSaber\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-02 00:59+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"POT-Creation-Date: 2016-01-13 08:01+0000\n"
+"PO-Revision-Date: 2016-01-13 05:01+0000\n"
+"Last-Translator: Martín Szyszlican <martinsz@gmail.com>\n"
+"Language-Team: Spanish (Costa Rica) (http://www.transifex.com/okfnar/"
+"yoquierosaber/language/es_CR/)\n"
+"Language: es_CR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: templates/base.html:10 templates/elections/juego_base.html:9
 #: templates/newsletter/message.html:11
 msgid "Vota Inteligente"
-msgstr "La voz de guanacaste"
+msgstr "#SinDudasEnLasUrnas de La voz de Guanacaste"
 
-#: templates/base.html:92
+#: templates/base.html:69 templates/elections/juego.html:162
+msgid "Lenguajes"
+msgstr ""
+
+#: templates/base.html:96
 msgid "Hecho por"
 msgstr ""
 
-#: templates/base.html:100
+#: templates/base.html:104
 msgid "Subir"
 msgstr ""
 
@@ -72,9 +78,13 @@ msgstr ""
 
 #: templates/elections/candidate_detail.html:72
 #: templates/elections/juego.html:34 templates/elections/juego.html.py:107
-#: templates/elections/juego.html:164
+#: templates/elections/juego.html:175
 #: templates/elections/soulmate_response.html:52
 msgid "Compartir"
+msgstr ""
+
+#: templates/elections/candidate_detail.html:109
+msgid "Comparálo con otro candidato"
 msgstr ""
 
 #: templates/elections/candidate_detail.html:123
@@ -118,12 +128,12 @@ msgstr ""
 
 #: templates/elections/election_detail.html:19
 msgid "Informate sobre los pre-candidatos nacionales y de tu provincia"
-msgstr ""
+msgstr "Infórmate sobe los candidatos de tu cantón"
 
 #: templates/elections/election_detail.html:20
 #: templates/elections/juego.html:23
 msgid "Elegí tu distrito"
-msgstr ""
+msgstr "Elije tu cantón"
 
 #: templates/elections/election_detail.html:29
 msgid "que no superaron las internas (PASO)"
@@ -140,6 +150,7 @@ msgid ""
 "Descubr&#237; con cuál de los <b>{{ election }}</b> coincid&#237;s m&#225;"
 "s..."
 msgstr ""
+"Descubre con cuál de los candidatos de <b>{{election}}</b> coincides más..."
 
 #: templates/elections/election_detail.html:41
 #: templates/elections/election_detail.html:42
@@ -153,32 +164,36 @@ msgstr ""
 
 #: templates/elections/juego.html:22 templates/elections/juego.html.py:152
 msgid "Descubriendo<br/> con qu&#233; candidato coincid&#237;s m&#225;s..."
-msgstr ""
+msgstr "Descubriendo<br/> con qué candidato coincides más..."
 
 #: templates/elections/juego.html:27 templates/elections/juego.html.py:78
 #: templates/elections/juego.html:157
 msgid "Jugar"
 msgstr ""
 
-#: templates/elections/juego.html:32 templates/elections/juego.html.py:162
+#: templates/elections/juego.html:32 templates/elections/juego.html.py:173
 msgid "Volver a jugar"
 msgstr ""
 
-#: templates/elections/juego.html:35 templates/elections/juego.html.py:165
+#: templates/elections/juego.html:35 templates/elections/juego.html.py:176
 msgid "Acerca de YQS"
-msgstr ""
+msgstr "Sobre este sitio"
 
-#: templates/elections/juego.html:36 templates/elections/juego.html.py:166
+#: templates/elections/juego.html:36 templates/elections/juego.html.py:177
 msgid "Todos los candidatos"
 msgstr ""
 
 #: templates/elections/juego.html:46
+#, fuzzy
+#| msgid "&#191;Con  cu&#225;l candidato tengo</br>m&#225;s afinidad?"
 msgid "¿Con  cuál candidato tengo más afinidad?"
-msgstr "¿Con qué candidato tengo más afinidad, mae?"
+msgstr ""
+"#SinDudasEnLasUrnas <br/>\n"
+"¿Con qué candidato tengo más afinidad?"
 
 #: templates/elections/juego.html:53
 msgid "Seleccione su localidad"
-msgstr ""
+msgstr "Seleccione su cantón"
 
 #: templates/elections/juego.html:57
 msgid "Empezar"
@@ -186,11 +201,14 @@ msgstr ""
 
 #: templates/elections/juego.html:70
 msgid "Informate sobre los pre-candidatos<br/> nacionales y de tu provincia"
-msgstr ""
+msgstr "Infórmate sobre los candidatos <br> de cu cantón"
 
 #: templates/elections/juego.html:75
-msgid "Descubr&#237; con qu&#233; pre-candidato a<br/><b style=\\"
+msgid ""
+"Descubr&#237; con qu&#233; pre-candidato a<br/><b style='color:"
+"#dd3975;'>presidente</b> coincid&#237;s m&#225;s..."
 msgstr ""
+"Descubre con cuál de los candidatos de <b>{{election}}</b> coincides más..."
 
 #: templates/elections/juego.html:90
 msgid "S&#237"
@@ -205,10 +223,12 @@ msgid ""
 "Si quer&#233;s dejanos tu mail<br>para enviarte m&#225;s informaci&#243;n "
 "antes de las elecciones:"
 msgstr ""
+"Si quieres, déjanos tu mail<br>para enviarte m&#225;s informaci&#243;n antes "
+"de las elecciones:"
 
 #: templates/elections/juego.html:105
 msgid "Volvé y seguí contestando para mayor presición"
-msgstr ""
+msgstr "Vuelve y sigue contestando para mayor presición"
 
 #: templates/elections/juego.html:113
 msgid "Volver"
@@ -220,25 +240,25 @@ msgstr ""
 
 #: templates/elections/juego.html:142
 msgid "Coincide con vos:"
-msgstr ""
+msgstr "Coincide contigo:"
 
 #: templates/elections/juego.html:144
 msgid "No coincide con vos:"
-msgstr ""
+msgstr "No coincide contigo:"
 
 #: templates/elections/juego.html:145
 msgid "No tiene respuesta:"
 msgstr ""
 
-#: templates/elections/juego.html:170
+#: templates/elections/juego.html:181
 msgid "Compartí esta información con tus amigos en redes sociales:"
-msgstr ""
+msgstr "Comparte esta información con tus amigos en redes sociales:"
 
-#: templates/elections/juego.html:173
+#: templates/elections/juego.html:184
 msgid "Yo Quiero Saber 2015"
-msgstr ""
+msgstr "#SinDudasEnLasUrnas"
 
-#: templates/elections/juego.html:174
+#: templates/elections/juego.html:185
 msgid ""
 "\n"
 "\t\t\t\t    Mediante preguntas y respuestas vas a conocer la afinidad con "
@@ -250,59 +270,65 @@ msgid ""
 "agosto. \n"
 "\t\t\t\t"
 msgstr ""
+"\n"
+"\t\t\t\t    Mediante preguntas y respuestas podrás a conocer la afinidad con "
+"quienes aspiran a gobernar cada cantón.<br/>\n"
+"\t\t\t\t\t\t\t\tUna manera divertida de informarte sobre los candidatos a "
+"las elecciones de Ferbero en Costa Rica.\n"
+"\t\t\t\t"
 
-#: templates/elections/juego.html:180
+#: templates/elections/juego.html:191
 msgid "&#191;Quienes hacemos Yo Quiero Saber?"
-msgstr ""
+msgstr "¿Quienes hacemos #SinDudasEnLasUrnas?"
 
-#: templates/elections/juego.html:189
+#: templates/elections/juego.html:200
 msgid "Con el apoyo de:"
 msgstr ""
 
-#: templates/elections/juego.html:196
+#: templates/elections/juego.html:207
 msgid ""
 "Junto con otras organizaciones de la sociedad civil, periodistas, polit&#243;"
 "logos y voluntarios de: ACIJ, Asociaci&#243;n Conciencia, We-Me, Acción "
 "Social DiTella y Taringa."
-msgstr ""
+msgstr "Fundación Conocimiento Abierto Argentina y La Voz de Guanacaste"
 
-#: templates/elections/juego.html:199
+#: templates/elections/juego.html:210
 msgid "Desarrollado por MySociety, Ciudadano Inteligente y Cl&#237;nica Web."
-msgstr ""
+msgstr "Fundación Conocimiento Abierto Argentina y La Voz de Guanacaste"
 
-#: templates/elections/juego.html:200
+#: templates/elections/juego.html:211
 msgid "Contacto:"
 msgstr ""
 
-#: templates/elections/juego.html:201
+#: templates/elections/juego.html:212
 msgid "Sumate a nuestro equipo de investigación"
-msgstr ""
+msgstr "-"
 
-#: templates/elections/juego.html:222
+#: templates/elections/juego.html:233
 msgid "SI"
 msgstr ""
 
-#: templates/elections/juego.html:223
+#: templates/elections/juego.html:234
 msgid "MÁS<br/>OPCIONES"
 msgstr ""
 
-#: templates/elections/juego.html:224
+#: templates/elections/juego.html:235
 msgid "NO"
 msgstr ""
 
-#: templates/elections/juego.html:233
+#: templates/elections/juego.html:244
 msgid "Pregunta anterior"
 msgstr ""
 
-#: templates/elections/juego.html:235
+#: templates/elections/juego.html:246
 msgid "Saltear pregunta"
 msgstr ""
 
-#: templates/elections/juego.html:270 templates/elections/juego.html.py:277
+#: templates/elections/juego.html:281 templates/elections/juego.html.py:288
 msgid "Afinidad"
 msgstr ""
 
-#: templates/elections/juego.html:270
+#: templates/elections/juego.html:281
 msgid "con"
 msgstr ""
 
@@ -421,10 +447,13 @@ msgid ""
 "Due to a technical error we were not able to submit your confirmation email. "
 "This could be because your email address is invalid."
 msgstr ""
+"Debido a un error técnico, fuimos incapaces de enviar tu mensaje de "
+"confirmación. Esto podría ser porque tu dirección de correo esta mal escrita "
+"o no fué reconocida correctamente."
 
 #: templates/newsletter/subscription_subscribe_activated.html:10
 msgid "Your subscription has successfully been activated."
-msgstr ""
+msgstr "Tu suscripción ha sido activada."
 
 #: templates/newsletter/subscription_subscribe_email_sent.html:10
 msgid ""
@@ -490,7 +519,7 @@ msgstr ""
 
 #: templates/search.html:5 templates/search/tags_search.html:6
 msgid "Busqueda"
-msgstr ""
+msgstr "Búsqueda"
 
 #: templates/search.html:13 templates/search/tags_search.html:14
 msgid "Buscar"
@@ -511,3 +540,10 @@ msgstr ""
 #: templates/search.html:33
 msgid "Siguiente"
 msgstr ""
+
+#~ msgid ""
+#~ "¿Votás? Contanos en <a href=\"http://www.twitter.com/YoQuieroSaberAr"
+#~ "\">twitter @YoQuieroSaberAr</a> hashtag #YoQuieroSaber"
+#~ msgstr ""
+#~ "¿Votas? Cuéntanos en <a href=\"https://twitter.com/VozdeGuanacaste"
+#~ "\">twitter @VozdeGuanacaste</a> hashtag #SinDudasEnLasUrnas"

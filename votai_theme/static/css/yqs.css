@@ -227,7 +227,7 @@ right: .9375rem;
 	height: 100%;
 	white-space: nowrap;
 	text-align: center;
-	padding-top: 1em;
+	padding-top: 1.5vh;
 }
 header span{
     display: inline-block;
@@ -242,13 +242,18 @@ header span{
 }
 
 #headermenu {
-margin-top: 0.5em;
+margin-top: 1vh;
 font-family: yqsFont, "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 font-size: 1.5em;
 }
 #headermenu a {
 	color: black;
 padding: 0 0.5em;
+}
+
+#headermenu .selected {
+	background: #eee;
+	border: 1px solid #ddd;
 }
 
 #headermenu a:hover {
@@ -425,7 +430,8 @@ font-weight: bold;
 
 .imgHeader{
 	vertical-align: middle;
-	height:50px;
+	height:70px;
+	max-width: 80vw;
 }
 body{
 	//background-color:#86e895;
@@ -548,6 +554,25 @@ button:focus {
 	box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.5);
 
 	font-family: yqsFont;
+}
+
+.bInicio {
+    padding: 1vh;
+    border-radius: 2vh;
+    margin: 1vh 1vw;
+    height: auto;
+    width: 22vw;
+    font-size: 1.4em;
+    display: inline-block;
+}
+
+#gamemenu {
+	padding: 0 5vw;
+}
+
+.game-selector-title {
+	font-size: 1.4em;
+	color: white;
 }
 
 #bInicioMain {
@@ -979,10 +1004,8 @@ background-color: #5a7;
 	font-size:0.9em;
 }
 #menuMob{
-	//width: 80vw;
 	width: 100%;
-	margin-top: 20vh;
-	//margin-left: 10vw;
+	margin-top: 8vh;
 }
 #menuMob a:hover {
   text-decoration: none;
@@ -994,6 +1017,19 @@ background-color: #5a7;
 #menuMob hr {
 	border-top: dotted 2px;
 	border-color: white;
+}
+
+#langmenu {
+	display: none;
+}
+
+#menuMob #langmenu {
+	position: static;
+}
+
+.election-link-template,
+.game-link-template {
+	display: none;
 }
 
 .share{
@@ -1928,6 +1964,9 @@ padding: 0 4em 1em 0;
 	}
 	.afPreg{
 		padding-right:15px;
+	}
+	.mLogo {
+		display: none;
 	}
 }
 
