@@ -430,11 +430,9 @@ font-weight: bold;
 
 .imgHeader{
 	vertical-align: middle;
-	height:70px;
 	max-width: 80vw;
 }
 body{
-	//background-color:#86e895;
 	background-color:#dddddd;
 	overflow:auto;
 	text-align:center;
@@ -494,6 +492,13 @@ button:focus {
   color: white;
   text-shadow: black 1px 1px 10px;
 	font-family: yqsFont;
+}
+
+@media only screen and (max-width: 768px) {
+	#inicio h4 {
+		font-style: 2em;
+	}
+
 }
 
 #inicio h1{
