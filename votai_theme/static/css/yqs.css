@@ -574,6 +574,12 @@ button:focus {
 #gamemenu {
 	padding: 0 5vw;
 }
+#gamemenu.only-option .bInicio {
+	display: none;
+}
+#gamemenu.only-option .bInicio.selected {
+	display: inline-block;
+}
 
 .game-selector-title {
 	font-size: 1.4em;

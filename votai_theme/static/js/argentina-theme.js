@@ -84,6 +84,11 @@ jQuery(document).ready(function($){
 
                                 gameLink = $(".game-link-template").clone().removeClass("game-link-template");
                                 gameLink.data("url",value["medianaranja_link"]).text(value["name"]);
+                                if (location.href.indexOf(value["name"].toLowerCase()) > -1) {
+                                        $("#gamemenu").addClass("only-option");
+                                        gameLink.addClass("selected");
+                                }
+
                                 $("#gamemenu").append(gameLink);
 
                         }
