@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-13 08:01+0000\n"
+"POT-Creation-Date: 2016-01-15 15:59+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,6 +21,10 @@ msgstr ""
 #: templates/base.html:10 templates/elections/juego_base.html:9
 #: templates/newsletter/message.html:11
 msgid "Vota Inteligente"
+msgstr ""
+
+#: templates/base.html:62
+msgid "Inicio"
 msgstr ""
 
 #: templates/base.html:69 templates/elections/juego.html:162
@@ -145,9 +149,10 @@ msgid ""
 msgstr ""
 
 #: templates/elections/election_detail.html:38
+#, python-format
 msgid ""
-"Descubr&#237; con cuál de los <b>{{ election }}</b> coincid&#237;s m&#225;"
-"s..."
+" Descubr&#237; con cuál de los <b>%(election)s</b> coincid&#237;s m&#225;"
+"s... "
 msgstr ""
 
 #: templates/elections/election_detail.html:41
@@ -164,8 +169,8 @@ msgstr ""
 msgid "Descubriendo<br/> con qu&#233; candidato coincid&#237;s m&#225;s..."
 msgstr ""
 
-#: templates/elections/juego.html:27 templates/elections/juego.html.py:78
-#: templates/elections/juego.html:157
+#: templates/elections/juego.html:27 templates/elections/juego.html.py:60
+#: templates/elections/juego.html:78 templates/elections/juego.html.py:157
 msgid "Jugar"
 msgstr ""
 
@@ -181,16 +186,12 @@ msgstr ""
 msgid "Todos los candidatos"
 msgstr ""
 
-#: templates/elections/juego.html:46
-msgid "¿Con  cuál candidato tengo más afinidad?"
+#: templates/elections/juego.html:48
+msgid " #SinDudasEnLasUrnas<br/>¿Con  cuál candidato tengo más afinidad? "
 msgstr ""
 
-#: templates/elections/juego.html:53
+#: templates/elections/juego.html:56
 msgid "Seleccione su localidad"
-msgstr ""
-
-#: templates/elections/juego.html:57
-msgid "Empezar"
 msgstr ""
 
 #: templates/elections/juego.html:70
@@ -266,54 +267,35 @@ msgstr ""
 msgid "&#191;Quienes hacemos Yo Quiero Saber?"
 msgstr ""
 
-#: templates/elections/juego.html:200
-msgid "Con el apoyo de:"
-msgstr ""
-
-#: templates/elections/juego.html:207
-msgid ""
-"Junto con otras organizaciones de la sociedad civil, periodistas, polit&#243;"
-"logos y voluntarios de: ACIJ, Asociaci&#243;n Conciencia, We-Me, Acción "
-"Social DiTella y Taringa."
-msgstr ""
-
-#: templates/elections/juego.html:210
-msgid "Desarrollado por MySociety, Ciudadano Inteligente y Cl&#237;nica Web."
-msgstr ""
-
-#: templates/elections/juego.html:211
+#: templates/elections/juego.html:196
 msgid "Contacto:"
 msgstr ""
 
-#: templates/elections/juego.html:212
-msgid "Sumate a nuestro equipo de investigación"
-msgstr ""
-
-#: templates/elections/juego.html:233
+#: templates/elections/juego.html:216
 msgid "SI"
 msgstr ""
 
-#: templates/elections/juego.html:234
+#: templates/elections/juego.html:217
 msgid "MÁS<br/>OPCIONES"
 msgstr ""
 
-#: templates/elections/juego.html:235
+#: templates/elections/juego.html:218
 msgid "NO"
 msgstr ""
 
-#: templates/elections/juego.html:244
+#: templates/elections/juego.html:227
 msgid "Pregunta anterior"
 msgstr ""
 
-#: templates/elections/juego.html:246
+#: templates/elections/juego.html:229
 msgid "Saltear pregunta"
 msgstr ""
 
-#: templates/elections/juego.html:281 templates/elections/juego.html.py:288
+#: templates/elections/juego.html:264 templates/elections/juego.html.py:271
 msgid "Afinidad"
 msgstr ""
 
-#: templates/elections/juego.html:281
+#: templates/elections/juego.html:264
 msgid "con"
 msgstr ""
 

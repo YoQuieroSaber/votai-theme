@@ -35,7 +35,7 @@ elections_json = {% elections_json %};
 				    {% if candidates.grouper == True %}
 				    {% trans "Jugá con todos los candidatos, incluso los que no superaron las primarias (PASO)" %}
 				    {% else %}
-				    {% trans "Descubr&#237; con cuál de los <b>{{ election }}</b> coincid&#237;s m&#225;s..." %}
+				    {% blocktrans %} Descubr&#237; con cuál de los <b>{{ election }}</b> coincid&#237;s m&#225;s... {% endblocktrans %}
 				    {% endif %}
 			    </p>
 				<a class="bEmpez" href="{% url 'soul_mate_detail_view' slug=election.slug  %}?show_all_candidates={{ candidates.grouper }}" accesskey="n" title="{% trans "1/2 Naranja" %} (Alt+n)">

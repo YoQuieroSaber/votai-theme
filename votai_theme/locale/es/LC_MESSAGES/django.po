@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: YoQuieroSaber\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-13 08:01+0000\n"
+"POT-Creation-Date: 2016-01-15 15:59+0000\n"
 "PO-Revision-Date: 2016-01-13 05:01+0000\n"
 "Last-Translator: Martín Szyszlican <martinsz@gmail.com>\n"
 "Language-Team: Spanish (Costa Rica) (http://www.transifex.com/okfnar/"
@@ -23,6 +23,10 @@ msgstr ""
 #: templates/newsletter/message.html:11
 msgid "Vota Inteligente"
 msgstr "#SinDudasEnLasUrnas de La voz de Guanacaste"
+
+#: templates/base.html:62
+msgid "Inicio"
+msgstr ""
 
 #: templates/base.html:69 templates/elections/juego.html:162
 msgid "Lenguajes"
@@ -146,9 +150,13 @@ msgid ""
 msgstr ""
 
 #: templates/elections/election_detail.html:38
+#, fuzzy, python-format
+#| msgid ""
+#| "Descubr&#237; con cuál de los <b>{{ election }}</b> coincid&#237;s m&#225;"
+#| "s..."
 msgid ""
-"Descubr&#237; con cuál de los <b>{{ election }}</b> coincid&#237;s m&#225;"
-"s..."
+" Descubr&#237; con cuál de los <b>%(election)s</b> coincid&#237;s m&#225;"
+"s... "
 msgstr ""
 "Descubre con cuál de los candidatos de <b>{{election}}</b> coincides más..."
 
@@ -166,8 +174,8 @@ msgstr ""
 msgid "Descubriendo<br/> con qu&#233; candidato coincid&#237;s m&#225;s..."
 msgstr "Descubriendo<br/> con qué candidato coincides más..."
 
-#: templates/elections/juego.html:27 templates/elections/juego.html.py:78
-#: templates/elections/juego.html:157
+#: templates/elections/juego.html:27 templates/elections/juego.html.py:60
+#: templates/elections/juego.html:78 templates/elections/juego.html.py:157
 msgid "Jugar"
 msgstr ""
 
@@ -183,21 +191,17 @@ msgstr "Sobre este sitio"
 msgid "Todos los candidatos"
 msgstr ""
 
-#: templates/elections/juego.html:46
+#: templates/elections/juego.html:48
 #, fuzzy
 #| msgid "&#191;Con  cu&#225;l candidato tengo</br>m&#225;s afinidad?"
-msgid "¿Con  cuál candidato tengo más afinidad?"
+msgid " #SinDudasEnLasUrnas<br/>¿Con  cuál candidato tengo más afinidad? "
 msgstr ""
 "#SinDudasEnLasUrnas <br/>\n"
 "¿Con qué candidato tengo más afinidad?"
 
-#: templates/elections/juego.html:53
+#: templates/elections/juego.html:56
 msgid "Seleccione su localidad"
 msgstr "Seleccione su cantón"
-
-#: templates/elections/juego.html:57
-msgid "Empezar"
-msgstr ""
 
 #: templates/elections/juego.html:70
 msgid "Informate sobre los pre-candidatos<br/> nacionales y de tu provincia"
@@ -281,54 +285,35 @@ msgstr ""
 msgid "&#191;Quienes hacemos Yo Quiero Saber?"
 msgstr "¿Quienes hacemos #SinDudasEnLasUrnas?"
 
-#: templates/elections/juego.html:200
-msgid "Con el apoyo de:"
-msgstr ""
-
-#: templates/elections/juego.html:207
-msgid ""
-"Junto con otras organizaciones de la sociedad civil, periodistas, polit&#243;"
-"logos y voluntarios de: ACIJ, Asociaci&#243;n Conciencia, We-Me, Acción "
-"Social DiTella y Taringa."
-msgstr "Fundación Conocimiento Abierto Argentina y La Voz de Guanacaste"
-
-#: templates/elections/juego.html:210
-msgid "Desarrollado por MySociety, Ciudadano Inteligente y Cl&#237;nica Web."
-msgstr "Fundación Conocimiento Abierto Argentina y La Voz de Guanacaste"
-
-#: templates/elections/juego.html:211
+#: templates/elections/juego.html:196
 msgid "Contacto:"
 msgstr ""
 
-#: templates/elections/juego.html:212
-msgid "Sumate a nuestro equipo de investigación"
-msgstr "-"
-
-#: templates/elections/juego.html:233
+#: templates/elections/juego.html:216
 msgid "SI"
 msgstr ""
 
-#: templates/elections/juego.html:234
+#: templates/elections/juego.html:217
 msgid "MÁS<br/>OPCIONES"
 msgstr ""
 
-#: templates/elections/juego.html:235
+#: templates/elections/juego.html:218
 msgid "NO"
 msgstr ""
 
-#: templates/elections/juego.html:244
+#: templates/elections/juego.html:227
 msgid "Pregunta anterior"
 msgstr ""
 
-#: templates/elections/juego.html:246
+#: templates/elections/juego.html:229
 msgid "Saltear pregunta"
 msgstr ""
 
-#: templates/elections/juego.html:281 templates/elections/juego.html.py:288
+#: templates/elections/juego.html:264 templates/elections/juego.html.py:271
 msgid "Afinidad"
 msgstr ""
 
-#: templates/elections/juego.html:281
+#: templates/elections/juego.html:264
 msgid "con"
 msgstr ""
 
@@ -540,6 +525,19 @@ msgstr ""
 #: templates/search.html:33
 msgid "Siguiente"
 msgstr ""
+
+#~ msgid ""
+#~ "Junto con otras organizaciones de la sociedad civil, periodistas, "
+#~ "polit&#243;logos y voluntarios de: ACIJ, Asociaci&#243;n Conciencia, We-"
+#~ "Me, Acción Social DiTella y Taringa."
+#~ msgstr "Fundación Conocimiento Abierto Argentina y La Voz de Guanacaste"
+
+#~ msgid ""
+#~ "Desarrollado por MySociety, Ciudadano Inteligente y Cl&#237;nica Web."
+#~ msgstr "Fundación Conocimiento Abierto Argentina y La Voz de Guanacaste"
+
+#~ msgid "Sumate a nuestro equipo de investigación"
+#~ msgstr "-"
 
 #~ msgid ""
 #~ "¿Votás? Contanos en <a href=\"http://www.twitter.com/YoQuieroSaberAr"

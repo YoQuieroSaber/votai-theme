@@ -107,7 +107,8 @@ jQuery(document).ready(function($){
                 function jugar(){
 
                 //url = "/theme/election/pre-candidato-a-presidente/media-naranja.json";
-                        location.href="/theme"+elecUrl+"/media-naranja";
+                        lang = elecUrl.substring(0,3);
+                        location.href=lang+"/theme"+elecUrl.substring(3)+"/media-naranja";
                         jsonUrl=elecUrl+"/media-naranja.json";
 
                 }

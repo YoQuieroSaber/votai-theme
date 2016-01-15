@@ -1,104 +1,42 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # Martín Szyszlican <martinsz@gmail.com>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: YoQuieroSaber\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-15 19:47+0000\n"
-"PO-Revision-Date: 2016-01-13 08:07+0000\n"
+"POT-Creation-Date: 2016-01-15 15:59+0000\n"
+"PO-Revision-Date: 2016-01-15 15:54+0000\n"
 "Last-Translator: Martín Szyszlican <martinsz@gmail.com>\n"
-"Language-Team: English (http://www.transifex.com/okfnar/yoquierosaber/language/en/)\n"
+"Language-Team: English (http://www.transifex.com/okfnar/yoquierosaber/"
+"language/en/)\n"
+"Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: en\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: templates/base.html:9 templates/elections/juego_base.html:9
+#: templates/base.html:10 templates/elections/juego_base.html:9
 #: templates/newsletter/message.html:11
 msgid "Vota Inteligente"
 msgstr "#WithoutaDoubtAtThePolls by The Voice of Guanacaste"
 
-#: templates/base.html:55
-msgid "Presidentes"
-msgstr "Presidents"
-
-#: templates/base.html:58
-msgid "Gobernadores"
-msgstr "Gobernors"
-
-#: templates/base.html:61
-msgid "Otros cargos"
-msgstr "Other posts"
-
-#: templates/base.html:63
-msgid "Investigación colectiva"
-msgstr "Collective research"
-
-#: templates/base.html:66
-msgid "Medios"
-msgstr "Media"
-
-#: templates/base.html:69
-msgid "Nosotros"
-msgstr "About us"
-
-#: templates/base.html:73
-msgid "Facebook"
+#: templates/base.html:62
+msgid "Inicio"
 msgstr ""
 
-#: templates/base.html:74
-msgid "Twitter"
+#: templates/base.html:69 templates/elections/juego.html:162
+msgid "Lenguajes"
 msgstr ""
 
-#: templates/base.html:75
-msgid "Taringa"
-msgstr ""
-
-#: templates/base.html:95
-msgid "Calendario electoral"
-msgstr "Elections calendar"
-
-#: templates/base.html:98
-msgid "Todas las elecciones"
-msgstr "All elections"
-
-#: templates/base.html:101
-msgid ""
-"¿Votás? Contanos en <a "
-"href=\"http://www.twitter.com/YoQuieroSaberAr\">twitter @YoQuieroSaberAr</a>"
-" hashtag #YoQuieroSaber"
-msgstr "Do you vote? Tell us in <a href=\"http://www.twitter.com/VozdeGuanacaste\">twitter @VozdeGuanacaste</a> hashtag #WithoutaDoubtAtThePolls"
-
-#: templates/base.html:104
-msgid "Colabor&#225; con nuestra investigación colectiva"
-msgstr ""
-
-#: templates/base.html:107
+#: templates/base.html:96
 msgid "Hecho por"
 msgstr "Made by"
 
-#: templates/base.html:115
-msgid "Socios"
-msgstr "Partners"
-
-#: templates/base.html:124
-msgid "Apoyado por"
-msgstr "Supported by"
-
-#: templates/base.html:131
-msgid "Desarrollado por"
-msgstr "Developed by"
-
-#: templates/base.html:138
-msgid "Todos los colaboradores y voluntarios"
-msgstr "All collaborators and volunteers"
-
-#: templates/base.html:144
+#: templates/base.html:104
 msgid "Subir"
 msgstr "Top"
 
@@ -143,11 +81,17 @@ msgid "Tomar foto"
 msgstr "Take picture"
 
 #: templates/elections/candidate_detail.html:72
-#: templates/elections/juego.html:34 templates/elections/juego.html.py:110
-#: templates/elections/juego.html:167
+#: templates/elections/juego.html:34 templates/elections/juego.html.py:107
+#: templates/elections/juego.html:175
 #: templates/elections/soulmate_response.html:52
 msgid "Compartir"
 msgstr "Share"
+
+#: templates/elections/candidate_detail.html:109
+#, fuzzy
+#| msgid "Apoya a tu candidato"
+msgid "Comparálo con otro candidato"
+msgstr "Support your candidate"
 
 #: templates/elections/candidate_detail.html:123
 #: templates/elections/election_detail.html:90
@@ -182,7 +126,9 @@ msgstr "Select a candidate"
 msgid ""
 "Aquí se mostraran las diferencias y similitudes entre los candidatos que "
 "selecciones."
-msgstr "Here we'll show the differences and similarities between the selected candidates."
+msgstr ""
+"Here we'll show the differences and similarities between the selected "
+"candidates."
 
 #: templates/elections/election_base.html:8
 msgid "Perfiles"
@@ -205,13 +151,20 @@ msgstr "did not pass the internal elections"
 msgid ""
 "Jugá con todos los candidatos, incluso los que no superaron las primarias "
 "(PASO)"
-msgstr "Play with all candidates, even those who did not pass the internal elections"
+msgstr ""
+"Play with all candidates, even those who did not pass the internal elections"
 
 #: templates/elections/election_detail.html:38
+#, fuzzy, python-format
+#| msgid ""
+#| "Descubr&#237; con cuál de los <b>{{ election }}</b> coincid&#237;s m&#225;"
+#| "s..."
 msgid ""
-"Descubr&#237; con cuál de los <b>{{ election }}</b> coincid&#237;s "
-"m&#225;s..."
-msgstr "Find out which of the candidates for  <b>{{election}}</b> is your best match..."
+" Descubr&#237; con cuál de los <b>%(election)s</b> coincid&#237;s m&#225;"
+"s... "
+msgstr ""
+"Find out which of the candidates for  <b>{{election}}</b> is your best "
+"match..."
 
 #: templates/elections/election_detail.html:41
 #: templates/elections/election_detail.html:42
@@ -223,149 +176,151 @@ msgstr "Play"
 msgid "y"
 msgstr "and"
 
-#: templates/elections/juego.html:22 templates/elections/juego.html.py:155
+#: templates/elections/juego.html:22 templates/elections/juego.html.py:152
 msgid "Descubriendo<br/> con qu&#233; candidato coincid&#237;s m&#225;s..."
 msgstr "Finding out who is our best match..."
 
-#: templates/elections/juego.html:27 templates/elections/juego.html.py:81
-#: templates/elections/juego.html:160
+#: templates/elections/juego.html:27 templates/elections/juego.html.py:60
+#: templates/elections/juego.html:78 templates/elections/juego.html.py:157
 msgid "Jugar"
 msgstr "Play"
 
-#: templates/elections/juego.html:32 templates/elections/juego.html.py:165
+#: templates/elections/juego.html:32 templates/elections/juego.html.py:173
 msgid "Volver a jugar"
 msgstr "Play again"
 
-#: templates/elections/juego.html:35 templates/elections/juego.html.py:168
+#: templates/elections/juego.html:35 templates/elections/juego.html.py:176
 msgid "Acerca de YQS"
 msgstr "About this site"
 
-#: templates/elections/juego.html:36 templates/elections/juego.html.py:169
+#: templates/elections/juego.html:36 templates/elections/juego.html.py:177
 msgid "Todos los candidatos"
 msgstr "All candidates"
 
-#: templates/elections/juego.html:50
-msgid "&#191;Con  cu&#225;l candidato tengo</br>m&#225;s afinidad?"
+#: templates/elections/juego.html:48
+msgid " #SinDudasEnLasUrnas<br/>¿Con  cuál candidato tengo más afinidad? "
 msgstr "#WithoutaDoubtAtThePolls<br/> ¿Which candidate is my<br/> best match?"
 
-#: templates/elections/juego.html:60
-msgid "Empezar"
-msgstr "Start"
+#: templates/elections/juego.html:56
+msgid "Seleccione su localidad"
+msgstr "Select your county"
 
-#: templates/elections/juego.html:73
+#: templates/elections/juego.html:70
 msgid "Informate sobre los pre-candidatos<br/> nacionales y de tu provincia"
 msgstr "Learn about the candidates of your county"
 
-#: templates/elections/juego.html:78
-msgid "Descubr&#237; con qu&#233; pre-candidato a<br/><b style="
+#: templates/elections/juego.html:75
+#, fuzzy
+#| msgid ""
+#| "Descubr&#237; con cuál de los <b>{{ election }}</b> coincid&#237;s m&#225;"
+#| "s..."
+msgid ""
+"Descubr&#237; con qu&#233; pre-candidato a<br/><b style='color:"
+"#dd3975;'>presidente</b> coincid&#237;s m&#225;s..."
 msgstr ""
+"Find out which of the candidates for  <b>{{election}}</b> is your best "
+"match..."
 
-#: templates/elections/juego.html:93
+#: templates/elections/juego.html:90
 msgid "S&#237"
 msgstr "Yes"
 
-#: templates/elections/juego.html:94
+#: templates/elections/juego.html:91
 msgid "No"
 msgstr "No"
 
-#: templates/elections/juego.html:99
+#: templates/elections/juego.html:96
 msgid ""
 "Si quer&#233;s dejanos tu mail<br>para enviarte m&#225;s informaci&#243;n "
 "antes de las elecciones:"
-msgstr "Leave us your email <br> and we'll send you more information before the elections (optional)"
+msgstr ""
+"Leave us your email <br> and we'll send you more information before the "
+"elections (optional)"
 
-#: templates/elections/juego.html:108
+#: templates/elections/juego.html:105
 msgid "Volvé y seguí contestando para mayor presición"
 msgstr "Go back and continue answering to improve accuracy"
 
-#: templates/elections/juego.html:116
+#: templates/elections/juego.html:113
 msgid "Volver"
 msgstr "Back"
 
-#: templates/elections/juego.html:120
+#: templates/elections/juego.html:117
 msgid "Mas preguntas"
 msgstr "More questions"
 
-#: templates/elections/juego.html:145
+#: templates/elections/juego.html:142
 msgid "Coincide con vos:"
 msgstr "Matches with you:"
 
-#: templates/elections/juego.html:147
+#: templates/elections/juego.html:144
 msgid "No coincide con vos:"
 msgstr "Doesn't match with you:"
 
-#: templates/elections/juego.html:148
+#: templates/elections/juego.html:145
 msgid "No tiene respuesta:"
 msgstr "No answer:"
 
-#: templates/elections/juego.html:173
+#: templates/elections/juego.html:181
 msgid "Compartí esta información con tus amigos en redes sociales:"
 msgstr "Share this information with your friends on social networks:"
 
-#: templates/elections/juego.html:176
+#: templates/elections/juego.html:184
 msgid "Yo Quiero Saber 2015"
 msgstr "#WithoutaDoubtAtThePolls"
 
-#: templates/elections/juego.html:177
+#: templates/elections/juego.html:185
 msgid ""
 "\n"
-"\t\t\t\t    Mediante preguntas y respuestas vas a conocer la afinidad con quienes aspiran a gobernar el pa&#237;s:  candidatos a presidente y gobernador de las provincia de Buenos Aires, Entre R&#237;os, San Juan y Tucum&#225;n.<br/>\n"
-"\t\t\t\t\t\t\t\tUna manera divertida de informarte sobre los candidatos a las elecciones primarias abiertas y simult&#225;neas (PASO) del 9 de agosto. \n"
+"\t\t\t\t    Mediante preguntas y respuestas vas a conocer la afinidad con "
+"quienes aspiran a gobernar el pa&#237;s:  candidatos a presidente y "
+"gobernador de las provincia de Buenos Aires, Entre R&#237;os, San Juan y "
+"Tucum&#225;n.<br/>\n"
+"\t\t\t\t\t\t\t\tUna manera divertida de informarte sobre los candidatos a "
+"las elecciones primarias abiertas y simult&#225;neas (PASO) del 9 de "
+"agosto. \n"
 "\t\t\t\t"
-msgstr "\n\t\t\t\t    By answering questions you're going to know your affinity score with those who aspire to govern in each county.<br/>\n\t\t\t\t\t\t\t\tA fun way to learn about the elections in Costa Rica this February. \n\t\t\t\t"
+msgstr ""
+"\n"
+"\t\t\t\t    By answering questions you're going to know your affinity score "
+"with those who aspire to govern in each county.<br/>\n"
+"\t\t\t\t\t\t\t\tA fun way to learn about the elections in Costa Rica this "
+"February. \n"
+"\t\t\t\t"
 
-#: templates/elections/juego.html:183
+#: templates/elections/juego.html:191
 msgid "&#191;Quienes hacemos Yo Quiero Saber?"
 msgstr "Who made #WithoutaDoubtAtThePolls?"
 
-#: templates/elections/juego.html:192
-msgid "Con el apoyo de:"
-msgstr "With the support of:"
-
-#: templates/elections/juego.html:199
-msgid ""
-"Junto con otras organizaciones de la sociedad civil, periodistas, "
-"polit&#243;logos y voluntarios de: ACIJ, Asociaci&#243;n Conciencia, We-Me, "
-"Acción Social DiTella y Taringa."
-msgstr "Fundación Conocimiento Abierto Argentina and The Voice of Guanacaste"
-
-#: templates/elections/juego.html:202
-msgid "Desarrollado por MySociety, Ciudadano Inteligente y Cl&#237;nica Web."
-msgstr "Fundación Conocimiento Abierto Argentina and The Voice of Guanacaste"
-
-#: templates/elections/juego.html:203
+#: templates/elections/juego.html:196
 msgid "Contacto:"
 msgstr "Contact us:"
 
-#: templates/elections/juego.html:204
-msgid "Sumate a nuestro equipo de investigación"
-msgstr "-"
-
-#: templates/elections/juego.html:225
+#: templates/elections/juego.html:216
 msgid "SI"
 msgstr "YES"
 
-#: templates/elections/juego.html:226
+#: templates/elections/juego.html:217
 msgid "MÁS<br/>OPCIONES"
 msgstr "MORE OPTIONS"
 
-#: templates/elections/juego.html:227
+#: templates/elections/juego.html:218
 msgid "NO"
 msgstr "NO"
 
-#: templates/elections/juego.html:236
+#: templates/elections/juego.html:227
 msgid "Pregunta anterior"
 msgstr "Previous question"
 
-#: templates/elections/juego.html:238
+#: templates/elections/juego.html:229
 msgid "Saltear pregunta"
 msgstr "Skip question"
 
-#: templates/elections/juego.html:273 templates/elections/juego.html.py:280
+#: templates/elections/juego.html:264 templates/elections/juego.html.py:271
 msgid "Afinidad"
 msgstr "Affinity"
 
-#: templates/elections/juego.html:273
+#: templates/elections/juego.html:264
 msgid "con"
 msgstr "with"
 
@@ -481,9 +436,11 @@ msgstr "Newsletter subscribe"
 #: templates/newsletter/subscription_unsubscribe.html:11
 #: templates/newsletter/subscription_update.html:11
 msgid ""
-"Due to a technical error we were not able to submit your confirmation email."
-" This could be because your email address is invalid."
-msgstr "Due to a technical error we were not able to submit your confirmation email. This could be because your email address is invalid."
+"Due to a technical error we were not able to submit your confirmation email. "
+"This could be because your email address is invalid."
+msgstr ""
+"Due to a technical error we were not able to submit your confirmation email. "
+"This could be because your email address is invalid."
 
 #: templates/newsletter/subscription_subscribe_activated.html:10
 msgid "Your subscription has successfully been activated."
@@ -494,7 +451,10 @@ msgid ""
 "Your subscription request was successfully received and an activation email "
 "has been sent to you. In that email you will find a link which you need to "
 "follow in order to activate your subscription."
-msgstr "Your subscription request was successfully received and an activation email has been sent to you. In that email you will find a link which you need to follow in order to activate your subscription."
+msgstr ""
+"Your subscription request was successfully received and an activation email "
+"has been sent to you. In that email you will find a link which you need to "
+"follow in order to activate your subscription."
 
 #: templates/newsletter/subscription_subscribe_user.html:20
 msgid "Do you want to subscribe to this newsletter?"
@@ -523,7 +483,10 @@ msgid ""
 "Your unsubscription request has successfully been received. An email has "
 "been sent to you with a link you need to follow in order to confirm your "
 "unsubscription."
-msgstr "Your unsubscription request has successfully been received. An email has been sent to you with a link you need to follow in order to confirm your unsubscription."
+msgstr ""
+"Your unsubscription request has successfully been received. An email has "
+"been sent to you with a link you need to follow in order to confirm your "
+"unsubscription."
 
 #: templates/newsletter/subscription_unsubscribe_user.html:21
 msgid "Do you want to unsubscribe from this newsletter?"
@@ -549,7 +512,10 @@ msgid ""
 "Your update request was successfully received and an activation email has "
 "been sent to you. In that email you will find a link which you need to "
 "follow in order to update your subscription."
-msgstr "Your update request was successfully received and an activation email has been sent to you. In that email you will find a link which you need to follow in order to update your subscription."
+msgstr ""
+"Your update request was successfully received and an activation email has "
+"been sent to you. In that email you will find a link which you need to "
+"follow in order to update your subscription."
 
 #: templates/search.html:5 templates/search/tags_search.html:6
 msgid "Busqueda"
@@ -574,3 +540,67 @@ msgstr "Previous"
 #: templates/search.html:33
 msgid "Siguiente"
 msgstr "Next"
+
+#~ msgid "Presidentes"
+#~ msgstr "Presidents"
+
+#~ msgid "Gobernadores"
+#~ msgstr "Gobernors"
+
+#~ msgid "Otros cargos"
+#~ msgstr "Other posts"
+
+#~ msgid "Investigación colectiva"
+#~ msgstr "Collective research"
+
+#~ msgid "Medios"
+#~ msgstr "Media"
+
+#~ msgid "Nosotros"
+#~ msgstr "About us"
+
+#~ msgid "Calendario electoral"
+#~ msgstr "Elections calendar"
+
+#~ msgid "Todas las elecciones"
+#~ msgstr "All elections"
+
+#~ msgid ""
+#~ "¿Votás? Contanos en <a href=\"http://www.twitter.com/YoQuieroSaberAr"
+#~ "\">twitter @YoQuieroSaberAr</a> hashtag #YoQuieroSaber"
+#~ msgstr ""
+#~ "Do you vote? Tell us in <a href=\"http://www.twitter.com/VozdeGuanacaste"
+#~ "\">twitter @VozdeGuanacaste</a> hashtag #WithoutaDoubtAtThePolls"
+
+#~ msgid "Socios"
+#~ msgstr "Partners"
+
+#~ msgid "Apoyado por"
+#~ msgstr "Supported by"
+
+#~ msgid "Desarrollado por"
+#~ msgstr "Developed by"
+
+#~ msgid "Todos los colaboradores y voluntarios"
+#~ msgstr "All collaborators and volunteers"
+
+#~ msgid "Empezar"
+#~ msgstr "Start"
+
+#~ msgid "Con el apoyo de:"
+#~ msgstr "With the support of:"
+
+#~ msgid ""
+#~ "Junto con otras organizaciones de la sociedad civil, periodistas, "
+#~ "polit&#243;logos y voluntarios de: ACIJ, Asociaci&#243;n Conciencia, We-"
+#~ "Me, Acción Social DiTella y Taringa."
+#~ msgstr ""
+#~ "Fundación Conocimiento Abierto Argentina and The Voice of Guanacaste"
+
+#~ msgid ""
+#~ "Desarrollado por MySociety, Ciudadano Inteligente y Cl&#237;nica Web."
+#~ msgstr ""
+#~ "Fundación Conocimiento Abierto Argentina and The Voice of Guanacaste"
+
+#~ msgid "Sumate a nuestro equipo de investigación"
+#~ msgstr "-"
