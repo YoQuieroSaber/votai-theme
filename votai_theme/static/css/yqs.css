@@ -496,7 +496,8 @@ button:focus {
 
 @media only screen and (max-width: 768px) {
 	#inicio h4 {
-		font-style: 2em;
+		font-size: 2.5em;
+		margin-top: 7vh;
 	}
 
 }
