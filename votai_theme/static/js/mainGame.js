@@ -765,13 +765,16 @@ var app = (function(){
 
 		preguntasPasadas = getPreguntasPasadas();
 
-		preguntasPasadas.push(preguntaActual["question_id"]);
-		location.hash = "preguntasPasadas="+JSON.stringify(preguntasPasadas);
-		console.log(preguntaActual,preguntasPasadas);
+		if (preguntaActual) {
+			preguntasPasadas.push(preguntaActual["question_id"]);
+			location.hash = "preguntasPasadas="+JSON.stringify(preguntasPasadas);
+			console.log(preguntaActual,preguntasPasadas);
 
-		// Escribe el texto de la siguiente pregunta
-		$(".tPreg").html(preguntaActual["question_text"]);
-		resizeFont($(".tPreg"));
+			// Escribe el texto de la siguiente pregunta
+			$(".tPreg").html(preguntaActual["question_text"]);
+			resizeFont($(".tPreg"));			
+		}
+
 
 		animando = true;
 
@@ -1230,6 +1233,10 @@ var app = (function(){
 			}
 			$(".posturas").html(posBG);
 			ordenarAfinidad();
+
+			if (postStats) {
+				postStats(candidatos,userRes,eleccion,preguntas,punParcial);
+			}
 	}
 
 	// #Animación muestra el resultado a partir del voto elegido
@@ -1506,7 +1513,11 @@ function loadGame(url){
 					preguntas = shuffle(categorias);
 
 					//Descomentar para desactivar el límite de preguntas
-					//MaxPreg = preguntas.length;
+					if (preguntas.length < MaxPreg) {
+						MaxPreg = preguntas.length;	
+					}
+					for(var i=0;i<MaxPreg;i++)userRes[i]=-1;
+
 
 					$(".dots.template").hide();
 					for(var i=0;i<MaxPreg;i++) {
@@ -2114,7 +2125,6 @@ function loadGame(url){
 				animaNo();
 			});
 
-			for(var i=0;i<MaxPreg;i++)userRes[i]=-1;
 
 			$("#telon").hide();
 			$("#inicio").show();
