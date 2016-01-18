@@ -76,7 +76,7 @@ jQuery(document).ready(function($){
 
                                 electionLink = $(".election-link-template").clone().removeClass("election-link-template");
                                 electionLink.find("a").attr("href",value.detaillink).text(value["name"]);
-                                if (location.href.indexOf(value["name"].toLowerCase()) > -1) {
+                                if (location.href.indexOf(value["name"].toLowerCase().replace(" ","-").replace("ñ","n").replace("á","a")) > -1) {
                                         $("#headermenu").removeClass("selected");
                                         electionLink.addClass("selected");
                                 }
@@ -84,7 +84,7 @@ jQuery(document).ready(function($){
 
                                 gameLink = $(".game-link-template").clone().removeClass("game-link-template");
                                 gameLink.data("url",value["medianaranja_link"]).text(value["name"]);
-                                if (location.href.indexOf(value["name"].toLowerCase()) > -1) {
+                                if (location.href.indexOf(value["name"].toLowerCase().replace(" ","-").replace("ñ","n").replace("á","a")) > -1) {
                                         $("#gamemenu").addClass("only-option");
                                         gameLink.addClass("selected");
                                 }

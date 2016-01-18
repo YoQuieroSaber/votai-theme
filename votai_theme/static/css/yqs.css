@@ -563,9 +563,9 @@ button:focus {
 }
 
 .bInicio {
-    padding: 1vh;
-    border-radius: 2vh;
-    margin: 1vh 1vw;
+    padding: 5px;
+    border-radius: 10px;
+    margin: 6px;
     height: auto;
     width: 22vw;
     font-size: 1.4em;

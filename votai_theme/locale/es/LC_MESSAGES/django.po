@@ -315,7 +315,7 @@ msgstr ""
 
 #: templates/elections/juego.html:264
 msgid "con"
-msgstr ""
+msgstr "con candidatos de"
 
 #: templates/elections/personal_data_candidate.html:15
 msgid "Partido"

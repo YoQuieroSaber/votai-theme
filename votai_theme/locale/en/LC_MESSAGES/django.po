@@ -322,7 +322,7 @@ msgstr "Affinity"
 
 #: templates/elections/juego.html:264
 msgid "con"
-msgstr "with"
+msgstr "with candidates from"
 
 #: templates/elections/personal_data_candidate.html:15
 msgid "Partido"
