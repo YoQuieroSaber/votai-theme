@@ -25,7 +25,7 @@
 					<div id="candidate-img-profile">
 						{% if candidate.image %}
 
-						{% thumbnail candidate.image "300x300" crop="center"  format="PNG" as im %}
+						{% thumbnail candidate.image "300x300"  crop="50% 0%"  format="PNG" as im %}
 						    <img src="{{ im.url }}" alt="{{candidate.name}}" height="300" width="300" border="0" class="img-responsive" style="background-color: {{candidate.extra_info.color}} ">
 						{% endthumbnail %}
 						
@@ -54,7 +54,7 @@
 									</div>
 									<div id="videocontainer">
 										<video id="video"></video>
-										{% thumbnail candidate.image "300x640" crop="center" as im %}
+										{% thumbnail candidate.image "300x640"  crop="50% 0%" as im %}
 										<img src="{{im.url}}" id="soulmate-pic" alt="{{candidate.name}}" title="{{candidate.name}}">
 										{% endthumbnail %}
 									</div>

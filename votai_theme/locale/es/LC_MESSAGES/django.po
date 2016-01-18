@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: YoQuieroSaber\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-15 15:59+0000\n"
+"POT-Creation-Date: 2016-01-18 19:15+0000\n"
 "PO-Revision-Date: 2016-01-13 05:01+0000\n"
 "Last-Translator: Martín Szyszlican <martinsz@gmail.com>\n"
 "Language-Team: Spanish (Costa Rica) (http://www.transifex.com/okfnar/"
@@ -24,11 +24,11 @@ msgstr ""
 msgid "Vota Inteligente"
 msgstr "#SinDudasEnLasUrnas de La voz de Guanacaste"
 
-#: templates/base.html:62
+#: templates/base.html:62 templates/elections/juego.html:89
 msgid "Inicio"
 msgstr ""
 
-#: templates/base.html:69 templates/elections/juego.html:162
+#: templates/base.html:69 templates/elections/juego.html:163
 msgid "Lenguajes"
 msgstr ""
 
@@ -81,8 +81,8 @@ msgid "Tomar foto"
 msgstr ""
 
 #: templates/elections/candidate_detail.html:72
-#: templates/elections/juego.html:34 templates/elections/juego.html.py:107
-#: templates/elections/juego.html:175
+#: templates/elections/juego.html:34 templates/elections/juego.html.py:108
+#: templates/elections/juego.html:176
 #: templates/elections/soulmate_response.html:52
 msgid "Compartir"
 msgstr ""
@@ -150,15 +150,11 @@ msgid ""
 msgstr ""
 
 #: templates/elections/election_detail.html:38
-#, fuzzy, python-format
-#| msgid ""
-#| "Descubr&#237; con cuál de los <b>{{ election }}</b> coincid&#237;s m&#225;"
-#| "s..."
+#, python-format
 msgid ""
 " Descubr&#237; con cuál de los <b>%(election)s</b> coincid&#237;s m&#225;"
 "s... "
-msgstr ""
-"Descubre con cuál de los candidatos de <b>{{election}}</b> coincides más..."
+msgstr "Descubre con cuál de los candidatos de <b>%(election)s</b> coincides más"
 
 #: templates/elections/election_detail.html:41
 #: templates/elections/election_detail.html:42
@@ -170,24 +166,24 @@ msgstr "Jugar"
 msgid "y"
 msgstr ""
 
-#: templates/elections/juego.html:22 templates/elections/juego.html.py:152
+#: templates/elections/juego.html:22 templates/elections/juego.html.py:153
 msgid "Descubriendo<br/> con qu&#233; candidato coincid&#237;s m&#225;s..."
 msgstr "Descubriendo<br/> con qué candidato coincides más..."
 
 #: templates/elections/juego.html:27 templates/elections/juego.html.py:60
-#: templates/elections/juego.html:78 templates/elections/juego.html.py:157
+#: templates/elections/juego.html:78 templates/elections/juego.html.py:158
 msgid "Jugar"
 msgstr ""
 
-#: templates/elections/juego.html:32 templates/elections/juego.html.py:173
+#: templates/elections/juego.html:32 templates/elections/juego.html.py:174
 msgid "Volver a jugar"
 msgstr ""
 
-#: templates/elections/juego.html:35 templates/elections/juego.html.py:176
+#: templates/elections/juego.html:35 templates/elections/juego.html.py:177
 msgid "Acerca de YQS"
 msgstr "Sobre este sitio"
 
-#: templates/elections/juego.html:36 templates/elections/juego.html.py:177
+#: templates/elections/juego.html:36 templates/elections/juego.html.py:178
 msgid "Todos los candidatos"
 msgstr ""
 
@@ -214,15 +210,15 @@ msgid ""
 msgstr ""
 "Descubre con cuál de los candidatos de <b>{{election}}</b> coincides más..."
 
-#: templates/elections/juego.html:90
+#: templates/elections/juego.html:91
 msgid "S&#237"
 msgstr ""
 
-#: templates/elections/juego.html:91
+#: templates/elections/juego.html:92
 msgid "No"
 msgstr ""
 
-#: templates/elections/juego.html:96
+#: templates/elections/juego.html:97
 msgid ""
 "Si quer&#233;s dejanos tu mail<br>para enviarte m&#225;s informaci&#243;n "
 "antes de las elecciones:"
@@ -230,39 +226,39 @@ msgstr ""
 "Si quieres, déjanos tu mail<br>para enviarte m&#225;s informaci&#243;n antes "
 "de las elecciones:"
 
-#: templates/elections/juego.html:105
+#: templates/elections/juego.html:106
 msgid "Volvé y seguí contestando para mayor presición"
 msgstr "Vuelve y sigue contestando para mayor presición"
 
-#: templates/elections/juego.html:113
+#: templates/elections/juego.html:114
 msgid "Volver"
 msgstr ""
 
-#: templates/elections/juego.html:117
+#: templates/elections/juego.html:118
 msgid "Mas preguntas"
 msgstr ""
 
-#: templates/elections/juego.html:142
+#: templates/elections/juego.html:143
 msgid "Coincide con vos:"
 msgstr "Coincide contigo:"
 
-#: templates/elections/juego.html:144
+#: templates/elections/juego.html:145
 msgid "No coincide con vos:"
 msgstr "No coincide contigo:"
 
-#: templates/elections/juego.html:145
+#: templates/elections/juego.html:146
 msgid "No tiene respuesta:"
 msgstr ""
 
-#: templates/elections/juego.html:181
+#: templates/elections/juego.html:182
 msgid "Compartí esta información con tus amigos en redes sociales:"
 msgstr "Comparte esta información con tus amigos en redes sociales:"
 
-#: templates/elections/juego.html:184
+#: templates/elections/juego.html:185
 msgid "Yo Quiero Saber 2015"
 msgstr "#SinDudasEnLasUrnas"
 
-#: templates/elections/juego.html:185
+#: templates/elections/juego.html:186
 msgid ""
 "\n"
 "\t\t\t\t    Mediante preguntas y respuestas vas a conocer la afinidad con "
@@ -281,39 +277,39 @@ msgstr ""
 "las elecciones de Ferbero en Costa Rica.\n"
 "\t\t\t\t"
 
-#: templates/elections/juego.html:191
+#: templates/elections/juego.html:192
 msgid "&#191;Quienes hacemos Yo Quiero Saber?"
 msgstr "¿Quienes hacemos #SinDudasEnLasUrnas?"
 
-#: templates/elections/juego.html:196
+#: templates/elections/juego.html:197
 msgid "Contacto:"
 msgstr ""
 
-#: templates/elections/juego.html:216
+#: templates/elections/juego.html:217
 msgid "SI"
 msgstr ""
 
-#: templates/elections/juego.html:217
+#: templates/elections/juego.html:218
 msgid "MÁS<br/>OPCIONES"
 msgstr ""
 
-#: templates/elections/juego.html:218
+#: templates/elections/juego.html:219
 msgid "NO"
 msgstr ""
 
-#: templates/elections/juego.html:227
+#: templates/elections/juego.html:228
 msgid "Pregunta anterior"
 msgstr ""
 
-#: templates/elections/juego.html:229
+#: templates/elections/juego.html:230
 msgid "Saltear pregunta"
 msgstr ""
 
-#: templates/elections/juego.html:264 templates/elections/juego.html.py:271
+#: templates/elections/juego.html:265 templates/elections/juego.html.py:272
 msgid "Afinidad"
 msgstr ""
 
-#: templates/elections/juego.html:264
+#: templates/elections/juego.html:265
 msgid "con"
 msgstr "con candidatos de"
 

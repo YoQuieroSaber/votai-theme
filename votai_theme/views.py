@@ -70,7 +70,7 @@ class MedianaranjaJsonView(MediaNaranjaView):
 
             imurl = candidate.extra_info['portrait_photo']
             try:
-                im = get_thumbnail(candidate.image, '100x100', format='PNG', crop='center', quality=99)
+                im = get_thumbnail(candidate.image, '100x100', format='PNG', crop='50% 0%', quality=99)
                 if im is not None:
                     imurl = im.url
 

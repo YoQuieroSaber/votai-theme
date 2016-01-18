@@ -69,7 +69,7 @@
 									</p>
 									<p class="text-right">
 									{% if first_candidate.image %}
-										{% thumbnail first_candidate.image "35x35" crop="center"  format="PNG" as im %}
+										{% thumbnail first_candidate.image "35x35"  crop="50% 0%"  format="PNG" as im %}
 										<a href="{% url 'candidate_detail_view' election_slug=election.slug slug=first_candidate.id %}" title="Ver perfil completo de {{first_candidate.name}}"><img src="{{im.url}}" height="35" width="35" alt="{{first_candidate.name}}" border="0" class="img-responsive" title="{{first_candidate.name}}" style="display: inline; background-color: {% candidate_extra_info first_candidate 'color' %} "></a>
 										{% endthumbnail %}
 									{% endif %}
@@ -84,7 +84,7 @@
 									</p>
 									<p class="text-right">
 									{% if second_candidate.image %}
-										{% thumbnail second_candidate.image "35x35" crop="center"  format="PNG" as im %}
+										{% thumbnail second_candidate.image "35x35"  crop="50% 0%"  format="PNG" as im %}
 										<a href="{% url 'candidate_detail_view' election_slug=election.slug slug=second_candidate.id %}" title="Ver perfil completo de {{second_candidate.name}}"><img src="{{im.url}}" height="35" width="35" alt="{{second_candidate.name}}" border="0" class="img-responsive" title="{{second_candidate.name}}" style="display: inline; background-color: {% candidate_extra_info second_candidate 'color' %} "></a>
 										{% endthumbnail %}
 									{% endif %}
