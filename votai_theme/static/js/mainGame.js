@@ -1680,6 +1680,7 @@ function loadGame(url){
 		$(".pregResu").css("font-size","2.5em");
 		$(".pregResu").css("height","30%");
 		$(".pregResu").html("<div style='width:100%;height:50%;'>&nbsp;</div>&#161;Gracias!");
+		$(".volverAInicio").show();
 		// if () {
 		// 	$(".posturas").show().html("<p><a href="">Más información sobre esta elección</a></p>");
 		// }
