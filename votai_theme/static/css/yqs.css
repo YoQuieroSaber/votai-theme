@@ -1031,10 +1031,6 @@ background-color: #5a7;
 	border-color: white;
 }
 
-#langmenu {
-	display: none;
-}
-
 #menuMob #langmenu {
 	position: static;
 }

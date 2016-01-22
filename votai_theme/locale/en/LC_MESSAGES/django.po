@@ -209,15 +209,11 @@ msgstr "Select your county"
 msgid "Informate sobre los pre-candidatos<br/> nacionales y de tu provincia"
 msgstr "Learn about the candidates of your county"
 
-#: templates/elections/juego.html:75
-#, fuzzy
-#| msgid ""
-#| "Descubr&#237; con cuál de los <b>{{ election }}</b> coincid&#237;s m&#225;"
-#| "s..."
+#: templates/elections/election_detail.html:38
+#, python-format
 msgid ""
-"Descubr&#237; con qu&#233; pre-candidato a<br/><b style='color:"
-"#dd3975;'>presidente</b> coincid&#237;s m&#225;s..."
-msgstr ""
+" Descubr&#237; con cuál de los <b>%(election)s</b> coincid&#237;s m&#225;"
+"s... "
 "Find out which of the candidates for  <b>{{election}}</b> is your best "
 "match..."
 
