@@ -214,7 +214,7 @@ msgstr "Learn about the candidates of your county"
 msgid ""
 " Descubr&#237; con cuál de los <b>%(election)s</b> coincid&#237;s m&#225;"
 "s... "
-"Find out which of the candidates for  <b>{{election}}</b> is your best "
+msgstr "Find out which of the candidates for  <b>{{election}}</b> is your best "
 "match..."
 
 #: templates/elections/juego.html:91
