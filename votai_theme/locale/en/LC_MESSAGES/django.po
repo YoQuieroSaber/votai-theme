@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: YoQuieroSaber\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-22 15:27+0000\n"
+"POT-Creation-Date: 2016-01-22 15:37+0000\n"
 "PO-Revision-Date: 2016-01-15 15:54+0000\n"
 "Last-Translator: Martín Szyszlican <martinsz@gmail.com>\n"
 "Language-Team: English (http://www.transifex.com/okfnar/yoquierosaber/"
@@ -27,11 +27,11 @@ msgstr "#WithoutaDoubtAtThePolls by The Voice of Guanacaste"
 #: templates/base.html:62 templates/elections/juego.html:89
 #: templates/elections/juego.html.py:179
 msgid "Inicio"
-msgstr ""
+msgstr "Start"
 
 #: templates/base.html:69 templates/elections/juego.html:163
 msgid "Lenguajes"
-msgstr ""
+msgstr "Languages"
 
 #: templates/base.html:96
 msgid "Hecho por"
@@ -160,7 +160,8 @@ msgstr ""
 msgid ""
 " Descubr&#237; con cuál de los <b>%(election)s</b> coincid&#237;s m&#225;"
 "s... "
-msgstr "Find out which of the candidates for  <b>%(election)s</b> is your best "
+msgstr ""
+"Find out which of the candidates for  <b>%(election)s</b> is your best "
 "match..."
 
 #: templates/elections/election_detail.html:41
@@ -230,6 +231,10 @@ msgstr ""
 "Leave us your email <br> and we'll send you more information before the "
 "elections (optional)"
 
+#: templates/elections/juego.html:103
+msgid "Enviar"
+msgstr "Submit"
+
 #: templates/elections/juego.html:106
 msgid "Volvé y seguí contestando para mayor presición"
 msgstr "Go back and continue answering to improve accuracy"
@@ -241,6 +246,14 @@ msgstr "Back"
 #: templates/elections/juego.html:118
 msgid "Mas preguntas"
 msgstr "More questions"
+
+#: templates/elections/juego.html:124 templates/search.html:33
+msgid "Siguiente"
+msgstr "Next"
+
+#: templates/elections/juego.html:129
+msgid "Resultados"
+msgstr "Results"
 
 #: templates/elections/juego.html:143
 msgid "Coincide con vos:"
@@ -529,10 +542,6 @@ msgstr "No results found"
 #: templates/search.html:31
 msgid "Anterior"
 msgstr "Previous"
-
-#: templates/search.html:33
-msgid "Siguiente"
-msgstr "Next"
 
 #~ msgid "Presidentes"
 #~ msgstr "Presidents"

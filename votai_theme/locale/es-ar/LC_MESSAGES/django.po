@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-22 15:27+0000\n"
+"POT-Creation-Date: 2016-01-22 15:37+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -219,6 +219,10 @@ msgid ""
 "antes de las elecciones:"
 msgstr ""
 
+#: templates/elections/juego.html:103
+msgid "Enviar"
+msgstr ""
+
 #: templates/elections/juego.html:106
 msgid "Volvé y seguí contestando para mayor presición"
 msgstr ""
@@ -229,6 +233,14 @@ msgstr ""
 
 #: templates/elections/juego.html:118
 msgid "Mas preguntas"
+msgstr ""
+
+#: templates/elections/juego.html:124 templates/search.html:33
+msgid "Siguiente"
+msgstr ""
+
+#: templates/elections/juego.html:129
+msgid "Resultados"
 msgstr ""
 
 #: templates/elections/juego.html:143
@@ -500,8 +512,4 @@ msgstr ""
 
 #: templates/search.html:31
 msgid "Anterior"
-msgstr ""
-
-#: templates/search.html:33
-msgid "Siguiente"
 msgstr ""

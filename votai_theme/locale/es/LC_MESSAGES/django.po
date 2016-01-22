@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: YoQuieroSaber\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-22 15:27+0000\n"
+"POT-Creation-Date: 2016-01-22 15:37+0000\n"
 "PO-Revision-Date: 2016-01-13 05:01+0000\n"
 "Last-Translator: Martín Szyszlican <martinsz@gmail.com>\n"
 "Language-Team: Spanish (Costa Rica) (http://www.transifex.com/okfnar/"
@@ -228,6 +228,10 @@ msgstr ""
 "Si quieres, déjanos tu mail<br>para enviarte m&#225;s informaci&#243;n antes "
 "de las elecciones:"
 
+#: templates/elections/juego.html:103
+msgid "Enviar"
+msgstr ""
+
 #: templates/elections/juego.html:106
 msgid "Volvé y seguí contestando para mayor presición"
 msgstr "Vuelve y sigue contestando para mayor presición"
@@ -238,6 +242,14 @@ msgstr ""
 
 #: templates/elections/juego.html:118
 msgid "Mas preguntas"
+msgstr ""
+
+#: templates/elections/juego.html:124 templates/search.html:33
+msgid "Siguiente"
+msgstr ""
+
+#: templates/elections/juego.html:129
+msgid "Resultados"
 msgstr ""
 
 #: templates/elections/juego.html:143
@@ -518,10 +530,6 @@ msgstr ""
 
 #: templates/search.html:31
 msgid "Anterior"
-msgstr ""
-
-#: templates/search.html:33
-msgid "Siguiente"
 msgstr ""
 
 #~ msgid ""
