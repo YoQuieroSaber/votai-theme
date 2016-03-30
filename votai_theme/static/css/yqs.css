@@ -468,8 +468,10 @@ button:focus {
 }
 
 #inicio.election_10 {
-  background-image: url(/static/img/candidatos/macri+scioli.png);
-  background-position: bottom;
+#  background-image: url(/static/img/candidatos/macri+scioli.png);
+#  background-position: bottom;
+  background-image: url(https://farm7.staticflickr.com/6051/6375587755_d348cc85c2_o_d.jpg);
+  background-position: center;
   background-size: 100%;
   background-repeat: no-repeat;
   background-color: #474;
