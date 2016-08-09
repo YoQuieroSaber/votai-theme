@@ -473,7 +473,12 @@ button:focus {
   background-size: cover;
   background-repeat: no-repeat;
   background-color: #474;
-  top: 107px !important;
+}
+
+@media (min-width: 768px) {
+	#inicio.election_10 {
+	  top: 107px !important;
+	}	
 }
 
 #inicio.election_10 .imgInicio {
