@@ -470,7 +470,7 @@ button:focus {
 #inicio.election_10 {
   background-image: url(/static/img/yqsfondo.jpg);
   background-position: center;
-  background-size: 100%;
+  background-size: cover;
   background-repeat: no-repeat;
   background-color: #474;
   top: 107px !important;
