@@ -1,19 +1,22 @@
 {% load i18n %}
-{% if taken_position %}
-        {{taken_position.position.label}}
-	<!--p>
-	 {{taken_position.position.description}}
-	</p-->
+{% load staticfiles %}
+{% load thumbnail %}
+{% load votainteligente_extras %}
 
-	{% if taken_position.sources.length > 1 %}
-        <ul>
+{% if taken_position.position %}
+        {{taken_position.position.label}}
+	<p class="position_description">
+	 {{taken_position.description}}
+
+	{% if taken_position.sources.all %}
         {% for source in taken_position.sources.all %}
             
-            <li><a href="{{source.url}}">{{source.note}}</a></li>
+            (<a href="{{source.url}}" target="_blank">{% if source.note %}{{source.note}}{% else %}Fuente{% endif %}</a>)
             
         {% endfor %}
-        </ul>
 	{% endif %}
+	</p>
 {% else %}
-    {% trans "Esta(e) candidata(o) aún no responde" %} 
+    Aún no tenemos esta respuesta
+     {% include 'elections/twitter/answer_this_question.html' with taken_position=taken_position candidate=candidate %}
 {% endif %}

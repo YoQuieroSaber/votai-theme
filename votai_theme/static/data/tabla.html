@@ -1,0 +1,131 @@
+
+<style>
+body,table {
+	font-family: sans-serif;
+	font-size: 0.75em;
+}
+td, th {
+	max-width: 60px;
+	min-width: 60px;
+	min-height: 60px;
+	overflow: hidden;
+	height: 60px;
+	max-height: 60px;
+	text-align: center;
+}
+</style>
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script>
+	window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')
+</script>
+
+<script>
+	function color(answer_value) {
+		col = "#eee";
+
+		switch (answer_value) {
+			case 0: col="#0c0"; break; //si
+            case 1: col="#af0"; break; //si, pero
+            case 2: col="#ff0"; break; //no, pero
+            case 3: col="#f00"; break; //no
+
+		}
+		return col;
+	}
+	function answer(answer_id,data) {
+		for (c in data.categories) {
+			for (q in data.categories[c].questions) {
+				for (a in data.categories[c].questions[q].answers) { 
+					if(data.categories[c].questions[q].answers[a].answer_id == answer_id) {
+						return data.categories[c].questions[q].answers[a];
+					}
+				}
+			}
+		}
+	}
+
+
+       function question(question_id,data) {
+                for (c in data.categories) {
+                        for (q in data.categories[c].questions) {
+                                if(data.categories[c].questions[q].question_id == question_id) {
+                                        return data.categories[c].questions[q];
+                                }
+                        }
+                }
+        }
+
+	function answer2(answer_id,question) {
+		for (a in question.answers) {
+			answer = question.answers[a];
+			if (answer.answer_id == answer_id) {
+				return answer;
+			}
+		}
+	}
+
+	function election_table(data) {
+                div = $("<div><h2></h2><p></p></div>"); 
+                $("body").append(div);
+		div.find("h2").text(data.election_name);
+
+		table = $("<table></table>");
+		header = $("<thead></thead>");
+                tbody = $("<tbody></tbody>");
+		table.append(header,tbody);
+
+		div.append(table);
+		header.append("<th>Candidato</th>");
+		for (c in data.categories) {
+			category = data.categories[c];
+			for (q in category.questions) {
+				question = category.questions[q];
+				header.append("<th>"+question.question_text+"</th>");
+				for (c in data.candidates) {
+					candidate = data.candidates[c];
+					if ($("#candidate"+candidate.candidate_id).length == 0) {
+						tbody.append("<tr id='candidate"+candidate.candidate_id+"'><td>"+candidate.candidate_name+" ("+candidate.candidate_partido+")</td></tr>");
+						
+					}
+					candidate_row = $("#candidate"+candidate.candidate_id);
+					has_answer = false;
+					for (p in candidate.positions) {
+						pos = candidate.positions[p];
+						if (pos.question_id == question.question_id) {
+							ans = answer2(pos.answer_id,question);
+							if (ans) {							
+								ht = pos.answer_text ? "ampliada" : "simple";
+								ht = ans.answer_value+", "+ht;
+								col = color(ans.answer_value);
+								title = question.question_text +" " +ans.answer_text + " " + pos.answer_text;
+								has_answer=true;
+							}
+							else {
+								console.error("Error: no se encontró la respuesta",pos,candidate);
+							}
+						}
+					}
+					if (has_answer == false) {
+						ht = "Sin respuesta";
+						col = "#eee";
+						title = question.question_text + "sin respuesta";
+					}
+                    candidate_row.append($("<td style='background-color: "+col+"' title=\""+title+"\">"+ht+"</td>"));
+
+				}
+			}
+		}
+
+    }
+
+
+    $.getJSON("/theme/election/candidatos-a-gobernador-chaco/media-naranja.json", election_table);
+    $.getJSON("/theme/election/pre-candidato-a-presidente/media-naranja.json", election_table);
+    $.getJSON("/theme/election/pre-candidato-a-gobernador-de-buenos-aires/media-naranja.json", election_table);
+    $.getJSON("/theme/election/pre-candidato-a-gobernador-de-tucuman/media-naranja.json", election_table);
+    $.getJSON("/theme/election/pre-candidato-a-gobernador-de-san-juan/media-naranja.json", election_table);
+    $.getJSON("/theme/election/candidatos-a-gobernador-san-luis/media-naranja.json", election_table);
+    $.getJSON("/theme/election/pre-candidato-a-gobernador-de-entre-rios/media-naranja.json", election_table);
+
+</script>
+

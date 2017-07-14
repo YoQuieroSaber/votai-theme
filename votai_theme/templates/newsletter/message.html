@@ -1,0 +1,40 @@
+{% load url from future %}{% load thumbnail %}<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html lang="es">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>{{ newsletter.title }}: {{ message.title }}</title>
+</head>
+<body>
+    <div style="">
+    <a class="navbar-brand" href="/"><img src="{% static 'img/logo-votainteligente.png' %}" title="Vota Inteligente" alt="{% trans "Vota Inteligente" %}"></a>
+    </div>
+    {% if submission.publish %}
+    <small>Si tiene problemas, puede <a href="http://{{ site.domain }}{{ submission.get_absolute_url }}">Leer este mensaje en el navegador</a></small>
+    {% endif %}
+
+    <h1>{{ newsletter.title }}</h1>
+    <h2>{{ message.title }}</h2>
+    {% for article in message.articles.all %}
+        <h3>{{ article.title }}</h3>
+        
+        {% thumbnail article.image "200x200" as image %}
+            <img src="http://{{ site.domain }}{{ image.url }}" width="{{ image.width }}" height="{{ image.height }}">
+        {% endthumbnail %}
+
+        <div>{{ article.text|safe }}</div>
+        
+        {% if article.url %}
+            <div><a href="{{ article.url }}">Continuar leyendo...</div></a>
+        {% endif %}
+    {% endfor %}
+    
+    <p>
+    <small>
+    Este mensaje se envía sólo a usuarios suscriptos. Puede
+    <a href="http://{{ site.domain }}{% url "newsletter_unsubscribe_request" newsletter.slug %}">Anular suscripción</a>
+    </small>
+    </p>
+</body>
+</html>

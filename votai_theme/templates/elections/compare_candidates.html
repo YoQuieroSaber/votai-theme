@@ -1,6 +1,8 @@
 {% extends "elections/election_base.html" %}
 {% load i18n %}
+{% load thumbnail %}
 {% load votainteligente_extras %}
+{% load yqs_extras %}
 
 {% block title %} - {{election}} - {% trans "Frente a Frente"%}{% endblock title%}
 
@@ -27,7 +29,7 @@
 				<option value=""></option>
 				{% for candidato in election.candidates.all %}
 					{% if second_candidate.id != candidato.id %}
-				<option value="{{candidato.id}}" {% if candidato.id and candidato.id == first_candidate.id %}selected="selected"{% endif %}>{{candidato.name}}</option>
+				<option value="{{candidato.id}}" {% if candidato.id and candidato.id == first_candidate.id %}selected="selected"{% endif %}>{{candidato.name}} {% if candidato.did_not_pass_primaries == True %} (no superó las internas PASO){% endif %}</option>
 					{% endif %}
 				{% endfor %}
 				<i class="icon-chevron-down"></i>
@@ -38,7 +40,7 @@
 				<option value=""></option>
 				{% for candidato in election.candidates.all %}
 					{% if first_candidate.id != candidato.id %}
-				<option value="{{candidato.id}}" {% if candidato.id and candidato.id == second_candidate.id %}selected="selected"{% endif %}>{{candidato.name}}</option>
+				<option value="{{candidato.id}}" {% if candidato.id and candidato.id == second_candidate.id %}selected="selected"{% endif %}>{{candidato.name}} {% if candidato.did_not_pass_primaries == True %} (no superó las internas PASO){% endif %}</option>
 					{% endif %}
 				{% endfor %}
 			</select>
@@ -51,29 +53,44 @@
 				{% for category in election.categories.all %}
 
 				<div class="panel panel-default">
-					<div class="panel-heading" id="{{category.slug}}">{{category.name}}</div>
+					<div class="panel-heading" id="{{category.slug}}">{{category.name}} {% if candidato.did_not_pass_primaries == True %} (no superó las internas PASO){% endif %}</div>
 					<div class="panel-body">
 					{% for topic in category.topics.all %}
 						<div class="row">
 							<div class="col-md-12">
-								<h5>{{ topic.label }}</h5>
+								<p class="question">{{ topic.label }}</p>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md-6">
 								<div class="fondo-blanco contenedor">
-									<p>
+									<p class="answer">
 										{% get_taken_position_for topic first_candidate only_text=True %}
 									</p>
-									<p class="text-right">{{ first_candidate.name }}</p>
+									<p class="text-right">
+									{% if first_candidate.image %}
+										{% thumbnail first_candidate.image "35x35" crop="center"  format="PNG" as im %}
+										<a href="{% url 'candidate_detail_view' election_slug=election.slug slug=first_candidate.id %}" title="Ver perfil completo de {{first_candidate.name}}"><img src="{{im.url}}" height="35" width="35" alt="{{first_candidate.name}}" border="0" class="img-responsive" title="{{first_candidate.name}}" style="display: inline; background-color: {% candidate_extra_info first_candidate 'color' %} "></a>
+										{% endthumbnail %}
+									{% endif %}
+
+									{{ first_candidate.name }}</p>
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="fondo-blanco contenedor">
-									<p>
+									<p class="answer">
 										{% get_taken_position_for topic second_candidate only_text=True %}
 									</p>
-									<p class="text-right">{{ second_candidate.name }}</p>
+									<p class="text-right">
+									{% if second_candidate.image %}
+										{% thumbnail second_candidate.image "35x35" crop="center"  format="PNG" as im %}
+										<a href="{% url 'candidate_detail_view' election_slug=election.slug slug=second_candidate.id %}" title="Ver perfil completo de {{second_candidate.name}}"><img src="{{im.url}}" height="35" width="35" alt="{{second_candidate.name}}" border="0" class="img-responsive" title="{{second_candidate.name}}" style="display: inline; background-color: {% candidate_extra_info second_candidate 'color' %} "></a>
+										{% endthumbnail %}
+									{% endif %}
+
+									{{ second_candidate.name }}
+									</p>
 								</div>
 							</div>
 						</div>

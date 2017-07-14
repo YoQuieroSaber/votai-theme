@@ -182,7 +182,7 @@ header{
 }
 
 header, footer {
-	background-color: #004D40;
+	background-color: #454;
 }
 
 .header__nav__social a[href*="facebook"] {
@@ -1763,7 +1763,7 @@ padding: 0 4em 1em 0;
 		margin-left:60px;
 		margin-right:60px;
 	}
-	.dmots{
+	.dots{
 		width: 10px;
 		height: 10px;
 		border-radius: 12px;

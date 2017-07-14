@@ -8,7 +8,13 @@
 <script type="text/javascript">
 elections_json = {% elections_json %};
 </script>
-<div id="telon" style=""><img class="loading" src="{% static 'img/loading.gif' %}"></div>
+<div id="telon">
+        <div>
+                <img src="{% static 'img/YQSlogo.png' %}" class='imgInicio' >
+        </div>
+
+		<span class="loading"></span>
+</div>
 <div id="sideLeft">
                 <div class="menu" id="menuDesk">
 
@@ -25,13 +31,13 @@ elections_json = {% elections_json %};
                 <li>
 		<a onclick="location.reload()"><b>Volver a jugar</b></a></li>
 		<li>
-		<a id="bCompartir"><b>Compartir</b></a></li>
-		<li><a id="bNosotros">Acerca de YQS</a></li>
+		<a class="bCompartir"><b>Compartir</b></a></li>
+		<li><a class="bNosotros"><b>Acerca de YQS</b></a></li>
 		<li><a id="bTodos" href="/election/pre-candidato-a-presidente" style="display:none">Todos los candidatos</a></li>
 	</div>
 </div>
 
-<div id=inicio>
+<div id="inicio" style="display: none">
 	<div class="row">
 		<img src="{% static 'img/YQSlogo.png' %}" class='imgInicio' >
 	</div>
@@ -48,12 +54,15 @@ elections_json = {% elections_json %};
 		<div class="col-xs-1 col-md-4" id="iniColS">
 		</div>
 	</div>
-	<div class="row"></div>
+	<!-- <div class="row"><select name="elecci&#243;n" id="eleccion"></select></div> -->
 	<div class="row">
-		<!--	<button type="button" class="bJugar">
+		<button type="button" class="bInicio">
 		<span style="font-size:1.5em;vertical-align:middle;">Empezar</span>
 		<span style="font-size:3em; vertical-align:middle;"><b>&#20;&#20;>></b></span>
-	</button>   -->     
+	</button> 
+	</div>
+	<div class="row" style="margin-top: 1em">
+		<div class="election_name election_name_content"></div>
 	</div>
 </div>
 
@@ -74,86 +83,133 @@ elections_json = {% elections_json %};
 	</div>
 </div>
 
-<div id=game>
+<div id="game">
 	<button type="button" class="bMenuH"></button>
 	<div class="resultados">
 		<h3 class="pregResu"></h3>
 		<div class="posturas"></div>
-		<img class="loading" src="{% static 'img/loading.gif' %}">
+		<span class="loading"></span>
 
 		<button type="button" class="encSi">S&#237</button>
 		<button type="button" class="encNo">No</button>
 
 		<div class="correoU">
-			Si quer&#233;s dejanos tu mail<br>para enviarte m&#225;s informaci&#243;n antes de las elecciones:<br><br>
-		<input type="text" name="correo" id="inCorreo">		
+			<form>
+			<p>
+			<label for="inCorreo">Si quer&#233;s dejanos tu mail<br>para enviarte m&#225;s informaci&#243;n antes de las elecciones:</label>
+			</p>
+			<input type="text" name="correo" id="inCorreo" />		
+			</form>
 		</div>
 
 		<button type="button" class="enviar">Enviar</button>
-		<div class="resuFooter">
-		<button type="button" class="bShare">
-		<span style="font-size:1.3em;vertical-align:middle;">Compartir</span>
-		<img src="{% static 'img/share.png' %}" width=20px height=20px style="margin-left:4px;">
-		</button>
-			
-		<button type="button" class="sigue">
-		<span style="font-size:1.2em;vertical-align:middle;">Siguiente</span>
-		<span style="font-size:2.4em; vertical-align:middle;margin-left:2px;"><b>&#20;&#20;>></b></span>
-		</button>
 
-		<button type="button" class="rejugar">
-		<span style="font-size:1.3em;vertical-align:middle;">Re-Jugar</span>
-		<img src="{% static 'img/reload.png' %}" width=30px height=30px>
-		</button>	
+		<div class="resuFooter">
+			<p class="message-accuracy" style="display: none">Volvé y seguí contestando para mayor presición</p>
+			<button type="button" class="bShare secondaryButton">
+			<span style="font-size:1.3em;vertical-align:middle;">Compartir</span>
+			<img src="{% static 'img/share.png' %}" width=20px height=20px style="margin-left:4px;">
+			</button>
+				
+			<button type="button" class="vuelve secondaryButton">
+			<span style="font-size:2.4em; vertical-align:middle;margin-left:2px;"><b>&lt;&lt;&#20;&#20;</b></span>
+			<span style="font-size:1.2em;vertical-align:middle;">Volver</span>
+			</button>
+
+			<button type="button" class="rejugar secondaryButton">
+			<span style="font-size:1.3em;vertical-align:middle;">Mas preguntas</span>
+			<img src="{% static 'img/reload.png' %}" width="30px" height="30px"/>
+			</button>	
+
+				
+			<button type="button" class="sigue mainButton">
+			<span style="font-size:1.2em;vertical-align:middle;">Siguiente</span>
+			<span style="font-size:2.4em; vertical-align:middle;margin-left:2px;"><b>&#20;&#20;>></b></span>
+			</button>
+
+			<button type="button" class="bResultados secondaryButton">
+			<span style="font-size:1.2em;vertical-align:middle;">Resultados</span>
+			<span style="font-size:2.4em; vertical-align:middle;margin-left:2px;"><b>&#20;&#20;>></b></span>
+			</button>
 		</div>
 	</div>
 	<div class="intermedio">
-				<button class="closeInter"></button>
-		<div class="afiniCand">
-				<div class="afiniCHead">
-					<img class='afiniCImg' width=90px height=90px><div class="afiniCNom"></div>				
-				</div>
-				<div class="coincide"><div class="tit">Coincide con vos:</div><br/>
-				</div>
-				<div class="noCoincide"><div class="tit">No coincide con vos:</div><br/></div>
-				<div class="noResp"><div class="tit">No tiene respuesta:</div><br/></div>
-				
-		</div>	
-		<div class="menu" id="menuMob">
-		<img src="{% static 'img/YQSlogo.png' %}" class='imgHeader'>
+		<div class="intermedio-content">
+			<button class="closeInter"></button>
+			<div class="afiniCand">
+					<div class="afiniCHead">
+						<img class='afiniCImg' width=90px height=90px><div class="afiniCNom"></div>				
+						<div class="afiniBio"></div>
 
-        <div class="descubriendo">
-                <h4>Descubriendo<br/> con qu&#233; candidato coincid&#237;s m&#225;s...</h4>
-        <select name="elecci&#243;n" id="eleccion"></select>
-        <br/>
-        <br/>
-        <button type="button" class="bEmpez">
-                <span style="font-size:1.5em;vertical-align:middle;">Jugar</span>
-        </button>
-        </div>
-                <ul class="submenu" id="submenuMob">
-                <li>
-                <a onclick="location.reload()"><b>Volver a jugar</b></a></li>
-                <li>
-                <a id="bCompartir"><b>Compartir</b></a></li>
-                <li><a id="bNosotros">Acerca de YQS</a></li>
-                <li><a id="bTodos" href="/election/pre-candidato-a-presidente" style="display:none">Todos los candidatos</a></li>
-        </ul>
-</div>
-		<div class="share"><div data-social-share-privacy='true'></div></div>	
+					</div>
+					<div class="coincide"><div class="tit">Coincide con vos:</div><br/>
+					</div>
+					<div class="noCoincide"><div class="tit">No coincide con vos:</div><br/></div>
+					<div class="noResp"><div class="tit">No tiene respuesta:</div><br/></div>
+					
+			</div>	
+			<div class="menu" id="menuMob">
+				<img src="{% static 'img/YQSlogo.png' %}" class='imgHeader'>
+
+		        <div class="descubriendo">
+		                <h4>Descubriendo<br/> con qu&#233; candidato coincid&#237;s m&#225;s...</h4>
+		        <select name="elecci&#243;n" id="eleccion"></select>
+		        <br/>
+		        <br/>
+		        <button type="button" class="bEmpez">
+		                <span style="font-size:1.5em;vertical-align:middle;">Jugar</span>
+		        </button>
+		        </div>
+		                <ul class="submenu" id="submenuMob">
+		                <li>
+		                <a onclick="location.reload()"><b>Volver a jugar</b></a></li>
+		                <li>
+		                <a class="bCompartir"><b>Compartir</b></a></li>
+				<li><a class="bNosotros"><b>Acerca de YQS</b></a></li>
+		                <li><a id="bTodos" href="/election/pre-candidato-a-presidente" style="display:none">Todos los candidatos</a></li>
+		        </ul>
+	  	    </div>
+			<div class="share">
+				<p>Compartí esta información con tus amigos en redes sociales:</a><div data-social-share-privacy='true' style="width: 55px;"></div>
+			</div>	
+			<div class="about2">
+				<h2 class="yqs-title">Yo Quiero Saber 2015</h2>
+				<p>Mediante preguntas y respuestas vas a conocer la afinidad con quienes aspiran a gobernar el pa&#237;s:  candidatos a presidente y gobernador de las provincia de Buenos Aires, Entre R&#237;os, San Juan y Tucum&#225;n.<br/>
+				Una manera divertida de informarte sobre los candidatos a las elecciones primarias abiertas y simult&#225;neas (PASO) del 9 de agosto. 
+				</p>
+				
+					<h2>&#191;Quienes hacemos Yo Quiero Saber?</h2>
+					<p>
+		          <a href="http://www.congresointeractivo.org"><img src="/static/img/logo-congreso-interactivo.png" width="107" height="40" alt="Congreso Interactivo"></a>
+		          <a href="http://ar.okfn.org"><img src="/static/img/logo-okf-argentina.png" width="172" height="40" alt="Open Knowledge Argentina"></a>
+		          <a href="http://twitter.com/dataconcepcion"><img src="/static/img/logo-datos-concepcion.png" width="35" height="40" alt="Datos Concepción"></a>
+		          <a href="http://www.directoriolegislativo.org/"><img src="/static/img/logo-directorio-legislativo.png" width="130" height="40" alt="Directorio Legislativo"></a>
+		          </p>
+				<div class="quienes-hacemos">
+					<p>
+						Con el apoyo de: </p>
+					<p>
+		          <a href="http://hackslabs.org/"><img src="{% static 'img/logo-hl.png' %}" alt="hackslabs"></a> 
+		          <a href="http://www.worldbank.org/"><img src="{% static 'img/logo-wb.png' %}" alt="World Bank"></a> 
+		          <a href="http://www.icfj.org/" style="zoom: 0.8;"><img src="{% static 'img/logo-icfj.png' %}" alt="ICFJ"></a>				
+					</p>
+					<p>
+	          			Junto con otras organizaciones de la sociedad civil, periodistas, polit&#243;logos y voluntarios de: ACIJ, Asociaci&#243;n Conciencia, We-Me, Acción Social DiTella y Taringa.
+
+					</p>
+					<p>Desarrollado por MySociety, Ciudadano Inteligente y Cl&#237;nica Web.</p>	
+					<p>Contacto: <a href="mailto:info@yoquierosaber.org?subject=Contacto desde el juego">info@yoquierosaber.org</a></p>
+					<p><a href="mailto:info@yoquierosaber.org?subject=Contacto por investigacion desde el juego">Sumate a nuestro equipo de investigación</a></p>
+				</div>
+			</div>
+		</div>
+		<div class="intermedio-gap"></div>
 	</div>
 	<div class="preguntas">
 	<div class="row" id="encabezado">
 		<div class="recorrido">
 			<ul>
-				<div class="dots" id="p0"></div>
-				<div class="dots" id="p1"></div>
-				<div class="dots" id="p2"></div>
-				<div class="dots" id="p3"></div>
-				<div class="dots" id="p4"></div>
-				<div class="dots" id="p5"></div>
-				<div class="dots" id="p6"></div>
-				<div class="dots" id="p7"></div>
+				<div class="dots template"></div>
 			</ul>
 		</div>
 
@@ -165,7 +221,7 @@ elections_json = {% elections_json %};
 	</div>
 		
 			<div class="col-xs-4 col-md-4" id="tarjeta1" ><button type="button" class='voto' id="vSi" alt="Si" >SI</button></div>
-			<div class="col-xs-4 col-md-4" id="tarjeta3" ><button type="button" id="vOp">MAS<br/>OPCIONES</button></div>
+			<div class="col-xs-4 col-md-4" id="tarjeta3" ><button type="button" id="vOp">MÁS<br/>OPCIONES</button></div>
 			<div class="col-xs-4 col-md-4" id="tarjeta2" ><button type="button" class='voto' id="vNo" alt="No" >NO</button></div>
 
 			<div class="opciones">
@@ -175,9 +231,9 @@ elections_json = {% elections_json %};
 				<button class="bOp4"><div class="op4" id="opc"></div></button>				
 				<br/>
 				<span style="vertical-align:middle;">
-				<button type="button" id="nav2" class="bBack"></button>
+				<button type="button" id="nav2" class="bBack" title="Pregunta anterior"></button>
 				<button class="closeBtn"></button>
-				<button type="button" id="nav2" class="bSaltear"></button>
+				<button type="button" id="nav2" class="bSaltear" title="Saltear pregunta"></button>
 				</span>
 			</div>	
 
@@ -212,7 +268,7 @@ elections_json = {% elections_json %};
 			<img src="{% static 'img/ranura2.png' %}">
 		</div>
 	
-		<div class="afiT" style="z-index:20">Afinidad</div>
+		<div class="afiT"><span class="realAfinidad">Afinidad<span class="election_name"> con </span> </span><span class="election_name election_name_content"></span></div>
 		<div class="afinidad" style="z-index:20">
 			<span class="afiniImg"></span>
 		</div>

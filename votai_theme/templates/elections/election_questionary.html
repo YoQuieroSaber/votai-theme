@@ -2,7 +2,9 @@
 {% load i18n %}
 {% load thumbnail %}
 {% load votainteligente_extras %}
+{% load yqs_extras %}
 {% load staticfiles %}
+{% load markdown_deux_tags %}
 
 {% block title %} - {{election}} - {% trans "Cuestionario"%}{% endblock title%}
 
@@ -13,7 +15,7 @@
 {% block mainelection %}
 <div id="questionary">
 	<div class="questionary">		
-
+		<h1>{% trans "Cuestionario"%}: {{election}}</h1>
 		{% for category in election.categories.all %}
 		<div class="panel panel-default">
 			<div class="panel-heading">{{category.name}}</div>
@@ -28,18 +30,21 @@
 						{% if position.taken_positions.all|length > 0 %}
 
 						<div class="row hidden-xs hidden-sm">
-							<div class="col-md-5">
+							<div class="col-md-3">
+								<i class="icon-quote-left"></i> {{position.label}} <i class="icon-quote-right"></i>
+							</div>
+							<div class="col-md-9">
 								<ul class="list-inline">
 								{% for taken_position in position.taken_positions.all %}
 									<li>
 									{% with candidate=taken_position.person %}
 										{% if candidate.image %}
-											{% thumbnail candidate.image "100x100" crop="center" as im %}
-											<a href="{% url 'candidate_detail_view' election_slug=election.slug slug=candidate.id %}"><img src="{{im.url}}" height="100" width="100" alt="{{candidate.name}}" border="0" class="img-responsive" title="{{candidate.name}}"></a>
+											{% thumbnail candidate.image "50x50" crop="center"  format="PNG" as im %}
+											<a href="{% url 'candidate_detail_view' election_slug=election.slug slug=candidate.id %}" title="Ver perfil completo de {{candidate.name}}"><img src="{{im.url}}" height="50" width="50" alt="{{candidate.name}}" border="0" class="img-responsive" title="{{candidate.name}}" style="background-color: {% candidate_extra_info candidate 'color' %} "></a>
 											{% endthumbnail %}
 										{% else %}
-											{% thumbnail "http://votainteligente.cl/static/img/candidate-default.jpg" "100x100" crop="center" as im %}
-											<a href="{% url 'candidate_detail_view' election_slug=election.slug slug=candidate.id %}"><img src="{{im.url}}"  height="100" width="100" alt="{{candidate.name}}" border="0" class="img-responsive" title="{{candidate.name}}"></a>
+											{% thumbnail candidate.image "50x50" crop="center"  format="PNG" as im %}
+											<a href="{% url 'candidate_detail_view' election_slug=election.slug slug=candidate.id %}" title="Ver perfil completo de {{candidate.name}}"><img src="{{im.url}}"  height="50" width="50" alt="{{candidate.name}}" border="0" class="img-responsive" title="{{candidate.name}}" style="background-color: {% candidate_extra_info candidate 'color' %} "></a>
 											{% endthumbnail %}
 										{% endif %}
 										<span>{{candidate.name}}</span>
@@ -47,9 +52,6 @@
 									</li>
 								{% endfor %}
 								</ul>
-							</div>
-							<div class="col-md-7">
-								<i class="icon-quote-left"></i> {{position.label}} <i class="icon-quote-right"></i>
 							</div>
 						</div>
 						{% endif %}
@@ -64,11 +66,11 @@
 								{% for taken_position in position.taken_positions.all %}
 									{% with candidate=taken_position.person %}
 										{% if forloop.first %}
-											<a href="{% url 'candidate_detail_view' election_slug=election.slug slug=candidate.id %}">{{candidate.name}}</a>
+											<a href="{% url 'candidate_detail_view' election_slug=election.slug slug=candidate.id %}" title="Ver perfil completo de {{candidate.name}}">{{candidate.name}}</a>
 										{% elif forloop.last %}
-											{% trans "y" %} <a href="{% url 'candidate_detail_view' election_slug=election.slug slug=candidate.id %}">{{candidate.name}}</a>
+											{% trans "y" %} <a href="{% url 'candidate_detail_view' election_slug=election.slug slug=candidate.id %}" title="Ver perfil completo de {{candidate.name}}">{{candidate.name}}</a>
 										{% else %}
-											, <a href="{% url 'candidate_detail_view' election_slug=election.slug slug=candidate.id %}">{{candidate.name}}</a>
+											, <a href="{% url 'candidate_detail_view' election_slug=election.slug slug=candidate.id %}" title="Ver perfil completo de {{candidate.name}}">{{candidate.name}}</a>
 										{% endif %}
 									{% endwith %}
 								{% endfor %}

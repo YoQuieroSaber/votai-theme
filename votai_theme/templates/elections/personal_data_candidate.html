@@ -1,8 +1,18 @@
 {% load i18n %}
+
 {% if candidate.birth_date %}
 <tr>
     <td>
         <span>{% trans 'Nacimiento' %}:</span> {{candidate.birth_date}}
+    </td>
+</tr>
+{% endif %}
+
+{% if candidate.extra_info.partido %}
+
+<tr>
+    <td>
+        <span>{% trans 'Partido' %}:</span> {{candidate.extra_info.partido}}
     </td>
 </tr>
 {% endif %}

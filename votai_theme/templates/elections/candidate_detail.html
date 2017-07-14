@@ -5,6 +5,7 @@
 {% load markdown_deux_tags %}
 {% load votainteligente_extras %}
 {% load thumbnail %}
+{% load yqs_extras %}
 
 {% block url_face_to_face %}{% url 'face_to_face_one_candidate_detail_view' slug=election.slug slug_candidate_one=candidate.id %}{% endblock url_face_to_face %}
 
@@ -14,8 +15,8 @@
 
 {% block mainelection %}
 	<div class="container-profile">
-		<div>
-			<h3>{{ candidate.name }}</h3>
+		<div style="display:none">
+			{{ candidate.name }}
 		</div>
 
 		<div class="profile-candidate">
@@ -78,9 +79,26 @@
 
 				</div>
 				<div class="col-md-5">
+					 <h3>{{ candidate.name }} {% if candidate.did_not_pass_primaries == True %} (no superó las internas PASO){% endif %}</h3>
 					<table class="table">
-						{% include 'elections/candidates/personal_data_candidate.html' with candidate=candidate %}
+						{% include 'elections/personal_data_candidate.html' with candidate=candidate %}
 					</table>			
+
+                                <div class="antecedentes col-md-12">
+                                        <div class="info">
+                                        {% for background_category in election.can_election.backgroundcategory_set.all %}
+                                                {% for background in background_category.background_set.all %}
+                                                        {% for background_candidate in background.backgroundcandidate_set.all %}
+                                                                {{background_candidate.value}}
+                                                        {% endfor %}
+                                                {% endfor %}
+                                        {% endfor %}
+
+
+                                        {{ candidate.biography|markdown }}
+                                        </div>
+                                </div>
+
 				</div>
 				
 				<div class="col-md-4 social-side">
@@ -88,29 +106,12 @@
 					
 					
 					{% if 'facetoface'|val_navbars and election.uses_face_to_face  %}
-					<button type="button" class="btn btn-danger btn-lg btn-block" onClick="location.href='{% url 'face_to_face_one_candidate_detail_view' slug=election.slug slug_candidate_one=candidate.id %}'"><i class="icon-bolt"></i> {% trans "Compáralo con otro candidato" %}</button>
+					<button type="button" class="btn btn-danger btn-lg btn-block" onClick="location.href='{% url 'face_to_face_one_candidate_detail_view' slug=election.slug slug_candidate_one=candidate.id %}'"><i class="icon-bolt"></i> Comparálo con otro candidato</button>
 					{% endif %}
 					
 				</div>
 			</div>
 			
-			<div class="row">
-
-				<div class="antecedentes col-md-12">
-					<div class="info">
-					{% for background_category in election.can_election.backgroundcategory_set.all %}
-			 			{% for background in background_category.background_set.all %}
-			 				{% for background_candidate in background.backgroundcandidate_set.all %}
-				 				{{background_candidate.value}}
-			 				{% endfor %}
-			 			{% endfor %}
-			 		{% endfor %}
-
-			 		
-					{{ candidate.biography|markdown }}
-			 		</div>
-			 	</div>
-			</div>
 		</div>
 
 	</div>
@@ -165,19 +166,9 @@
 	<script type="text/javascript">
 	var API_KEY = '{{ 'client_id'|website_imgur }}';
 	var candidate_name = '{{candidate.name}}';
+	var hashtags="DoyLaCara,YoQuieroSaber";
 	var twitter_url = '{% url_domain %}{% url 'candidate_detail_view' election_slug=election.slug slug=candidate.id %}';
 	</script>
 	<script type="text/javascript" src="{% static 'js/video.js' %}"></script>
 {% endblock mainelection %}
 
-{% block extrajs %}
-	$(document).ready(function() {
-		$('div.antecedentes div.info').expander({
-			expandText: '<i class="icon-chevron-down"></i>',
-			userCollapseText: '<i class="icon-chevron-up"></i>',
-			slicePoint: 180,
-		});
-
-		$('.pop-fuente').popover();
-	});
-{% endblock extrajs %}

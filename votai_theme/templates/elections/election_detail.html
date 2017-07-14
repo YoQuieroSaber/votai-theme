@@ -14,55 +14,74 @@
 elections_json = {% elections_json %};
 </script>
 
-
-<div class="game-cta">
-       <div class="descubIni" style="overflow: hidden">
-                   <div class="col-md-1" id="inviDC3"></div>
-		<div class="col-md-6" id="inviDC1">Informate sobre los pre-candidatos nacionales y de tu provincia</div>
-                <div class="col-md-4" id="inviDC2"><select name="elecci&#243;n" id="eleccion"></select></div>
-        </div>
-{% if 'soulmate'|val_navbars and election.uses_soul_mate  %}
-<div class="soulmate-link">
-        <p class="soulmate-text">Descubr&#237; con cuál de los <b>{{ election }}</b> coincid&#237;s m&#225;s...</p>
-	<a class="bEmpez" href="{% url 'soul_mate_detail_view' slug=election.slug %}" accesskey="n" title="{% trans "1/2 Naranja" %} (Alt+n)">
-<span style="font-size:1.5em;vertical-align:middle;">{% trans "1/2 Naranja" %}</span>
-	</a>
+<div class="descubIni" style="overflow: hidden">
+           <div class="col-md-1" id="inviDC3"></div>
+<div class="col-md-6" id="inviDC1">Informate sobre los pre-candidatos nacionales y de tu provincia</div>
+        <div class="col-md-4" id="inviDC2"><select name="elecci&#243;n" id="eleccion"></select></div>
 </div>
-{% endif %}
-        </div>
-        <div>
-                <h2 class="text-center">{{ election }}</h2>
-        </div>
 
 
-<div class="row">
-	<div class="container-candidates">
-		{% for candidate in election.candidates.all|dictsort:"candidate.name" %}
-		<div class="col-md-2">
-			
-			{% if candidate.image %}
-				{% thumbnail candidate.image "300x300" crop="center" format="PNG" as im %}
-				<a href="{% url 'candidate_detail_view' election_slug=election.slug slug=candidate.id %}"><img src="{{im.url}}" alt="{{candidate.name}}" border="0" class="img-responsive" style="background-color: {{ candidate.extra_info.color }}">{%if candidate.extra_info.custom_ribbon %}<div class="ribbon">{{ candidate.extra_info.custom_ribbon }}</div>{% endif %}</a>
-				{% endthumbnail %}
-			{% else %}
-				<a href="{% url 'candidate_detail_view' election_slug=election.slug slug=candidate.id %}"><img src="{% static 'img/candidate-default.jpg' %}" alt="{{candidate.name}}" border="0" class="img-responsive">{% if candidate.extra_info.custom_ribbon %}<div class="ribbon">{{ candidate.extra_info.custom_ribbon }}</div>{% endif %}</a>
-			{% endif %}
-			
-			<p class="text-center">
-				<a href="{% url 'candidate_detail_view' election_slug=election.slug slug=candidate.id %}">{{candidate.name}}</a>
-				{% if not candidate.has_answered %}{% no_ha_respondido_twitter_button %}{% endif %}
-			</p>
+{% regroup election.candidates.all|dictsort:"did_not_pass_primaries" by did_not_pass_primaries as elections  %}
+	{% for candidates in elections %}
 
-		</div>
-		{% if forloop.counter|divisibleby:6 %}
+	<div class="candidate_group did_not_pass_primaries_{{ candidates.grouper }}">
+	    <div>
+	            <h2 class="text-center">{{ election }} {% if candidates.grouper == True %} que no superaron las internas (PASO){% endif %}</h2>
+	    </div>
+		<div class="game-cta">
+			{% if 'soulmate'|val_navbars and election.uses_soul_mate  %}
+			<div class="soulmate-link">
+			    <p class="soulmate-text">
+				    {% if candidates.grouper == True %}
+				    Jugá con todos los candidatos, incluso los que no superaron las primarias (PASO)
+				    {% else %}
+				    Descubr&#237; con cuál de los <b>{{ election }}</b> coincid&#237;s m&#225;s...
+				    {% endif %}
+			    </p>
+				<a class="bEmpez" href="{% url 'soul_mate_detail_view' slug=election.slug  %}?show_all_candidates={{ candidates.grouper }}" accesskey="n" title="{% trans "1/2 Naranja" %} (Alt+n)">
+					<span style="font-size:1.5em;vertical-align:middle;">{% trans "1/2 Naranja" %}</span>
+				</a>
 			</div>
-		</div>
+			{% endif %}
+	    </div>
+
+
 		<div class="row">
 			<div class="container-candidates">
-		{% endif %}
-		{% endfor %}
-	</div>
-</div>
+
+				{% for candidate in candidates.list|dictsort:"candidate.name" %}
+				<div class="col-md-2">
+					
+					{% if candidate.image %}
+						{% thumbnail candidate.image "300x300" crop="center" format="PNG" as im %}
+						<a href="{% url 'candidate_detail_view' election_slug=election.slug slug=candidate.id %}"><img src="{{im.url}}" alt="{{candidate.name}}" border="0" class="img-responsive" style="background-color: {{ candidate.extra_info.color }}">{%if candidate.extra_info.custom_ribbon %}<div class="ribbon">{{ candidate.extra_info.custom_ribbon }}</div>{% endif %}</a>
+						{% endthumbnail %}
+					{% else %}
+						<a href="{% url 'candidate_detail_view' election_slug=election.slug slug=candidate.id %}"><img src="{% static 'img/candidate-default.jpg' %}" alt="{{candidate.name}}" border="0" class="img-responsive">{% if candidate.extra_info.custom_ribbon %}<div class="ribbon">{{ candidate.extra_info.custom_ribbon }}</div>{% endif %}</a>
+					{% endif %}
+					
+					<p class="text-center">
+						<a href="{% url 'candidate_detail_view' election_slug=election.slug slug=candidate.id %}">
+							{{candidate.name}} 
+							<br/>
+							<span style="color: #888; font-size: 0.8em">{{candidate.extra_info.partido}}</span>
+						</a>
+						<br/>
+						{% if not candidate.has_answered %}{% no_ha_respondido_twitter_button %}{% endif %}
+					</p>
+
+				</div>
+				{% if forloop.counter|divisibleby:6 %}
+					</div>
+				</div>
+				<div class="row">
+					<div class="container-candidates">
+				{% endif %}
+				{% endfor %}
+			</div>
+		</div>
+
+
         <div class="row">
                 <div class="nav-candidator">
                         <nav class="col-md-12">
@@ -81,6 +100,9 @@ elections_json = {% elections_json %};
                         </nav>
                 </div>
         </div>
+    </div>
+	{% endfor %}
 
+</div>
 
 {% endblock mainelection %}
