@@ -1,192 +1,209 @@
-<!DOCTYPE html>
-{% load staticfiles %}
-{% load flatpages %}
-{% load i18n %}
-{% load votainteligente_extras %}
+<!DOCTYPE html> {% load staticfiles %} {% load flatpages %} {% load i18n %} {% load votainteligente_extras %}
 <html prefix="og: http://ogp.me/ns/{{ 'type'|ogpdata }}#">
-  <head>
-    <meta charset="utf-8">
-    <title>{% trans "Vota Inteligente" %} {% block title %}- {{ 'home_title'|website_gs }}{% endblock title %}</title>
-    <meta name="author" content="{{ 'author'|metadata }}">
-    <meta name="description" content="{% block description %}{{ 'description'|metadata }}{% endblock description %}">
-    <meta name="keywords" content="{{ 'keywords'|metadata }}{% block keywords %}{% endblock keywords %}">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="google-site-verification" content="{{ 'gsite-verification'|ga }}">
 
-    <!--for facebook fans-->
-    <meta property="og:type" content="{{ 'type'|ogpdata }}">
-    <meta property="og:url" content="{{ 'url'|ogpdata }}">
-    <meta property="og:image" content="{% static 'image'|ogpdata %}">
-    <!--eoff-->
+<head>
+  <meta charset="utf-8">
+  <title>{% trans "Vota Inteligente" %} {% block title %}- {{ 'home_title'|website_gs }}{% endblock title %}</title>
+  <meta name="author" content="{{ 'author'|metadata }}">
+  <meta name="description" content="{% block description %}{{ 'description'|metadata }}{% endblock description %}">
+  <meta name="keywords" content="{{ 'keywords'|metadata }}{% block keywords %}{% endblock keywords %}">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="google-site-verification" content="{{ 'gsite-verification'|ga }}">
 
-    <link rel="shortcut icon" sizes="196x196" href="{% static 'img/favicon.6fb2111c9430.ico' %}">
-    <link rel="apple-touch-icon-precomposed" href="{% static 'img/apple-touch-icon.976c73215044.png' %}"/>
+  <!--for facebook fans-->
+  <meta property="og:type" content="{{ 'type'|ogpdata }}">
+  <meta property="og:url" content="{{ 'url'|ogpdata }}">
+  <meta property="og:image" content="{% static 'image'|ogpdata %}">
+  <!--eoff-->
 
-    <!-- Browser out of date -->
-    <script type="text/javascript">
+  <link rel="shortcut icon" sizes="196x196" href="{% static 'img/favicon.6fb2111c9430.ico' %}">
+  <link rel="apple-touch-icon-precomposed" href="{% static 'img/apple-touch-icon.976c73215044.png' %}" />
+
+  <!-- Browser out of date -->
+  <script type="text/javascript">
     var $buoop = {}
     $buoop.ol = window.onload;
-    window.onload=function(){
-     try {if ($buoop.ol) $buoop.ol();}catch (e) {}
-     var e = document.createElement("script");
-     e.setAttribute("type", "text/javascript");
-     e.setAttribute("src", "http://browser-update.org/update.js");
-     document.body.appendChild(e);
+    window.onload = function() {
+      try {
+        if ($buoop.ol) $buoop.ol();
+      } catch (e) {}
+      var e = document.createElement("script");
+      e.setAttribute("type", "text/javascript");
+      e.setAttribute("src", "http://browser-update.org/update.js");
+      document.body.appendChild(e);
     }
-    </script>
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
-    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
-    <link rel="stylesheet" href="{% static 'css/chosen.min.css' %}" rel="stylesheet">
-    <link rel="stylesheet" href="{% static 'css/main.css' %}">
-    <link rel="stylesheet" href="{% static 'css/yqs.css' %}">
-    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,900' rel='stylesheet' type='text/css'>
-    <link type="text/plain" rel="author" href="{% static 'humans.txt' %}" />
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  </script>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/chosen.min.css' %}" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/main.css' %}">
+  <link rel="stylesheet" href="{% static 'css/yqs.css' %}">
+  <link href='http://fonts.googleapis.com/css?family=Lato:300,400,900' rel='stylesheet' type='text/css'>
+  <link type="text/plain" rel="author" href="{% static 'humans.txt' %}" />
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
 
-  </head>
-  <body data-ng-app="votainteligente">
-    <header>
-      <div class="hLogo"><span></span><a href="/"><img src="{% static 'img/YQSlogo.png' %}" class='imgHeader'></a></div>
-      <ul class="list-inline" id="headermenu">
-        <li>
-          <a href="/election/pre-candidato-a-presidente">Presidentes</a>
-        </li>
-        <li>
-          <a href="/pages/gobernadores">Gobernadores</a>
-        </li>
-        <li>
-          <a href="http://investigacion.yoquierosaber.org/posts">Otros cargos</a>
-        <li>
-          <a href="http://investigacion.yoquierosaber.org/">Investigación colectiva</a>
-        </li>
-        <li>
-          <a href="/pages/medios/">Medios</a>
-        </li>
-        <li>
-          <a href="/pages/nosotros/">Nosotros</a>
-        </li>
-      </ul>
-      <div class="header__nav__social">
-        <a href="https://www.facebook.com/YoQuieroSaber">Facebook</a>
-        <a href="https://twitter.com/YoQuieroSaberAR">Twitter</a>
-        <a href="http://taringa.net/YoQuieroSaber15">Taringa</a>
-      </div>
-    </header>
-      <div id="wrapper">
-        <div class="container">
-          {% block content %}
-          {% endblock content %}
-          {% block juego %}
-          {% endblock %}
-        </div>
-      </div>
-      <!-- <div class="share-sidebar">
+</head>
+
+<body data-ng-app="votainteligente">
+  <header>
+    <div class="hLogo"><span></span><a href="/"><img src="{% static 'img/YQSlogo.png' %}" class='imgHeader'></a></div>
+    <ul class="list-inline" id="headermenu">
+      <li>
+        <a href="/pages/nosotros/">Nosotros</a>
+      </li>
+      <li>
+        <a href="/pages/medios/">Medios</a>
+      </li>
+      <li>
+        <a href="#">MediaKit</a>
+      </li>
+      <li>
+        <a href="#">Github</a>
+      </li>
+    </ul>
+    <div class="header__nav__social">
+      <a href="https://www.facebook.com/YoQuieroSaber">Facebook</a>
+      <a href="https://twitter.com/YoQuieroSaberAR">Twitter</a>
+      <a href="http://taringa.net/YoQuieroSaber15">Taringa</a>
+    </div>
+  </header>
+  <div id="wrapper">
+    <div class="container">
+      {% block content %} {% endblock content %} {% block juego %} {% endblock %}
+    </div>
+  </div>
+  <!-- <div class="share-sidebar">
       <p class="share-title">Compartir</p>
       <div data-social-share-privacy="true" data-order="facebook fbshare mail twitter gplus"  data-options='{
               "language" : "es",
           }'></div>
       </div> -->
 
-      <footer class="footer">
-        <div class="calendario">
-          <h3 class="faltan">Calendario electoral</h3>
-          <ul class="row">
-            <li class="col-sm-8"><a href="/election/pre-candidato-a-presidente">Ballotage en <span class="fecha-distancia">22/11/2015</span></a></li>
-            <li class="col-sm-4"><a href="/pages/gobernadores">Todas las elecciones</a></li>
-          </ul>
-          <p class="votas">
-            ¿Votás? Contanos en <a href="http://www.twitter.com/YoQuieroSaberAr">twitter @YoQuieroSaberAr</a> hashtag #YoQuieroSaber
+  <footer class="footer">
+    <div class="calendario">
+      <h3 class="faltan">Calendario electoral</h3>
+      <ul class="row">
+        <li class="col-sm-8"><a href="/election/pre-candidato-a-presidente">Ballotage en <span class="fecha-distancia">22/11/2015</span></a></li>
+        <li class="col-sm-4"><a href="/pages/gobernadores">Todas las elecciones</a></li>
+      </ul>
+      <p class="votas">
+        ¿Votás? Contanos en twitter <a href="http://www.twitter.com/YoQuieroSaberAr">@YoQuieroSaberAr</a> hashtag <strong>#YoQuieroSaber</strong>
+      </p>
+    </div>
+
+    <div class="about">
+      <!--<div class="footer__bylines">-->
+      <div class="madeby">
+        <div class="about-content">
+          <h4>Hecho por</h4>
+          <p>
+            <a href="http://www.congresointeractivo.org"><img src="/static/img/logo-congreso-interactivo.png" width="150" alt="Congreso Interactivo"></a>
+            <a href="http://ar.okfn.org"><img src="/static/img/logo-okf-argentina.png" width="200" alt="Open Knowledge Argentina"></a>
+            <a href="http://twitter.com/dataconcepcion"><img src="/static/img/logo-datos-concepcion.png" width="40" height="40" alt="Datos Concepción"></a>
+            <a href="http://www.directoriolegislativo.org/"><img src="/static/img/logo-directorio-legislativo.png" width="180" alt="Directorio Legislativo"></a>
+          </p>
+          <button class="colabora"><a href="http://investigacion.yoquierosaber.org/">Colabor&#225; con nuestra investigaci&#243;n colectiva</a></button>
+        </div>
+      </div>
+      <div class="socios">
+        <div class="about-content">
+          <h4>Socios</h4>
+          <p>
+            <a href="http://www.taringa.net"><img src="/static/img/logo-taringa-2.png" width="180" alt="Taringa"></a> &middot;
+            <a href="http://www.acij.org.ar"><img src="/static/img/logo-acij.png" width="100" alt="ACIJ"></a> &middot;
+            <a href="http://www.conciencia.org"><img src="/static/img/logo-conciencia.jpg" width="100" alt="Asociación Conciencia"></a> &middot;
+            <a href="http://www.we-me.org"><img src="/static/img/logo-weme.png" width="70" alt="We-Me"></a> &middot;
+            <a href="http://www.utdt.edu/ver_contenido.php?id_contenido=9095&amp;id_item_menu=17559"><img src="/static/img/logo-accionsocial.png" width="150" alt="Acción Social DiTella"></a> &middot;
+            <a href="https://mysociety.org"><img src="/static/img/logo-mysociety.png" width="150" alt="mySociety"></a> &middot;
+            <a href="http://www.ciudadanointeligente.org"><img src="/static/img/logo-ci.svg" width="140" alt="Ciudadano Inteligente"></a> &middot;
+            <a href="http://www.clinica-web.com.ar"><img src="/static/img/logo-cw.png" width="180" alt="Clínica Web"></a>
           </p>
         </div>
-        <button class="colabora"><a href="http://investigacion.yoquierosaber.org/">Colabor&#225; con nuestra investigaci&#243;n colectiva</a></button>
-				<div class="about">
-          <div class="footer__bylines">
-            <h4>Hecho por</h4>
-            <p>
-              <a href="http://www.congresointeractivo.org"><img src="/static/img/logo-congreso-interactivo.png" width="107" height="40" alt="Congreso Interactivo"></a>
-              <a href="http://ar.okfn.org"><img src="/static/img/logo-okf-argentina.png" width="172" height="40" alt="Open Knowledge Argentina"></a>
-              <a href="http://twitter.com/dataconcepcion"><img src="/static/img/logo-datos-concepcion.png" width="35" height="40" alt="Datos Concepción"></a>
-              <a href="http://www.directoriolegislativo.org/"><img src="/static/img/logo-directorio-legislativo.png" width="130" height="40" alt="Directorio Legislativo"></a>
-            </p>
+      </div>
+      <div class="support">
+        <div class="about-content">
+          <p>
+            <h4>Apoyado por </h4>
+          </p>
+          <a href="http://hackslabs.org/"><img src="{% static 'img/logo-hl.png' %}" width="120" alt="hackslabs" style="background-color:#fff;padding: 1%;"></a>
+          <a href="http://www.worldbank.org/"><img src="{% static 'img/logo-wb.png' %}" width="100" alt="World Bank"></a>
+          <a href="http://www.icfj.org/" style="zoom: 0.8;"><img src="{% static 'img/logo-ICFJ.png' %}" width="200" alt="ICFJ" style="background-color:#fff;padding: 1%;"></a>
+          <a href="http://www.avina.net/"><img src="{% static 'img/logo-avina.jpg' %}" width="115" alt="Fundación Avina"></a>
+          <a href="http://www.thedatashift.org/"><img src="{% static 'img/logo-datashift.png' %} " alt="The Data Shift " width="115" style="background-color:#fff;padding: 1%;"></a>
+        </div>
+      </div>
+      <div class="collab">
+        <div class="about-content">
+          <h3><a href="/pages/nosotros/ ">Colaboradores y voluntarios</a></h3>
+        </div>
+      </div>
+    </div>
 
-            <h4>Socios</h4>
-            <p>
-              <a href="http://www.taringa.net">Taringa</a> &middot;
-              <a href="http://www.acij.org.ar">ACIJ</a> &middot;
-              <a href="http://www.conciencia.org">Asociación Conciencia</a> &middot;
-              <a href="http://www.we-me.org">We-Me</a> &middot;
-              <a href="http://www.utdt.edu/ver_contenido.php?id_contenido=9095&amp;id_item_menu=17559">Acción Social DiTella</a>  &middot;
-              <a href="https://mysociety.org">mySociety</a> &middot;
-              <a href="http://www.ciudadanointeligente.org">Ciudadano Inteligente</a> &middot;
-              <a href="http://www.clinica-web.com.ar">Clínica Web</a>
-            </p>
-            <p>
-              <h4>Apoyado por </h4>
-            </p>
-            <div style="background: white; padding: 1em; padding-bottom: 0.5em; border-radius: 1em">
-                  <a href="http://hackslabs.org/"><img src="{% static 'img/logo-hl.png' %}" alt="hackslabs"></a>
-                  <a href="http://www.worldbank.org/"><img src="{% static 'img/logo-wb.png' %}" alt="World Bank"></a>
-                  <a href="http://www.icfj.org/" style="zoom: 0.8;"><img src="{% static 'img/logo-icfj.png' %}" alt="ICFJ"></a>
-                  <a href="http://www.avina.net/"><img src="{% static 'img/logo-avina.jpg' %}" alt="Fundación Avina" style="width: 135px"></a>
-                  <a href="http://www.thedatashift.org/""><img src="{% static 'img/logo-datashift.png' %}" alt="The Data Shift" style="width: 135px"></a>
-            </div>
-            <p>
-              <a href="/pages/nosotros/">Todos los colaboradores y voluntarios</a>
-            </p>
-          </div>
+  </footer>
+  <a href="#0 " class="cd-top ">Subir</a>
+  <script src="http://code.jquery.com/jquery-1.10.1.min.js "></script>
+  <script>
+    window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js "><\/script>')
+  </script>
 
-				</div>
-      </footer>
-      <a href="#0" class="cd-top">Subir</a>
-      <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-      <script>
-      window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')
-      </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.3/angular.min.js "></script>
+  <script src="{% static 'js/removeDiacritics.js' %} "></script>
+  <script src="{% static 'js/jquery.expander.js' %} "></script>
 
-      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.3/angular.min.js"></script>
-      <script src="{% static 'js/removeDiacritics.js' %}"></script>
-      <script src="{% static 'js/jquery.expander.js' %}"></script>
+  <script src="{% static 'js/main.js' %} "></script>
 
-      <script src="{% static 'js/main.js' %}"></script>
-
-      <script src="{% static 'SocialSharePrivacy/javascripts/jquery.cookies.js' %}"></script>
-      <!-- <script type="application/x-social-share-privacy-settings">{"path_prefix":"{% static 'SocialSharePrivacy/' %}","layout":"box","services":{"buffer":{"status":false},"delicious":{"status":false},"disqus":{"status":false},"facebook":{"status":false},"flattr":{"status":false},"hackernews":{"status":false},"linkedin":{"status":false},"pinterest":{"status":false},"reddit":{"status":false},"stumbleupon":{"status":false},"tumblr":{"status":false},"xing":{"status":false}}}</script> -->
-      <script type="text/javascript">(function () {var s = document.createElement('script');var t = document.getElementsByTagName('script')[0];s.type = 'text/javascript';s.async = true;s.src = "http://elecciones2015.yoquierosaber.org/static/SocialSharePrivacy/javascripts/jquery.socialshareprivacy.min.autoload.js";t.parentNode.insertBefore(s, t);})();</script>
+  <script src="{% static 'SocialSharePrivacy/javascripts/jquery.cookies.js' %} "></script>
+  <!-- <script type="application/x-social-share-privacy-settings ">{"path_prefix ":"{% static 'SocialSharePrivacy/' %} ","layout ":"box ","services ":{"buffer ":{"status ":false},"delicious ":{"status ":false},"disqus ":{"status ":false},"facebook
+          ":{"status ":false},"flattr ":{"status ":false},"hackernews ":{"status ":false},"linkedin ":{"status ":false},"pinterest ":{"status ":false},"reddit ":{"status ":false},"stumbleupon ":{"status ":false},"tumblr ":{"status ":false},"xing ":{"status ":false}}}</script> -->
+  <script type="text/javascript ">
+    (function() {
+      var s = document.createElement('script');
+      var t = document.getElementsByTagName('script')[0];
+      s.type = 'text/javascript';
+      s.async = true;
+      s.src = "http://elecciones2015.yoquierosaber.org/static/SocialSharePrivacy/javascripts/jquery.socialshareprivacy.min.autoload.js ";
+      t.parentNode.insertBefore(s, t);
+    })();
+  </script>
 
 
-      <script src="{% static 'js/argentina-theme.js' %}"></script>
-      <script type="text/javascript">
-      var app = angular.module('votainteligente', []);
-      </script>
-      <script type="text/javascript">
-      {% block extrajs %}
-      {% endblock extrajs %}
-      </script>
+  <script src="{% static 'js/argentina-theme.js' %} "></script>
+  <script type="text/javascript ">
+    var app = angular.module('votainteligente', []);
+  </script>
+  <script type="text/javascript ">
+    { % block extrajs %
+    } { % endblock extrajs %
+    }
+  </script>
 
-      {% block extrascripts %}
-      {% endblock extrascripts %}
+  {% block extrascripts %} {% endblock extrascripts %}
 
 
-      <!-- Latest compiled and minified JavaScript -->
-      <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-      <script src="//cdnjs.cloudflare.com/ajax/libs/chosen/1.0/chosen.jquery.min.js" type="text/javascript"></script>
-      <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.3.1/jquery.cookie.min.js" type="text/javascript"></script>
-      <script type="text/javascript">
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js "></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/chosen/1.0/chosen.jquery.min.js " type="text/javascript "></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.3.1/jquery.cookie.min.js " type="text/javascript "></script>
+  <script type="text/javascript ">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', '{{ '
+      code '|ga }}'
+    ]);
+    _gaq.push(['_trackPageview']);
 
-        var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', '{{ 'code'|ga }}']);
-        _gaq.push(['_trackPageview']);
+    (function() {
+      var ga = document.createElement('script');
+      ga.type = 'text/javascript';
+      ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
 
-        (function() {
-          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-        })();
+</body>
 
-      </script>
-
-    </body>
 </html>
