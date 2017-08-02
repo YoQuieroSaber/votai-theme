@@ -1,5 +1,5 @@
-var elecUrl="/election/ballotage";
-var jsonUrl= "/theme/election/ballotage/media-naranja.json";
+var elecUrl="/election/paso-legislativas-2017";
+var jsonUrl= "/theme/election/paso-legislativas-2017/media-naranja.json";
 
 jQuery(document).ready(function($){
         // browser window scroll (in pixels) after which the "back to top" link is shown
