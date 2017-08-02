@@ -155,7 +155,7 @@ div.question-answer div.row.hidden-xs {
 	padding-top: 40px;
 	width:100%;
 	height:100%;
-	background-color:#86e895;
+	background-color:#9b6b7d;
 	z-index:10000;
 	text-align:center;
 }
@@ -182,7 +182,7 @@ header{
 }
 
 header, footer {
-	background-color: #454;
+	background-color: #c2185b;
 }
 
 .header__nav__social a[href*="facebook"] {
@@ -235,7 +235,7 @@ header span{
     vertical-align: middle;
 }
 #headermenu {
-margin-top: 0.5em;
+margin-top: 0.8em;
 font-family: yqsFont, "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 font-size: 1.5em;
 }
@@ -245,7 +245,7 @@ padding: 0 0.5em;
 }
 
 #headermenu a:hover {
-	text-decoration: underline;
+	border-bottom: 4px solid #fff;
 }
 .breadcrumb>li+li:before {
 padding: 0 5px;
@@ -328,8 +328,11 @@ footer h3{
 	margin-top: 25px;
 	border-radius: 5px;
 	border: none;
-	padding: 1em;
+	padding: 1em 3em;
 	font-weight: bold;
+  background-color: #c3b37d;
+  width: 70%;
+
 }
 .colabora a:hover {
   text-decoration: none;
@@ -337,22 +340,22 @@ footer h3{
 }
 .colabora a {
   color: #000000;
-  cursor: pointer;
+  //cursor: pointer;
 }
 .dias{
 	color:#e4324c;
 }
 .calendario{
 	font-size:2em;
-	background-color:#bbb;
-	color: black;
+	background-color:#880e4f;
+	color: white;
 	text-align:center;
 	padding:20px;
 }
 .calendario h3
 {
 	margin-top:0px;
-	color: #353535;
+	color: #fff;
 	font-size: 1.1em;
 	font-family:yqsFont;
 }
@@ -380,6 +383,21 @@ footer h3{
 .votas {
 	clear: both;
 	font-size: 1em;
+  background: #9b6b7d;
+  margin-top: 0;
+  margin-left:-2%;
+  margin-right:-2%;
+  margin-bottom: -2.6%;
+  padding: 2% 0;
+  color: #fff;
+  border-bottom: #a5a2a3 20px solid;
+}
+.votas a{
+  color:#f7b0d5;
+  font-weight: bold;
+}
+.votas strong{
+  color:#f7b0d5;
 }
 
 .fecha-distancia {
@@ -389,12 +407,11 @@ footer h3{
 .about{
 	#background-color:#0f4135;
 	#box-shadow: 50px 50px 20px black;
-	max-width:545px;
-	text-align:left;
 	margin:auto;
+  border-top: #ad1450 35px solid;
 }
 .about img {
-	margin-right: 0.7em;
+	margin-right: 2.7em;
 }
 .about p{
 	font-size:1.0em;
@@ -403,10 +420,14 @@ footer h3{
 }
 
 .about h4{
-font-size: 1.0em;
-color: #cfa;
-margin-bottom: 1px;
-font-weight: bold;
+  color: #fff;
+  margin-bottom: 1px;
+  font-weight: bold;
+  text-align: center;
+  padding-bottom: 2%;
+  font-size: 2em;
+  font-family: yqsFont;
+
 }
 .about a{
 	color:white;
@@ -417,11 +438,64 @@ font-weight: bold;
 	color:white;
 }
 
+.madeby{
+  background-color: #b3677b;
+  border-top: #c2185b solid 10px;
+  border-bottom: #c2185b solid 10px;
+}
+
+.madeby a{
+  color: #000;
+}
+
+.socios{
+  background-color: #ad1450;
+  border-top: #c2185b solid 10px;
+  border-bottom: #c2185b solid 10px;
+}
+
+.support{
+  background-color: #9b0844;
+  border-top: #c2185b solid 5px;
+  border-bottom: #c2185b solid 5px;
+  padding-bottom: 5%;
+}
+
+.collab{
+  background-color: #560429;
+  border-bottom: #3a031e solid 30px;
+  margin-bottom: -3%;
+
+}
+
+.collab h3{
+  color: #fff;
+  margin-bottom: 1px;
+  font-weight: bold;
+  text-align: center;
+  padding-bottom: 2%;
+  font-size: 1.5em;
+  font-family: yqsFont;
+
+}
+
+.about-content{
+  max-width: 80%;
+  margin: auto;
+  padding: 2%;
+}
+
+.socios-content img{
+  border-radius: 5px;
+  margin: 1.5%;
+  padding: 0.5%;
+}
+
 .imgHeader{
 	vertical-align: middle;
-	width:232.43px;
-	height:50px;
+	height:55px;
 }
+
 body{
 	//background-color:#86e895;
 	background-color:#dddddd;
@@ -451,7 +525,7 @@ button:focus {
 	//height:100%;
 	height:560px;
 	width:100%;
-	background-color:#86e895;
+	background-color:#9b6b7d;
 	//z-index:1;
 	text-align:center;
 	padding-top:5%;
@@ -478,7 +552,7 @@ button:focus {
 @media (min-width: 768px) {
 	#inicio.election_10 {
 	  top: 107px !important;
-	}	
+	}
 }
 
 #inicio.election_10 .imgInicio {
@@ -536,7 +610,7 @@ button:focus {
 .bInicio,
 .bJugar{
 	top:66%;
-	background-color:#da3b75;
+	background-color:#05b349;
 	background-size: 100%;
 	//color:#40d9b3;
 	color:#fff;
@@ -941,7 +1015,7 @@ button:focus {
 
 .menu a {
 	padding: 1em;
-	background: #454;
+	background: #af044a;
 	display: block;
 	border-radius: 1em;
 	margin: 1em;
@@ -966,7 +1040,7 @@ background-color: #5a7;
 }
 
 .bEmpez{
-	background-color:#dd3975;
+	background-color:#2dba60;
 	background-size: 100%;
 	color:#fff;
 	border: none;
@@ -1836,7 +1910,7 @@ padding: 0 4em 1em 0;
 		font-family: yqsFont;
 	}
 	.bEmpez{
-		background-color:#dd3975;
+		background-color:#2dba60;
 		background-size: 100%;
 		color:#fff;
 		border: none;
@@ -1952,7 +2026,7 @@ padding: 0 4em 1em 0;
   overflow: hidden;
   text-indent: 100%;
   white-space: nowrap;
-  background: #787 url(../img/cd-top-arrow.svg) no-repeat center 50%;
+  background: #84767b url(../img/cd-top-arrow.svg) no-repeat center 50%;
   visibility: hidden;
   opacity: 0;
   -webkit-transition: opacity .3s 0s, visibility 0s .3s;
@@ -1971,10 +2045,10 @@ padding: 0 4em 1em 0;
 }
 .cd-top.cd-fade-out {
   /* if the user keeps scrolling down, the button is out of focus and becomes less visible */
-  opacity: .5;
+  opacity: 1.5;
 }
 .no-touch .cd-top:hover {
-  background-color: #454;
+  background-color: #545;
   opacity: 1;
 }
 @media only screen and (min-width: 768px) {
