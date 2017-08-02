@@ -8,9 +8,10 @@
 <script type="text/javascript">
 elections_json = {% elections_json %};
 </script>
+
 <div id="telon">
         <div>
-                <img src="{% static 'img/YQSlogo.png' %}" class='imgInicio' >
+                <img src="{% static 'img/YQSlogo.png' %}" class="imgInicio" >
         </div>
 
 		<span class="loading"></span>
@@ -59,7 +60,7 @@ elections_json = {% elections_json %};
 		<button type="button" class="bInicio">
 		<span style="font-size:1.5em;vertical-align:middle;">Empezar</span>
 		<span style="font-size:3em; vertical-align:middle;"><b>&#20;&#20;>></b></span>
-	</button> 
+	</button>
 	</div>
 	<div class="row" style="margin-top: 1em">
 		<div class="election_name election_name_content"></div>
@@ -68,9 +69,9 @@ elections_json = {% elections_json %};
 
 <div id="inicioD">
 	<div class="descubIni">
-		
+
 			<div class="col-xs-3 col-md-3" id="inviDC3"></div>
-			<div class="col-xs-3 col-md-3" id="inviDC1">Informate sobre los pre-candidatos<br/> nacionales y de tu provincia</div>		
+			<div class="col-xs-3 col-md-3" id="inviDC1">Informate sobre los pre-candidatos<br/> nacionales y de tu provincia</div>
 		<div class="col-xs-3 col-md-3" id="inviDC2"><select name="elecci&#243;n" id="eleccion"></select></div>
 			<div class="col-xs-3 col-md-3" id="inviDC3"></div>
 			<br/>
@@ -79,7 +80,7 @@ elections_json = {% elections_json %};
 
 	<button type="button" class="bEmpez">
 		<span style="font-size:1.5em;vertical-align:middle;">Jugar</span>
-	</button>        
+	</button>
 	</div>
 </div>
 
@@ -98,7 +99,7 @@ elections_json = {% elections_json %};
 			<p>
 			<label for="inCorreo">Si quer&#233;s dejanos tu mail<br>para enviarte m&#225;s informaci&#243;n antes de las elecciones:</label>
 			</p>
-			<input type="text" name="correo" id="inCorreo" />		
+			<input type="text" name="correo" id="inCorreo" />
 			</form>
 		</div>
 
@@ -110,7 +111,7 @@ elections_json = {% elections_json %};
 			<span style="font-size:1.3em;vertical-align:middle;">Compartir</span>
 			<img src="{% static 'img/share.png' %}" width=20px height=20px style="margin-left:4px;">
 			</button>
-				
+
 			<button type="button" class="vuelve secondaryButton">
 			<span style="font-size:2.4em; vertical-align:middle;margin-left:2px;"><b>&lt;&lt;&#20;&#20;</b></span>
 			<span style="font-size:1.2em;vertical-align:middle;">Volver</span>
@@ -119,9 +120,9 @@ elections_json = {% elections_json %};
 			<button type="button" class="rejugar secondaryButton">
 			<span style="font-size:1.3em;vertical-align:middle;">Mas preguntas</span>
 			<img src="{% static 'img/reload.png' %}" width="30px" height="30px"/>
-			</button>	
+			</button>
 
-				
+
 			<button type="button" class="sigue mainButton">
 			<span style="font-size:1.2em;vertical-align:middle;">Siguiente</span>
 			<span style="font-size:2.4em; vertical-align:middle;margin-left:2px;"><b>&#20;&#20;>></b></span>
@@ -138,7 +139,7 @@ elections_json = {% elections_json %};
 			<button class="closeInter"></button>
 			<div class="afiniCand">
 					<div class="afiniCHead">
-						<img class='afiniCImg' width=90px height=90px><div class="afiniCNom"></div>				
+						<img class='afiniCImg' width=90px height=90px><div class="afiniCNom"></div>
 						<div class="afiniBio"></div>
 
 					</div>
@@ -146,8 +147,8 @@ elections_json = {% elections_json %};
 					</div>
 					<div class="noCoincide"><div class="tit">No coincide con vos:</div><br/></div>
 					<div class="noResp"><div class="tit">No tiene respuesta:</div><br/></div>
-					
-			</div>	
+
+			</div>
 			<div class="menu" id="menuMob">
 				<img src="{% static 'img/YQSlogo.png' %}" class='imgHeader'>
 
@@ -171,13 +172,13 @@ elections_json = {% elections_json %};
 	  	    </div>
 			<div class="share">
 				<p>Compartí esta información con tus amigos en redes sociales:</a><div data-social-share-privacy='true' style="width: 55px;"></div>
-			</div>	
+			</div>
 			<div class="about2">
 				<h2 class="yqs-title">Yo Quiero Saber 2015</h2>
 				<p>Mediante preguntas y respuestas vas a conocer la afinidad con quienes aspiran a gobernar el pa&#237;s:  candidatos a presidente y gobernador de las provincia de Buenos Aires, Entre R&#237;os, San Juan y Tucum&#225;n.<br/>
-				Una manera divertida de informarte sobre los candidatos a las elecciones primarias abiertas y simult&#225;neas (PASO) del 9 de agosto. 
+				Una manera divertida de informarte sobre los candidatos a las elecciones primarias abiertas y simult&#225;neas (PASO) del 9 de agosto.
 				</p>
-				
+
 					<h2>&#191;Quienes hacemos Yo Quiero Saber?</h2>
 					<p>
 		          <a href="http://www.congresointeractivo.org"><img src="/static/img/logo-congreso-interactivo.png" width="107" height="40" alt="Congreso Interactivo"></a>
@@ -189,15 +190,15 @@ elections_json = {% elections_json %};
 					<p>
 						Con el apoyo de: </p>
 					<p>
-		          <a href="http://hackslabs.org/"><img src="{% static 'img/logo-hl.png' %}" alt="hackslabs"></a> 
-		          <a href="http://www.worldbank.org/"><img src="{% static 'img/logo-wb.png' %}" alt="World Bank"></a> 
-		          <a href="http://www.icfj.org/" style="zoom: 0.8;"><img src="{% static 'img/logo-icfj.png' %}" alt="ICFJ"></a>				
+		          <a href="http://hackslabs.org/"><img src="{% static 'img/logo-hl.png' %}" alt="hackslabs"></a>
+		          <a href="http://www.worldbank.org/"><img src="{% static 'img/logo-wb.png' %}" alt="World Bank"></a>
+		          <a href="http://www.icfj.org/" style="zoom: 0.8;"><img src="{% static 'img/logo-icfj.png' %}" alt="ICFJ"></a>
 					</p>
 					<p>
 	          			Junto con otras organizaciones de la sociedad civil, periodistas, polit&#243;logos y voluntarios de: ACIJ, Asociaci&#243;n Conciencia, We-Me, Acción Social DiTella y Taringa.
 
 					</p>
-					<p>Desarrollado por MySociety, Ciudadano Inteligente y Cl&#237;nica Web.</p>	
+					<p>Desarrollado por MySociety, Ciudadano Inteligente y Cl&#237;nica Web.</p>
 					<p>Contacto: <a href="mailto:info@yoquierosaber.org?subject=Contacto desde el juego">info@yoquierosaber.org</a></p>
 					<p><a href="mailto:info@yoquierosaber.org?subject=Contacto por investigacion desde el juego">Sumate a nuestro equipo de investigación</a></p>
 				</div>
@@ -219,7 +220,7 @@ elections_json = {% elections_json %};
 				<!--	</div> -->
 		</div>
 	</div>
-		
+
 			<div class="col-xs-4 col-md-4" id="tarjeta1" ><button type="button" class='voto' id="vSi" alt="Si" >SI</button></div>
 			<div class="col-xs-4 col-md-4" id="tarjeta3" ><button type="button" id="vOp">MÁS<br/>OPCIONES</button></div>
 			<div class="col-xs-4 col-md-4" id="tarjeta2" ><button type="button" class='voto' id="vNo" alt="No" >NO</button></div>
@@ -228,14 +229,14 @@ elections_json = {% elections_json %};
 				<button class="bOp1"><div class="op1" id="opc"></div></button>
 				<button class="bOp2"><div class="op2" id="opc"></div></button>
 				<button class="bOp3"><div class="op3" id="opc"></div></button>
-				<button class="bOp4"><div class="op4" id="opc"></div></button>				
+				<button class="bOp4"><div class="op4" id="opc"></div></button>
 				<br/>
 				<span style="vertical-align:middle;">
 				<button type="button" id="nav2" class="bBack" title="Pregunta anterior"></button>
 				<button class="closeBtn"></button>
 				<button type="button" id="nav2" class="bSaltear" title="Saltear pregunta"></button>
 				</span>
-			</div>	
+			</div>
 
 		<div class="sobreFondo1" style="text-align:center;z-index:1">
 			<img class="sobreTapa" src="{% static 'img/sobre_fondo1.png' %}">
@@ -246,7 +247,7 @@ elections_json = {% elections_json %};
 		<div class="tapaCerrada" style="text-align:center;z-index:5">
 			<img class="sobreTapa2" src="{% static 'img/tapaCerrada.png' %}" >
 		</div>
-		
+
 		<div class="sobreFrente" style="text-align:center;z-index:6">
 			<img src="{% static 'img/sobre_frente.png' %}">
 		</div>
@@ -258,16 +259,16 @@ elections_json = {% elections_json %};
 		<button type="button" id="nav1" class="bBack"></button>
 
 		<button type="button" id="nav1" class="bSaltear"></button>
-		
+
 		<div class="pre-urna"></div>
-		
+
 		<div class="urna1" style="text-align:center;z-index:5">
 			<img src="{% static 'img/ranura1.png' %}">
 		</div>
 		<div class="urna2" style="text-align:center;z-index:10">
 			<img src="{% static 'img/ranura2.png' %}">
 		</div>
-	
+
 		<div class="afiT"><span class="realAfinidad">Afinidad<span class="election_name"> con </span> </span><span class="election_name election_name_content"></span></div>
 		<div class="afinidad" style="z-index:20">
 			<span class="afiniImg"></span>
