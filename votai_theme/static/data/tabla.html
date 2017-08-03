@@ -84,7 +84,7 @@ td, th {
 				for (c in data.candidates) {
 					candidate = data.candidates[c];
 					if ($("#candidate"+candidate.candidate_id).length == 0) {
-						tbody.append("<tr id='candidate"+candidate.candidate_id+"'><td>"+candidate.candidate_name+" ("+candidate.candidate_partido+")</td></tr>");
+						tbody.append("<tr id='candidate"+candidate.candidate_id+"'><td>"+candidate.candidate_name+" ("+candidate.candidate_partido+")<img src=\""+candidate.candidate_pic+"\" style='height:25px'>"+(candidate.candidate_bio?"CON BIO":"SIN BIO")+"</td></tr>");
 						
 					}
 					candidate_row = $("#candidate"+candidate.candidate_id);
@@ -119,13 +119,13 @@ td, th {
     }
 
 
-    $.getJSON("/theme/election/candidatos-a-gobernador-chaco/media-naranja.json", election_table);
-    $.getJSON("/theme/election/pre-candidato-a-presidente/media-naranja.json", election_table);
-    $.getJSON("/theme/election/pre-candidato-a-gobernador-de-buenos-aires/media-naranja.json", election_table);
-    $.getJSON("/theme/election/pre-candidato-a-gobernador-de-tucuman/media-naranja.json", election_table);
-    $.getJSON("/theme/election/pre-candidato-a-gobernador-de-san-juan/media-naranja.json", election_table);
-    $.getJSON("/theme/election/candidatos-a-gobernador-san-luis/media-naranja.json", election_table);
-    $.getJSON("/theme/election/pre-candidato-a-gobernador-de-entre-rios/media-naranja.json", election_table);
+    $.getJSON("/theme/election/buenos-aires-diputados/media-naranja.json", election_table);
+    $.getJSON("/theme/election/buenos-aires-senadores/media-naranja.json", election_table);
+    $.getJSON("/theme/election/caba-diputados/media-naranja.json", election_table);
+    $.getJSON("/theme/election/mendoza/media-naranja.json", election_table);
+    $.getJSON("/theme/election/cordoba-diputados/media-naranja.json", election_table);
+    $.getJSON("/theme/election/entre-rios-diputados/media-naranja.json", election_table);
+//    $.getJSON("/theme/election/pre-candidato-a-gobernador-de-entre-rios/media-naranja.json", election_table);
 
 </script>
 

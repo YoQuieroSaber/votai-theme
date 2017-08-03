@@ -167,7 +167,7 @@
 	var API_KEY = '{{ 'client_id'|website_imgur }}';
 	var candidate_name = '{{candidate.name}}';
 	var hashtags="DoyLaCara,YoQuieroSaber";
-	var twitter_url = '{% url_domain %}{% url 'candidate_detail_view' election_slug=election.slug slug=candidate.id %}';
+	var twitter_url = '{% url_domain %}{#% url 'candidate_detail_view' election_slug=election.slug slug=candidate.id %#}';
 	</script>
 	<script type="text/javascript" src="{% static 'js/video.js' %}"></script>
 {% endblock mainelection %}
