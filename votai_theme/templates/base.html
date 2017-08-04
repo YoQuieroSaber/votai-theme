@@ -55,10 +55,7 @@
         <a href="/pages/nosotros/">Nosotros</a>
       </li>
       <li>
-        <a href="/pages/medios/">Medios</a>
-      </li>
-      <li>
-        <a href="#">MediaKit</a>
+        <a href="/pages/medios/">MediaKit</a>
       </li>
       <li>
         <a href="https://github.com/yoquierosaber/votai-theme" target="_blank">Github</a>
@@ -123,41 +120,24 @@
         <div class="about-content">
           <h4>Hecho por</h4>
           <p>
-            <a href="http://www.congresointeractivo.org"><img src="/static/img/logo-congreso-interactivo.png" width="150" alt="Congreso Interactivo"></a>
-            <a href="http://ar.okfn.org"><img src="/static/img/logo-okf-argentina.png" width="200" alt="Open Knowledge Argentina"></a>
-            <a href="http://twitter.com/dataconcepcion"><img src="/static/img/logo-datos-concepcion.png" width="40" height="40" alt="Datos Concepción"></a>
-            <a href="http://www.directoriolegislativo.org/"><img src="/static/img/logo-directorio-legislativo.png" width="180" alt="Directorio Legislativo"></a>
+            <a href="https://www.fcabierto.org"><img src="/static/img/logo-fca.png" width="200" alt="Conocimiento Abierto"></a>
+            <a href="http://democraciaenred.org"><img src="/static/img/logo-DER.png" width="150" alt="Democracia en Red"></a>
+            <a href="http://www.uba.ar"><img src="/static/img/logo-uba.png" width="80" alt="Universidad Nacional Buenos Aires"></a>
+            <a href="http://www.ciudadanointeligente.org"><img src="/static/img/logo-ci.svg" width="150" alt="Ciudadano Inteligente"></a>
+            <a href="http://www.avina.net/avina/"><img src="/static/img/logo-avina.jpg" width="120" alt="Avina"></a>
+            <a href="https://mysociety.org"><img src="/static/img/logo-mysociety.png" width="150" alt="mySociety"></a>
           </p>
           <button class="colabora"><a href="http://investigacion.yoquierosaber.org/">Colabor&#225; con nuestra investigaci&#243;n colectiva</a></button>
         </div>
       </div>
-      <div class="socios">
+      <!--<div class="socios">
         <div class="about-content">
-          <h4>Socios</h4>
-          <p>
-            <a href="http://www.taringa.net"><img src="/static/img/logo-taringa-2.png" width="180" alt="Taringa"></a> &middot;
-            <a href="http://www.acij.org.ar"><img src="/static/img/logo-acij.png" width="100" alt="ACIJ"></a> &middot;
-            <a href="http://www.conciencia.org"><img src="/static/img/logo-conciencia.jpg" width="100" alt="Asociación Conciencia"></a> &middot;
-            <a href="http://www.we-me.org"><img src="/static/img/logo-weme.png" width="70" alt="We-Me"></a> &middot;
-            <a href="http://www.utdt.edu/ver_contenido.php?id_contenido=9095&amp;id_item_menu=17559"><img src="/static/img/logo-accionsocial.png" width="150" alt="Acción Social DiTella"></a> &middot;
-            <a href="https://mysociety.org"><img src="/static/img/logo-mysociety.png" width="150" alt="mySociety"></a> &middot;
-            <a href="http://www.ciudadanointeligente.org"><img src="/static/img/logo-ci.svg" width="140" alt="Ciudadano Inteligente"></a> &middot;
-            <a href="http://www.clinica-web.com.ar"><img src="/static/img/logo-cw.png" width="180" alt="Clínica Web"></a>
-          </p>
         </div>
       </div>
       <div class="support">
         <div class="about-content">
-          <p>
-            <h4>Apoyado por </h4>
-          </p>
-          <a href="http://hackslabs.org/"><img src="{% static 'img/logo-hl.png' %}" width="120" alt="hackslabs" style="background-color:#fff;padding: 1%;"></a>
-          <a href="http://www.worldbank.org/"><img src="{% static 'img/logo-wb.png' %}" width="100" alt="World Bank"></a>
-          <a href="http://www.icfj.org/" style="zoom: 0.8;"><img src="{% static 'img/logo-ICFJ.png' %}" width="200" alt="ICFJ" style="background-color:#fff;padding: 1%;"></a>
-          <a href="http://www.avina.net/"><img src="{% static 'img/logo-avina.jpg' %}" width="115" alt="Fundación Avina"></a>
-          <a href="http://www.thedatashift.org/"><img src="{% static 'img/logo-datashift.png' %} " alt="The Data Shift " width="115" style="background-color:#fff;padding: 1%;"></a>
         </div>
-      </div>
+      </div>-->
       <div class="collab">
         <div class="about-content">
         </div>
@@ -196,8 +176,11 @@
   <script type="text/javascript ">
     var app = angular.module('votainteligente', []);
   </script>
+  <div style="display:none;">
+     {% block extrajs %} {% endblock extrajs %}
 
-  {% block extrascripts %} {% endblock extrascripts %}
+    {% block extrascripts %} {% endblock extrascripts %}
+  </div>
 
 
   <!-- Latest compiled and minified JavaScript -->
@@ -215,7 +198,7 @@
       var ga = document.createElement('script');
       ga.type = 'text/javascript';
       ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      ga.src = ('https:' == document.lo cation.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
       var s = document.getElementsByTagName('script')[0];
       s.parentNode.insertBefore(ga, s);
     })();
