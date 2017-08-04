@@ -39,20 +39,27 @@ elections_json = {% elections_json %};
 </div>
 
 <div id="inicio" style="display: none">
+	<div class="row"><br></div>
 	<div class="row">
-		<img src="{% static 'img/YQSlogo.png' %}" class='imgInicio' >
-	</div>
-	<div class="row"></br></div>
-	<div class="row">
-		<div class="col-xs-1 col-md-4" id="iniColS">
+		<div class="col-xs-1 col-md-2" id="iniColS">
 		</div>
-		<div class="col-xs-10 col-md-4" id="iniColC">
+		<div class="col-xs-10 col-md-8" id="iniColC">
 
-			<h4 class="invita">&#191;Con  cu&#225;l candidato tengo</br>m&#225;s afinidad?<br/><br/>
+			<h4 class="invita">&#191;Con  cu&#225;l candidato tengo m&#225;s afinidad?<br/><br/>
 				<!--	<select name="elecci&#243;n" id="eleccion"></select>-->
 				</h4><br/>
+        <div class="s-election">
+          <ul class="row" style="padding-top:2%;">
+            <li class="col-sm-4"><a href="theme/election/paso-legislativas-2017/media-naranja">Buenos Aires Diputados</a></li>
+            <li class="col-sm-4"><a href="theme/election/buenos-aires-senadores/media-naranja">Buenos Aires Senadores</a></li>
+            <li class="col-sm-4"><a href="theme/election/caba-diputados/media-naranja">CABA Diputados</a></li>
+            <li class="col-sm-4"><a href="theme/election/mendoza/media-naranja">Mendoza Diputados</a></li>
+            <li class="col-sm-4"><a href="theme/election/cordoba-diputados/media-naranja">Córdoba Diputados</a></li>
+            <li class="col-sm-4"><a href="theme/election/entre-rios-diputados/media-naranja">Entre Ríos Diputados</a></li>
+          </ul>
+        </div>
 		</div>
-		<div class="col-xs-1 col-md-4" id="iniColS">
+		<div class="col-xs-1 col-md-2" id="iniColS">
 		</div>
 	</div>
 	<!-- <div class="row"><select name="elecci&#243;n" id="eleccion"></select></div> -->
@@ -61,7 +68,7 @@ elections_json = {% elections_json %};
 		<span style="font-size:1.5em;vertical-align:middle;">Empezar</span>
 		<span style="font-size:3em; vertical-align:middle;"><b>&#20;&#20;>></b></span>
 	</button>
-	</div>
+</div>
 	<div class="row" style="margin-top: 1em">
 		<div class="election_name election_name_content"></div>
 	</div>
