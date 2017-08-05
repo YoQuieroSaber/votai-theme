@@ -1,5 +1,5 @@
-var elecUrl="/election/paso-legislativas-2017";
-var jsonUrl= "/theme/election/paso-legislativas-2017/media-naranja.json";
+var elecUrl="/election/buenos-aires-senadores";
+var jsonUrl= "/theme/election/buenos-aires-senadores/media-naranja.json";
 
 jQuery(document).ready(function($){
         // browser window scroll (in pixels) after which the "back to top" link is shown
@@ -41,10 +41,10 @@ jQuery(document).ready(function($){
                 jsonUrl= elections_json[0].medianaranja_link;
 
                 var options_eleccion = '';
-                options_eleccion += '<option value="' + elecUrl + '"><h4>Elegí tu distrito</h4><\/option>';
+                options_eleccion += '<option value="/es-ar/' + elecUrl + '"><h4>Elegí tu distrito</h4><\/option>';
                 $.each(elections_json, function(key,value){
                         //console.log(value["detaillink"]);
-                        options_eleccion += '<option value="' + value["detaillink"] + '"><h4>' +  value["name"] + '</h4><\/option>';
+                        options_eleccion += '<option value="' + value["detaillink"].replace("es-ar/","") + '"><h4>' +  value["name"] + '</h4><\/option>';
                 });
                 $("select#eleccion").html(options_eleccion);
 
@@ -58,7 +58,7 @@ jQuery(document).ready(function($){
                 function jugar(){
 
                 //url = "/theme/election/pre-candidato-a-presidente/media-naranja.json";
-                        location.href="/theme"+elecUrl+"/media-naranja";
+                        location.href="/theme"+elecUrl+"/media-naranja"+ "/?jugar=true";
                         jsonUrl=elecUrl+"/media-naranja.json";
 
                 }
@@ -67,9 +67,10 @@ jQuery(document).ready(function($){
                 $(".bEmpez").click(function() {
                         jugar();
                 });
+
+
         }
 });
-
 
 function getDayCount(secondDate){
         var oneDay = 24*60*60*1000; // hours*minutes*seconds*milliseconds

@@ -1548,14 +1548,18 @@ function loadGame(){
 					$("#game").addClass("election_"+eleccion.election_id);
 
 					preguntasPasadas = getPreguntasPasadas();
-					if (preguntasPasadas.length > 0) {
-						$("#game").show();
-						nextQuest();
+
+                                        if (preguntasPasadas.length > 0 || GetUrlValue("jugar") == "true") {
+                                                console.log("jugar1");
+                                                $("#game").show();
+                                                pregResize();
+                                                nextQuest();
+                                                $("#inicio").hide();
 					}
 					else {
 						$("#inicio").show().addClass("election_"+eleccion.election_id);
 					}
-          $("#telon").hide();
+				        $("#telon").hide();
 
 					$("#game,.afiniSide").on("click","img#fCand",function(){
 						for(var i=0;i<candidatos.length;i++){
@@ -1567,7 +1571,6 @@ function loadGame(){
 							}
 						}
 					});
-
 
 
 				});
@@ -1719,7 +1722,7 @@ function loadGame(){
 		$(".afinidad").css("overflow-x","hidden");
 		$("#game").css("top",gameTop+"px");
 		$("#telon").css("top",gameTop+"px");
-		$("#inicio").css("top",gameTop+"px");
+		$("#inicio").css("top",(gameTop/3)+"px");
 		var margR=parseFloat($("#sideLeft").css("margin-right"));
 		if($(window).width()>960){
 			$("#sideLeft").css("left",($(window).width()*0.5-parseFloat($("#game").css("width"))*0.5-parseFloat($("#sideLeft").css("width"))-margR)+"px");
@@ -1754,7 +1757,7 @@ function loadGame(){
 
 			gameTop = parseFloat($("#game").css("top"));
 			$("#telon").css("top",gameTop+"px");
-			$("#inicio").css("top",gameTop+"px");
+			$("#inicio").css("top",(gameTop/3)+"px");
 			pregFS = parseFloat($(".tPreg").css("font-size"));
 			resuFS = $(".pregResu").css("font-size");
 
@@ -2069,6 +2072,10 @@ function loadGame(){
 				$("#inicio").hide();
 
 			});
+			$("#cerrar-telon").click(function() {
+				$("#telon").hide();
+				$("#inicio").show();
+			})
 
 
 			$("#vSi").click(function(){

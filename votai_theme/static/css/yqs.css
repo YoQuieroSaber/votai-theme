@@ -1068,9 +1068,9 @@ background-color: #05b349;
 }
 #menuMob{
 	//width: 80vw;
-	width: 100%;
-	margin-top: 20vh;
-	//margin-left: 10vw;
+	width: calc(100%-40px);
+	margin-top: 4vh;
+	margin-left: 40px;
 }
 #menuMob a:hover {
   text-decoration: none;
@@ -1586,7 +1586,6 @@ padding: 0 4em 1em 0;
 .bSaltear#nav1{
 	position:absolute;
 	top:65%;
-	background-color:#86e895;
 	width:50px;
 	height:50px;
 	border: none;
