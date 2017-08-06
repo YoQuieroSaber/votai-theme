@@ -724,7 +724,27 @@ button:focus {
 {
 	width:90px;
 	float:left;
+	position: relative;
 }
+
+.leerbio {
+	position: absolute; 
+	left: 2px;
+	bottom: 2px;
+	width: 86px;
+	background: #eee; 
+	border-radius: 1em; 
+	font-size: 0.7em;
+}
+.resuIMG2 .leerbio,
+.resuIMG1 .leerbio {
+	right: 2px; left: auto; text-align: center
+}
+
+.resuIMG1 .leerbio {
+	width: 105px;
+}
+
 .chatIMG  img{
 		width:90px;
 		height:90px;
@@ -734,6 +754,7 @@ button:focus {
 {
 	width:90px;
 	float:right;
+	position: relative;
 }
 	.chatPhotoRight  img{
 		width:90px;
@@ -823,6 +844,7 @@ button:focus {
 	width:47%;
 	float:left;
 	text-align:right;
+	position: relative;
 }
 .resuIMG1 img{
 	width:110px;
@@ -948,8 +970,12 @@ button:focus {
 [class^="detalleButton"]{
 	cursor: pointer;
 	border:none;
-	background-color:#aaa;
+	background-color:#eee;
+	color: #333;
+	font-size: 0.85em;
+	padding: 0.45em;
 	border-radius:0.5em;
+	font-weight: normal;
 }
 
 
