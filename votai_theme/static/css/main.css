@@ -484,6 +484,12 @@ input, button, select, textarea {
 
 .social-link-candidate {
 	color: #FFF;
+	font-size: 1.2em;
+}
+
+.social-link-candidate:hover {
+	color: #05b34d;
+  text-shadow: 1px 1px 1px #111;
 }
 
 .container-candidates p {
@@ -821,11 +827,17 @@ div.question-answer div.row.hidden-xs:nth-of-type(2), div.question-answer div.ro
 	padding: 4px;
 	border-left: none;
 	border-right: none;
+	font-size: 1.2em;
 }
 
 .profile-candidate .table tbody>tr>td span {
 	opacity: 0.8;
 	font-weight: 300;
+}
+
+.info{
+	font-size: 1.2em;
+  margin-top: -3%;
 }
 
 .social-side button.btn-success {
@@ -1136,6 +1148,16 @@ tr.primary p:first-child, tr.danger p:first-child {
 {
 animation: doscaras 4s infinite;
 -webkit-animation: doscaras 4s infinite; /* Safari and Chrome */
+}
+
+.btn.btn-danger{
+	background: #83af37;
+	font-size: 1.1em;
+}
+
+.btn.btn-danger:hover{
+	background: #468c1d;
+	font-weight: bolder;
 }
 
 @keyframes doscaras

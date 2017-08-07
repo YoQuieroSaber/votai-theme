@@ -28,7 +28,7 @@ a{
 }
 
 .container-profile {
-	background: #454;
+	background: #c2185b;
 	margin-top: 1em;
 }
 
@@ -46,7 +46,8 @@ a{
 }
 
 .panel-default>.panel-heading {
-	background-color: #575;
+	background-color:#96004d;
+  font-size: 1.1em;
 }
 
 .container-profile h3 {
@@ -65,7 +66,7 @@ p.question {
 	font-size: 1.3em;
 }
 p.answer {
-	font-size: 1.2em;
+	font-size: 1.25em;
 }
 p.position_description {
 	font-size: 0.9em;
@@ -93,7 +94,9 @@ font-family: 'Saira Extra Condensed', sans-serif;
 margin-top: 1em;
 }
 body .social_share_privacy_area.box {
-width: auto;
+  width: auto;
+  float: left;
+  margin: 0 100%;
 }
 
 body .fbshare a {
@@ -737,7 +740,6 @@ button:focus {
 	width: 86px;
 	background: #eee;
 	border-radius: 1em;
-	font-size: 0.7em;
 }
 .resuIMG2 .leerbio,
 .resuIMG1 .leerbio {
@@ -940,7 +942,7 @@ button:focus {
 .postu {
 	text-align:left;
 	color:black;
-	font-size:1.0em;
+	font-size:1.15em;
 	line-height:1em;
 	padding-top:6px;
 	overflow:hidden;
@@ -956,9 +958,8 @@ button:focus {
 [class^="detalle"] {
 	text-align:left;
 	color:black;
-	font-size:1.0em;
+	font-size:1.15em;
 	line-height:1em;
-	padding-top:6px;
 	overflow:hidden;
 	background-color:rgba(0, 0, 0, 0));
 	padding-bottom: 10px;
@@ -995,7 +996,7 @@ button:focus {
 
 .intermedio-content {
 	background-color:#444;
-	width: 86%;
+	width: 100%;
 	float: left;
 	height: 100%;
 }
@@ -1055,12 +1056,13 @@ button:focus {
 }
 
 .menu a {
-	padding: 1em;
+	padding: 0.9em;
 	background: #af044a;
 	display: block;
 	border-radius: 1em;
 	margin: 1em;
 	color: white;
+  font-size: 1.2em;
 }
 
 .menu li {
@@ -2101,6 +2103,12 @@ padding: 0 4em 1em 0;
     right: 80px;
     bottom: 30px;
   }
+}
+.e-selected{
+  font-size:1.2em;
+  color: #fff;
+  text-shadow: 1px 1px 1px #000;
+  margin-top:0.5em
 }
 
 .s-election ul {
