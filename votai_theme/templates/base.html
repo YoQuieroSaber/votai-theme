@@ -14,7 +14,7 @@
   <!--for facebook fans-->
   <meta property="og:type" content="{{ 'type'|ogpdata }}">
   <meta property="og:url" content="{{ 'url'|ogpdata }}">
-  <meta property="og:image" content="{% static 'image'|ogpdata %}">
+  <meta property="og:image" content="{{ 'url'|ogpdata }}{% static 'image'|ogpdata %}">
   <!--eoff-->
 
   <link rel="shortcut icon" sizes="196x196" href="{% static 'img/favicon.6fb2111c9430.ico' %}">
