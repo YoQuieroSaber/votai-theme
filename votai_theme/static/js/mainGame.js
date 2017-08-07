@@ -120,7 +120,9 @@ var app = (function(){
 			else{
 				//Si el candidato no respondió la pregunta es como si estuviera en desacuerdo
 				puntajes[i][0]+=valorPuntos[3];
-				punPreg[i][0]=valorPuntos[3];;
+
+				//Valor -1 para esta pregunta así queda abajo del todo en pantalla intermedia
+				punPreg[i][0]=-1;
 				puntajes[i][2]++;
 
 				punParcial[i][1]=cInd;
