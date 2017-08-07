@@ -46,8 +46,6 @@
   <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed" rel="stylesheet">
   <link type="text/plain" rel="author" href="{% static 'humans.txt' %}" />
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-
-
 </head>
 
 <body data-ng-app="votainteligente">
@@ -88,7 +86,7 @@
   <footer class="footer">
     <div class="calendario">
       <h3 class="faltan">Calendario electoral</h3>
-      <ul class="row">
+       <ul class="row">
         <li class="col-sm-3"></li>
         <li class="col-sm-3">
           <div class="days">
@@ -148,7 +146,7 @@
         </div>
       </div>
     </div>
-
+  </div>
   </footer>
   <a href="#0" class="cd-top">Subir</a>
   <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
@@ -205,19 +203,6 @@
       s.parentNode.insertBefore(ga, s);
     })();
   </script>
-  <script type="text/javascript">
-    var countdownDateEl = document.getElementsByClassName('countdown-date')[0];
-    var countdown = 365;
-
-    countdownNumberEl.textContent = countdown;
-
-    setInterval(function() {
-    countdown = --countdown < 0 ? 365 : countdown;
-
-    countdownDateEl.textContent = countdown;
-    }, 1000);
-  </script>
-
 </body>
 
 </html>

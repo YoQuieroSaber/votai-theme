@@ -240,6 +240,7 @@ header span{
 margin-top: 0.8em;
 font-family: 'Saira Extra Condensed', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 font-size: 1.5em;
+text-shadow: 1px 1px 1px #222;
 }
 #headermenu a {
 	color: white;
