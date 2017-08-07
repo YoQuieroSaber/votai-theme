@@ -1725,17 +1725,18 @@ padding: 0 4em 1em 0;
 
 .afiT{
 	position:absolute;
-	top:75%;
+	top:76%;
 	left:2%;
 	font-family:'Saira Extra Condensed', sans-serif;
 	font-size:2em;
 	color:#000;
- 	z-index:3;
+ 	z-index:30;
 }
 
 .afiT .election_name {
 	color: #000;
 	font-size: 0.7em;
+    margin-top: 5px;
 }
 
 .afinidad{

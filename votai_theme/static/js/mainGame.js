@@ -1,11 +1,6 @@
 /** mainGame.js
 * Esta es la funcionalidad principal del juego de YoQuieroSaber
 * Authors: Juan Pablo Amato, Martín Szyszlican
-* TODO:
-* * Poner el selector en la elección actual en desktop
-* * Poner un link al sitio completo en mobile cuando no es iframe
-* * Ver qué pasa con las preguntas salteadas porque la categoría no tiene suficientes preguntas
-* * Ver qué pasa que no se puede volver atrás después de haber llegado a resuFinal
 */
 
 function showDetalle(eleNum){
@@ -86,7 +81,7 @@ var app = (function(){
 
 			var qresp = {};
 			qresp = $.grep(candidatos[cInd]["positions"], function(e){ return e["question_id"] == preguntaActual["question_id"]; })[0];
-			if(qresp!=null){
+			if(qresp!=null) {
 				//console.log(qresp);
 				var ansId = qresp.answer_id;
 				//console.log("A: "+ansId);
@@ -94,34 +89,40 @@ var app = (function(){
 				var candR = qresp.answer_value;
 				//console.log("B: "+candR);
 
-			if(Math.abs(userR-candR)==0){// Si no hay diferencia, ergo es igual, entonces el mayor puntaje
-				puntajes[i][0]+=valorPuntos[0];
-				punPreg[i][0]=valorPuntos[0];
-				puntajes[i][2]++;
-			}else if(Math.abs(userR-candR)==3){// Si la diferencia es la mayor posible, entonces el menor puntaje
-				puntajes[i][0]+=valorPuntos[3];
-				punPreg[i][0]=valorPuntos[3];
-				puntajes[i][2]++;
-			}else if(parseInt(userR*0.5)==parseInt(candR*0.5)){//Si no coincide exacto pero está en el mismo sentido, entonces el segundo mayor puntaje
-				puntajes[i][0]+=valorPuntos[1];
-				punPreg[i][0]=valorPuntos[1];
-				puntajes[i][2]++;
-			}else{//Finalmente, si no coincide el sentido, puede ser el tercer mejor puntaje o el cuarto y último
-				if(Math.abs(userR-candR)==1){
-					puntajes[i][0]+=valorPuntos[2];
-					punPreg[i][0]=valorPuntos[2];
+				if(Math.abs(userR-candR)==0){// Si no hay diferencia, ergo es igual, entonces el mayor puntaje
+					puntajes[i][0]+=valorPuntos[0];
+					punPreg[i][0]=valorPuntos[0];
 					puntajes[i][2]++;
-				}else{
+				}else if(Math.abs(userR-candR)==3){// Si la diferencia es la mayor posible, entonces el menor puntaje
 					puntajes[i][0]+=valorPuntos[3];
 					punPreg[i][0]=valorPuntos[3];
 					puntajes[i][2]++;
+				}else if(parseInt(userR*0.5)==parseInt(candR*0.5)){//Si no coincide exacto pero está en el mismo sentido, entonces el segundo mayor puntaje
+					puntajes[i][0]+=valorPuntos[1];
+					punPreg[i][0]=valorPuntos[1];
+					puntajes[i][2]++;
+				}else{//Finalmente, si no coincide el sentido, puede ser el tercer mejor puntaje o el cuarto y último
+					if(Math.abs(userR-candR)==1){
+						puntajes[i][0]+=valorPuntos[2];
+						punPreg[i][0]=valorPuntos[2];
+						puntajes[i][2]++;
+					}else{
+						puntajes[i][0]+=valorPuntos[3];
+						punPreg[i][0]=valorPuntos[3];
+						puntajes[i][2]++;
+					}
 				}
-			}
 				punParcial[i][1]=cInd;
 				punParcial[i][2]=puntajes[i][2];
 				punParcial[i][0] = puntajes[i][0]/punParcial[i][2];
 				//console.log("PunPar "+candidatos[cInd]["candidate_name"]+": "+punParcial[i]);
-			}else{
+			}
+			else{
+				//Si el candidato no respondió la pregunta es como si estuviera en desacuerdo
+				puntajes[i][0]+=valorPuntos[3];
+				punPreg[i][0]=valorPuntos[3];;
+				puntajes[i][2]++;
+
 				punParcial[i][1]=cInd;
 				punParcial[i][2]=puntajes[i][2];
 				if(punParcial[i][2]>0){
@@ -129,7 +130,6 @@ var app = (function(){
 				}else{
 					punParcial[i][0] = -1;
 				}
-				punPreg[i][0]=-1;
 				//console.log("PunPar "+candidatos[cInd]["candidate_name"]+": "+punParcial[i]);
 			}
 
