@@ -118,10 +118,11 @@ var app = (function(){
 				//console.log("PunPar "+candidatos[cInd]["candidate_name"]+": "+punParcial[i]);
 			}
 			else{
-				//Hardcodeo 50 puntos si el candidato no respondió la pregunta
-				puntajes[i][0]+=50;
+				//Si el candidato no respondió la pregunta es como si estuviera en desacuerdo
+				puntajes[i][0]+=valorPuntos[3];
+				punPreg[i][0]=valorPuntos[3];;
 				puntajes[i][2]++;
-				
+
 				punParcial[i][1]=cInd;
 				punParcial[i][2]=puntajes[i][2];
 				if(punParcial[i][2]>0){
@@ -129,7 +130,6 @@ var app = (function(){
 				}else{
 					punParcial[i][0] = -1;
 				}
-				punPreg[i][0]=-1;
 				//console.log("PunPar "+candidatos[cInd]["candidate_name"]+": "+punParcial[i]);
 			}
 
