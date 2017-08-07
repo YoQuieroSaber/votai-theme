@@ -728,12 +728,12 @@ button:focus {
 }
 
 .leerbio {
-	position: absolute; 
+	position: absolute;
 	left: 2px;
 	bottom: 2px;
 	width: 86px;
-	background: #eee; 
-	border-radius: 1em; 
+	background: #eee;
+	border-radius: 1em;
 	font-size: 0.7em;
 }
 .resuIMG2 .leerbio,
@@ -1723,17 +1723,18 @@ padding: 0 4em 1em 0;
 
 .afiT{
 	position:absolute;
-	top:75%;
+	top:76%;
 	left:2%;
 	font-family:yqsFont;
 	font-size:2em;
 	color:#000;
- 	z-index:3;
+ 	z-index:30;
 }
 
 .afiT .election_name {
 	color: #000;
 	font-size: 0.7em;
+    margin-top: 5px;
 }
 
 .afinidad{
