@@ -1724,7 +1724,7 @@ function loadGame(){
 		$(".afinidad").css("overflow-x","hidden");
 		$("#game").css("top",gameTop+"px");
 		$("#telon").css("top",gameTop+"px");
-		$("#inicio").css("top",(gameTop)+"px");
+		$("#inicio").css("top",("125")+"px");
 		var margR=parseFloat($("#sideLeft").css("margin-right"));
 		if($(window).width()>960){
 			$("#sideLeft").css("left",($(window).width()*0.5-parseFloat($("#game").css("width"))*0.5-parseFloat($("#sideLeft").css("width"))-margR)+"px");
@@ -1759,7 +1759,7 @@ function loadGame(){
 
 			gameTop = parseFloat($("#game").css("top"));
 			$("#telon").css("top",gameTop+"px");
-			$("#inicio").css("top",(gameTop/3)+"px");
+			$("#inicio").css("top",("125")+"px");
 			pregFS = parseFloat($(".tPreg").css("font-size"));
 			resuFS = $(".pregResu").css("font-size");
 
