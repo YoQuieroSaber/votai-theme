@@ -1301,3 +1301,6 @@ animation: doscaras 4s infinite;
 		height: 203px;
 	}
 }
+.col-centered{
+	float: none;
+}
