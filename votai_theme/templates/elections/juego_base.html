@@ -53,9 +53,18 @@
         <script src="{% static 'js/jquery.expander.js' %}"></script>
 
 	<!--<script src="js/jquery.socialshareprivacy.min.autoload.js"></script>-->
-	<script src="{% static 'SocialSharePrivacy/javascripts/jquery.cookies.js' %}"></script>
-	<script type="application/x-social-share-privacy-settings">{"path_prefix":"{% static 'SocialSharePrivacy/' %}","layout":"box","services":{"buffer":{"status":false},"delicious":{"status":false},"disqus":{"status":false},"facebook":{"status":false},"flattr":{"status":false},"hackernews":{"status":false},"linkedin":{"status":false},"pinterest":{"status":false},"reddit":{"status":false},"stumbleupon":{"status":false},"tumblr":{"status":false},"xing":{"status":false}}}</script>
-	<script type="text/javascript">(function () {var s = document.createElement('script');var t = document.getElementsByTagName('script')[0];s.type = 'text/javascript';s.async = true;s.src = "//www.yoquierosaber.org/static/SocialSharePrivacy/javascripts/jquery.socialshareprivacy.min.autoload.js";t.parentNode.insertBefore(s, t);})();</script>
+    <script src="/static/SocialSharePrivacy/javascripts/jquery.cookies.js"></script>
+<script type="application/x-social-share-privacy-settings">{"path_prefix":"/static/SocialSharePrivacy/","layout":"box","services":{"buffer":{"status":false},"delicious":{"status":false},"disqus":{"status":false},"facebook":{"status":false},"flattr":{"status":false},"hackernews":{"status":false},"linkedin":{"status":false},"pinterest":{"status":false},"reddit":{"status":false},"stumbleupon":{"status":false},"tumblr":{"status":false},"xing":{"status":false}}}</script>
+<script type="text/javascript">
+    (function() {
+      var s = document.createElement('script');
+      var t = document.getElementsByTagName('script')[0];
+      s.type = 'text/javascript';
+      s.async = true;
+      s.src = "//elecciones2015.yoquierosaber.org/static/SocialSharePrivacy/javascripts/jquery.socialshareprivacy.min.autoload.js";
+      t.parentNode.insertBefore(s, t);
+    })();
+  </script>
 
         <script src="{% static 'js/argentina-theme.js' %}"></script>
         <script src="{% static 'js/main.js' %}"></script>
