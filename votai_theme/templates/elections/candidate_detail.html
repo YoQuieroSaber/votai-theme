@@ -28,24 +28,24 @@
 						{% thumbnail candidate.image "300x300" crop="center"  format="PNG" as im %}
 						    <img src="{{ im.url }}" alt="{{candidate.name}}" height="300" width="300" border="0" class="img-responsive" style="background-color: {{candidate.extra_info.color}} ">
 						{% endthumbnail %}
-						
+
 						{% else %}
 						<img src="{% static 'img/candidate-default.jpg' %}" alt="{{candidate.name}}" border="0" class="img-responsive">
 						{% endif %}
-						
+
 						<img id="apoya" src="{% static 'img/hover-caraacara.png' %}" alt="{% trans "Apoya a tu candidato" %}" title="{% trans "Apoya a tu candidato" %}">
 						{% if candidate.extra_info.custom_ribbon %}<div class="ribbon">{{ candidate.extra_info.custom_ribbon }}</div>{% endif %}
 					</div>
-					
+
 					{% if candidate.image %}
-					<a class="btn btn-default button_pic hidden-xs" data-toggle="modal" href="#myCandidate" style="margin-bottom:5px" onClick="ga('send', 'event', 'support-candidate', 'click');"><i class="icon-camera"></i> {% trans "Da la cara por tu candidato" %}</a>
-					
+					<a class="btn btn-default button_pic hidden-xs" data-toggle="modal" href="#myCandidate" style="margin-bottom:5px;font-size: 1.1em;" onClick="ga('send', 'event', 'support-candidate', 'click');"><i class="icon-camera"></i> {% trans "Da la cara por tu candidato" %}</a>
+
 					<div class="modal fade" id="myCandidate" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 						<div class="modal-dialog">
 							<div class="modal-content">
 								<div class="modal-header">
 									<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-									<h4 class="modal-title"><i class="icon-camera"></i> {% trans "Da la cara por tu candidato" %}</h4>
+									<h4 class="modal-title"><i class="icon-camera" style="margin-right:5px;"></i> {% trans "Da la cara por tu candidato" %}</h4>
 								</div>
 								<div class="modal-body container_pic">
 									<div id="text-support" class="alert alert-warning alert-dismissable">
@@ -82,7 +82,7 @@
 					 <h3>{{ candidate.name }} {% if candidate.did_not_pass_primaries == True %} (no superó las internas PASO){% endif %}</h3>
 					<table class="table">
 						{% include 'elections/personal_data_candidate.html' with candidate=candidate %}
-					</table>			
+					</table>
 
                                 <div class="antecedentes col-md-12">
                                         <div class="info">
@@ -100,18 +100,18 @@
                                 </div>
 
 				</div>
-				
+
 				<div class="col-md-4 social-side">
 					{% include 'elections/candidates/contacts.html' with candidate=candidate %}
-					
-					
+
+
 					{% if 'facetoface'|val_navbars and election.uses_face_to_face  %}
 					<button type="button" class="btn btn-danger btn-lg btn-block" onClick="location.href='{% url 'face_to_face_one_candidate_detail_view' slug=election.slug slug_candidate_one=candidate.id %}'"><i class="icon-bolt"></i> Comparálo con otro candidato</button>
 					{% endif %}
-					
+
 				</div>
 			</div>
-			
+
 		</div>
 
 	</div>
@@ -171,4 +171,3 @@
 	</script>
 	<script type="text/javascript" src="{% static 'js/video.js' %}"></script>
 {% endblock mainelection %}
-
