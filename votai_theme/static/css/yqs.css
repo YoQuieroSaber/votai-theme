@@ -27,6 +27,11 @@ a{
 	color: #085;
 }
 
+.container p {
+    font-size: 1.1em;
+    font-family:'Saira', sans-serif;
+}
+
 .container-profile {
 	background: #c2185b;
 	margin-top: 1em;
@@ -47,7 +52,8 @@ a{
 
 .panel-default>.panel-heading {
 	background-color:#96004d;
-  font-size: 1.1em;
+  font-family: 'Saira', sans-serif;
+  font-size: 1em;
 }
 
 .container-profile h3 {
@@ -151,6 +157,14 @@ div.question-answer div.row.hidden-xs {
 	display: block;
 	border-radius: 0.5em;
 	padding: 1em;
+  font-family: 'Saira', sans-serif;
+  font-weight: bold;
+
+}
+
+p{
+  font-family: 'Saira', sans-serif;
+  font-size: 1.1em;
 }
 
 #telon{
@@ -528,6 +542,8 @@ button:focus {
 }
 .container{
 	text-align: left;
+  font-size: 1.1em;
+  font-family:'Saira', sans-serif;
 }
 
 #inicio{
@@ -820,6 +836,8 @@ button:focus {
 	min-height: 60px;
 	padding-left: 10px;
 	padding-right: 5px;
+  font-family: 'Saira', sans-serif;
+  font-size: 0.8em;
 }
 .chatBoxContent button
 {
@@ -1888,6 +1906,8 @@ padding: 0 4em 1em 0;
 @media only screen and (min-width:768px){
 	.container{
 		min-height: 617px;
+    font-size: 1.1em;
+    font-family:'Saira', sans-serif;
 	}
   body{
 		background-color:#dddddd;
