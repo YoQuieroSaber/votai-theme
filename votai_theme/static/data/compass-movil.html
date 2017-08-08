@@ -26,7 +26,7 @@
 			height: 200px;
 			margin-left: 200px;
 			margin-top: 200px;
-			border-left: 2px solid #ccc;		
+			border-left: 2px solid #ccc;
 		}
 		.question {
 			margin-top: 1em;
@@ -49,7 +49,7 @@
 			width: 400px;
 		}
 	</style>
-	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+	<script src="//code.jquery.com/jquery-1.10.1.min.js"></script>
 	<script>
 	window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')
 	</script>
@@ -89,9 +89,9 @@
     	promedio = av_suma[t]/av_cantidad[t];
     	promedio_redondeado = Math.round(promedio*2)/2;
     	av_promedio[t] = promedio_redondeado;
-    }	
+    }
     answer_values_preset["promedio"] = av_promedio;
-	
+
 	function answer(answer_id,data) {
 		for (c in data.categories) {
 			var category = data.categories[c];
@@ -101,12 +101,12 @@
 					$("#form").append("<div class='question' id='question_"+question.question_id+"'>"+question.question_text+"</div>");
 				}
 
-				for (a in question.answers) { 
+				for (a in question.answers) {
 					var answer = question.answers[a];
 					if(answer.answer_id == answer_id) {
 						if ($("#answer_"+answer_id).length == 0) {
 							$("#question_"+question.question_id).append("<div class='answer' id='answer_"+answer_id+"'>"+answer.answer_text+"<br/> <select id='answer_"+answer_id+"_x' class='answervalue'><option value='1'>Derecha económica</option><option value='0.5'>Derecha económica moderada</option><option value='0'>Sin posición económica</option><option value='-0.5'>Izquierda económica moderada</option><option value='-1'>Izquierda económica</option></select> <select id='answer_"+answer_id+"_y' class='answervalue'><option value='1'>Políticamente democratico</option><option value='0.5'>Políticamente democratico moderado</option><option value='0'>Sin posición política</option><option value='-0.5'>Políticamente conservador moderado</option><option value='-1'>Políticamente conservador</option></select></div>");
-							$("#answer_"+answer_id+"_x").val(answer_values[answer_id+"_x"]);	
+							$("#answer_"+answer_id+"_x").val(answer_values[answer_id+"_x"]);
 							$("#answer_"+answer_id+"_y").val(answer_values[answer_id+"_y"]);
 						}
 						answer_values[answer_id+"_x"] = parseFloat($("#answer_"+answer_id+"_x").val());
@@ -126,7 +126,7 @@
 		$("body").find("h2").text(data.election_name);
 		contenedor = $(".contenedor");
 		form = $(".form");
-		
+
 		for (c in data.candidates) {
 			var candidate = data.candidates[c];
 			candidate.answers = [];
@@ -146,11 +146,11 @@
 				// console.log(candidate.answers[a]);
 				if (answer_values[candidate.answers[a].answer_id+"_y"] != 0) {
 					candidate.suma_y += answer_values[candidate.answers[a].answer_id+"_y"];
-					candidate.cantidad_y++;					
+					candidate.cantidad_y++;
 				}
 				if (answer_values[candidate.answers[a].answer_id+"_x"] != 0) {
 					candidate.suma_x += answer_values[candidate.answers[a].answer_id+"_x"];
-					candidate.cantidad_x++;					
+					candidate.cantidad_x++;
 				}
 			}
 			candidate.posicion_y = (candidate.suma_y/candidate.cantidad_y);
@@ -160,7 +160,7 @@
 				candi = $("<div></div>").addClass("candidato").attr('id',"candidate_"+candidate.candidate_id);
 				contenedor.append(candi);
 				candi.css("background-color", candidate.candidate_color)
-				candi.css("background-image", "url("+candidate.candidate_pic+")");				
+				candi.css("background-image", "url("+candidate.candidate_pic+")");
 			}
 
 			candi = $("#candidate_"+candidate.candidate_id);
@@ -170,7 +170,7 @@
 			candi.css("top", pos_y + "px");
 			candi.attr("title",candidate.candidate_name + " x"+candidate.posicion_x + " y"+candidate.posicion_y);
 		}
-		
+
 		$("#values").val(JSON.stringify(answer_values));
     }
 
@@ -178,9 +178,9 @@
 
     function init() {
     	console.log("init");
-		
 
-        $.getJSON("/theme/election/pre-candidato-a-presidente/media-naranja.json", election_table);
+
+        $.getJSON("http://www.yoquierosaber.org/theme/election/buenos-aires-senadores/media-naranja.json", election_table);
         // $.getJSON("http://elecciones2015.yoquierosaber.org/theme/election/pre-candidato-a-gobernador-de-buenos-aires/media-naranja.json", election_table);
         // $.getJSON("http://elecciones2015.yoquierosaber.org/theme/election/pre-candidato-a-gobernador-de-tucuman/media-naranja.json", election_table);
         // $.getJSON("http://elecciones2015.yoquierosaber.org/theme/election/pre-candidato-a-gobernador-de-san-juan/media-naranja.json", election_table);
@@ -197,7 +197,7 @@
 		current_answer_values = $("#valores_predeterminados").val();
 		answer_values = answer_values_preset[current_answer_values];
 		for (v in answer_values) {
-			$("#answer_"+v).val(answer_values[v]);	
+			$("#answer_"+v).val(answer_values[v]);
 		}
 		$("body").on("change",".answervalue", null, init);
 		init();
@@ -208,17 +208,17 @@
 	<div id='compass'>
 		<h2></h2>
 		<p>
-		Valores predeterminados: <select id="valores_predeterminados"></select>			
+		Valores predeterminados: <select id="valores_predeterminados"></select>
 		</p>
 		<div class="contenedor"></div>
 
 		<div id="form">
-			<h3>Posiciones</h3>			
+			<h3>Posiciones</h3>
 		</div>
 		<hr>
 		Valores actuales: <input id='values'><br/>
 
-		<p>Ayudanos a definir los valores para cada posición. 
+		<p>Ayudanos a definir los valores para cada posición.
 		Seleccioná en cada uno de los campos de la izquierda los valores izquierda económica a derecha económica y politicamente conservador a politicamente democratico.<br/>
 		Finalmente, copiá el contenido del campo "valores actuales" y envialo a info@yoquierosaber.org<br/>
 		El gráfico se actualiza automaticamente luego de cada cambio.<br/>

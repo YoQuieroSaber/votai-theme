@@ -19,8 +19,8 @@ $(document).ready(function(){
 			var slug_two = $('#candidate_two').val();
 			var slug_one = $(this).val();
 			var data_path = path.split("/",4);
-			var new_url = 'http://' + host + '/' + data_path[1] + '/' + data_path[2] + '/' + data_path[3] + '/' + slug_one + '/' + slug_two;
-			
+			var new_url = '//' + host + '/' + data_path[1] + '/' + data_path[2] + '/' + data_path[3] + '/' + slug_one + '/' + slug_two;
+
 			window.location = new_url;
 		}
 	})
@@ -31,7 +31,7 @@ $(document).ready(function(){
 			var slug_one = $('#candidate_one').val();
 			var slug_two = $(this).val();
 			var data_path = path.split("/",4);
-			var new_url = 'http://' + host + '/' + data_path[1] + '/' + data_path[2] + '/' + data_path[3] + '/' + slug_one + '/' + slug_two;
+			var new_url = '//' + host + '/' + data_path[1] + '/' + data_path[2] + '/' + data_path[3] + '/' + slug_one + '/' + slug_two;
 
 			window.location = new_url;
 		}
