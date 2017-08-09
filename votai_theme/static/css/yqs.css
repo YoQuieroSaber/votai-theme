@@ -757,7 +757,7 @@ button:focus {
   border-radius: 0 0 0.4em 0.4em;
   font-size: 0.7em;
   padding: 0.2em;
-  width: 100%;
+  min-width: 88px;
   font-weight: bold;
   text-shadow: 0px 0px 2px #fff;
 
@@ -2070,10 +2070,6 @@ padding: 0 4em 1em 0;
 	.afPreg{
 		padding-right:15px;
 	}
-  .afiT{
-    top: 85%;
-    left: 25%;
-  }
 }
 
 
