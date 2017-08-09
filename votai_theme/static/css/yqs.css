@@ -750,12 +750,18 @@ button:focus {
 }
 
 .leerbio {
-	position: absolute;
-	left: 2px;
-	bottom: 2px;
-	width: 86px;
-	background: #eee;
-	border-radius: 1em;
+  position: absolute;
+  left: 0px;
+  bottom: -5px;
+  background: #eee;
+  border-radius: 0 0 0.4em 0.4em;
+  font-size: 0.7em;
+  padding: 0.2em;
+  width: 100%;
+  font-weight: bold;
+  text-shadow: 0px 0px 2px #fff;
+
+
 }
 .resuIMG2 .leerbio,
 .resuIMG1 .leerbio {
@@ -2064,6 +2070,10 @@ padding: 0 4em 1em 0;
 	.afPreg{
 		padding-right:15px;
 	}
+  .afiT{
+    top: 85%;
+    left: 25%;
+  }
 }
 
 
