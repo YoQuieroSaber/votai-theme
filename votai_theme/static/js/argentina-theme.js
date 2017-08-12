@@ -32,9 +32,26 @@ jQuery(document).ready(function($){
         $(".fecha-distancia").each(function(i,el) {
                 dateParts = $(el).text().split('/');
                 date = new Date(dateParts[1] + "/" + dateParts[0] + "/" + dateParts[2]);
-                $(el).text(getDayCount(date) + " días");
+                let days = getDayCount(date);
+                let text = days > 0 ? `${days} días` : "Hoy";
+
+                $(el).text(text);
+
         });
 
+        var pasoEndDate = moment("2017-08-13", "YYYY-MM-DD");
+        var generalesEndDate = moment("2017-10-23", "YYYY-MM-DD");
+        var today = moment();
+        var startDate = moment("2017-01-01", "YYYY-MM-DD");
+
+        var distance = today.diff(startDate, 'days');
+
+        var totalDaysPaso = pasoEndDate.diff(startDate, 'days');
+        var totalDaysGenerales = generalesEndDate.diff(startDate, 'days');
+
+
+        setCounter("paso", distance, totalDaysPaso);
+        setCounter("generales", distance, totalDaysGenerales);
 
         //Init election selector
         if (window.elections_json) {
@@ -75,7 +92,27 @@ jQuery(document).ready(function($){
 function getDayCount(secondDate){
         var oneDay = 24*60*60*1000; // hours*minutes*seconds*milliseconds
         var firstDate = new Date();
-        console.log(firstDate,secondDate);
-        var diffDays = Math.round(Math.abs((firstDate.getTime() - secondDate.getTime())/(oneDay)))+1;
-        return diffDays;
+        let equalDays = firstDate.getDate() === secondDate.getDate();
+        let equalMonths = firstDate.getMonth() === secondDate.getMonth();
+
+        return equalDays && equalMonths
+          ? 0
+          : Math.round(Math.abs((firstDate.getTime() - secondDate.getTime())/(oneDay))) + 1;
+}
+
+
+function setCounter(id, value, max)
+{
+  var elem = document.getElementById(id);
+  // Get the radius ("r" attribute)
+  var radius = elem.r.baseVal.value;
+  // Calculate the circumference of the circle
+  var circumference = radius * 2 * Math.PI;
+  // How long the bar has to be
+  var barLength = value * circumference / max;
+
+  // Set a dash pattern for the stroke.
+  // The dash pattern consists of a dash of the right length,
+  // followed by a gap big enough to ensure that we don't see the next dash.
+  elem.setAttribute("stroke-dasharray", barLength + " " + circumference);
 }
