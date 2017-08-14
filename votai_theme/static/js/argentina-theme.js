@@ -39,18 +39,18 @@ jQuery(document).ready(function($){
 
         });
 
-        var pasoEndDate = moment("2017-08-13", "YYYY-MM-DD");
+        //var pasoEndDate = moment("2017-08-13", "YYYY-MM-DD");
         var generalesEndDate = moment("2017-10-23", "YYYY-MM-DD");
         var today = moment();
         var startDate = moment("2017-01-01", "YYYY-MM-DD");
 
         var distance = today.diff(startDate, 'days');
 
-        var totalDaysPaso = pasoEndDate.diff(startDate, 'days');
+        //var totalDaysPaso = pasoEndDate.diff(startDate, 'days');
         var totalDaysGenerales = generalesEndDate.diff(startDate, 'days');
 
 
-        setCounter("paso", distance, totalDaysPaso);
+        //setCounter("paso", distance, totalDaysPaso);
         setCounter("generales", distance, totalDaysGenerales);
 
         //Init election selector
